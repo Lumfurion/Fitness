@@ -3,6 +3,7 @@ namespace Fitness.BusinessLogic.Model
 { /// <summary>
   /// Пользователь.
   /// </summary>
+    [Serializable]//Указуем что будем сериализовать.
     public class User
     {
         #region Cвойства.
