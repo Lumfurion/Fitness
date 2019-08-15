@@ -14,11 +14,11 @@ namespace Fitness.BusinessLogic.Model
         /// <summary>
         /// Пол.
         /// </summary>
-        public Gender Gender { get; }
+        public Gender Gender { get; set; }
         /// <summary>
         /// Дата рождения.
         /// </summary>
-        public DateTime BirthdayDate { get; }
+        public DateTime BirthdayDate { get; set; }
         /// <summary>
         ///Вес.
         /// </summary>
@@ -27,6 +27,8 @@ namespace Fitness.BusinessLogic.Model
         /// Рост.
         /// </summary>
         public double Height { get; set; }
+
+        public int Age { get { return DateTime.Now.Year - BirthdayDate.Year; }}
         #endregion 
 
 
@@ -72,10 +74,19 @@ namespace Fitness.BusinessLogic.Model
             Weight = weight;
             Height = height;
         }
+        public User(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException("Имя пользователя не может  быть пустым или null.", nameof(name));
+            }
+            Name = name;
+        }
+
 
         public override string ToString()
         {
-            return Name;
+            return Name + " " + Age;
         }
 
     }
