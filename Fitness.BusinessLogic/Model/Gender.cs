@@ -1,11 +1,11 @@
 ﻿using System;
-//Заготовка под Entity.Framework.
+
 namespace Fitness.BusinessLogic.Model
 {  /// <summary>
-   /// Пол.
+   /// Пол.     Заготовка под Entity.Framework.
    /// </summary>
-   [Serializable]
-   public class Gender
+    [Serializable]
+    public class Gender
    {   
         public string Name { get; }
         /// <summary>

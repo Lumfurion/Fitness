@@ -1,29 +1,39 @@
 ﻿using Fitness.BusinessLogic.Model;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
+
 
 namespace Fitness.BusinessLogic.Controller
 {   /// <summary>
     /// Контроллер пользователя.
     /// </summary>
-    public class UserController
-    {   /// <summary>
+    public class UserController : ControllerBase
+    {
+        private const string Users_FILE_NAME = "users.dat"; 
+        #region Cвойства
+        /// <summary>
         /// Пользователь приложения.
         /// Будем использовать список он не безопасен мозно его зменить даже если он приватный.
         /// </summary>
         public List<User> Users { get; }
+        /// <summary>
+        /// Текущий пользователь,для проверки есть такой пользователь.
+        /// </summary>
         public User CurrentUser { get; }
-        public bool isNewUser { get; } = false;//Проверка являться нопользователь новый или получили из приложения.
+        /// <summary>
+        /// Проверка являться пользователь новый или получили из приложения.
+        /// </summary>
+        public bool isNewUser { get; } = false;
+        #endregion
+
         /// <summary>
         /// Создание нового контроллера пользователя.
         /// При вводе пользователь вводит свой логин проверяем в наличии такого  логина в файле,
         /// если файле есть такой пользователь с таким логином подтягиваем его данные
         /// если пользователя нет с таким никнеймом мы получаем данные и добавляем в список всех пользователей.
         /// </summary>
-        /// <param name="user"></param>
+        /// <param name="user">Имя пользователя.</param>
         public UserController(string userName)
         {
             if (string.IsNullOrWhiteSpace(userName))
@@ -31,9 +41,10 @@ namespace Fitness.BusinessLogic.Controller
                 throw new ArgumentNullException("Имя пользователя не может быть пустым",nameof(userName));
             }
             Users =GetUsersData();
-            
+
             //Будем искать пользователя 1 единственным именами,ecли пользователь есть.
-            CurrentUser = Users.SingleOrDefault(u=>u.Name==userName);
+            CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
+
             if (CurrentUser == null)
             {
                 CurrentUser = new User(userName);
@@ -43,29 +54,18 @@ namespace Fitness.BusinessLogic.Controller
             }
   
         }
-       
+
         /// <summary>
-        /// Получить сохраненный список пользователей.
+        /// Получить сохраненный список пользователей(десериализация).
         /// </summary>
         public List<User> GetUsersData()
-        {
-            var formatter = new BinaryFormatter();
-
-            using (var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
-            {
-
-                if (fs.Length > 0 && formatter.Deserialize(fs) is List<User> users)
-                {
-                    return users;
-                }
-                else
-                {
-                    return new List<User>();
-                    //throw new FileLoadException("Не удалось получить данные пользователя из файла!", "users.dat");
-                }
-            }
+        {   //?? new List<User>()-праверка нужна потому что default(T) возращает null.
+            return Load<List<User>>(Users_FILE_NAME) ?? new List<User>();
         }
 
+        /// <summary>
+        /// Инициализация нового пользователя.
+        /// </summary>
         public void SetNewUserData(string genderName, DateTime birthdaydate, double weight = 1, double height = 1)
         { //Проверка.
             CurrentUser.Gender = new Gender(genderName);
@@ -76,16 +76,11 @@ namespace Fitness.BusinessLogic.Controller
         }
 
         /// <summary>
-        /// Сохранить данные пользователя.
+        /// Сохранить данные пользователя(Сериализация).
         /// </summary>
         public void  Save()
         {
-            var formatter = new BinaryFormatter();
-
-            using (var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, Users);
-            }   
+            Save(Users_FILE_NAME, Users);
         }
      
     }
