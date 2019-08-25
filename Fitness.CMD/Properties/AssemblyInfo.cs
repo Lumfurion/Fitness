@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("Fitness.Console")]
+[assembly: AssemblyTitle("Fitness.CMD")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Fitness.Console")]
+[assembly: AssemblyProduct("Fitness.CMD")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("084ea848-bd05-499b-bb28-5deb405d0ff6")]
+[assembly: Guid("ac2ee1ce-9cc0-4d54-a374-86c51d8c9612")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
