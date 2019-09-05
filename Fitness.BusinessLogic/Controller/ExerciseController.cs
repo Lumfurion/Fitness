@@ -8,9 +8,7 @@ namespace Fitness.BusinessLogic.Controller
     /// Упражнений Контроллер
     /// </summary>
     public class ExerciseController: ControllerBase
-    {
-        private const string Exercises_FILE_NAME = "exercises.dat";
-        private const string Activities_FILE_NAME = "activities.dat";
+    {  
         private readonly User user;
         public List<Exercise> Exercises { get; }
         public List<Activity> Activities { get; }
@@ -24,12 +22,12 @@ namespace Fitness.BusinessLogic.Controller
 
         private List<Activity> GetAllActivities()
         {
-            return Load<List<Activity>>(Activities_FILE_NAME) ?? new List<Activity>();
+            return Load<Activity>() ?? new List<Activity>();
         }
 
         private List<Exercise> GetAllExercises()
         {
-            return Load<List<Exercise>>(Exercises_FILE_NAME) ?? new List<Exercise>();
+            return Load<Exercise>() ?? new List<Exercise>();
         }
         /// <summary>
         /// Дабавление физической активности.
@@ -59,8 +57,8 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         private void Save()
         {
-            Save(Exercises_FILE_NAME,Exercises);
-            Save(Activities_FILE_NAME, Activities);
+            Save(Exercises);
+            Save(Activities);
         }
     }
 }

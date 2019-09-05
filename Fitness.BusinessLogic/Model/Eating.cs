@@ -10,20 +10,25 @@ namespace Fitness.BusinessLogic.Model
     public class Eating
     {
         #region Cвойство
+        public int Id { get; set; }
+
         /// <summary>
         /// Момент приема пищи.
         /// </summary>
-        public DateTime  Moment { get; }
+        public DateTime Moment { get; set; }
         /// <summary>
         /// Список еды и сколько сел пользователь еды.
         /// </summary>
-        public Dictionary<Food,double> Foods { get; }
+        public Dictionary<Food, double> Foods { get; set; }
+
+        public int UserId { get; set; } 
+
         /// <summary>
         /// Пользователь,в программе может быть несколько пользователей и разные приемы пищи.
         /// </summary>
-        public User User { get; }
+        public virtual User User { get; set; }
         #endregion
-
+        public Eating() { }
         public Eating(User user)
         {
             User = user ?? throw new ArgumentNullException("Пользователь не может быть пустым.", nameof(user));

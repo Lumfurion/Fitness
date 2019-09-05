@@ -11,8 +11,6 @@ namespace Fitness.BusinessLogic.Controller
     /// </summary>
     public class EatingController:ControllerBase
     {
-        private const string FOODS_FILE_NAME = "foods.dat";
-        private const string Eatings_FILE_NAME = "eatings.dat";
         private readonly User user;
         /// <summary>
         /// Список еды.
@@ -39,7 +37,7 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         private List<Food> GetAllFoods()
         {
-            return Load<List<Food>>(FOODS_FILE_NAME) ?? new List<Food>();
+            return Load<Food>() ?? new List<Food>();
         }
 
         /// <summary>
@@ -47,7 +45,7 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         private Eating GetEating()
         {
-            return Load<Eating>(Eatings_FILE_NAME) ?? new Eating(user);
+            return Load<Eating>().FirstOrDefault() ?? new Eating(user);
         }
 
 
@@ -57,8 +55,8 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         private void Save()
         {
-            Save(FOODS_FILE_NAME, Foods);
-            Save(Eatings_FILE_NAME, Eating);
+            Save( Foods);
+            Save(new List<Eating>() { Eating });
         }
 
 

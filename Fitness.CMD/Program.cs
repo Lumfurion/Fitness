@@ -33,7 +33,7 @@ namespace Fitness.CMD
             DateTime birtdayDate;
             while (true)
             {
-                Console.WriteLine($"Введите {value}(dd.MM.yyyy):");
+                Console.Write($"Введите {value}(dd.MM.yyyy):");
 
                 // Преобразовывает указанное строковое представление даты и времени в его эквивалент
                 // System.DateTime и возвращает значение, позволяющее определить успешность преобразования.
@@ -86,6 +86,7 @@ namespace Fitness.CMD
             var resourceManager = new ResourceManager("Fitness.CMD.Languages.Localization", typeof(Program).Assembly);
 
             Console.WriteLine(resourceManager.GetString("Hello", culture));//получение строки словоря
+
             Console.Write(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
 
@@ -120,7 +121,7 @@ namespace Fitness.CMD
                         Console.Clear();
                         var foods = EnterEating();
                         eatingController.Add(foods.Food, foods.Weight);
-
+                        Console.Clear();
                         foreach (var item in eatingController.Eating.Foods)
                         {
                             Console.WriteLine($"\t {item.Key} - {item.Value}");
@@ -147,7 +148,9 @@ namespace Fitness.CMD
                         break;
 
                 }
+              
                 Console.Read();
+                Console.Clear();
             } 
 
         }

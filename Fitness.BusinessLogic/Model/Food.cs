@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Fitness.BusinessLogic.Model
 {  /// <summary>
    /// Класс Food(продукт питания) будет хранить меню еды и сколько в еде:
@@ -8,25 +10,26 @@ namespace Fitness.BusinessLogic.Model
     public class Food
     {
         #region Свойства
-        public string Name { get; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// Белки
         /// </summary>
-        public double Proteins { get; }
-        public double Pats { get; }
+        public double Proteins { get; set; }
+        public double Pats { get; set; }
 
         /// <summary>
         /// Жиры
         /// </summary>
-        public double Fats { get; }
+        public double Fats { get; set; }
         /// <summary>
         /// Углеводы
         /// </summary>
-        public double Carbohydrates { get; }
+        public double Carbohydrates { get; set; }
         /// <summary>
         /// Калории
         /// </summary>
-        public double Calories { get; }
+        public double Calories { get; set; }
         /// <summary>
         /// Калории за 100 грамм продукта.
         /// </summary>
@@ -45,9 +48,14 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         private double CarbohydratesOneGramm { get { return Carbohydrates / 100.0; } }
         #endregion
+        //public virtual ICollection<Eating> Eatings { get; set; }
+
+        public Food() { }
+
         /// <summary>
         /// Получения продукта по имени.
         /// </summary>
+
         public Food(string name) : this(name, 0, 0, 0, 0) { }
        
         /// <summary>

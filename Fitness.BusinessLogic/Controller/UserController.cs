@@ -10,7 +10,7 @@ namespace Fitness.BusinessLogic.Controller
     /// </summary>
     public class UserController : ControllerBase
     {
-        private const string Users_FILE_NAME = "users.dat"; 
+       
         #region Cвойства
         /// <summary>
         /// Пользователь приложения.
@@ -60,7 +60,7 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         public List<User> GetUsersData()
         {   //?? new List<User>()-праверка нужна потому что default(T) возращает null.
-            return Load<List<User>>(Users_FILE_NAME) ?? new List<User>();
+            return Load<User>() ?? new List<User>();
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         public void  Save()
         {
-            Save(Users_FILE_NAME, Users);
+            Save(Users);
         }
      
     }
