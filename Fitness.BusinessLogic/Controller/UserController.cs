@@ -66,8 +66,25 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Инициализация нового пользователя.
         /// </summary>
-        public void SetNewUserData(string genderName, DateTime birthdaydate, double weight = 1, double height = 1)
+        public void SetNewUserData(string genderName, DateTime birthdaydate, double weight, double height)
         { //Проверка.
+            if (string.IsNullOrEmpty(genderName))
+            {
+                throw new ArgumentNullException("Пол пользователя не может быть пустым", nameof(genderName));
+            }
+            if (birthdaydate < DateTime.Parse("01.01.1900") || birthdaydate >= DateTime.Now)
+            {
+                throw new ArgumentException("Невозможная дата рождения.", nameof(birthdaydate));
+            }
+
+            if (weight >= 0 && weight <= 30)
+            {
+                throw new ArgumentException("Вес не может быть 0 и меньше 30", nameof(height));
+            }
+            if (height >= 0 && height <= 30)
+            {
+                throw new ArgumentException("Рост не может быть 0 и меньше 30", nameof(height));
+            }
             CurrentUser.Gender = new Gender(genderName);
             CurrentUser.BirthdayDate = birthdaydate;
             CurrentUser.Weight = weight;

@@ -56,7 +56,7 @@ namespace Fitness.BusinessLogic.Model
 
             if(gender == null)
             {
-                throw new ArgumentNullException("Пол нк может быть null.", nameof(gender));
+                throw new ArgumentNullException("Пол может быть null.", nameof(gender));
             }
             //birthdayDate >= DateTime.Now-дата быть определенных датах.
             if(birthdayDate < DateTime.Parse("01.01.1900") || birthdayDate >= DateTime.Now)
@@ -92,7 +92,7 @@ namespace Fitness.BusinessLogic.Model
 
         public override string ToString()
         {
-            return Name + " " + Age;
+            return Name + " " + Age + " " + Gender + " " + BirthdayDate.ToString("D") + " " + Weight + " " + Height;
         }
 
     }

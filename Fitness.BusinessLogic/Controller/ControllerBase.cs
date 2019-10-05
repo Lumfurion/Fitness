@@ -8,7 +8,7 @@ namespace Fitness.BusinessLogic.Controller
     {  /// <summary>
        ///Если поменять тип экземпляра тоесть поменятьSerializeDataSaver ,измениться поведение всей программы.
        /// </summary>
-        private readonly IDataSaver managar = new DatabaseDataSaver();
+        private readonly IDataSaver managar = new SerializeDataSaver();
         protected void Save<T>(List<T> item) where T : class
         {
             managar.Save(item);

@@ -3,6 +3,7 @@ using Fitness.BusinessLogic.Model;
 using System;
 using System.Globalization;
 using System.Resources;
+using System.Linq;
 
 namespace Fitness.CMD
 {    /// <summary>
@@ -90,10 +91,18 @@ namespace Fitness.CMD
             Console.Write(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
 
+           
+
             var userController = new UserController(name);
             var eatingController = new EatingController(userController.CurrentUser);
             var exerciseController = new ExerciseController(userController.CurrentUser);
 
+            foreach (var us in userController.Users)
+            {
+                Console.WriteLine(us.Name);
+
+                Console.WriteLine();
+            }
             if (userController.isNewUser == true)
             {
                 Console.Write(resourceManager.GetString("EnterGender", culture));
@@ -105,6 +114,34 @@ namespace Fitness.CMD
                 userController.SetNewUserData(gender, birtdayDate, weight, height);
             }
             Console.WriteLine(userController.CurrentUser);
+
+
+            Console.WriteLine("\nЕда");
+
+
+            foreach (var et in eatingController.Foods)
+            {
+                if (eatingController.Eating.User.Name == userController.CurrentUser.Name)
+                {
+                    Console.WriteLine(et.Name + " " + et.Pats + " " + et.Proteins + " " + et.Carbohydrates + " " + et.Calories);
+                    Console.WriteLine();
+                }
+                else break;
+              
+            }
+                   
+                
+                Console.WriteLine("\nУпражнение");
+                foreach (var ex in exerciseController.Exercises)
+                {   if (ex.User.Name == userController.CurrentUser.Name)
+                    {
+                      Console.WriteLine(ex.Activity.Name + " " + ex.Start.ToString("t") + " " + ex.Finish.ToString("t") + " " + ex.User.Name);
+                      Console.WriteLine();
+                    }
+                    else break;
+                }
+           
+
 
 
             while (true)

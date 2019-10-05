@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.CMD", "Fitness.CMD\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.BusinessLogic", "Fitness.BusinessLogic\Fitness.BusinessLogic.csproj", "{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Wpf", "Fitness.Wpf\Fitness.Wpf.csproj", "{87448243-0E4B-469F-970C-88024924BE54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87448243-0E4B-469F-970C-88024924BE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87448243-0E4B-469F-970C-88024924BE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87448243-0E4B-469F-970C-88024924BE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87448243-0E4B-469F-970C-88024924BE54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

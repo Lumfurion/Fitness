@@ -1,0 +1,58 @@
+﻿<Window x:Class="Fitness.Wpf.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fitness.Wpf"
+        mc:Ignorable="d"
+        Title="Registration" Height="690.244" Width="567.073" Background="#545d6a">
+    <Grid>
+
+        <Border Background="#2e3137" CornerRadius="30" Margin="25,25,25,26">
+
+            <Grid Margin="40,24,40,29">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="50*"/>
+
+                </Grid.RowDefinitions>
+
+                <Label  Content="UserName" Foreground="White"  FontSize="23"/>
+                <TextBox Grid.Row="1" Name="tbUsername" Background="#545d6a" Foreground="White" FontSize="30"/>
+
+                <Label  Grid.Row="2" Content="Password" Foreground="White"  FontSize="23"/>
+                <PasswordBox  Grid.Row="3" Name="tbPassword" Background="#545d6a" Foreground="White" FontSize="30" />
+
+                <Label  Grid.Row="4" Content="Gender" Foreground="White"  FontSize="23"/>
+                <TextBox Grid.Row="5" Name="tbGender" Background="#545d6a" Foreground="White" FontSize="30"/>
+
+                <Label  Grid.Row="6" Content="BirthdayDate" Foreground="White"  FontSize="23"/>
+                <TextBox Grid.Row="7" Name="tbbirthdayDate" Background="#545d6a" Foreground="White" FontSize="30"/>
+
+                <Label  Grid.Row="8" Content="Weight" Foreground="White"  FontSize="23"/>
+                <TextBox Grid.Row="9" Name="tbweight" Background="#545d6a" Foreground="White" FontSize="30"/>
+
+                <Label  Grid.Row="10" Content="Height" Foreground="White"  FontSize="23"/>
+                <TextBox Grid.Row="11" Name="tbheight" Background="#545d6a" Foreground="White" FontSize="30"/>
+
+                <Button x:Name="tbSave"  Grid.Row="12"
+               VerticalAlignment="Center" Content="Save" Margin="155,20,149,0" Height="39"
+               Background="#FF4CB050"  Foreground="White" FontSize="20"
+                />
+
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

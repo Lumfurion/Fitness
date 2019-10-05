@@ -15,7 +15,7 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public string Name { get; set; }
 
-        //public virtual ICollection<Exercise> Exercises { get; set; }
+        public virtual ICollection<Exercise> Exercises { get; set; }
 
         /// <summary>
         /// Количество калорий сжигаемых в единицу времени
@@ -23,7 +23,15 @@ namespace Fitness.BusinessLogic.Model
         public double CaloriesPerMinute  { get; set; }
         public Activity() { }
         public Activity(string name, double caloriesPerMinute)
-        {   //Проверка
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException("Имя пользователя не может  быть пустым или null.", nameof(name));
+            }
+            if (caloriesPerMinute <= 0)
+            {
+                throw new ArgumentException("Имя пользователя не может  быть  нулем.", nameof(name));
+            }
             Name = name;
             CaloriesPerMinute = caloriesPerMinute;
         }

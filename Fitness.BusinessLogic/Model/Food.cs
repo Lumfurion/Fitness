@@ -48,7 +48,7 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         private double CarbohydratesOneGramm { get { return Carbohydrates / 100.0; } }
         #endregion
-        //public virtual ICollection<Eating> Eatings { get; set; }
+        public virtual ICollection<Eating> Eatings { get; set; }
 
         public Food() { }
 
@@ -61,11 +61,36 @@ namespace Fitness.BusinessLogic.Model
         /// <summary>
         /// Будет принимать максимальное количество параметров.
         /// </summary>
-        public Food(string name,double proteins, double pats,double carbohydrates, double calories)
-        {   //TODO: проверки
+        public Food(string name,double proteins, double fats,double carbohydrates, double calories)
+        {
+            #region Проверки
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException("Имя еды не может  быть пустым или null.", nameof(name));
+            }
+
+            if (proteins <= 0)
+            {
+                throw new ArgumentException("Белков не может быть ноль.", nameof(proteins));
+            }
+            if (fats <= 0)
+            {
+                throw new ArgumentException("Жиры не может быть нулем.", nameof(fats));
+            }
+
+            if (carbohydrates <= 0)
+            {
+                throw new ArgumentException("Жиры не может быть нулем.", nameof(carbohydrates));
+            }
+
+            if (calories <= 0)
+            {
+                throw new ArgumentException("Жиры не может быть нулем.", nameof(calories));
+            }
+            #endregion
             Name = name;
             Proteins = proteins / 100.0;
-            Pats = pats / 100.0;
+            Pats = fats / 100.0;
             Carbohydrates = carbohydrates / 100.0;
             Calories = calories / 100.0;
         }
