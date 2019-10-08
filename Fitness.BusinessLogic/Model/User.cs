@@ -14,6 +14,11 @@ namespace Fitness.BusinessLogic.Model
         /// Имя.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Пароль.
+        /// </summary>
+        public string Password { get; set; }
         /// <summary>
         /// Пол.
         /// </summary>
@@ -31,8 +36,8 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public double Height { get; set; }
 
-        //public virtual ICollection<Eating> Eatings { get; set; }
-        //public virtual ICollection<Exercise> Exercises { get; set; }
+        public virtual ICollection<Eating> Eatings { get; set; }
+        public virtual ICollection<Exercise> Exercises { get; set; }
 
         public int Age { get { return DateTime.Now.Year - BirthdayDate.Year; }}
         #endregion
@@ -42,11 +47,12 @@ namespace Fitness.BusinessLogic.Model
         /// Создать  нового пользователя.
         /// </summary>
         /// <param name="name">Имя.</param>
+        /// <param name="password">Пароль.</param>
         /// <param name="gender">Пол.</param>
         /// <param name="birthdayDate">Дата раждения.</param>
         /// <param name="weight">Вес.</param>
         /// <param name="height">Рост.</param>
-        public User(string name,Gender gender,DateTime birthdayDate, double weight,double height)
+        public User(string name ,string password,Gender gender,DateTime birthdayDate, double weight,double height)
         {
             #region Проверка условий.
             if (string.IsNullOrWhiteSpace(name))
@@ -75,6 +81,7 @@ namespace Fitness.BusinessLogic.Model
             }
             #endregion 
             Name = name;
+            Password = password;
             Gender = gender;
             BirthdayDate = birthdayDate;
             Weight = weight;
@@ -92,7 +99,7 @@ namespace Fitness.BusinessLogic.Model
 
         public override string ToString()
         {
-            return Name + " " + Age + " " + Gender + " " + BirthdayDate.ToString("D") + " " + Weight + " " + Height;
+            return Name + " " + Password + " " + Age + " " + Gender + " " + BirthdayDate.ToString("D") + " " + Weight + " " + Height;
         }
 
     }

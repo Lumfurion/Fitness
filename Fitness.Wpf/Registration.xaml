@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="Registration" Height="690.244" Width="567.073" Background="#545d6a">
+     Name="reg" Title="Registration" Height="690.244" Width="567.073" Background="#545d6a">
     <Grid>
 
         <Border Background="#2e3137" CornerRadius="30" Margin="25,25,25,26">
@@ -48,7 +48,7 @@
 
                 <Button x:Name="tbSave"  Grid.Row="12"
                VerticalAlignment="Center" Content="Save" Margin="155,20,149,0" Height="39"
-               Background="#FF4CB050"  Foreground="White" FontSize="20"
+               Background="#FF4CB050"  Foreground="White" FontSize="20" Click="TbSave_Click"
                 />
 
 

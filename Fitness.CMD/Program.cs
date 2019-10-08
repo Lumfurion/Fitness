@@ -105,13 +105,15 @@ namespace Fitness.CMD
             }
             if (userController.isNewUser == true)
             {
+                Console.Write("EnterPassword");
+                var password = Console.ReadLine();
                 Console.Write(resourceManager.GetString("EnterGender", culture));
                 var gender = Console.ReadLine();
                 var birtdayDate = ParseDateTime("дату раждения");
                 var weight = ParseDauble("вес");
                 var height = ParseDauble("рост");
 
-                userController.SetNewUserData(gender, birtdayDate, weight, height);
+                userController.SetNewUserData(gender,password,birtdayDate,weight,height);
             }
             Console.WriteLine(userController.CurrentUser);
 

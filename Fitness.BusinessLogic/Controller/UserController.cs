@@ -25,8 +25,16 @@ namespace Fitness.BusinessLogic.Controller
         /// Проверка являться пользователь новый или получили из приложения.
         /// </summary>
         public bool isNewUser { get; } = false;
+
+        public static string CurrentUserName { get; set; }
         #endregion
 
+
+
+        public UserController()
+        {
+           Users = GetUsersData();   
+        }
         /// <summary>
         /// Создание нового контроллера пользователя.
         /// При вводе пользователь вводит свой логин проверяем в наличии такого  логина в файле,
@@ -66,7 +74,7 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Инициализация нового пользователя.
         /// </summary>
-        public void SetNewUserData(string genderName, DateTime birthdaydate, double weight, double height)
+        public void SetNewUserData(string genderName, string password, DateTime birthdaydate, double weight, double height)
         { //Проверка.
             if (string.IsNullOrEmpty(genderName))
             {
@@ -77,20 +85,25 @@ namespace Fitness.BusinessLogic.Controller
                 throw new ArgumentException("Невозможная дата рождения.", nameof(birthdaydate));
             }
 
-            if (weight >= 0 && weight <= 30)
+            if (weight == 0)
             {
-                throw new ArgumentException("Вес не может быть 0 и меньше 30", nameof(height));
+                throw new ArgumentException("Вес не может быть 0", nameof(height));
             }
-            if (height >= 0 && height <= 30)
+            if (height == 0)
             {
-                throw new ArgumentException("Рост не может быть 0 и меньше 30", nameof(height));
+                throw new ArgumentException("Рост не может быть 0", nameof(height));
             }
+            CurrentUser.Password = password;
             CurrentUser.Gender = new Gender(genderName);
             CurrentUser.BirthdayDate = birthdaydate;
             CurrentUser.Weight = weight;
             CurrentUser.Height = height;
             Save();
         }
+
+
+
+
 
         /// <summary>
         /// Сохранить данные пользователя(Сериализация).
