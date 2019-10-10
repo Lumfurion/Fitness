@@ -19,7 +19,7 @@ namespace UserControllerTests
             var controller = new UserController(userName);
 
             //Act
-            controller.SetNewUserData(gender, birtdayDate,weight, height);
+            controller.SetNewUserData(gender, birtdayDate, weight, height);
             var controller2 = new UserController(userName);
              
             //Assert

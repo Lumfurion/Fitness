@@ -124,7 +124,26 @@
     <Resource Include="Image\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Training\" />
+    <Resource Include="Image training\drying.png" />
+    <Resource Include="Image training\noob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image training\Slimming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image training\at home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image training\boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="System button\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="System button\Сollapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="System button\expend.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

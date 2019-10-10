@@ -5,26 +5,98 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="ChoiceTraining" Height="663.374" Width="832.827" Background="#FF00FFAE"  ResizeMode="NoResize" >
-    <Grid>
+        AllowsTransparency="True" Name="window" Title="ChoiceTraining" Height="639" Width="890.327" Background="#FF00FFAE" WindowStyle="None" ResizeMode="CanResizeWithGrip">
+    
+    <Grid Name="MainGrid" SizeChanged="MainGrid_SizeChanged">
         <Grid.RowDefinitions>
             <RowDefinition Height="169*"/>
             <RowDefinition Height="463*"/>
         </Grid.RowDefinitions>
 
+        <Grid.LayoutTransform>
+            <ScaleTransform x:Name="ApplicationScaleTransform"
+                        CenterX="0"
+                        CenterY="0"
+                        ScaleX="{Binding ElementName=window, Path=ScaleValue}"
+                        ScaleY="{Binding ElementName=window, Path=ScaleValue}" />
+        </Grid.LayoutTransform>
+
+
+        <!--Шапка-->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="412*"/>
                 <ColumnDefinition Width="413*"/>
             </Grid.ColumnDefinitions>
-            <Ellipse Grid.Column="0"     Margin="27,31,278,36" >
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="A:\Cloud\project\Мой программы\Фитнес\Fitness\Fitness.Wpf\Image\user.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <Label x:Name="lbUser" Content="user" FontSize="40" HorizontalAlignment="Left" Margin="153,51,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.317,1.173"/>
+            
+            <!--Костиль-->
+            <Grid Background="Transparent" Grid.Column="0"   Grid.ColumnSpan="2" >
+                <Border Background="Transparent"  MouseLeftButtonDown="titleBar_MouseLeftButtonDown"/>
+            </Grid>
+            
+            
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="169*"/>
+                    <ColumnDefinition Width="246*"/>
+                </Grid.ColumnDefinitions>
+                <Ellipse  Grid.Column="0"  Margin="30" >
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="Image\user.png"  />
+                    </Ellipse.Fill>
+                </Ellipse>
 
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="53*"/>
+                        <RowDefinition Height="71*"/>
+                        <RowDefinition Height="53*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" FontSize="50"  Foreground="White"  x:Name="lbUser" Content="user" HorizontalAlignment="Left" />
+                    
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="105*"/>
+                    <ColumnDefinition Width="104*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel  Grid.Column="1">
+                    <Border  BorderThickness="1" Grid.Column="1" CornerRadius="0,0,0,50"  Background="Black" Margin="0,0,0,109" >
+
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38*"/>
+                                <ColumnDefinition Width="57*" MaxWidth="300"/>
+                                <ColumnDefinition Width="57*" MaxWidth="300"/>
+                                <ColumnDefinition Width="57*" MaxWidth="300"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Border Grid.Column="1"  BorderBrush="Gray"  BorderThickness="2" CornerRadius="0"  Background="White"   x:Name="btnСollapse" Margin="13" >
+                                <Image Source="System button/Сollapse.png" VerticalAlignment="Bottom"/>
+
+                            </Border>
+
+                            <Border Grid.Column="2"  BorderBrush="Gray"  BorderThickness="2" CornerRadius="0"  Background="White"   x:Name="btnExpend" Margin="13" >
+                                <Image Source="System button/expend.png" VerticalAlignment="Bottom"/>
+                            </Border>
+
+                            <Border Grid.Column="3"  BorderBrush="Gray"  BorderThickness="2" CornerRadius="0"  Background="White"   x:Name="btnClose" Margin="13" >
+                                <Image Source="System button/Close.png" VerticalAlignment="Bottom"/>
+                            </Border>
+
+                        </Grid>
+
+
+                    </Border>
+                </StackPanel>
+            </Grid>
         </Grid>
+
+        <!--Тренировки-->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="227*"/>
@@ -37,59 +109,141 @@
                 <ColumnDefinition Width="205*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Row="0" RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Row="0"    Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Margin="15,126,16,83"  Text="База для начинающих" VerticalAlignment="Center"  FontSize="17" Foreground="White"/>
-            <Button  Grid.Row="0" x:Name="button" Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
+            <Border Grid.Column="0"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
 
-            <Rectangle Grid.Column="1"  Grid.Row="0" RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Column="1"  Grid.Row="0"    Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Grid.Column="1"  Grid.Row="0" Margin="74,126,80,84"  Text="Сушка" VerticalAlignment="Center"  FontSize="17" Foreground="White"/>
-            <Button Grid.Column="1"  Grid.Row="0" Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
+                    <Image  Grid.Row="1" Margin="10"  Source="Image training/noob.png"  />
+                    <TextBlock  Grid.Row="2"   Text="База для начинающих"   FontSize="17" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="8,0,7,0"/>
+                    <Button Grid.Row="3"  x:Name="btnNoob" Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
 
-            <Rectangle Grid.Column="2"  Grid.Row="0" RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Column="2"  Grid.Row="0"    Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Grid.Column="2"  Grid.Row="0" Margin="71,126,74,83"  Text="Худеим" VerticalAlignment="Center"  FontSize="17" Foreground="White"/>
-            <Button Grid.Column="2"  Grid.Row="0" Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
+            </Border>
 
-            <Rectangle Grid.Column="3"  Grid.Row="0" RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Column="3"  Grid.Row="0"    Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Grid.Column="3"  Grid.Row="0" Margin="16,126,18,83"  Text="В домашних условиях" VerticalAlignment="Center"  FontSize="17" Foreground="White"/>
-            <Button Grid.Column="3"  Grid.Row="0" Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
+            <Border Grid.Column="1" Grid.Row="0"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
 
-
-
-
-            <Rectangle Grid.Row="1" RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Row="1"    Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Grid.Row="1" Margin="54,125,47,83"  Text="Турник дома" VerticalAlignment="Center"  FontSize="17" Foreground="White"/>
-            <Button  Grid.Row="1" Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
-
-
-            <Rectangle Grid.Row="1" Grid.Column="1"  RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Row="1" Grid.Column="1"     Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Grid.Row="1"  Margin="10,125.5,10,86"  Text="Фулбоди для начинающих"   VerticalAlignment="Center"  FontSize="15" Foreground="White" Grid.Column="1"/>
-            <Button  Grid.Row="1" Grid.Column="1"  Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
-
-
-            <Rectangle Grid.Row="1" Grid.Column="2"  RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Row="1" Grid.Column="2"     Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Grid.Row="1" Grid.Column="2"  Margin="71,127,60,81"  Text="Опытная" VerticalAlignment="Center"  FontSize="17" Foreground="White"/>
-            <Button  Grid.Row="1" Grid.Column="2"  Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
+                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Image training/drying.png"  />
+                    <TextBlock Grid.Row="2"    Text="Сушка" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <Button Grid.Row="3" x:Name="btndrying"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
+            </Border>
 
 
-            <Rectangle Grid.Row="2" Grid.Column="3"  RadiusX="20" RadiusY="20"  Fill="#FF1D1D1D"  Margin="10" Stroke="Black"/>
-            <Image Grid.Row="2" Grid.Column="3"     Margin="60,27,58,0" VerticalAlignment="Top" Source="Image/Logotip.jpg"  />
-            <TextBlock Grid.Row="2" Grid.Column="3"  Margin="43,121,31,79"  Text="Экстремальная" VerticalAlignment="Center"  FontSize="17" Foreground="White"/>
-            <Button  Grid.Row="2" Grid.Column="3"  Content="Посмотреть"  Margin="33,166,31,21" Background="#FF3FD181"/>
+            <Border Grid.Column="2"  Grid.Row="0"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+
+                    <Image   Grid.Row="1"   VerticalAlignment="Top" Source="Image training/Slimming.png"  />
+                    <TextBlock   Grid.Row="2"   Text="Худеим" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <Button Grid.Row="3"  x:Name="btnslimming"  Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
+            </Border>
+
+
+            <Border Grid.Column="3"  Grid.Row="0"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Image training/at home.png"  />
+                    <TextBlock Grid.Row="2"  Text="Турник дома" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <Button Grid.Row="3" x:Name="btnAthomeHorizontalbar"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
+            </Border>
 
 
 
 
+            <Border   Grid.Row="1"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Image training/at home.png"  />
+                    <TextBlock Grid.Row="2"   Text="В домашних условиях" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <Button x:Name="btnAthome" Grid.Row="3"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
+            </Border>
 
 
 
+            <Border   Grid.Row="1" Grid.Column="1"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1"  VerticalAlignment="Top" Source="Image training/boy.png"  />
+                    <TextBlock Grid.Row="2"    Text="Фулбоди для начинающих"   VerticalAlignment="Center"  FontSize="15" Foreground="White" Grid.Column="1" HorizontalAlignment="Center"/>
+                    <Button Grid.Row="3" x:Name="btnFullbody"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
+            </Border>
+
+
+            <Border   Grid.Row="1" Grid.Column="2"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1"      VerticalAlignment="Top" Source="Image training/boy.png"  />
+                    <TextBlock Grid.Row="2"     Text="Опытная" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <Button Grid.Row="3"  x:Name="btnExperienced"  Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
+            </Border>
+
+
+
+            <Border   Grid.Row="1" Grid.Column="3"  CornerRadius="20,20,20,20" Background="#FF1D1D1D"  Margin="10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="96*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="12*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1"       VerticalAlignment="Top" Source="Image training/at home.png"  />
+                    <TextBlock Grid.Row="2"    Text="Экстремальная" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <Button Grid.Row="3" x:Name="btnExtreme"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
+                </Grid>
+            </Border>
 
         </Grid>
+
     </Grid>
 </Window>
