@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TrainingInfo.xaml.cs">
+      <DependentUpon>TrainingInfo.xaml</DependentUpon>
+    </Compile>
     <Page Include="ChoiceTraining.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +84,10 @@
       <DependentUpon>SignIn.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TrainingInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -144,6 +151,60 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="System button\expend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gender\girl.png" />
+    <Resource Include="Gender\Man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Take.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day1\Lunges-with-dumbbells.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day1\mahi-nogami.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day1\Тяга-блока-к-груди.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day1\razvedeniya-ruk-v-naklone-dlya-devushek.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day1\DSC_5501_1545278749-630x315.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day1\skruchivaniya-kak-pravilno-delat_20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobman\Day2\Жим гантелей сидя.jpg" />
+    <Resource Include="Training\Noobman\Day2\Жим ногами в тренажере.jpg" />
+    <Resource Include="Training\Noobman\Day2\Приседания с пустым грифом.jpg" />
+    <Resource Include="Training\Noobman\Day2\Тяга грифа к подбородку.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day2\Подъем ног лежа.jpg" />
+    <Resource Include="Training\Noobgril\Day2\Подъем рук стоя через стороны.jpg" />
+    <Resource Include="Training\Noobgril\Day2\Разгибание рук из-за головы с гантелью.jpg" />
+    <Resource Include="Training\Noobgril\Day2\Румынская становая тяга.jpg" />
+    <Resource Include="Training\Noobgril\Day2\Тяга гантели к поясу в наклоне.jpg" />
+    <Resource Include="Training\Noobgril\Day2\Ягодичный мостик.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobgril\Day3\Гиперэкстензия.jpg" />
+    <Resource Include="Training\Noobgril\Day3\Отжимания от пола.jpg" />
+    <Resource Include="Training\Noobgril\Day3\планка.jpg" />
+    <Resource Include="Training\Noobgril\Day3\Приседания с широкой постановкой ног.jpg" />
+    <Resource Include="Training\Noobgril\Day3\Сгибания рук с гантелями.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobman\Day1\Жим гантели из-за головы.jpg" />
+    <Resource Include="Training\Noobman\Day1\Жим штанги лежа.jpg" />
+    <Resource Include="Training\Noobman\Day1\Кардио.jpg" />
+    <Resource Include="Training\Noobman\Day1\Пресс.png" />
+    <Resource Include="Training\Noobman\Day1\Разведение гантелей лежа.jpg" />
+    <Resource Include="Training\Noobman\Day1\Разгибание рук на блоке.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

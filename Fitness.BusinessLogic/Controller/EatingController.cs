@@ -11,7 +11,7 @@ namespace Fitness.BusinessLogic.Controller
     /// </summary>
     public class EatingController:ControllerBase
     {
-        private readonly User user;
+      
         /// <summary>
         /// Список еды.
         /// </summary>
@@ -25,9 +25,8 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Создание пользователя,получается,у каждого пользователя прием пищи куда он сможет добавлять еду.
         /// </summary>
-        public EatingController(User user)
+        public EatingController()
         {
-            this.user = user ?? throw new ArgumentNullException("Пользователь не может буть пустым !",nameof(user));
             Foods = GetAllFoods();
             Eating = GetEating();
         }
@@ -45,7 +44,7 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         private Eating GetEating()
         {
-            return Load<Eating>().FirstOrDefault() ?? new Eating(user);
+            return Load<Eating>().FirstOrDefault() ?? new Eating();
         }
 
 

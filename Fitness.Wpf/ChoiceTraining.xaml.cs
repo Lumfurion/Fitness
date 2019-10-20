@@ -1,25 +1,26 @@
 ﻿using Fitness.BusinessLogic.Controller;
+using Microsoft.Win32;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Fitness.Wpf
 {  
 
     public partial class ChoiceTraining : Window
     {
-        readonly string name = UserController.CurrentUserName;
-        enum Status
-        {
-            Expend, Normal
-        }
-        Status status = Status.Expend;
+        readonly string  name = UserController.CurrentUserName;
+        readonly UserController userController;
+        TrainingInfo trainingInfo { get; set; }
+
         public ChoiceTraining()
         {
             InitializeComponent();
+            userController = new UserController(name);
             Initwindow();
-            
         }
 
         #region Масштабирование интерфейса 
@@ -85,21 +86,87 @@ namespace Fitness.Wpf
 
 
         private void Initwindow()
-         {
+        {   try
+            {
+                if (userController.Image != null)//если пользователя нет картинки.
+                {
+                    elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(userController.Image)));
+                }
+            }
+            catch
+            {
+
+            }
             lbUser.Content = name;
-            
+
+            #region Служебные кнопки
             //Кнопки
             btnClose.MouseLeftButtonUp += btnSystemButton_MouseLeftButtonUp;
             btnExpend.MouseLeftButtonUp += btnSystemButton_MouseLeftButtonUp;
             btnСollapse.MouseLeftButtonUp += btnSystemButton_MouseLeftButtonUp;
 
+            //Подсветка при наведении
+            btnClose.MouseEnter += ButtunsLight_MouseEnter;
+            btnExpend.MouseEnter += ButtunsLight_MouseEnter;
+            btnСollapse.MouseEnter += ButtunsLight_MouseEnter;
+
+            //Подсветка при покидание зоны наведения
+            btnClose.MouseLeave += ButtunsLight_MouseLeave;
+            btnExpend.MouseLeave += ButtunsLight_MouseLeave;
+            btnСollapse.MouseLeave += ButtunsLight_MouseLeave;
+            #endregion
+
+            #region Просмотр и выбор тренировки.
+            btnNoob.Click += Click_LookTraining;
+            btndrying.Click += Click_LookTraining;
+            btnslimming.Click += Click_LookTraining;
+            btnAthome.Click += Click_LookTraining;
+            btnAthomeHorizontalbar.Click += Click_LookTraining;
+            btnFullbody.Click += Click_LookTraining;
+            btnExperienced.Click += Click_LookTraining;
+            btnExtreme.Click += Click_LookTraining;
+            #endregion
+
         }
 
+        private void Click_LookTraining(object sender, RoutedEventArgs e)
+        {
+            Button button = null;
+
+            if (sender is Button)
+            {
+                button = (Button)sender;
+            }
+          
+            var name = button.Name;
+
+            switch (name)
+            {
+                case "btnNoob":
+                    trainingInfo = new TrainingInfo("Noob");
+                    break;
+                
+            }
+
+           
+
+
+            trainingInfo.ShowDialog();
+      
+        }
+
+       
+
+
+        /// <summary>
+        /// Перемещение интерфейса
+        /// </summary>
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }
 
+        #region Cлужебные кнопки
         private void btnSystemButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Border border = (Border)sender;
@@ -111,14 +178,12 @@ namespace Fitness.Wpf
                     Close();
                     break;
                 case "btnExpend":
-                    if (status == Status.Expend)
+                    if (WindowState == WindowState.Normal)
                     {
-                        status = Status.Normal;
                         window.WindowState = WindowState.Maximized;  
                     }
                     else
                     {
-                        status = Status.Expend;
                         window.WindowState = WindowState.Normal;
                     }
                     break;
@@ -129,8 +194,62 @@ namespace Fitness.Wpf
            
            
         }
+        private void ButtunsLight_MouseEnter(object sender, MouseEventArgs e)
+        {
 
-       
+            Border button = (Border)sender;
+            if (button.Name == "btnClose")
+            {
+                btnClose.Background = Brushes.Red;
+            }
+            else if (button.Name == "btnExpend")
+            {
+                btnExpend.Background = Brushes.White;
+                btnExpend.Opacity = 0.8; 
+            }
+            else
+            {
+                btnСollapse.Background = Brushes.White;
+                btnСollapse.Opacity = 0.8;
+            }
+
+        }
+        private void ButtunsLight_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            Border button = (Border)sender;
+            if (button.Name == "btnClose")
+            {
+                btnClose.Background = Brushes.White;
+            }
+            else if (button.Name == "btnExpend")
+            {
+                btnExpend.Background = Brushes.White;
+                btnExpend.Opacity = 1;
+            }
+            else
+            {
+                btnСollapse.Background = Brushes.White;
+                btnСollapse.Opacity =1;
+            }
+        }
+        #endregion
+
+
+
+        private void btnUserAvatar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+            if (ofd.ShowDialog()==true)
+            {
+              
+                elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(ofd.FileName)));
+                userController.Image = ofd.FileName;
+            }
+        }
+
+        
     }
    
 }

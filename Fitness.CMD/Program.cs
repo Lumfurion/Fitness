@@ -4,82 +4,115 @@ using System;
 using System.Globalization;
 using System.Resources;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Fitness.CMD
 {    /// <summary>
     /// Консольный интерфейс
     /// </summary>
     class Program
-    {   /// <summary>
-        /// Проверка преобразования в double.
-        /// </summary>
-        private static double ParseDauble(string name)
-        {
-            while (true)
-            {
-                Console.Write($"Введите {name}:");
-                if (double.TryParse(Console.ReadLine(), out double value))
-                {
-                    return value;
-                }
-                else
-                {
-                    Console.WriteLine($"Неверный формат поля {name}!");
-                }
-            }
-        }
+    {  
+       
 
-        private static DateTime ParseDateTime(string value)
-        {
-            DateTime birtdayDate;
-            while (true)
-            {
-                Console.Write($"Введите {value}(dd.MM.yyyy):");
+        //private static void  SetPro(TrainingController training)
+        //{
+            
+           
 
-                // Преобразовывает указанное строковое представление даты и времени в его эквивалент
-                // System.DateTime и возвращает значение, позволяющее определить успешность преобразования.
-                if (DateTime.TryParse(Console.ReadLine(), out birtdayDate))
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine($"Неверный формат {value}!");
-                }
-            }
+        //    List<Exercise> ex1 = new List<Exercise>()
+        //    {
+        //        new Exercise ("Пресс и талия",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Круги руками",4,@"Как делать: Планка — упражнение изометрическое (выполняется статично). Главное — правильно держать тело. Следуйте примеру на фото: спина и ноги прямые, поясница не должна провисать или выгибаться.
+        //         Прокачка: При правильном выполнении прокачиваются не только мышцы пресса, но и спины, ягодиц, ног и рук. Улучшается осанка и общий тонус мышц."),
 
-            return birtdayDate;
-        }
+        //        new Exercise ("Пресс и ягодицы",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4,@"Как делать: Примите позу планки на вытянутых руках как стартовую. Далее медленно опускайтесь как можно ниже. Важно, чтобы спина, таз и ноги сохраняли прямую линию. Затем так же медленно возвращайте тело в начальное положение.
+        //                       Прокачка: Воздействует на мышцы груди, рук и пресса.")
+        //    };
 
-        /// <summary>
-        /// Заполнение приема пищи.
-        /// </summary>
-        private static (Food Food, double Weight) EnterEating()
-        {
-            Console.Write("Введите имя продукта:");
-            var food = Console.ReadLine();
-            var weight = ParseDauble("вес порции");
-            var fats = ParseDauble("жиры");
-            var proteins = ParseDauble("протеины");
-            var carbohydrates = ParseDauble("углеводы");
-            var calories = ParseDauble("калорийность");
+        //    List<Exercise> ex2 = new List<Exercise>()
+        //    {
+        //        new Exercise ("Приседания",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Круги руками",4,@"Как делать: Встаньте на четвереньки. Вытяните левую ногу и правую руку в одну прямую линию. Затем медленно согните их и коснитесь правым локтем левого колена. Снова выпрямитесь. То же самое проделайте с правой ногой и левой рукой.
+        //        Прокачка: Хорошо тренирует корпус и мышцы, сгибающие бедро. Укрепляет и растягивает мышцы спины, ягодичные мышцы и поясницу."),
 
-            var product = new Food(food, proteins, fats, carbohydrates, calories);
+        //        new Exercise ("Укрепление мышц бедер и спины",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4," sd")
+        //    };
 
-            return (Food: product, Weight: weight);
-        }
+        //    training.Add("Day1", ex1);
+        //    training.Add("Day2", ex2);
 
-        private static (DateTime Begin, DateTime End, Activity Activity) EnterExercise()
-        {
-            Console.Write("Введите название упражнения:");
-            var name = Console.ReadLine();
-            var energy = ParseDauble("расход энергии в минуту");
+        //}
 
-            var begin = ParseDateTime("начало упражнения");
-            var end = ParseDateTime("окончание упражнения");
-            var activity = new Activity(name, energy);
-            return (begin,end,activity);
-        }
+
+        //private static void Fullbody(TrainingController training)
+        //{
+           
+        //    training.Training.Description = @"Фулбоди (от англ. «full body» — всё тело) - это программа тренировок всего тела за одно занятие, которая предназначена главным образом для новичков, но также часто применяется опытными атлетами после длительного перерыва, чтобы постепенно войти в тренировочный режим.
+
+        //    Фулбоди тренировка предполагает меньшее количество подходов на группу мышц (как правило не более трех на одну группу).
+
+        //    Тренировки всего тела являются более эффективными для новичков, чем сплит-схемы
+        //    Бодибилдеры прогрессируют, тренируясь как по системе «фулбади» (тренировки всего тела), так и по сплит-схемам, но для новичков система тренировки всего тела оказалась более эффективной.
+        //    Это выдержка из исследования американского спортивного исследователя Брэда Шонфельда (Brad Schoenfeld), которое будет опубликовано в ближайшее время в журнале «Strength and Conditioning Research».";
+
+        //    List<Exercise> ex1 = new List<Exercise>()
+        //    {
+        //        new Exercise ("Жим лёжа",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Круги руками",4,@"Как делать: Планка — упражнение изометрическое (выполняется статично). Главное — правильно держать тело. Следуйте примеру на фото: спина и ноги прямые, поясница не должна провисать или выгибаться.
+        //         Прокачка: При правильном выполнении прокачиваются не только мышцы пресса, но и спины, ягодиц, ног и рук. Улучшается осанка и общий тонус мышц."),
+
+        //        new Exercise ("Наклонный жим",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4,@"Как делать: Примите позу планки на вытянутых руках как стартовую. Далее медленно опускайтесь как можно ниже. Важно, чтобы спина, таз и ноги сохраняли прямую линию. Затем так же медленно возвращайте тело в начальное положение.
+        //                       Прокачка: Воздействует на мышцы груди, рук и пресса."),
+
+        //        new Exercise ("Тяга верхнего блока широким хватом",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4,@"Как делать: Примите позу планки на вытянутых руках как стартовую. Далее медленно опускайтесь как можно ниже. Важно, чтобы спина, таз и ноги сохраняли прямую линию. Затем так же медленно возвращайте тело в начальное положение.
+        //                       Прокачка: Воздействует на мышцы груди, рук и пресса."),
+
+        //        new Exercise ("Тяга к поясу",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4,@"Как делать: Примите позу планки на вытянутых руках как стартовую. Далее медленно опускайтесь как можно ниже. Важно, чтобы спина, таз и ноги сохраняли прямую линию. Затем так же медленно возвращайте тело в начальное положение.
+        //                       Прокачка: Воздействует на мышцы груди, рук и пресса.")
+
+
+        //    };
+
+        //    //List<Exercise> ex2 = new List<Exercise>()
+        //    //{
+        //    //    new Exercise ("Приседания",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Круги руками",4,@"Как делать: Встаньте на четвереньки. Вытяните левую ногу и правую руку в одну прямую линию. Затем медленно согните их и коснитесь правым локтем левого колена. Снова выпрямитесь. То же самое проделайте с правой ногой и левой рукой.
+        //    //    Прокачка: Хорошо тренирует корпус и мышцы, сгибающие бедро. Укрепляет и растягивает мышцы спины, ягодичные мышцы и поясницу."),
+
+        //    //    new Exercise ("Укрепление мышц бедер и спины",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4," sd")
+        //    //};
+
+        //    training.Add("Day1", ex1);
+        //    //training.Add("Day2", ex2);
+
+        //}
+
+
+        //private static void ds(TrainingController training)
+        //{
+
+        //    training.Training.Description = @"sdsd";
+
+        //    List<Exercise> ex1 = new List<Exercise>()
+        //    {
+        //        new Exercise ("dass",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Круги руками",4,@"Как делать: Планка — упражнение изометрическое (выполняется статично). Главное — правильно держать тело. Следуйте примеру на фото: спина и ноги прямые, поясница не должна провисать или выгибаться.
+        //         Прокачка: При правильном выполнении прокачиваются не только мышцы пресса, но и спины, ягодиц, ног и рук. Улучшается осанка и общий тонус мышц."),
+
+        //        new Exercise ("sdasa",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4,@"Как делать: Примите позу планки на вытянутых руках как стартовую. Далее медленно опускайтесь как можно ниже. Важно, чтобы спина, таз и ноги сохраняли прямую линию. Затем так же медленно возвращайте тело в начальное положение.
+        //                       Прокачка: Воздействует на мышцы груди, рук и пресса."),
+
+        //        new Exercise ("sdas",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4,@"Как делать: Примите позу планки на вытянутых руках как стартовую. Далее медленно опускайтесь как можно ниже. Важно, чтобы спина, таз и ноги сохраняли прямую линию. Затем так же медленно возвращайте тело в начальное положение.
+        //                       Прокачка: Воздействует на мышцы груди, рук и пресса."),
+
+        //        new Exercise ("sdasa",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Imege Наклоны с руками за головой",4,@"Как делать: Примите позу планки на вытянутых руках как стартовую. Далее медленно опускайтесь как можно ниже. Важно, чтобы спина, таз и ноги сохраняли прямую линию. Затем так же медленно возвращайте тело в начальное положение.
+        //                       Прокачка: Воздействует на мышцы груди, рук и пресса.")
+
+
+        //    };
+
+
+        //    training.Add("Day1", ex1);
+
+        //}
+
+
+
         static void Main()
         {
             var culture = CultureInfo.CreateSpecificCulture("ru-ru");//создание культуры.
@@ -90,12 +123,43 @@ namespace Fitness.CMD
 
             Console.Write(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
-
-           
-
             var userController = new UserController(name);
-            var eatingController = new EatingController(userController.CurrentUser);
-            var exerciseController = new ExerciseController(userController.CurrentUser);
+            var eatingController = new EatingController();
+          
+            var noob = "NoobMan";
+            var training = new TrainingController();
+            training.SelectTraining(noob);
+
+
+            Console.WriteLine(training.Description);
+            foreach (var Data in training.CurrentTraining)
+            {
+                Console.WriteLine(Data.Key);
+                foreach (var key in Data.Value)
+                {
+
+                    Console.WriteLine(key.Name);
+                    Console.WriteLine(key.Amount);
+                    Console.WriteLine(key.CaloriesPerMinute);
+                    Console.WriteLine(key.Start);
+                    Console.WriteLine(key.Finish);
+                    Console.WriteLine(key.Image);
+                    Console.WriteLine(key.Description);
+                    Console.WriteLine(key.Username);
+                    Console.WriteLine(key.Type);
+                    Console.WriteLine("\n");
+
+                }
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+
+
+            //training.Check();
+
+            Console.WriteLine("\n");
+
+
 
             foreach (var us in userController.Users)
             {
@@ -103,97 +167,45 @@ namespace Fitness.CMD
 
                 Console.WriteLine();
             }
-            if (userController.isNewUser == true)
-            {
-                Console.Write("EnterPassword");
-                var password = Console.ReadLine();
-                Console.Write(resourceManager.GetString("EnterGender", culture));
-                var gender = Console.ReadLine();
-                var birtdayDate = ParseDateTime("дату раждения");
-                var weight = ParseDauble("вес");
-                var height = ParseDauble("рост");
 
-                userController.SetNewUserData(gender,password,birtdayDate,weight,height);
-            }
-            Console.WriteLine(userController.CurrentUser);
+          
 
 
             Console.WriteLine("\nЕда");
 
+            //foreach (var item in eatingController.Eating.Foods)
+            //{
+            //    Console.WriteLine($"\t {item.Key} - {item.Value}");
+            //}
 
-            foreach (var et in eatingController.Foods)
-            {
-                if (eatingController.Eating.User.Name == userController.CurrentUser.Name)
-                {
-                    Console.WriteLine(et.Name + " " + et.Pats + " " + et.Proteins + " " + et.Carbohydrates + " " + et.Calories);
-                    Console.WriteLine();
-                }
-                else break;
-              
-            }
-                   
-                
-                Console.WriteLine("\nУпражнение");
-                foreach (var ex in exerciseController.Exercises)
-                {   if (ex.User.Name == userController.CurrentUser.Name)
-                    {
-                      Console.WriteLine(ex.Activity.Name + " " + ex.Start.ToString("t") + " " + ex.Finish.ToString("t") + " " + ex.User.Name);
-                      Console.WriteLine();
-                    }
-                    else break;
-                }
-           
+            //foreach (var et in eatingController.Foods)
+            //{
+            //    if (eatingController.Eating.User.Name == userController.CurrentUser.Name)
+            //    {
+            //        Console.WriteLine(et.Name + " " + et.Pats + " " + et.Proteins + " " + et.Carbohydrates + " " + et.Calories);
+            //        Console.WriteLine();
+            //    }
 
 
+            //}
 
-            while (true)
-            {
-                Console.WriteLine("Что вы хотите сделать?");
-                Console.WriteLine("E - Ввести прием пищи");
-                Console.WriteLine("A - Ввести упражнение");
-                Console.WriteLine("Q - Выход");
-                var key = Console.ReadKey();
+            //foreach (var et in eatingController.Foods)
+            //{
+            //    if (et.Username == name)
+            //    {
+            //        Console.WriteLine(et.Name + " " + et.Pats + " " + et.Proteins + " " + et.Carbohydrates + " " + et.Calories);
+            //        Console.WriteLine();
+            //    }
+            //    else break;
 
-                switch (key.Key)
-                {
-                    case ConsoleKey.E:
-                        Console.Clear();
-                        var foods = EnterEating();
-                        eatingController.Add(foods.Food, foods.Weight);
-                        Console.Clear();
-                        foreach (var item in eatingController.Eating.Foods)
-                        {
-                            Console.WriteLine($"\t {item.Key} - {item.Value}");
-                        }
-                        break;
+            //}
 
-                    case ConsoleKey.A:
-                        var exe = EnterExercise();
-                        exerciseController.Add(exe.Activity,exe.Begin, exe.End);
-                        Console.Clear();
-                        foreach (var item in exerciseController.Exercises)
-                        {
-                            Console.WriteLine($"\t{item.Activity} c {item.Start.ToShortTimeString()} до {item.Finish.ToShortTimeString()}");
-                        }
-                        break;
+            Console.ReadKey();
 
-                    case ConsoleKey.Q:
-                        Environment.Exit(0);
-                        break;
-
-                    default:
-                        Console.Clear();
-                        Console.WriteLine("Такой  команды нет!!");
-                        break;
-
-                }
-              
-                Console.Read();
-                Console.Clear();
-            } 
 
         }
 
        
+
     }
 }

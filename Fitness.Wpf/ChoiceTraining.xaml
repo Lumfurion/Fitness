@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        AllowsTransparency="True" Name="window" Title="ChoiceTraining" Height="639" Width="890.327" Background="#FF00FFAE" WindowStyle="None" ResizeMode="CanResizeWithGrip">
-    
-    <Grid Name="MainGrid" SizeChanged="MainGrid_SizeChanged">
+        AllowsTransparency="True" Background="Transparent" Name="window" Title="ChoiceTraining" Height="639" Width="890.327"   WindowStyle="None" ResizeMode="CanResizeWithGrip">
+
+    <Grid Name="MainGrid" SizeChanged="MainGrid_SizeChanged" Background="#FF00FFAE">
         <Grid.RowDefinitions>
             <RowDefinition Height="169*"/>
             <RowDefinition Height="463*"/>
@@ -37,23 +37,26 @@
             
             <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="169*"/>
-                    <ColumnDefinition Width="246*"/>
+                    <ColumnDefinition Width="169*" MaxWidth="300"/>
+                    <ColumnDefinition Width="246*" />
                 </Grid.ColumnDefinitions>
-                <Ellipse  Grid.Column="0"  Margin="30" >
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="Image\user.png"  />
-                    </Ellipse.Fill>
-                </Ellipse>
-
-                <Grid Grid.Column="1">
+               
+                    <Ellipse MouseLeftButtonDown="btnUserAvatar_MouseLeftButtonUp"  x:Name="elpUserAvatar" Grid.Column="0"  Margin="30" >
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="Image\user.png"  />
+                        </Ellipse.Fill>
+                    </Ellipse>
+                
+                <Grid Grid.Column="1" HorizontalAlignment="Left">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="53*"/>
                         <RowDefinition Height="71*"/>
                         <RowDefinition Height="53*"/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="1" FontSize="50"  Foreground="White"  x:Name="lbUser" Content="user" HorizontalAlignment="Left" />
-                    
+                    <Viewbox Grid.Row ="1" Stretch="Uniform">
+                        <Label   FontSize="100"  Foreground="White"  x:Name="lbUser" Content="user"  />
+                    </Viewbox>
+
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
@@ -69,9 +72,9 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="38*"/>
-                                <ColumnDefinition Width="57*" MaxWidth="300"/>
-                                <ColumnDefinition Width="57*" MaxWidth="300"/>
-                                <ColumnDefinition Width="57*" MaxWidth="300"/>
+                                <ColumnDefinition Width="57*" />
+                                <ColumnDefinition Width="57*" />
+                                <ColumnDefinition Width="57*" />
                             </Grid.ColumnDefinitions>
 
 
@@ -84,13 +87,11 @@
                                 <Image Source="System button/expend.png" VerticalAlignment="Bottom"/>
                             </Border>
 
-                            <Border Grid.Column="3"  BorderBrush="Gray"  BorderThickness="2" CornerRadius="0"  Background="White"   x:Name="btnClose" Margin="13" >
+                            <Border  Grid.Column="3"  BorderBrush="Gray"  BorderThickness="2" CornerRadius="0"  Background="White"   x:Name="btnClose" Margin="13" >
                                 <Image Source="System button/Close.png" VerticalAlignment="Bottom"/>
                             </Border>
 
                         </Grid>
-
-
                     </Border>
                 </StackPanel>
             </Grid>
@@ -154,7 +155,7 @@
                     </Grid.RowDefinitions>
 
                     <Image   Grid.Row="1"   VerticalAlignment="Top" Source="Image training/Slimming.png"  />
-                    <TextBlock   Grid.Row="2"   Text="Худеим" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <TextBlock   Grid.Row="2"   Text="Сбросить вес" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3"  x:Name="btnslimming"  Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
             </Border>

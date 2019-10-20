@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Fitness.BusinessLogic.Controller;
+using System;
+
 namespace Fitness.BusinessLogic.Model
 {   /// <summary>
     /// Упражнения
@@ -6,7 +8,27 @@ namespace Fitness.BusinessLogic.Model
     [Serializable]
     public class Exercise
     {
-        public int Id { get; set; }
+        #region Cвойства
+
+        /// <summary>
+        /// Какого прльзователя упражнения
+        /// </summary>
+        public string Username { get; set; }
+
+        /// <summary>
+        /// Тип тренировки.
+        /// </summary>
+        public  string Type { get; set; }
+
+       
+        /// <summary>
+        /// Название вида активности.
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// Количество калорий сжигаемых в единицу времени
+        /// </summary>
+        public double CaloriesPerMinute { get; set; }
 
         /// <summary>
         ///Начало упражнения
@@ -16,30 +38,46 @@ namespace Fitness.BusinessLogic.Model
         /// Конец упражнения
         /// </summary>
         public DateTime Finish { get; set; }
-        public int ActivityId { get; set; }
-        
+      
         /// <summary>
-        /// Какое упражнение делал пользователь
+        /// Изображение активности
         /// </summary>
-        public virtual Activity Activity { get; set; }
-
-        public int UserId { get; set; }
+        public string Image { get; set; }
+       
+       /// <summary>
+       /// Количество раз.
+       /// </summary>
+        public int Amount { get; set; }
+        /// <summary>
+        /// Количество подходов.
+        /// </summary>
+        public int Сount { get; set; }
+        /// <summary>
+        /// Обозначение
+        /// </summary>
+        public string Designation { get; set; }
 
         /// <summary>
-        /// Какой пользователь
+        /// Описание
         /// </summary>
-        public virtual User User { get; set; }
+        public string Description { get; set; }
+        #endregion
 
         public Exercise() { }
-        public Exercise(DateTime start, DateTime finish, Activity activity, User user)
-        {   //Проверка
-
+        public Exercise(string name, double caloriesPerMinute, DateTime start, DateTime finish, string image, int amount, int count,string designation, string description)
+        {
+            Name = name;
+            CaloriesPerMinute = caloriesPerMinute;
             Start = start;
             Finish = finish;
-            Activity = activity;
-            User = user;
+            Image = image;
+            Сount = count;
+            Amount = amount;
+            Designation = designation;
+            Description = description;
+            Username = UserController.CurrentUserName;
+            Type = TrainingController.Type;
+
         }
-
-
     }
 }

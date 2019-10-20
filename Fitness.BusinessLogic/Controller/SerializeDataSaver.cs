@@ -39,7 +39,7 @@ namespace Fitness.BusinessLogic.Controller
             using (var fs = new FileStream(fileName, FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, item);
-            };
+            }
         }
     }
 }

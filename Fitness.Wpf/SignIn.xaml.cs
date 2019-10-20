@@ -30,8 +30,6 @@ namespace Fitness.Wpf
                 
                 if(user.CurrentUser.Password == tbPassword.Password)
                 {
-                    var Login = tbUsername.Text;
-                    UserController.CurrentUserName = Login;
                     ChoiceTraining training = new ChoiceTraining();
                     training.Show();
                     Close();

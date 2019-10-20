@@ -9,7 +9,6 @@ namespace Fitness.BusinessLogic.Model
     public class User
     {
         #region Cвойства.
-        public int Id { get; set; }
         /// <summary>
         /// Имя.
         /// </summary>
@@ -19,6 +18,13 @@ namespace Fitness.BusinessLogic.Model
         /// Пароль.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Картинка.
+        /// </summary>
+        public string Image { get; set; }
+        public int Imagecount { get; set; }
+
         /// <summary>
         /// Пол.
         /// </summary>
@@ -36,9 +42,7 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public double Height { get; set; }
 
-        public virtual ICollection<Eating> Eatings { get; set; }
-        public virtual ICollection<Exercise> Exercises { get; set; }
-
+    
         public int Age { get { return DateTime.Now.Year - BirthdayDate.Year; }}
         #endregion
         public User() { }
@@ -52,7 +56,7 @@ namespace Fitness.BusinessLogic.Model
         /// <param name="birthdayDate">Дата раждения.</param>
         /// <param name="weight">Вес.</param>
         /// <param name="height">Рост.</param>
-        public User(string name ,string password,Gender gender,DateTime birthdayDate, double weight,double height)
+        public User(string name,string password,Gender gender,DateTime birthdayDate, double weight,double height)
         {
             #region Проверка условий.
             if (string.IsNullOrWhiteSpace(name))

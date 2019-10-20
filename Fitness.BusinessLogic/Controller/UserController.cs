@@ -1,6 +1,8 @@
 ﻿using Fitness.BusinessLogic.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 
@@ -27,6 +29,29 @@ namespace Fitness.BusinessLogic.Controller
         public bool isNewUser { get; } = false;
 
         public static string CurrentUserName { get; set; }
+
+        public string Image
+        {
+            set
+            {
+                if (CurrentUser != null)
+                {
+                    CurrentUser.Image = value;
+                    CopyImage(value);
+                }
+                Save();
+            }
+            get
+            {
+                if(!string.IsNullOrEmpty(CurrentUser.Image))
+                {
+                    return CurrentUser.Image;
+                }
+
+                return null;
+            }
+        }
+
         #endregion
 
 
@@ -44,6 +69,7 @@ namespace Fitness.BusinessLogic.Controller
         /// <param name="user">Имя пользователя.</param>
         public UserController(string userName)
         {
+          
             if (string.IsNullOrWhiteSpace(userName))
             {
                 throw new ArgumentNullException("Имя пользователя не может быть пустым",nameof(userName));
@@ -52,6 +78,8 @@ namespace Fitness.BusinessLogic.Controller
 
             //Будем искать пользователя 1 единственным именами,ecли пользователь есть.
             CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
+
+            CurrentUserName = userName;
 
             if (CurrentUser == null)
             {
@@ -100,8 +128,38 @@ namespace Fitness.BusinessLogic.Controller
             CurrentUser.Height = height;
             Save();
         }
+        /// <summary>
+        /// Перемение файла.
+        /// </summary>
+        /// <param name="value"></param>
+        public void CopyImage(string value)
+        {
+            string directory = @"UserImage\" + CurrentUser.Name;
+            string sourceDirectory = value;
+            string targetDirectory = directory + @"\" + $"UserAvatar{CurrentUser.Name}.jpg";
+            string pathImage = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), targetDirectory); ;
+
+            if (File.Exists(pathImage))
+            {
+                int n= CurrentUser.Imagecount++;
+                targetDirectory = directory + @"\" + $"UserAvatar{n + CurrentUser.Name}.jpg";
+
+            }
+
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
 
 
+            if (!File.Exists(targetDirectory))//Нету файла
+            {
+                File.Copy(sourceDirectory, targetDirectory);
+            }
+            pathImage = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), targetDirectory);
+            CurrentUser.Image = pathImage;
+            
+        }
 
 
 

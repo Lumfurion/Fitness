@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness.BusinessLogic.Controller;
+using System;
 using System.Collections.Generic;
 
 namespace Fitness.BusinessLogic.Model
@@ -10,7 +11,10 @@ namespace Fitness.BusinessLogic.Model
     public class Food
     {
         #region Свойства
-        public int Id { get; set; }
+        /// <summary>
+        /// Польватель корый есть еду.
+        /// </summary>
+        public string Username { get; set; }
         public string Name { get; set; }
         /// <summary>
         /// Белки
@@ -93,6 +97,7 @@ namespace Fitness.BusinessLogic.Model
             Pats = fats / 100.0;
             Carbohydrates = carbohydrates / 100.0;
             Calories = calories / 100.0;
+            Username = UserController.CurrentUserName;
         }
         public override string ToString()
         {
