@@ -206,5 +206,59 @@
     <Resource Include="Training\Noobman\Day1\Разведение гантелей лежа.jpg" />
     <Resource Include="Training\Noobman\Day1\Разгибание рук на блоке.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\Noobman\Day3\Гиперэкстензия.jpg" />
+    <Resource Include="Training\Noobman\Day3\Молот.jpg" />
+    <Resource Include="Training\Noobman\Day3\Сгибание рук с грифом на бицепс.jpg" />
+    <Resource Include="Training\Noobman\Day3\Тяга верхнего блока.jpg" />
+    <Resource Include="Training\Noobman\Day3\Тяга нижнего блока.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingGirl\Day1\Выпады с гантелями.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingGirl\Day1\Кардио.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day1\Пресс подъем туловища на римском стуле и подъем ног лежа..jpg" />
+    <Resource Include="Training\SlimmingGirl\Day1\Приседание со штангой.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day1\Приседания плие.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingGirl\Day2\Жим гантелей лежа.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day2\Косые скручивания.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day2\Подъем туловища на полу.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day2\Разведение рук с гантелями на горизонтальной скамье.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day2\Разведение рук с гантелями на скамье под углом 30 градусов.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day2\Разгибание рук на блоке.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day2\Румынская тяга.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day2\Сведение ног в тренажере.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingGirl\Day3\Жим гантелей сидя.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day3\Жим ногами %28стопы на верхней части платформы, расставлены широко%29.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day3\Подъем на носки на икры.jpg" />
+    <Resource Include="Training\SlimmingGirl\Day3\Разгибание ног в тренажере.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingGirl\Day3\Разведение гантелей через стороны.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingMan\Day2\Жим штанги лёжа на наклонной скамье.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingMan\Day1\Жим ногами.jpg" />
+    <Resource Include="Training\SlimmingMan\Day1\Жим штанги лёжа.jpg" />
+    <Resource Include="Training\SlimmingMan\Day1\Подъём штанги на бицепс стоя.jpg" />
+    <Resource Include="Training\SlimmingMan\Day1\Подъёмы на икры.jpg" />
+    <Resource Include="Training\SlimmingMan\Day1\Разведение рук с гантелями стоя.jpg" />
+    <Resource Include="Training\SlimmingMan\Day1\Разгибания рук на блоке на трицепс.jpg" />
+    <Resource Include="Training\SlimmingMan\Day1\Сгибание ног.jpg" />
+    <Resource Include="Training\SlimmingMan\Day1\Тяга нижнего блока.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingMan\Day3\Сгибание ног стоя.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\SlimmingMan\Day3\Разгибания ног в тренажёре.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

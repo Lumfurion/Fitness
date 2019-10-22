@@ -21,7 +21,7 @@ namespace Fitness.Wpf
             btnMan.Click += Gender;
             btnWomen.Click += Gender;
 
-            trainingController.SelectTraining("NoobMan");
+            trainingController.SelectTraining($"{type}Man");
             ICTraining.ItemsSource = trainingController.CurrentTraining;
             DataContext = trainingController;
 
@@ -47,6 +47,19 @@ namespace Fitness.Wpf
                     {
                         trainingController.SelectTraining("NoobGirl");
                         
+                    }
+                    break;
+
+                case "Slimming":
+                    if (name == btnMan.Name)
+                    {
+                        trainingController.SelectTraining("SlimmingMan");
+
+                    }
+                    else if (name == btnWomen.Name)
+                    {
+                        trainingController.SelectTraining("SlimmingGirl");
+
                     }
                     break;
 

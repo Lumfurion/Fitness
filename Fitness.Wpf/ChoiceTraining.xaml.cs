@@ -118,7 +118,7 @@ namespace Fitness.Wpf
 
             #region Просмотр и выбор тренировки.
             btnNoob.Click += Click_LookTraining;
-            btndrying.Click += Click_LookTraining;
+            //btndrying.Click += Click_LookTraining;
             btnslimming.Click += Click_LookTraining;
             btnAthome.Click += Click_LookTraining;
             btnAthomeHorizontalbar.Click += Click_LookTraining;
@@ -145,11 +145,11 @@ namespace Fitness.Wpf
                 case "btnNoob":
                     trainingInfo = new TrainingInfo("Noob");
                     break;
-                
+                case "btnslimming":
+                    trainingInfo = new TrainingInfo("Slimming");
+                    break;
+
             }
-
-           
-
 
             trainingInfo.ShowDialog();
       

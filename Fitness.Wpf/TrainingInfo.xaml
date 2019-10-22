@@ -86,23 +86,25 @@
                             <ItemsControl  Grid.Row="2"    ItemsSource="{Binding Path=Value}" >
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <Grid>
+
+                                        <Grid >
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="21*"/>
                                                 <ColumnDefinition Width="110*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"  Width="120" Height="100"/>
+                                            <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"  Width="180" Height="150"/>
 
                                             <Grid Grid.Column="1" >
                                                 <Grid.RowDefinitions>
-                                                    <RowDefinition Height="28*"/>
-                                                    <RowDefinition Height="29*"/>
+                                                    <RowDefinition Height="217*"/>
+                                                    <RowDefinition Height="64*"/>
+                                                    <RowDefinition Height="217*"/>
                                                 </Grid.RowDefinitions>
-                                                <TextBlock Grid.Row="0"  Text="{Binding Name}" FontSize="15" FontWeight="Bold" Margin="33" />
+
+                                                <TextBlock Grid.Row="1"  Margin="15,0,0,0" Text="{Binding Name}" FontSize="15" FontWeight="Bold"  />
                                             </Grid>
                                         </Grid>
-
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
@@ -111,7 +113,6 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-
 
 
         <Button  Grid.Row="7"   Background="#FF38DE48" Name="btnSelect" HorizontalAlignment="Center"  Margin="3" Click="BtnSelect_Click">
