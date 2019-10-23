@@ -93,7 +93,7 @@
                                                 <ColumnDefinition Width="110*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"  Width="180" Height="150"/>
+                                            <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"   Width="190" Height="150"/>
 
                                             <Grid Grid.Column="1" >
                                                 <Grid.RowDefinitions>

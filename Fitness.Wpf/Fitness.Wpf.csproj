@@ -260,5 +260,45 @@
   <ItemGroup>
     <Resource Include="Training\SlimmingMan\Day3\Разгибания ног в тренажёре.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image training\Body-building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\BodyBuildingGirl\Day1\Фронтальный подъём штанги над головой .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\BodyBuildingGirl\Day1\Жим гантелей лежа на горизонтальной скамье.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day1\Жим гантелей лежа на наклонной скамье.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day1\Жим на плечи в тросовом тренажёре.PNG" />
+    <Resource Include="Training\BodyBuildingGirl\Day1\Отжимания на брусьях.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day1\Разведение рук с гантелями лежа на наклонной скамье.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day1\Разгибание рук стоя на нижнем блоке.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day1\Сведение рук в кроссовере.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\BodyBuildingGirl\Day3\Выпад с гантелями вперед.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day3\Выпады со штангой в сторону.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day3\Подъем на носки на одной ноге.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day3\Приседания со штангой.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day3\Становая тяга в машине Смита с прямыми ногами.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\BodyBuildingGirl\Day2\Подтягивания обратным хватом.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day2\Подтягивания.jpg" />
+    <Resource Include="Training\BodyBuildingGirl\Day2\Подъем EZ-штанги на бицепс на скамье Скотта.jpeg" />
+    <Resource Include="Training\BodyBuildingGirl\Day2\Попеременный подъем гантелей на бицепс стоя.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\BodyBuildingMan\Day1\Жим штанги стоя.jpg" />
+    <Resource Include="Training\BodyBuildingMan\Day1\Приседания со штангой.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\BodyBuildingMan\Day2\Жим лежа узким хватом.jpg" />
+    <Resource Include="Training\BodyBuildingMan\Day2\Подтягивания.jpg" />
+    <Resource Include="Training\BodyBuildingMan\Day2\Французский жим.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\BodyBuildingMan\Day2\Cтановая тяга.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

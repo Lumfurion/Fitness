@@ -5,12 +5,12 @@ using System.Windows.Controls;
 
 namespace Fitness.Wpf
 {
-   
+
     public partial class TrainingInfo : Window
     {
         UserController userController { get; }
         TrainingController trainingController { get; }
-        string type { get;  }
+        string type { get; }
 
         public TrainingInfo(string type)
         {
@@ -27,6 +27,22 @@ namespace Fitness.Wpf
 
         }
 
+
+        private void SelectGender(string name,string man, string girl)
+        {
+            if (name == btnMan.Name)
+            {
+                trainingController.SelectTraining(man);
+
+            }
+            else if (name == btnWomen.Name)
+            {
+                trainingController.SelectTraining(girl);
+
+            }
+
+        }
+
         private void Gender(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
@@ -38,29 +54,14 @@ namespace Fitness.Wpf
             switch (type)
             {
                 case "Noob":
-                    if (name == btnMan.Name)
-                    {
-                        trainingController.SelectTraining("NoobMan");
-                        
-                    }
-                    else if (name == btnWomen.Name)
-                    {
-                        trainingController.SelectTraining("NoobGirl");
-                        
-                    }
+                    SelectGender(name, "NoobMan", "NoobGirl");
                     break;
 
                 case "Slimming":
-                    if (name == btnMan.Name)
-                    {
-                        trainingController.SelectTraining("SlimmingMan");
-
-                    }
-                    else if (name == btnWomen.Name)
-                    {
-                        trainingController.SelectTraining("SlimmingGirl");
-
-                    }
+                    SelectGender(name, "SlimmingMan", "SlimmingGirl");
+                    break;
+                case "BodyBuilding":
+                    SelectGender(name, "BodyBuildingMan", "BodyBuildingGirl");
                     break;
 
             }
@@ -72,7 +73,6 @@ namespace Fitness.Wpf
 
         private void BtnSelect_Click(object sender, RoutedEventArgs e)
         {
-           
             trainingController.Saver();
             if (trainingController.Select == true)
             {
