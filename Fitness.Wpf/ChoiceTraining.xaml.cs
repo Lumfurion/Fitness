@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace Fitness.Wpf
 {  
@@ -14,13 +15,16 @@ namespace Fitness.Wpf
     {
         readonly string  name = UserController.CurrentUserName;
         readonly UserController userController;
+        public TrainingController trainingController;
         TrainingInfo trainingInfo { get; set; }
-
+        DispatcherTimer timer = new DispatcherTimer();
         public ChoiceTraining()
         {
             InitializeComponent();
             userController = new UserController(name);
+            trainingController = new TrainingController();
             Initwindow();
+
         }
 
         #region Масштабирование интерфейса 
@@ -127,6 +131,23 @@ namespace Fitness.Wpf
             btnExtreme.Click += Click_LookTraining;
             #endregion
 
+            
+
+            //Вызваем обробочик каждих 0.1 секунду timer_tick.
+            //Интервал устанавливается в 0.1 секунду с помощью TimeSpan объекта, и запускается таймер.
+            timer.Interval = TimeSpan.FromSeconds(0.1);
+            timer.Tick += timer_tick;
+            timer.Start();
+
+        }
+
+        private void timer_tick(object sender, EventArgs e)
+        {
+            trainingController.Update();
+            if (trainingController.CurrentUserSelectsTraining() == true)
+            {
+                Close();
+            }
         }
 
         private void Click_LookTraining(object sender, RoutedEventArgs e)
@@ -151,7 +172,12 @@ namespace Fitness.Wpf
                 case "btnBodyBuilding":
                     trainingInfo = new TrainingInfo("BodyBuilding");
                     break;
-
+                case "btnAthomeHorizontalbar":
+                    trainingInfo = new TrainingInfo("AthomeHorizontalbar");
+                    break;
+                case "btnAthome":
+                    trainingInfo = new TrainingInfo("AtHomeConditions");
+                    break;
             }
 
             trainingInfo.ShowDialog();

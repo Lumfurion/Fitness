@@ -13,16 +13,14 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         public string Description { get; set; }
 
-        public List<Exercise> Exercises { get;}
+        public List<Exercise> Exercises { get; set; }
 
-        public Training Training { get;}
-
-        public bool Select { get; set; } = false;
+        public Training Training { get; set; }
 
         /// <summary>
         /// Будет хранить тренировку пользователя
         /// </summary>
-        public Dictionary<string, List<Exercise>> CurrentTraining { get;}
+        public Dictionary<string, List<Exercise>> CurrentTraining { get; set; }
 
         internal static string Type { get; set; }
 
@@ -41,47 +39,61 @@ namespace Fitness.BusinessLogic.Controller
             Exercises = GetAllExercises();
             Training = GetTraining();
 
-            if (Training !=null)
-            {
-                GetCurrentTraining();
-            }
+            //if (Training !=null)
+            //{
+            //    GetCurrentTraining();
+            //}
         }
 
-        /// <summary>
-        /// Получение тренировки для кокретного пользователя.
-        /// </summary>
-        public void GetCurrentTraining()
+        public void Update ()
         {
-            var name = UserController.CurrentUserName;
-            var settraining = Type;
-
-            if (CurrentTraining != null)
-            {
-                CurrentTraining.Clear();
-            }
-
-            foreach (var ex in Training.Exercises)
-            {
-                var day = ex.Key;
-                foreach (var vulue in ex.Value)
-                {   
-                    if (vulue.Username == name && vulue.Type == settraining)
-                    {
-                        List<Exercise> exe;
-                        if (!CurrentTraining.TryGetValue(day, out exe))
-                        {
-                            exe = new List<Exercise>();
-                            CurrentTraining.Add(day, exe);
-                        }
-                        exe.Add(new Exercise(vulue.Name, vulue.CaloriesPerMinute, vulue.Start, vulue.Finish, vulue.Image, vulue.Amount, vulue.Сount,vulue.Designation, vulue.Description));
-
-                    }
-
-                }
-            }
-
+            Exercises = GetAllExercises();
+            Training = GetTraining();
         }
 
+        ///// <summary>
+        ///// Получение тренировки для кокретного пользователя.
+        ///// </summary>
+        //public void GetCurrentTraining()
+        //{
+        //    var name = UserController.CurrentUserName;
+        //    var settraining = Type;
+
+        //    if (CurrentTraining != null)
+        //    {
+        //        CurrentTraining.Clear();
+        //    }
+
+        //    foreach (var ex in Training.Exercises)
+        //    {
+        //        var day = ex.Key;
+        //        foreach (var vulue in ex.Value)
+        //        {   
+        //            if (vulue.Username == name && vulue.Type == settraining)
+        //            {
+        //                List<Exercise> exe;
+        //                if (!CurrentTraining.TryGetValue(day, out exe))
+        //                {
+        //                    exe = new List<Exercise>();
+        //                    CurrentTraining.Add(day, exe);
+        //                }
+        //                exe.Add(new Exercise(vulue.Name, vulue.CaloriesPerMinute, vulue.Start, vulue.Finish, vulue.Image, vulue.Amount, vulue.Сount,vulue.Designation, vulue.Description));
+
+        //            }
+
+        //        }
+        //    }
+
+        //}
+
+
+        public bool CurrentUserSelectsTraining()
+        {
+            var rezalt = Training.selectedWorkouts.Any(s => s.Name == UserController.CurrentUserName  && s.isSelected == true);
+            return rezalt;
+        }
+
+     
         #region Выбор тренировки.
         public void AddNew(string day, List<Exercise> exercises)
         {
@@ -128,6 +140,13 @@ namespace Fitness.BusinessLogic.Controller
                     break;
                 case "BodyBuildingGirl":
                     BodyBuildingGirl();
+                    break;
+
+                case "AthomeHorizontalbarMan":
+                    AthomeHorizontalbarMan();
+                    break;
+                case "AtHomeConditionsMan":
+                    AtHomeConditions();
                     break;
             }
          
@@ -297,7 +316,6 @@ namespace Fitness.BusinessLogic.Controller
             //Training.Add("День 3", day3);
         }
         #endregion
-
         #region Сброс веса 
         private void SlimmingGirl()
         {
@@ -449,8 +467,6 @@ namespace Fitness.BusinessLogic.Controller
             //Training.Add("День 3", day3);
         }
         #endregion
-
-
         #region  Бодибилдинг
         private void BodyBuildingGirl()
         {
@@ -503,9 +519,6 @@ namespace Fitness.BusinessLogic.Controller
             AddNew("День 3", day3);
 
         }
-
-
-
 
         private void BodyBuildingMan()
         {
@@ -560,6 +573,99 @@ namespace Fitness.BusinessLogic.Controller
 
         }
         #endregion
+        #region  Турник дома
+        private void AthomeHorizontalbarMan()
+        {
+            var des = @"Набор упражнений для занятий  дома,требует гантели  и турник.";
+            if (!Training.DescriptionSet.ContainsKey(Type))
+            {
+                Training.DescriptionSet.Add(Type, des);
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
+            else
+            {
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
+
+
+            List<Exercise> day1 = new List<Exercise>()
+            {
+                new Exercise ("Подтягивания",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day2/Подтягивания.jpg",2,5,"раз",@""),
+                new Exercise ("Подтягивания обратным хватом",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day2/Подтягивания обратным хватом.jpg",2,5,"раз",@""),
+                new Exercise ("Подтягивание широким хватом",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day1/Подтягивание широким хватом.jpg",2,5,"раз",@""),
+                new Exercise ("Отжимания от пола",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day1/Отжимания от пола.jpg",2,5,"раз",@""),
+
+            };
+
+            List<Exercise> day2 = new List<Exercise>()
+            {
+                 new Exercise ("Приседания",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day2/Приседания.jpg",3,10,"раз",@""),
+                 new Exercise ("Приседания с выпрыгиванием",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day2/Приседания с выпрыгиванием.jpg",3,10,"раз",@""),
+                 new Exercise ("Приседания с гантелями плие",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day2/Приседания с гантелями плие.jpg",3,10,"раз",@""),
+                 new Exercise ("Скручивания на пресс на наклоной скамье",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day2/Скручивания на пресс на наклоной скамье.jpg",3,10,"раз",@""),
+                 new Exercise ("Обратное скручивание",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day2/Обратное скручивание.jpg",3,10,"раз",@""),
+                 new Exercise ("Планка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/планка.jpg",2,10,"секунд",""),
+                 new Exercise ("Лодка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day2/Лодка.jpg",3,10,"раз",@"")
+            };
+
+
+            AddNew("День 1", day1);
+            AddNew("День 2", day2);
+            
+        }
+        #endregion
+        #region В домашних условиях
+        private void AtHomeConditions()
+        {
+            var des = @"Набор упражнений для занятий  дома,требует гантели  и турник.";
+            if (!Training.DescriptionSet.ContainsKey(Type))
+            {
+                Training.DescriptionSet.Add(Type, des);
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
+            else
+            {
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
+
+
+            List<Exercise> day1 = new List<Exercise>()
+            {
+                new Exercise ("Скручивания корпуса лежа",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/skruchivaniya-kak-pravilno-delat_20.jpg",3,10,"раз",@""),
+                new Exercise ("Выпады с гантелями",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/Lunges-with-dumbbells.jpg",3,10,"(по 10 шагов на каждую ногу)",@""),
+                new Exercise ("Отжимания от пола",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day1/Отжимания от пола.jpg",3,5,"раз",@""),
+                new Exercise ("Приседания с гантелями",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day1/Приседания с гантелями.jpg",3,10,"раз",@""),
+                new Exercise ("Пуловер лежа с гантелями",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day1/Пуловер лежа с гантелями.jpg",3,5,"раз",@""),
+                new Exercise ("Французский жим с гантелями сидя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobman/Day1/Жим гантели из-за головы.jpg",2,10,"раз",@""),
+            };
+
+            List<Exercise> day2 = new List<Exercise>()
+            {  new Exercise ("Подем корпуса",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day2/Подем корпуса.jpg",3,10,"раз",@""),
+               new Exercise ("Тяга одной гантели в наклоне",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day2/Тяга одной гантели в наклоне.jpg",3,10,"раз",@""),
+               new Exercise ("Отжимания от пола",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day1/Отжимания от пола.jpg",3,5,"раз",@""),
+               new Exercise ("Наклоны со штангой на плечах",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day2/Наклоны со штангой на плечах.jpg",3,10,"раз",@""),
+
+            };
+
+            List<Exercise> day3 = new List<Exercise>()
+            {  new Exercise ("Подем ног в висе",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Подем ног в висе.jpg",3,10,"раз",@""),
+               new Exercise ("Жим арнольда",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Жим арнольда.jpg",2,10,"раз",@""),
+               new Exercise ("Лодка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AthomeHorizontalbarMan/Day2/Лодка.jpg",3,10,"раз",@""),
+               new Exercise ("Разведение гантелей через стороны",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Разведение гантелей через стороны.jpg",3,10,"раз",@""),
+               new Exercise ("Подъем гантелей перед собой",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Подъем гантелей перед собой.jpg",3,10,"раз",@""),
+               new Exercise ("Концентрированный подъем на бицепс",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Концентрированный подъем на бицепс.jpg",3,10,"раз",@""),
+               new Exercise ("Шраги с гантелями стоя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Шраги с гантелями стоя.jpg",3,10,"раз",@"")
+             
+
+            };
+
+            AddNew("День 1", day1);
+            AddNew("День 2", day2);
+            AddNew("День 3", day3);
+
+        }
+        #endregion
+
 
         #endregion
 
@@ -572,7 +678,7 @@ namespace Fitness.BusinessLogic.Controller
         {
             if (exercises != null &&  string.IsNullOrEmpty(day))
             {
-                Training.Add(day,exercises);
+                Training.AddTraining(day,exercises);
                 //GetCurrentTraining();
                 Save();
             }
@@ -587,13 +693,13 @@ namespace Fitness.BusinessLogic.Controller
         public void Saver()
         {   var isSuch =Training.Exercises.Any(ex => ex.Value.Any(e => e.Type == Type && e.Username == UserController.CurrentUserName));
 
-            if (isSuch == false)//Нету
+            if (isSuch == false )//Нету
             {
                 foreach (var tr in CurrentTraining)
                 {
-                    Training.Add(tr.Key, tr.Value);
+                    Training.AddTraining(tr.Key, tr.Value);
                 }
-                Select = true;
+                Training.selectedWorkouts.Add(new SelectedWorkout(true));
                 Save();
             }
            

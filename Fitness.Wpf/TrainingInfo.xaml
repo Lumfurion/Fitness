@@ -48,7 +48,8 @@
                     <RowDefinition Height="29*"/>
                     <RowDefinition Height="30*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="1" Text="Выбирите пол" FontSize="20" Margin="30,10,25,10" Foreground="Red" HorizontalAlignment="Center" Width="136" />
+                <TextBlock Grid.Row="1" FontWeight="Bold"  Text="Выбирите пол" FontSize="20" Margin="10" Foreground="Green" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="0" Name="lbMessege" TextWrapping="Wrap"  FontWeight="Bold"   FontSize="10" Margin="10" Foreground="Red"  />
 
             </Grid>
 

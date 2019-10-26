@@ -8,8 +8,8 @@ namespace Fitness.Wpf
 
     public partial class TrainingInfo : Window
     {
-        UserController userController { get; }
-        TrainingController trainingController { get; }
+        readonly UserController userController;
+        readonly TrainingController trainingController;
         string type { get; }
 
         public TrainingInfo(string type)
@@ -63,6 +63,9 @@ namespace Fitness.Wpf
                 case "BodyBuilding":
                     SelectGender(name, "BodyBuildingMan", "BodyBuildingGirl");
                     break;
+                case "AthomeHorizontalbar":
+                    lbMessege.Text = "Это тренировка подходит для всех пол не нужно выбирать.";
+                    break;
 
             }
             
@@ -73,11 +76,13 @@ namespace Fitness.Wpf
 
         private void BtnSelect_Click(object sender, RoutedEventArgs e)
         {
-            trainingController.Saver();
-            if (trainingController.Select == true)
+            if(trainingController.CurrentUserSelectsTraining() != true)
             {
+                trainingController.Saver();
                 Close();
             }
+ 
+
         }
     }
 }

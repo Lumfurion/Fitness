@@ -300,5 +300,33 @@
   <ItemGroup>
     <Resource Include="Training\BodyBuildingMan\Day2\Cтановая тяга.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\AthomeHorizontalbarMan\Day1\Отжимания от пола.jpg" />
+    <Resource Include="Training\AthomeHorizontalbarMan\Day1\Подтягивание широким хватом.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Лодка.jpg" />
+    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Обратное скручивание.jpg" />
+    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Приседания с выпрыгиванием.jpg" />
+    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Приседания с гантелями плие.jpg" />
+    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Приседания.jpg" />
+    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Скручивания на пресс на наклоной скамье.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\AtHomeConditions\Day1\Приседания с гантелями.jpg" />
+    <Resource Include="Training\AtHomeConditions\Day1\Пуловер лежа с гантелями.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\AtHomeConditions\Day2\Наклоны со штангой на плечах.jpg" />
+    <Resource Include="Training\AtHomeConditions\Day2\Подем корпуса.jpg" />
+    <Resource Include="Training\AtHomeConditions\Day2\Тяга одной гантели в наклоне.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\AtHomeConditions\Day3\Жим арнольда.jpg" />
+    <Resource Include="Training\AtHomeConditions\Day3\Концентрированный подъем на бицепс.jpg" />
+    <Resource Include="Training\AtHomeConditions\Day3\Подем ног в висе.jpg" />
+    <Resource Include="Training\AtHomeConditions\Day3\Подъем гантелей перед собой.jpg" />
+    <Resource Include="Training\AtHomeConditions\Day3\Шраги с гантелями стоя.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

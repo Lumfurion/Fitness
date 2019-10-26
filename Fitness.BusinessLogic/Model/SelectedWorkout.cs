@@ -3,21 +3,29 @@ using System;
 
 namespace Fitness.BusinessLogic.Model
 {
+    [Serializable]
     public class SelectedWorkout
     {
-        string Name { get; set; } 
-        string Type { get; set; } 
-        bool   isSelected { get; set; } = false;
-        DateTime When { get; set; } 
+      
+        /// <summary>
+        ///Имя пользователя для которого выбрана тренировка.
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        ///Тип тренировки.
+        /// </summary>
+        public string Type { get; set; }
+        public bool isSelected { get; set; } = false;
+        public DateTime When { get; set; }
 
-        public void Select (bool vulue)
+        public SelectedWorkout(bool vulue)
         {
             isSelected = vulue;
             if (isSelected != false)
             {
                 Name = UserController.CurrentUserName;
                 Type = TrainingController.Type;
-                When = DateTime.Now; 
+                When = DateTime.Now;
             }
         }
     }

@@ -7,11 +7,12 @@ namespace Fitness.Wpf
     public partial class MainWindow : Window
     {
         UserController user { get; set; }
-        
+        TrainingController trainingController { get; }
+
         public MainWindow()
         {
             InitializeComponent();
-           
+            trainingController = new TrainingController();
         }
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
@@ -30,9 +31,17 @@ namespace Fitness.Wpf
                 
                 if(user.CurrentUser.Password == tbPassword.Password)
                 {
-                    ChoiceTraining training = new ChoiceTraining();
-                    training.Show();
-                    Close();
+                    if (trainingController.CurrentUserSelectsTraining() != true)
+                    {
+                        ChoiceTraining training = new ChoiceTraining();
+                        training.Show();
+                        Close();
+                    }
+                    else
+                    {  //Главная окно
+                        Close();
+                    }
+                   
                 }
                 else
                 {

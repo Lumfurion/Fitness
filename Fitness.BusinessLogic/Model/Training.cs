@@ -18,17 +18,24 @@ namespace Fitness.BusinessLogic.Model
         /// Описание закрепляем за типом тренировки.
         /// </summary>
         public Dictionary<string,string> DescriptionSet { get; }
+       
+        /// <summary>
+        /// Будет хранить пользователя тип тренировки когда выбрал.
+        /// </summary>
+        public List<SelectedWorkout> selectedWorkouts { get; }
         #endregion
 
         public Training()
         {
             Exercises = new Dictionary<string, List<Exercise>>();
             DescriptionSet = new Dictionary<string, string>();
-
-
+            selectedWorkouts = new List<SelectedWorkout>();
+            
         }
 
-        public void Add (string day, List<Exercise> exercises)
+
+       
+        public void AddTraining(string day, List<Exercise> exercises)
         {
             if (!Exercises.ContainsKey(day))
             {
