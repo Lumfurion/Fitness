@@ -55,10 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TrainingInfo.xaml.cs">
       <DependentUpon>TrainingInfo.xaml</DependentUpon>
     </Compile>
     <Page Include="ChoiceTraining.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,6 +334,41 @@
     <Resource Include="Training\AtHomeConditions\Day3\Подем ног в висе.jpg" />
     <Resource Include="Training\AtHomeConditions\Day3\Подъем гантелей перед собой.jpg" />
     <Resource Include="Training\AtHomeConditions\Day3\Шраги с гантелями стоя.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyMan\Day2\Отжимания на брусьях.jpg" />
+    <Resource Include="Training\FullbodyMan\Day2\Подтягивания прямым хватом.jpg" />
+    <Resource Include="Training\FullbodyMan\Day2\Разведение рук с гантелями стоя.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyMan\Day1\Армейский жим стоя.jpg" />
+    <Resource Include="Training\FullbodyMan\Day1\Жим штанги лежа широким хватом.jpg" />
+    <Resource Include="Training\FullbodyMan\Day1\Разведение гантелей лежа на скамье.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyGirl\Day1\Тяга горизонтального блока.jpg" />
+    <Resource Include="Training\FullbodyGirl\Day1\Упражнение молот.jpg" />
+    <Resource Include="Training\FullbodyGirl\Day1\Французский жим сидя.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyGirl\Day1\Скручивания наклонной скамье.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyGirl\Day1\Разминка.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyGirl\Day1\Растяжка.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyGirl\Day2\Жим в хаммере.jpg" />
+    <Resource Include="Training\FullbodyGirl\Day2\Подьемы ног в висе.jpg" />
+    <Resource Include="Training\FullbodyGirl\Day2\Разведение с гантелями на дельты.jpg" />
+    <Resource Include="Training\FullbodyGirl\Day2\Сгибания с нижним блоком.jpg" />
+    <Resource Include="Training\FullbodyGirl\Day2\Т-тяга на тренажере.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Training\FullbodyGirl\Day3\Сведения на тренажере рук в бабочка.jpg" />
+    <Resource Include="Training\FullbodyGirl\Day3\Тяга штанги в наклоне.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

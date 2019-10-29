@@ -239,7 +239,7 @@
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
                     <Image Grid.Row="1"       VerticalAlignment="Top" Source="Image training/at home.png"  />
-                    <TextBlock Grid.Row="2"    Text="Экстремальная" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="2"   Text="Экстремальная" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3" x:Name="btnExtreme"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
             </Border>

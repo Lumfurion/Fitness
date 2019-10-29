@@ -1,5 +1,4 @@
 ﻿using Fitness.BusinessLogic.Controller;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -66,9 +65,14 @@ namespace Fitness.Wpf
                 case "AthomeHorizontalbar":
                     lbMessege.Text = "Это тренировка подходит для всех пол не нужно выбирать.";
                     break;
+                case "AtHomeConditions":
+                    lbMessege.Text = "Это тренировка подходит для всех пол не нужно выбирать.";
+                    break;
+                case "Fullbody":
+                    SelectGender(name, "FullbodyMan", "FullbodyGirl");
+                    break;
 
             }
-            
             ICTraining.ItemsSource = trainingController.CurrentTraining;
             DataContext = trainingController;
             

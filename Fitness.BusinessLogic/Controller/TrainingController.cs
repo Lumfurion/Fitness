@@ -113,9 +113,7 @@ namespace Fitness.BusinessLogic.Controller
         }
         public void SelectTraining(string name)
         {
-            Type = name;
-            //var type =Training.Exercises.Any(ex => ex.Value.Any(e => e.Type == Type && e.Username == UserController.CurrentUserName));
-            
+            Type = name;  
             CurrentTraining.Clear();
             switch (name)
             {
@@ -148,30 +146,16 @@ namespace Fitness.BusinessLogic.Controller
                 case "AtHomeConditionsMan":
                     AtHomeConditions();
                     break;
+                case "FullbodyMan":
+                    FullbodyMan();
+                    break;
+
+                case "FullbodyGirl":
+                    FullbodyGirl();
+                    break;
+
             }
-         
-
-            //if (type == false)
-            //{
-            //    CurrentTraining.Clear();
-            //    switch (name)
-            //    {
-            //        case "NoobMan":
-            //            NoobMan();
-            //            break;
-
-            //        case "NoobGirl":
-            //            NoobGirl();
-            //            break;
-            //    }
-            //   GetCurrentTraining();
-            //}
-            //else
-            //{ 
-            //    Description = Training.DescriptionSet[Type];
-            //    GetCurrentTraining();
-
-            //}
+        
         }
 
        
@@ -256,45 +240,22 @@ namespace Fitness.BusinessLogic.Controller
 
             List<Exercise> day1 = new List<Exercise>()
             {
-                new Exercise ("Выпады в движении (без отягощения или с гантелями)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/Lunges-with-dumbbells.jpg",4,20,"(по 10 шагов на каждую ногу)",
-                @"Выпад – это одно из основных упражнений для ног, которое задействует ягодичные мышцы и мышцы бедер. В зависимости от длины выпада, можно накачать те или иные мышцы ног."),
-
-                new Exercise ("Махи ногами назад, стоя на четвереньках (с утяжелителями или без)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-               "Training/Noobgril/Day1/mahi-nogami.jpg",4,15,"раз",@"Махи ногами – это целый ряд упражнений для бедер и ягодиц, включающий в себя множество различных вариаций. При помощи махов вы можете эффективно проработать заднюю, переднюю, внешнюю и внутреннюю поверхность бедра, а также большие и средние ягодичные мышцы. Грамотное использование этого упражнения поможет вам добиться результатов в похудении, подтянуть мускулатуру нижней части тела, сделать фигуру упругой и привлекательной."),
-
-                new Exercise ("Тяга верхнего блока к груди (или подтягивания с резинкой)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-                "Training/Noobgril/Day1/Тяга-блока-к-груди.png",5,10,"раз",@"«Тяга грифа сверху вниз к груди на блочном тренажере в положении сидя» является наиболее функциональным упражнением по сравнению с традиционно дополняющей его «тягой грифа широким хватом сверху вниз за голову на блочном тренажере в положении сидя»."),
-
-                new Exercise ("Разведение рук в стороны в наклоне (с гантелями или эспандером)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-                "Training/Noobgril/Day1/razvedeniya-ruk-v-naklone-dlya-devushek.jpg",4,12,"раз",@""),
-
-                 new Exercise ("Сведение рук лежа с гантелями (или стоя с эспандером)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-                "Training/Noobgril/Day1/DSC_5501_1545278749-630x315.jpg",4,12,"раз",@"Лучшее дополнительное упражнение на мышцы груди – это разводка гантелей лежа, или правильно говоря – разведение. За счет различных углов наклона скамьи этим упражнением можно прокачать все участки грудных мышц."),
-
-                 new Exercise ("Скручивания корпуса лежа",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-                "Training/Noobgril/Day1/skruchivaniya-kak-pravilno-delat_20.jpg",4,20,"раз",@"Упражнение «Скручивание лежа на полу» является отличным упражнением для проработки прямой мышцы живота. Благодаря своей простоте и доступности, его можно выполнять не только в тренажерном зале, но и дома.")
-
+                 new Exercise ("Выпады в движении",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/Lunges-with-dumbbells.jpg",4,20,"(по 10 шагов на каждую ногу)",@"Выпад – это одно из основных упражнений для ног, которое задействует ягодичные мышцы и мышцы бедер. В зависимости от длины выпада, можно накачать те или иные мышцы ног."),
+                 new Exercise ("Махи ногами назад, стоя на четвереньках",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/mahi-nogami.jpg",4,15,"раз",@"Махи ногами – это целый ряд упражнений для бедер и ягодиц, включающий в себя множество различных вариаций. При помощи махов вы можете эффективно проработать заднюю, переднюю, внешнюю и внутреннюю поверхность бедра, а также большие и средние ягодичные мышцы. Грамотное использование этого упражнения поможет вам добиться результатов в похудении, подтянуть мускулатуру нижней части тела, сделать фигуру упругой и привлекательной."),
+                 new Exercise ("Тяга верхнего блока к груди",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/Тяга-блока-к-груди.png",5,10,"раз",@"«Тяга грифа сверху вниз к груди на блочном тренажере в положении сидя» является наиболее функциональным упражнением по сравнению с традиционно дополняющей его «тягой грифа широким хватом сверху вниз за голову на блочном тренажере в положении сидя»."),
+                 new Exercise ("Разведение рук в стороны в наклоне",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/razvedeniya-ruk-v-naklone-dlya-devushek.jpg",4,12,"раз",@""),
+                 new Exercise ("Сведение рук лежа с гантелями",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/DSC_5501_1545278749-630x315.jpg",4,12,"раз",@"Лучшее дополнительное упражнение на мышцы груди – это разводка гантелей лежа, или правильно говоря – разведение. За счет различных углов наклона скамьи этим упражнением можно прокачать все участки грудных мышц."),
+                 new Exercise ("Скручивания корпуса лежа",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/skruchivaniya-kak-pravilno-delat_20.jpg",4,20,"раз",@"Упражнение «Скручивание лежа на полу» является отличным упражнением для проработки прямой мышцы живота. Благодаря своей простоте и доступности, его можно выполнять не только в тренажерном зале, но и дома.")
             };
 
             List<Exercise> day2 = new List<Exercise>()
             {
-                new Exercise ("Румынская становая тяга (с гантелями или эспандером)",100,
-                Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Румынская становая тяга.jpg",5,10,"раз",@""),
-
-                new Exercise ("Ягодичный мостик (без отягощения или с блином)",100,
-                Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Ягодичный мостик.jpg",4,12,"раз",""),
-
-                new Exercise ("Подъем рук стоя через стороны (с гантелями или эспандером)",100,
-                Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Подъем рук стоя через стороны.jpg",4,12,"раз",""),
-
-                new Exercise ("Тяга гантели к поясу в наклоне (можно заменить эспандером)",100,
-                Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Тяга гантели к поясу в наклоне.jpg",4,10,"раз",""),
-
-                new Exercise ("Разгибание рук из-за головы с гантелью или эспандером",100,
-                Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Разгибание рук из-за головы с гантелью.jpg",3,12,"раз",""),
-
-                new Exercise ("Подъем ног лежа",100,
-                Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Подъем ног лежа.jpg",4,15,"раз","")
+                new Exercise ("Румынская становая тяга (с гантелями или эспандером)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Румынская становая тяга.jpg",5,10,"раз",@""),
+                new Exercise ("Ягодичный мостик (без отягощения или с блином)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Ягодичный мостик.jpg",4,12,"раз",""),
+                new Exercise ("Подъем рук стоя через стороны с гантелями",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Подъем рук стоя через стороны.jpg",4,12,"раз",""),
+                new Exercise ("Тяга гантели к поясу в наклоне",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Тяга гантели к поясу в наклоне.jpg",4,10,"раз",""),
+                new Exercise ("Разгибание рук из-за головы с гантелью",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Разгибание рук из-за головы с гантелью.jpg",3,12,"раз",""),
+                new Exercise ("Подъем ног лежа",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day2/Подъем ног лежа.jpg",4,15,"раз","")
             };
 
             List<Exercise> day3 = new List<Exercise>()
@@ -302,8 +263,8 @@ namespace Fitness.BusinessLogic.Controller
                 new Exercise ("Приседания с широкой постановкой ног (без отягощения или с гантелью),",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/Приседания с широкой постановкой ног.jpg",5,10,"раз",@""),
                 new Exercise ("Гиперэкстензия",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/Гиперэкстензия.jpg",4,15,"раз",""),
                 new Exercise ("Отжимания от пола",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/Отжимания от пола.jpg",4,10,"раз",""),
-                new Exercise ("Тяга верхнего блока к груди (или подтягивания)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/Тяга-блока-к-груди.png",4,10,"раз",""),
-                new Exercise ("Сгибания рук с гантелями (или эспандером)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/Сгибания рук с гантелями.jpg",4,10,"раз",""),
+                new Exercise ("Тяга верхнего блока к груди",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/Тяга-блока-к-груди.png",4,10,"раз",""),
+                new Exercise ("Сгибания рук с гантелями",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/Сгибания рук с гантелями.jpg",4,10,"раз",""),
                 new Exercise ("Планка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/планка.jpg",3,1,"минуте","")
 
             };
@@ -311,9 +272,6 @@ namespace Fitness.BusinessLogic.Controller
             AddNew("День 1", day1);
             AddNew("День 2", day2);
             AddNew("День 3", day3);
-            //Training.Add("День 1", day1);
-            //Training.Add("День 2", day2);
-            //Training.Add("День 3", day3);
         }
         #endregion
         #region Сброс веса 
@@ -355,7 +313,7 @@ namespace Fitness.BusinessLogic.Controller
                 new Exercise ("Жим гантелей лежа",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Жим гантелей лежа.jpg",2,20,"раз",@""),
                 new Exercise ("Разведение рук с гантелями на горизонтальной скамье",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Разведение рук с гантелями на горизонтальной скамье.jpg",2,20,"раз",@""),
                 new Exercise ("Разведение рук с гантелями на скамье под углом 30 градусов",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Разведение рук с гантелями на скамье под углом 30 градусов.jpg",2,20,"раз",@""),
-                new Exercise ("Разгибание рук на блоке",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Разгибание рук на блоке.jpg",3,20,"раз",@""),
+                new Exercise ("Разгибания с верхним блоком",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Разгибание рук на блоке.jpg",3,20,"раз",@""),
                 new Exercise ("Косые скручивания",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Косые скручивания.jpg",3,20,"на каждую сторону",@""),
                 new Exercise ("Подъем туловища на полу",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Подъем туловища на полу.jpg",4,20,"раз",@""),
                 new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,10,"минут",@"")
@@ -365,31 +323,19 @@ namespace Fitness.BusinessLogic.Controller
 
             List<Exercise> day3 = new List<Exercise>()
             {  new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,20,"минут",@""),
-               new Exercise ("Жим ногами (стопы на верхней части платформы, расставлены широко)",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-               "Training/SlimmingGirl/Day3/Жим ногами (стопы на верхней части платформы, расставлены широко).jpg",2,15,"раз",@""),
-
-               new Exercise ("Разгибание ног в тренажере",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-               "Training/SlimmingGirl/Day3/Разгибание ног в тренажере.jpg",0,20,"минут",@""),
-
-               new Exercise ("Сведение ног в тренажере",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-               "Training/SlimmingGirl/Day2/Сведение ног в тренажере.jpg",2,20,"раз",@""),
-               new Exercise ("Подъем на носки на икры",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-               "Training/SlimmingGirl/Day3/Подъем на носки на икры.jpg",4,30,"раз",@""),
-               new Exercise ("Жим гантелей сидя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-               "Training/SlimmingGirl/Day3/Жим гантелей сидя.jpg",3,20,"раз",@""),
-               new Exercise ("Разведение гантелей через стороны",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),
-               "Training/SlimmingGirl/Day3/Разведение гантелей через стороны.jpg",3,15,"раз",@""),
+               new Exercise ("Жим ногами",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Жим ногами (стопы на верхней части платформы, расставлены широко).jpg",2,15,"раз",@""),
+               new Exercise ("Разгибание ног в тренажере",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Разгибание ног в тренажере.jpg",0,20,"минут",@""),
+               new Exercise ("Сведение ног в тренажере",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Сведение ног в тренажере.jpg",2,20,"раз",@""),
+               new Exercise ("Подъем на носки на икры",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"), "Training/SlimmingGirl/Day3/Подъем на носки на икры.jpg",4,30,"раз",@""),
+               new Exercise ("Жим гантелей сидя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Жим гантелей сидя.jpg",3,20,"раз",@""),
+               new Exercise ("Разведение гантелей через стороны",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Разведение гантелей через стороны.jpg",3,15,"раз",@""),
                new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,20,"минут",@"")
-
             };
 
 
             AddNew("Понедельник", day1);
             AddNew("Среда", day2);
             AddNew("Пятница", day3);
-            //Training.Add("День 1", day1);
-            //Training.Add("День 2", day2);
-            //Training.Add("День 3", day3);
         }
 
         private void SlimmingMan()
@@ -470,7 +416,7 @@ namespace Fitness.BusinessLogic.Controller
         #region  Бодибилдинг
         private void BodyBuildingGirl()
         {
-            var des = @"Для девушек боди бдинг";
+            var des = @"Ваши тренировки должны быть направлены в сторону наращивания мышечной массы и потери жира, это будет способствовать улучшению форм, повышению упругости и тонуса мышц, и поможет сохранить соблазнительные изгибы женского тела.";
             if (!Training.DescriptionSet.ContainsKey(Type))
             {
                 Training.DescriptionSet.Add(Type, des);
@@ -507,7 +453,6 @@ namespace Fitness.BusinessLogic.Controller
             {
                 new Exercise ("Приседания со штангой",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day3/Приседания со штангой.jpg", 2,15,"раз",@""),
                 new Exercise ("Становая тяга в машине Смита с прямыми ногами",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day3/Становая тяга в машине Смита с прямыми ногами.jpg", 2,15,"раз",@""),
-
                 new Exercise ("Выпад с гантелями вперед",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day3/Выпад с гантелями вперед.jpg", 2,15,"раз",@""),
                 new Exercise ("Выпады со штангой в сторону",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day3/Выпады со штангой в сторону.jpg", 2,15,"раз",@""),
                 new Exercise ("Подъем на носки на одной ноге",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day3/Подъем на носки на одной ноге.jpg", 2,15,"раз",@""),
@@ -617,7 +562,7 @@ namespace Fitness.BusinessLogic.Controller
         #region В домашних условиях
         private void AtHomeConditions()
         {
-            var des = @"Набор упражнений для занятий  дома,требует гантели  и турник.";
+            var des = @"Цель: Базовое развитие мышц и поднятие тонуса организма.Универсальный набор упражнений для занятий дома с гантелями.Отлично подходит для поддержания тонуса, не выходя из дома или для предварительной подготовки к походу в зал.В наклоне со штангой можно использовать гантели.";
             if (!Training.DescriptionSet.ContainsKey(Type))
             {
                 Training.DescriptionSet.Add(Type, des);
@@ -665,7 +610,118 @@ namespace Fitness.BusinessLogic.Controller
 
         }
         #endregion
+        #region Фулбоди
+        private void FullbodyMan()
+        {
+            var des = @"  Подойдет для начинающих, упор на базовые упражнения без перегрузки изолирующими.  Базовые упражнения - это тип упражнений, которые включают в работу несколько мышц или групп мышц, может задействоваться сразу несколько суставов. Как правило, это тяжелые упражнения, которые выполняются со свободным весом.Альтернатива базовому сплиту, для тех у кого мало времени.Будьте аккуратны, и не допустите перетренированности.";
+            if (!Training.DescriptionSet.ContainsKey(Type))
+            {
+                Training.DescriptionSet.Add(Type, des);
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
+            else
+            {
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
 
+
+            List<Exercise> day1 = new List<Exercise>()
+            {
+                new Exercise ("Приседания со штангой",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingMan/Day1/Приседания со штангой.jpeg", 3,10,"раз",@""),
+                new Exercise ("Жим штанги широким хватом ",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyMan/Day1/Жим штанги лежа широким хватом.jpg", 3,15,"раз",@""),
+                new Exercise ("Подтягивания прямым хватом",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingMan/Day2/Подтягивания.jpg", 3,15,"раз",@""),
+                new Exercise ("Армейский жим стоя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyMan/Day1/Армейский жим стоя.jpg", 3,15,"раз",@""),
+                new Exercise ("Разведение гантелей лежа на скамье",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyMan/Day1/Разведение гантелей лежа на скамье.png", 3,15,"раз",@"")
+            };
+
+            List<Exercise> day2 = new List<Exercise>()
+            {
+               new Exercise ("Cтановая тяга",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingMan/Day2/Cтановая тяга.jpg", 3,8,"раз",@""),
+               new Exercise ("Отжимания на брусьях",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyMan/Day2/Отжимания на брусьях.jpg", 3,8,"раз",@""),
+               new Exercise ("Подтягивания обратным хватом",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyMan/Day2/Подтягивания прямым хватом.jpg", 3,8,"раз",@""),
+               new Exercise ("Подъем гантелей через стороны",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingMan/Day1/Разведение рук с гантелями стоя.jpg", 3,8,"раз",@""),
+               new Exercise ("Подъём штанги на бицепс стоя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingMan/Day1/Подъём штанги на бицепс стоя.jpg",2,15,"раз",@""),
+
+            };
+
+
+
+            AddNew("День 1", day1);
+            AddNew("День 2", day2); 
+
+        }
+
+        private void FullbodyGirl()
+        {
+            var des = @"Глaвными инcтpyмeнтaми coздaния идeaльнoй фигypы дeвyшeк и жeнщин являютcя cилoвыe тpeниpoвки и кapдиoнaгpyзки. Cилoвыe yпpaжнeния пoзвoляют вылeпливaть cвoe тeлo, пoдoбнo cкyльптopy, нapaщивaя в нyжныx мecтax мышeчный oбъeм, a кapдиoнaгpyзки избaвляют oт лишниx жиpoвыx oтлoжeний. Ho paбoтaют эти инcтpyмeнты тoлькo в coвoкyпнocти c пpaвильным питaниeм. ";
+            if (!Training.DescriptionSet.ContainsKey(Type))
+            {
+                Training.DescriptionSet.Add(Type, des);
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
+            else
+            {
+                Description = Training.DescriptionSet[Type];//Получение описание треровки.
+            }
+
+
+            List<Exercise> day1 = new List<Exercise>()
+            {  new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,10,"минут",@""),
+               new Exercise ("Тяга верхнего блока к груди",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day1/Тяга-блока-к-груди.png",3,20,"раз",@""),
+               new Exercise ("Тяга горизонтального блока",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Тяга горизонтального блока.jpg",4,20,"раз",@""),
+               new Exercise ("Разведение рук на горизонтальной скамье",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Разведение рук с гантелями на горизонтальной скамье.jpg",2,10,"раз",@""),
+               new Exercise ("Жим гантелей сидя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Жим гантелей сидя.jpg",4,20,"раз",@""),
+               new Exercise ("Французский жим сидя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Французский жим сидя.jpg",4,20,"раз",@""),
+               new Exercise ("Упражнение молот",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Упражнение молот.jpg",4,25,"раз",@""),
+               new Exercise ("Жим ногами",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Жим ногами (стопы на верхней части платформы, расставлены широко).jpg",4,15,"раз",@""),
+               new Exercise ("Скручивания на пресс на наклоной скамье",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Скручивания наклонной скамье.jpg",3,25,"раз",@""),
+               new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,20,"минут",@""),
+               new Exercise ("Растяжка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Растяжка.PNG",0,10,"минут",@"")
+            };
+
+            List<Exercise> day2 = new List<Exercise>()
+            {
+              new Exercise ("Разминка – суставная гимнастика",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Разминка.jpg",0,40,"минут",@""),
+              new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,40,"минут",@""),
+              new Exercise ("Растяжка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Растяжка.PNG",0,10,"минут",@"")
+            };
+
+            List<Exercise> day3 = new List<Exercise>()
+            {
+              new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,40,"минут",@""),
+              new Exercise ("Т-тяга на тренажере",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day2/Т-тяга на тренажере.PNG",0,10,"минут",@""),
+              new Exercise ("Жим в хаммере",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day2/Жим в хаммере.jpg",0,10,"минут",@""),
+              new Exercise ("Разведение с гантелями на дельты",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day2/Разведение с гантелями на дельты.jpg",0,10,"минут",@""),
+              new Exercise ("Разгибания с верхним блоком",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day2/Разгибание рук на блоке.jpg",3,20,"раз",@""),
+              new Exercise ("Сгибания с нижним блоком",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day2/Сгибания с нижним блоком.jpg",0,10,"минут",@""),
+              new Exercise ("Гиперэкстензия",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/Noobgril/Day3/Гиперэкстензия.jpg",2,20,"раз",@""),
+              new Exercise ("Подьемы ног в висе",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day2/Подьемы ног в висе.jpg",0,10,"минут",@""),
+              new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,20,"минут",@""),
+              new Exercise ("Растяжка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Растяжка.PNG",0,10,"минут",@"")
+            };
+
+
+            List<Exercise> day4 = new List<Exercise>()
+            {
+              new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,10,"минут",@""),
+              new Exercise ("Тяга штанги в наклоне",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day3/Тяга штанги в наклоне.jpg",4,20,"раз",@""),
+              new Exercise ("Тяга горизонтального блока",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Тяга горизонтального блока.jpg",4,20,"раз",@""),
+              new Exercise ("Сведения на тренажере рук в бабочка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day3/Сведения на тренажере рук в бабочка.jpg",4,20,"раз",@""),
+              new Exercise ("Жим гантелей сидя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day3/Жим гантелей сидя.jpg",3,20,"раз",@""),
+              new Exercise ("Отжимания на брусьях",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/BodyBuildingGirl/Day1/Отжимания на брусьях.jpg",1,8,"раз",@""),
+              new Exercise ("Упражнение молот",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Упражнение молот.jpg",4,25,"раз",@""),
+              new Exercise ("Скручивания на пресс на наклоной скамье",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Скручивания наклонной скамье.jpg",3,25,"раз",@""),
+              new Exercise ("Кардио",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/SlimmingGirl/Day1/Кардио.jpg",0,20,"минут",@""),
+              new Exercise ("Растяжка",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/FullbodyGirl/Day1/Растяжка.PNG",0,10,"минут",@"")
+            };
+
+            AddNew("Понедельник", day1);
+            AddNew("Вторник,Четверг,Суббота", day2);
+            AddNew("Среда", day3);
+            AddNew("Пятница", day4);
+
+        }
+        #endregion
 
         #endregion
 
@@ -679,7 +735,6 @@ namespace Fitness.BusinessLogic.Controller
             if (exercises != null &&  string.IsNullOrEmpty(day))
             {
                 Training.AddTraining(day,exercises);
-                //GetCurrentTraining();
                 Save();
             }
             else

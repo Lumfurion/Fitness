@@ -18,13 +18,14 @@ namespace Fitness.Wpf
         public TrainingController trainingController;
         TrainingInfo trainingInfo { get; set; }
         DispatcherTimer timer = new DispatcherTimer();
+  
         public ChoiceTraining()
         {
             InitializeComponent();
             userController = new UserController(name);
             trainingController = new TrainingController();
             Initwindow();
-
+        
         }
 
         #region Масштабирование интерфейса 
@@ -145,8 +146,11 @@ namespace Fitness.Wpf
         {
             trainingController.Update();
             if (trainingController.CurrentUserSelectsTraining() == true)
-            {
-                Close();
+            {  
+               timer.Stop();
+               Home home=new Home();
+               home.Show();
+               Close();
             }
         }
 
@@ -177,6 +181,10 @@ namespace Fitness.Wpf
                     break;
                 case "btnAthome":
                     trainingInfo = new TrainingInfo("AtHomeConditions");
+                    break;
+
+                case "btnFullbody":
+                    trainingInfo = new TrainingInfo("Fullbody");
                     break;
             }
 

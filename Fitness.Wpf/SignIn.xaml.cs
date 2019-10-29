@@ -38,7 +38,9 @@ namespace Fitness.Wpf
                         Close();
                     }
                     else
-                    {  //Главная окно
+                    {
+                        Home home = new Home();
+                        home.Show();
                         Close();
                     }
                    

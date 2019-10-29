@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="TrainingInfo" Height="900" Width="678" ResizeMode="NoResize">
+        Title="TrainingInfo" Height="900" Width="678" ResizeMode="NoResize" SizeToContent="Height">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="74*"/>
@@ -15,15 +15,24 @@
             <RowDefinition Height="244*"/>
             <RowDefinition Height="6*"/>
             <RowDefinition Height="400*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*" MaxHeight="45"/>
 
         </Grid.RowDefinitions>
 
-        <Grid>
+        <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="143*"/>
                 <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="31*"/>
+                    <RowDefinition Height="32*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock FontSize="16" Text="Помните! Вы можете легко изменить любую программу под себя." FontFamily="Times New Roman" FontWeight="Bold" Margin="15,5,0,0" Foreground="#FFF10E0E"  />
+            </Grid>
 
         </Grid>
         <!--Для кого тренировка-->
