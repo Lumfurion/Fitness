@@ -61,6 +61,12 @@
     <Compile Include="TrainingInfo.xaml.cs">
       <DependentUpon>TrainingInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlHome.xaml.cs">
+      <DependentUpon>UserControlHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlWorkout.xaml.cs">
+      <DependentUpon>UserControlWorkout.xaml</DependentUpon>
+    </Compile>
     <Page Include="ChoiceTraining.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +98,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="TrainingInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlWorkout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -369,6 +383,42 @@
   <ItemGroup>
     <Resource Include="Training\FullbodyGirl\Day3\Сведения на тренажере рук в бабочка.jpg" />
     <Resource Include="Training\FullbodyGirl\Day3\Тяга штанги в наклоне.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\workout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\diet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main\gender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main\Weight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main\Height.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main\training.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

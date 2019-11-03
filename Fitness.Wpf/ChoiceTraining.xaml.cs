@@ -200,7 +200,7 @@ namespace Fitness.Wpf
         /// </summary>
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            DragMove();
         }
 
         #region Cлужебные кнопки

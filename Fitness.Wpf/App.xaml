@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:Fitness.Wpf"
              StartupUri="SignIn.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>

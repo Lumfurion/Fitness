@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="Fitness.Wpf.UserControlHome"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Fitness.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="636.104" d:DesignWidth="620">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <!--Информация о пользователе-->
+        <Border Background="#FF833395" Margin="60" CornerRadius="10">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="58*"/>
+                    <ColumnDefinition Width="357*"/>
+                    <ColumnDefinition Width="85*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="81*"/>
+                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="89*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="31*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Viewbox   Stretch="Uniform"   Grid.Column="1"  Grid.ColumnSpan="3">
+                        <TextBlock Foreground="White"    Text="Информация о пользователе"  />
+                    </Viewbox>
+
+                    <Image  Grid.Row="1"  Grid.Column="0"  Margin="3"  Source="Main/login.png" HorizontalAlignment="Right" />
+                    <Viewbox Grid.Row="1"  Grid.Column="1"   Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"    Text="Логин:" HorizontalAlignment="Right"/>
+                    </Viewbox>
+
+                    <Viewbox  Grid.Row="1"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
+                        <TextBlock Foreground="White"    Text="{Binding Path=Name}"/>
+                    </Viewbox>
+
+                    <Image  Grid.Row="2"  Grid.Column="0"  Margin="3"  Source="Main/Password.png" HorizontalAlignment="Right" />
+                    <Viewbox Grid.Row="2"  Grid.Column="1"   Stretch="Uniform"   HorizontalAlignment="Left">
+                        <TextBlock Foreground="White"    Text="Пароль:" />
+                    </Viewbox>
+
+                    <Viewbox  Grid.Row="2"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
+                        <TextBlock Foreground="White"    Text="{Binding Path=Password}"/>
+                    </Viewbox>
+
+
+
+                    <Image  Grid.Row="3"  Grid.Column="0"  Margin="3"  Source="Main/gender.png" HorizontalAlignment="Right"/>
+                    <Viewbox Grid.Row="3"  Grid.Column="1"   Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"    Text="Пол:" />
+                    </Viewbox>
+
+                    <Viewbox  Grid.Row="3"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
+                        <TextBlock Foreground="White"    Text="{Binding Path=Gender}"/>
+                    </Viewbox>
+
+
+
+                    <Image  Grid.Row="4"  Grid.Column="0"  Margin="3"  Source="Main/calendar.png" HorizontalAlignment="Right" />
+                    <Viewbox  Grid.Row="4"  Grid.Column="1"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"   Text="Дата:" />
+                    </Viewbox>
+
+                    <Viewbox  Grid.Row="4"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
+                        <TextBlock Foreground="White"    Text="{Binding Path=BirthdayDate}"/>
+                    </Viewbox>
+
+
+                    <Image  Grid.Row="4"  Grid.Column="0"  Margin="3"  Source="Main/calendar.png" HorizontalAlignment="Right"  />
+                    <Viewbox  Grid.Row="4"  Grid.Column="1"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"   Text="Дата:" />
+                    </Viewbox>
+
+                    <Viewbox  Grid.Row="4"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"    Text="{Binding Path=BirthdayDate}"/>
+                    </Viewbox>
+
+
+                    <Image  Grid.Row="5"  Grid.Column="0"   Margin="3" Source="Main/Weight.png" HorizontalAlignment="Right"  />
+                    <Viewbox  Grid.Row="5"  Grid.Column="1"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"   Text="Вес:" />
+                    </Viewbox>
+                    <Viewbox  Grid.Row="5"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"    Text="{Binding Path=Weight}"/>
+                    </Viewbox>
+
+
+
+                    <Image Grid.Row="6"  Grid.Column="0"  Margin="3"  Source="Main/Height.png" HorizontalAlignment="Right"  />
+                    <Viewbox  Grid.Row="6"  Grid.Column="1"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"   Text="Рост:" />
+                    </Viewbox>
+                    <Viewbox  Grid.Row="6"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"    Text="{Binding Path=Height}"/>
+                    </Viewbox>
+
+                </Grid>
+
+            </Grid>
+
+        </Border>
+
+        <!---->
+
+        <Border Grid.Row="1" Background="#FF833395" Margin="40,40,40,10" CornerRadius="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="83*"/>
+                    <ColumnDefinition Width="374*"/>
+                    <ColumnDefinition Width="83*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="66*"/>
+                        <ColumnDefinition Width="163*"/>
+                        <ColumnDefinition Width="103*"/>
+                        <ColumnDefinition Width="42*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="23*"/>
+                    </Grid.RowDefinitions>
+
+                    <Viewbox   Stretch="Uniform"   Grid.Column="0"  Grid.ColumnSpan="3">
+                        <TextBlock Foreground="White"    Text="Тренировка"  />
+                    </Viewbox>
+
+                    <Image Grid.Row="1" Margin="5" Source="Main/training.png" />
+
+                    <Viewbox Grid.Row="1"  Grid.Column="1"   Stretch="Uniform"   HorizontalAlignment="Right"   >
+                        <TextBlock Foreground="White"    Text="Вибраная тренировка:"/>
+                    </Viewbox>
+
+                    <Viewbox  Grid.Row="1"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                        <TextBlock Foreground="White"   Name="lbSelected" />
+                    </Viewbox>
+
+                </Grid>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</UserControl>
