@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="Home" Height="636.104" Width="821.988"  Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip" >
+        Title="Home" Height="881.104" Width="1176"  Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip" >
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="105*" MaxWidth="300"/>
@@ -26,7 +26,7 @@
                 </Grid.RowDefinitions>
 
 
-                <Ellipse  MouseLeftButtonDown="btnUserAvatar_MouseLeftButtonUp"  x:Name="elpUserAvatar" Grid.Column="0"  Margin="37,10,34,5"  >
+                <Ellipse  MouseLeftButtonDown="btnUserAvatar_MouseLeftButtonUp"  x:Name="elpUserAvatar" Grid.Column="0"  Margin="37,10,34,5" MaxWidth="200">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="Image\user.png"  />
                     </Ellipse.Fill>
@@ -71,7 +71,7 @@
                         <Image  Source="Menu/workout.png" Margin="5,0,0,0" />
 
                         <Viewbox  Stretch="Uniform"  Grid.Column="1"  HorizontalAlignment="Left">
-                            <TextBlock Text="Тренировка"   FontSize="23"  Foreground="White" />
+                            <TextBlock Text="Тренировка"  FontSize="23"  Foreground="White" />
                         </Viewbox>
 
                     </Grid>

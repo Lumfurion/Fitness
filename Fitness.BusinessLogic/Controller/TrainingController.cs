@@ -6,94 +6,90 @@ using System.Linq;
 
 namespace Fitness.BusinessLogic.Controller
 {
-    public class TrainingController:ControllerBase
+    public class TrainingController : ControllerBase
     {
         /// <summary>
         /// Описание
         /// </summary>
         public string Description { get; set; }
 
-        public List<Exercise> Exercises { get; set; }
-
-        public Training Training { get; set; }
+        /// <summary>
+        /// Класс который хранит трироки.
+        /// </summary>
+        private Training Training { get; set; }
 
         /// <summary>
-        /// Будет хранить тренировку пользователя
+        /// Будет хранить тренировку пользователя.
         /// </summary>
-        public Dictionary<string, List<Exercise>> CurrentTraining { get; set; }
+        public Dictionary<string, List<Exercise>> CurrentTraining { get; }
 
         internal static string Type { get; set; }
 
-        
+
         public TrainingController()
         {
             CurrentTraining = new Dictionary<string, List<Exercise>>();
-            Exercises = GetAllExercises();
             Training = GetTraining();
         }
 
-        public TrainingController(string type)
+
+        public void Update()
         {
-            Type = type;
-            CurrentTraining = new Dictionary<string, List<Exercise>>();
-            Exercises = GetAllExercises();
             Training = GetTraining();
-
-            //if (Training !=null)
-            //{
-            //    GetCurrentTraining();
-            //}
         }
 
-        public void Update ()
+        /// <summary>
+        /// Получение тренировки для кокретного пользователя.
+        /// </summary>
+        public void GetCurrentTraining()
         {
-            Exercises = GetAllExercises();
-            Training = GetTraining();
+            var name = UserController.CurrentUserName;
+            SelectedWorkout st = Training.selectedWorkouts.Where(t => t.Name == name).FirstOrDefault();
+            var settraining = st.Type;
+
+            CurrentTraining.Clear();
+
+            foreach (var ex in Training.Exercises)
+            {
+                var day = ex.Key;
+                foreach (var vulue in ex.Value)
+                {
+                    if (vulue.Username == name && vulue.Type == settraining)
+                    {
+                        List<Exercise> exe;
+                        if (!CurrentTraining.TryGetValue(day, out exe))
+                        {
+                            exe = new List<Exercise>();
+                            CurrentTraining.Add(day, exe);
+                        }
+                        exe.Add(new Exercise(vulue.Name, vulue.CaloriesPerMinute, vulue.Start, vulue.Finish, vulue.Image, vulue.Amount, vulue.Сount, vulue.Designation, vulue.Description));
+
+                    }
+
+                }
+            }
+
         }
 
-        ///// <summary>
-        ///// Получение тренировки для кокретного пользователя.
-        ///// </summary>
-        //public void GetCurrentTraining()
-        //{
-        //    var name = UserController.CurrentUserName;
-        //    var settraining = Type;
-
-        //    if (CurrentTraining != null)
-        //    {
-        //        CurrentTraining.Clear();
-        //    }
-
-        //    foreach (var ex in Training.Exercises)
-        //    {
-        //        var day = ex.Key;
-        //        foreach (var vulue in ex.Value)
-        //        {   
-        //            if (vulue.Username == name && vulue.Type == settraining)
-        //            {
-        //                List<Exercise> exe;
-        //                if (!CurrentTraining.TryGetValue(day, out exe))
-        //                {
-        //                    exe = new List<Exercise>();
-        //                    CurrentTraining.Add(day, exe);
-        //                }
-        //                exe.Add(new Exercise(vulue.Name, vulue.CaloriesPerMinute, vulue.Start, vulue.Finish, vulue.Image, vulue.Amount, vulue.Сount,vulue.Designation, vulue.Description));
-
-        //            }
-
-        //        }
-        //    }
-
-        //}
-
-
+        /// <summary>
+        /// Проверка  выбрана треровка.
+        /// </summary>
         public bool CurrentUserSelectsTraining()
         {
-            var rezalt = Training.selectedWorkouts.Any(s => s.Name == UserController.CurrentUserName  && s.isSelected == true);
+            var rezalt = Training.selectedWorkouts.Any(s => s.Name == UserController.CurrentUserName && s.isSelected == true);
             return rezalt;
         }
 
-     
+        /// <summary>
+        ///Получения типа выбранной тренировки.
+        /// </summary>
+        public string GetTypeSelectTraining()
+        {
+            var rezalt = Training.selectedWorkouts.Where(t => t.Name == UserController.CurrentUserName).FirstOrDefault();
+            return rezalt.Type;
+        }
+
+
         #region Выбор тренировки.
         public void AddNew(string day, List<Exercise> exercises)
         {
@@ -105,7 +101,7 @@ namespace Fitness.BusinessLogic.Controller
             {
                 foreach (var ex in exercises)
                 {
-                    CurrentTraining[day].Add(new Exercise(ex.Name, ex.CaloriesPerMinute, ex.Start, ex.Finish, ex.Image, ex.Amount, ex.Сount,ex.Designation,ex.Description));
+                    CurrentTraining[day].Add(new Exercise(ex.Name, ex.CaloriesPerMinute, ex.Start, ex.Finish, ex.Image, ex.Amount, ex.Сount, ex.Designation, ex.Description));
                 }
             }
 
@@ -113,7 +109,7 @@ namespace Fitness.BusinessLogic.Controller
         }
         public void SelectTraining(string name)
         {
-            Type = name;  
+            Type = name;
             CurrentTraining.Clear();
             switch (name)
             {
@@ -155,10 +151,10 @@ namespace Fitness.BusinessLogic.Controller
                     break;
 
             }
-        
+
         }
 
-       
+
 
         #region Новичок
         private void NoobMan()
@@ -215,14 +211,12 @@ namespace Fitness.BusinessLogic.Controller
             AddNew("День 1", day1);
             AddNew("День 2", day2);
             AddNew("День 3", day3);
-            //Training.Add("День 1", day1);
-            //Training.Add("День 2", day2);
-            //Training.Add("День 3", day3);
+            
         }
         private void NoobGirl()
         {
 
-            var des = 
+            var des =
              @"Легкую зарядку продолжительностью 10-20 минут можно выполнять каждый день. 
               Для более интенсивных занятий, длящихся 45-60 минут, выделите три дня в неделю, чтобы организм успевал восстанавливаться. 
              Перед каждой тренировкой хорошенько разминайтесь – делайте суставную гимнастику или кардио средней интенсивности. 
@@ -512,8 +506,8 @@ namespace Fitness.BusinessLogic.Controller
 
             };
 
-            AddNew("Понедельник(ноги, плечи)",day1);
-            AddNew("Среда(спина, трицепс)",day2);
+            AddNew("Понедельник(ноги, плечи)", day1);
+            AddNew("Среда(спина, трицепс)", day2);
             AddNew("Пятница(грудь, бицепс)", day3);
 
         }
@@ -556,7 +550,7 @@ namespace Fitness.BusinessLogic.Controller
 
             AddNew("День 1", day1);
             AddNew("День 2", day2);
-            
+
         }
         #endregion
         #region В домашних условиях
@@ -600,7 +594,7 @@ namespace Fitness.BusinessLogic.Controller
                new Exercise ("Подъем гантелей перед собой",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Подъем гантелей перед собой.jpg",3,10,"раз",@""),
                new Exercise ("Концентрированный подъем на бицепс",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Концентрированный подъем на бицепс.jpg",3,10,"раз",@""),
                new Exercise ("Шраги с гантелями стоя",100,Convert.ToDateTime("22:00"),Convert.ToDateTime("22:30"),"Training/AtHomeConditions/Day3/Шраги с гантелями стоя.jpg",3,10,"раз",@"")
-             
+
 
             };
 
@@ -647,7 +641,7 @@ namespace Fitness.BusinessLogic.Controller
 
 
             AddNew("День 1", day1);
-            AddNew("День 2", day2); 
+            AddNew("День 2", day2);
 
         }
 
@@ -732,23 +726,21 @@ namespace Fitness.BusinessLogic.Controller
         /// <param name="exercises"></param>
         public void Add(string day, List<Exercise> exercises)
         {
-            if (exercises != null &&  string.IsNullOrEmpty(day))
+            if (exercises != null && string.IsNullOrEmpty(day))
             {
-                Training.AddTraining(day,exercises);
+                Training.AddTraining(day, exercises);
                 Save();
             }
-            else
-            {
-                //Ошибка.
-            }
- 
         }
 
-
+        /// <summary>
+        /// Сохранят если пользователь не выбрал тренировку.
+        /// </summary>
         public void Saver()
-        {   var isSuch =Training.Exercises.Any(ex => ex.Value.Any(e => e.Type == Type && e.Username == UserController.CurrentUserName));
+        {
+            var isSuch = Training.Exercises.Any(ex => ex.Value.Any(e => e.Type == Type && e.Username == UserController.CurrentUserName));
 
-            if (isSuch == false )//Нету
+            if (isSuch == false)//Нету
             {
                 foreach (var tr in CurrentTraining)
                 {
@@ -757,36 +749,8 @@ namespace Fitness.BusinessLogic.Controller
                 Training.selectedWorkouts.Add(new SelectedWorkout(true));
                 Save();
             }
-           
+
         }
-
-
-        //public void Check()
-        //{
-        //    foreach (var key in Training.Exercises)
-        //    {
-        //        Console.WriteLine(key.Key);
-        //        foreach (var vulue in key.Value)
-        //        {
-        //            if (vulue.Type != Type && vulue.Username == UserController.CurrentUserName)
-        //            {
-        //                Console.WriteLine(vulue.Name);
-        //                Console.WriteLine(vulue.Amount);
-        //                Console.WriteLine(vulue.CaloriesPerMinute);
-        //                Console.WriteLine(vulue.Start);
-        //                Console.WriteLine(vulue.Finish);
-        //                Console.WriteLine(vulue.Image);
-        //                Console.WriteLine(vulue.Description);
-        //                Console.WriteLine(vulue.Username);
-        //                Console.WriteLine(vulue.Type);
-        //                Console.WriteLine("\n");
-        //            }
-
-
-
-        //        }
-        //    }
-        //}
 
 
         private Training GetTraining()
@@ -794,14 +758,8 @@ namespace Fitness.BusinessLogic.Controller
             return Load<Training>().FirstOrDefault() ?? new Training();
         }
 
-        private List<Exercise> GetAllExercises()
-        {
-            return Load<Exercise>() ?? new List<Exercise>();
-        }
-
         private void Save()
         {
-            Save(Exercises);
             Save(new List<Training>() { Training });
         }
 

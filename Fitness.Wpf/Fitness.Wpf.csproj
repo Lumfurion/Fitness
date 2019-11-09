@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutExercise.xaml.cs">
+      <DependentUpon>AboutExercise.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <Compile Include="UserControlWorkout.xaml.cs">
       <DependentUpon>UserControlWorkout.xaml</DependentUpon>
     </Compile>
+    <Page Include="AboutExercise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChoiceTraining.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -419,6 +426,39 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Main\training.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImagesKeyOptions\fullscreen.png" />
+    <Resource Include="ImagesKeyOptions\Mute.png" />
+    <Resource Include="ImagesKeyOptions\Pause.png" />
+    <Resource Include="ImagesKeyOptions\Play.png" />
+    <Resource Include="ImagesKeyOptions\screenNormal.png" />
+    <Resource Include="ImagesKeyOptions\Speaker.png" />
+    <Resource Include="ImagesKeyOptions\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\analytics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InfoExercise\Кардио\Кардио.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InfoExercise\Кардио\КардиоДевочка.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InfoExercise\Кардио\КардиоМальчик.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="InfoExercise\Приседания со штангой\Приседание со штангой.jpg" />
+    <Content Include="InfoExercise\Приседания со штангой\Приседания со штангой Девушка.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InfoExercise\Приседания со штангой\Приседания со штангой Мальчик.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

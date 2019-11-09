@@ -9,23 +9,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Fitness.Wpf
-{  
+{
 
     public partial class ChoiceTraining : Window
     {
-        readonly string  name = UserController.CurrentUserName;
+        readonly string name = UserController.CurrentUserName;
         readonly UserController userController;
         public TrainingController trainingController;
         TrainingInfo trainingInfo { get; set; }
         DispatcherTimer timer = new DispatcherTimer();
-  
+
         public ChoiceTraining()
         {
             InitializeComponent();
             userController = new UserController(name);
             trainingController = new TrainingController();
             Initwindow();
-        
+
         }
 
         #region Масштабирование интерфейса 
@@ -91,7 +91,8 @@ namespace Fitness.Wpf
 
 
         private void Initwindow()
-        {   try
+        {
+            try
             {
                 if (userController.Image != null)//если пользователя нет картинки.
                 {
@@ -132,7 +133,7 @@ namespace Fitness.Wpf
             btnExtreme.Click += Click_LookTraining;
             #endregion
 
-            
+
 
             //Вызваем обробочик каждих 0.1 секунду timer_tick.
             //Интервал устанавливается в 0.1 секунду с помощью TimeSpan объекта, и запускается таймер.
@@ -146,11 +147,11 @@ namespace Fitness.Wpf
         {
             trainingController.Update();
             if (trainingController.CurrentUserSelectsTraining() == true)
-            {  
-               timer.Stop();
-               Home home=new Home();
-               home.Show();
-               Close();
+            {
+                timer.Stop();
+                Home home = new Home();
+                home.Show();
+                Close();
             }
         }
 
@@ -162,7 +163,7 @@ namespace Fitness.Wpf
             {
                 button = (Button)sender;
             }
-          
+
             var name = button.Name;
 
             switch (name)
@@ -189,10 +190,10 @@ namespace Fitness.Wpf
             }
 
             trainingInfo.ShowDialog();
-      
+
         }
 
-       
+
 
 
         /// <summary>
@@ -208,7 +209,7 @@ namespace Fitness.Wpf
         {
             Border border = (Border)sender;
             string name = border.Name;
-         
+
             switch (name)
             {
                 case "btnClose":
@@ -217,7 +218,9 @@ namespace Fitness.Wpf
                 case "btnExpend":
                     if (WindowState == WindowState.Normal)
                     {
-                        window.WindowState = WindowState.Maximized;  
+                        MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+                        MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
+                        window.WindowState = WindowState.Maximized;
                     }
                     else
                     {
@@ -228,8 +231,8 @@ namespace Fitness.Wpf
                     window.WindowState = WindowState.Minimized;
                     break;
             }
-           
-           
+
+
         }
         private void ButtunsLight_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -242,7 +245,7 @@ namespace Fitness.Wpf
             else if (button.Name == "btnExpend")
             {
                 btnExpend.Background = Brushes.White;
-                btnExpend.Opacity = 0.8; 
+                btnExpend.Opacity = 0.8;
             }
             else
             {
@@ -267,7 +270,7 @@ namespace Fitness.Wpf
             else
             {
                 btnСollapse.Background = Brushes.White;
-                btnСollapse.Opacity =1;
+                btnСollapse.Opacity = 1;
             }
         }
         #endregion
@@ -278,15 +281,15 @@ namespace Fitness.Wpf
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
-            if (ofd.ShowDialog()==true)
+            if (ofd.ShowDialog() == true)
             {
-              
+
                 elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(ofd.FileName)));
                 userController.Image = ofd.FileName;
             }
         }
 
-        
+
     }
-   
+
 }

@@ -1,0 +1,83 @@
+﻿<Window x:Class="Fitness.Wpf.AboutExercise"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fitness.Wpf"
+        mc:Ignorable="d"
+        Title="Информация о уражнении" Height="900" Width="810" WindowStyle="ToolWindow" ResizeMode="NoResize" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="259*"/>
+            <RowDefinition Height="236*"/>
+            <RowDefinition Height="374*"/>
+        </Grid.RowDefinitions>
+
+
+        <Image HorizontalAlignment="Center" Source="{Binding  Image}"  />
+        <TextBlock TextWrapping="Wrap" Grid.Row="1" Text="{Binding Description}" FontSize="20" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="131*"/>
+                <ColumnDefinition Width="131*"/>
+            </Grid.ColumnDefinitions>
+            <Grid  Background="Black">
+                <MediaElement Name="PlayerGirl"   Source="{Binding VideoGirl}"   LoadedBehavior="Manual"   />
+
+                <Border Background="#FF09E092"  CornerRadius="20"  Margin="54,327,54,10"  Width="277" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"   >
+
+                        <Ellipse Name="btnPlay" Height="30" Width="30"  Margin="1" Tag="Play">
+                            <Ellipse.Fill>
+                                <ImageBrush  ImageSource="ImagesKeyOptions\Play.png" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <Ellipse  Name="btnPause" Height="30" Width="30"   Margin="1" Tag="Pause">
+                            <Ellipse.Fill>
+                                <ImageBrush  ImageSource="ImagesKeyOptions\Pause.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <Ellipse Name="btnStop" Height="30" Width="30"   Margin="1" Tag="Stop">
+                            <Ellipse.Fill>
+                                <ImageBrush  ImageSource="ImagesKeyOptions\Stop.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </StackPanel>
+                </Border>
+                <TextBlock  Margin="22,10,60,332" Foreground="White" FontSize="20" Text="Упражнения выполняют  девочка" />
+            </Grid>
+
+
+            <Grid Grid.Column="1"  Background="Black" Margin="2,0,0,0">
+                <MediaElement Name="PlayerMan" Source="{Binding VideoMan}"   LoadedBehavior="Manual"   />
+
+                <Border Background="#FF09E092"  CornerRadius="20"  Margin="54,327,54,10"  Width="277" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"   >
+
+                        <Ellipse Name="btnPlay2" Height="30" Width="30"  Margin="1" Tag="Play">
+                            <Ellipse.Fill>
+                                <ImageBrush  ImageSource="ImagesKeyOptions\Play.png" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <Ellipse  Name="btnPause2" Height="30" Width="30"   Margin="1" Tag="Pause">
+                            <Ellipse.Fill>
+                                <ImageBrush  ImageSource="ImagesKeyOptions\Pause.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <Ellipse Name="btnStop2" Height="30" Width="30"   Margin="1" Tag="Stop">
+                            <Ellipse.Fill>
+                                <ImageBrush  ImageSource="ImagesKeyOptions\Stop.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </StackPanel>
+                </Border>
+                <TextBlock  Margin="22,10,60,332" Foreground="White" FontSize="20" Text="Упражнения выполняют  мальчик" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

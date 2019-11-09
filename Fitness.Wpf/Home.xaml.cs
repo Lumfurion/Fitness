@@ -25,7 +25,7 @@ namespace Fitness.Wpf
         private void Initwindow()
         {
             lbUser.Content = UserController.CurrentUserName;
-            elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(userController.Image)));
+            //elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(userController.Image)));
 
             recDiet.Visibility = Visibility.Hidden;
             recEating.Visibility = Visibility.Hidden;

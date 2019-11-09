@@ -12,11 +12,11 @@ namespace Fitness.BusinessLogic.Controller
     /// </summary>
     public class UserController : ControllerBase
     {
-       
+
         #region Cвойства
         /// <summary>
         /// Пользователь приложения.
-        /// Будем использовать список он не безопасен мозно его зменить даже если он приватный.
+        /// Будем использовать список он не безопасен можно его заменить даже если он приватный.
         /// </summary>
         public List<User> Users { get; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Fitness.BusinessLogic.Controller
             }
             get
             {
-                if(!string.IsNullOrEmpty(CurrentUser.Image))
+                if (!string.IsNullOrEmpty(CurrentUser.Image))
                 {
                     return CurrentUser.Image;
                 }
@@ -58,7 +58,7 @@ namespace Fitness.BusinessLogic.Controller
 
         public UserController()
         {
-           Users = GetUsersData();   
+            Users = GetUsersData();
         }
         /// <summary>
         /// Создание нового контроллера пользователя.
@@ -69,12 +69,12 @@ namespace Fitness.BusinessLogic.Controller
         /// <param name="user">Имя пользователя.</param>
         public UserController(string userName)
         {
-          
+
             if (string.IsNullOrWhiteSpace(userName))
             {
-                throw new ArgumentNullException("Имя пользователя не может быть пустым",nameof(userName));
+                throw new ArgumentNullException("Имя пользователя не может быть пустым", nameof(userName));
             }
-            Users =GetUsersData();
+            Users = GetUsersData();
 
             //Будем искать пользователя 1 единственным именами,ecли пользователь есть.
             CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
@@ -88,16 +88,10 @@ namespace Fitness.BusinessLogic.Controller
                 isNewUser = true;
                 Save();
             }
-  
+
         }
 
-        /// <summary>
-        /// Получить сохраненный список пользователей(десериализация).
-        /// </summary>
-        public List<User> GetUsersData()
-        {   //?? new List<User>()-праверка нужна потому что default(T) возращает null.
-            return Load<User>() ?? new List<User>();
-        }
+
 
         /// <summary>
         /// Инициализация нового пользователя.
@@ -129,9 +123,9 @@ namespace Fitness.BusinessLogic.Controller
             Save();
         }
         /// <summary>
-        /// Перемение файла.
+        /// Перемещение файла.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">Старый путь файла.</param>
         public void CopyImage(string value)
         {
             string directory = @"UserImage\" + CurrentUser.Name;
@@ -141,12 +135,12 @@ namespace Fitness.BusinessLogic.Controller
 
             if (File.Exists(pathImage))
             {
-                int n= CurrentUser.Imagecount++;
+                int n = CurrentUser.Imagecount++;
                 targetDirectory = directory + @"\" + $"UserAvatar{n + CurrentUser.Name}.jpg";
 
             }
 
-            if (!Directory.Exists(directory))
+            if (!Directory.Exists(directory))//Создание папок.
             {
                 Directory.CreateDirectory(directory);
             }
@@ -158,18 +152,27 @@ namespace Fitness.BusinessLogic.Controller
             }
             pathImage = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), targetDirectory);
             CurrentUser.Image = pathImage;
-            
+
         }
 
 
 
         /// <summary>
+        /// Получить сохраненный список пользователей(десериализация).
+        /// </summary>
+        public List<User> GetUsersData()
+        {
+            return Load<User>() ?? new List<User>(); //?? new List<User>()-праверка нужна потому что default(T) возращает null.
+        }
+
+        /// <summary>
         /// Сохранить данные пользователя(Сериализация).
         /// </summary>
-        public void  Save()
+        public void Save()
         {
             Save(Users);
         }
-     
+
+
     }
 }

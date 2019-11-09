@@ -13,11 +13,7 @@ namespace Fitness.Wpf
             userController = new UserController(UserController.CurrentUserName);
             trainingController = new TrainingController();
             DataContext = userController.CurrentUser;
-            var trainingselect = trainingController.Training.selectedWorkouts.Where(t => t.Name == UserController.CurrentUserName);
-
-            foreach(var t in trainingselect)
-                lbSelected.Text = t.Type;
-
+            lbSelected.Text = trainingController.GetTypeSelectTraining();
 
         }
 
