@@ -443,9 +443,7 @@
     <Resource Include="Menu\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="InfoExercise\Кардио\Кардио.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="InfoExercise\Кардио\Кардио.jpg" />
     <Content Include="InfoExercise\Кардио\КардиоДевочка.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

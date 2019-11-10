@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Fitness.BusinessLogic.Model
 {
@@ -47,8 +48,13 @@ namespace Fitness.BusinessLogic.Model
                     Exercises[day].Add(new Exercise(ex.Name, ex.CaloriesPerMinute, ex.Start, ex.Finish,ex.Image,ex.Amount,ex.Сount,ex.Designation,ex.Description));
                 }
             }
+        }
 
 
+        public void DeleteTraining(string key, string name)
+        {
+            var exercise= Exercises[key].Where(ex => ex.Name == name).FirstOrDefault();
+            Exercises[key].Remove(exercise); 
         }
 
 

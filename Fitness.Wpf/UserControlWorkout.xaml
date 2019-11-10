@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <TabControl Background="Transparent">
-
+            <!--Посмотреть выбранную тренировку-->
             <TabItem Background="#FFA43636" >
                 <TabItem.Header>
                     <Grid>
@@ -23,52 +23,38 @@
                     </Grid>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Grid >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="553*"/>
-                            <RowDefinition Height="41*"/>
-                        </Grid.RowDefinitions>
 
-                        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                            <ItemsControl  Name="ICTraining">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid >
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="25*"/>
-                                                <RowDefinition Height="5*"/>
-                                                <RowDefinition Height="57*"/>
-                                                <RowDefinition Height="141*"/>
-                                            </Grid.RowDefinitions>
-                                            <TextBlock  Grid.Row="0"  FontWeight="Bold" Text="{Binding Key}"  FontSize="20" HorizontalAlignment="Left" Margin="5" />
-                                            <Separator Grid.Row="1"/>
+                    <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <ItemsControl  Name="ICTraining">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Expander Margin="5" Padding="5" Header="{Binding Key}"  FontSize="20"  BorderBrush="Black" BorderThickness="2">
+                                        <ItemsControl   ItemsSource="{Binding Path=Value}" >
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
 
-                                            <ItemsControl  Grid.Row="2"    ItemsSource="{Binding Path=Value}" >
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
+                                                    <Grid >
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="21*"/>
+                                                            <ColumnDefinition Width="110*"/>
+                                                        </Grid.ColumnDefinitions>
 
-                                                        <Grid >
+                                                        <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"   Width="190" Height="150"/>
+
+                                                        <Grid Grid.Column="1" >
                                                             <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="21*"/>
-                                                                <ColumnDefinition Width="110*"/>
+                                                                <ColumnDefinition Width="554*"/>
+                                                                <ColumnDefinition Width="111*"/>
                                                             </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="217*"/>
+                                                                <RowDefinition Height="64*"/>
+                                                                <RowDefinition Height="217*"/>
+                                                            </Grid.RowDefinitions>
 
-                                                            <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"   Width="190" Height="150"/>
-
-                                                            <Grid Grid.Column="1" >
-                                                                <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="554*"/>
-                                                                    <ColumnDefinition Width="111*"/>
-                                                                </Grid.ColumnDefinitions>
-                                                                <Grid.RowDefinitions>
-                                                                    <RowDefinition Height="217*"/>
-                                                                    <RowDefinition Height="64*"/>
-                                                                    <RowDefinition Height="217*"/>
-                                                                </Grid.RowDefinitions>
-
-                                                                <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
-                                                                <Button  Tag="{Binding ElementName=ExerciseName, Path=Text}"
-                                                                         Click="Button_Click"
+                                                            <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
+                                                            <Button  Tag="{Binding ElementName=ExerciseName, Path=Text}"
+                                                                         Click="Look_Click"
                                                                          Content="Посмотреть" 
                                                                          FontSize="15"   
                                                                          Grid.Column="1" Grid.Row="1"  
@@ -78,31 +64,27 @@
                                                                          BorderBrush="Transparent"
                                                                          Background="#FFABF113"/>
 
-                                                                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="12,0,0,0">
-                                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="Подход"/>
-                                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Amount}"/>
-                                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="по"/>
-                                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Сount}"/>
-                                                                    <TextBlock    FontSize="15"   Margin="6,0,0,0"  Text="{Binding Designation}"/>
-                                                                </StackPanel>
 
-                                                            </Grid>
+                                                            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="12,0,0,0">
+                                                                <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="Подход"/>
+                                                                <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Amount}"/>
+                                                                <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="по"/>
+                                                                <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Сount}"/>
+                                                                <TextBlock    FontSize="15"   Margin="6,0,0,0"  Text="{Binding Designation}"/>
+                                                            </StackPanel>
+
                                                         </Grid>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </ScrollViewer>
-
-
-                    </Grid>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </Expander>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
                 </TabItem.Content>
             </TabItem>
-
-
 
             <TabItem Background="#FF1D4DB4">
 
@@ -120,10 +102,50 @@
                 </TabItem.Header>
 
                 <TabItem.Content>
-                    <Grid >
+                    <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <ItemsControl  Name="ICEdit">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    
+                                    <Expander x:Name="epedit" Margin="5" Padding="5" Header="{Binding Key}"  FontSize="20"  BorderBrush="Black" BorderThickness="2">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="374*"/>
+                                                <RowDefinition Height="45*"/>
+                                            </Grid.RowDefinitions>
+                                            <ItemsControl ItemsSource="{Binding Path=Value}"  >
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid>
+                                                            <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                <Button Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}" Margin="2" Content="Удалить"  Click="DeleteExercise_Click"/>
+                                                                <Button x:Name="btnEdit"  Margin="2" Content="Изменить" Tag="{Binding Name}" Click="EditExercise_Click"/>
+                                                            </StackPanel>
+                                                        </Grid>
 
-                    </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                            <Grid  Grid.Row="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="27*"/>
+                                                    <ColumnDefinition Width="7*"/>
+                                                    <ColumnDefinition Width="32*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Button Grid.Column="1"  Tag="{Binding Key}"   Click="AddExercise_Click"  Content="+"  FontSize="30"   MinHeight="44"  MaxHeight="100"   Foreground="White" BorderBrush="Transparent"  Background="#FFABF113" />
+                                            </Grid>
+
+                                        </Grid>
+                                    </Expander>
+                                   
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
                 </TabItem.Content>
+                
             </TabItem>
 
             <TabItem>
@@ -141,7 +163,7 @@
                             <ColumnDefinition Width="89*"/>
                         </Grid.ColumnDefinitions>
                         <Image Source="Image\analytics.png" Height="30" Grid.Column="0" />
-                        <TextBlock   Grid.Column="1" Margin="3">Составление треровок</TextBlock>
+                        <TextBlock   Grid.Column="1" Margin="3">Выбор тренировки</TextBlock>
                     </Grid>
                 </TabItem.Header>
 

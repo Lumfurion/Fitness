@@ -733,6 +733,14 @@ namespace Fitness.BusinessLogic.Controller
             }
         }
 
+        public void Delete(string key, string name)
+        {  
+            Training.DeleteTraining(key,name);
+            Save();
+            GetCurrentTraining();
+        }
+
+
         /// <summary>
         /// Сохранят если пользователь не выбрал тренировку.
         /// </summary>
