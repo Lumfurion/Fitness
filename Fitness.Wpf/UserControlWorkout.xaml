@@ -53,17 +53,10 @@
                                                             </Grid.RowDefinitions>
 
                                                             <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
-                                                            <Button  Tag="{Binding ElementName=ExerciseName, Path=Text}"
-                                                                         Click="Look_Click"
-                                                                         Content="Посмотреть" 
-                                                                         FontSize="15"   
-                                                                         Grid.Column="1" Grid.Row="1"  
-                                                                         MinHeight="44"  MaxHeight="100" 
-                                                                         Margin="2" 
-                                                                         Foreground="White"
-                                                                         BorderBrush="Transparent"
-                                                                         Background="#FFABF113"/>
-
+                                                            <Button  Tag="{Binding ElementName=ExerciseName, Path=Text}" Click="Look_Click"
+                                                                   Content="Посмотреть"  Grid.Column="1" 
+                                                                   Grid.Row="1"  MinHeight="44"  MaxHeight="100"  Style="{StaticResource ButtonInfo}" /> 
+                                                                    
 
                                                             <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="12,0,0,0">
                                                                 <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="Подход"/>
@@ -119,8 +112,8 @@
                                                         <Grid>
                                                             <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
                                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                                                <Button Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}" Margin="2" Content="Удалить"  Click="DeleteExercise_Click"/>
-                                                                <Button x:Name="btnEdit"  Margin="2" Content="Изменить" Tag="{Binding Name}" Click="EditExercise_Click"/>
+                                                                <Button Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}" Style="{StaticResource ButtonError}" Content="Удалить"  Click="DeleteExercise_Click"/>
+                                                                <Button x:Name="btnEdit" Style="{StaticResource ButtonEdit}"   Content="Изменить" Tag="{Binding Name}" Click="EditExercise_Click"/>
                                                             </StackPanel>
                                                         </Grid>
 
@@ -134,7 +127,7 @@
                                                     <ColumnDefinition Width="32*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <Button Grid.Column="1"  Tag="{Binding Key}"   Click="AddExercise_Click"  Content="+"  FontSize="30"   MinHeight="44"  MaxHeight="100"   Foreground="White" BorderBrush="Transparent"  Background="#FFABF113" />
+                                                <Button Grid.Column="1"  Tag="{Binding Key}" Style="{StaticResource ButtonAdd}"   Click="AddExercise_Click"  Content="+"  FontSize="20"    MinHeight="44"  MaxHeight="60"/>
                                             </Grid>
 
                                         </Grid>

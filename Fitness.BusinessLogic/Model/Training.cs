@@ -45,7 +45,7 @@ namespace Fitness.BusinessLogic.Model
             {
                 foreach (var ex in exercises)
                 {
-                    Exercises[day].Add(new Exercise(ex.Name, ex.CaloriesPerMinute, ex.Start, ex.Finish,ex.Image,ex.Amount,ex.Сount,ex.Designation,ex.Description));
+                    Exercises[day].Add(new Exercise(ex.Name, ex.CaloriesPerMinute,ex.Image,ex.Amount,ex.Сount,ex.Designation));
                 }
             }
         }

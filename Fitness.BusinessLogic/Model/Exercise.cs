@@ -20,7 +20,6 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public  string Type { get; set; }
 
-       
         /// <summary>
         /// Название вида активности.
         /// </summary>
@@ -30,14 +29,6 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public double CaloriesPerMinute { get; set; }
 
-        /// <summary>
-        ///Начало упражнения
-        /// </summary>
-        public DateTime Start { get; set; }
-        /// <summary>
-        /// Конец упражнения
-        /// </summary>
-        public DateTime Finish { get; set; }
       
         /// <summary>
         /// Изображение активности
@@ -57,24 +48,18 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public string Designation { get; set; }
 
-        /// <summary>
-        /// Описание
-        /// </summary>
-        public string Description { get; set; }
+      
         #endregion
 
         public Exercise() { }
-        public Exercise(string name, double caloriesPerMinute, DateTime start, DateTime finish, string image, int amount, int count,string designation, string description)
+        public Exercise(string name, double caloriesPerMinute, string image, int amount, int count,string designation)
         {
             Name = name;
             CaloriesPerMinute = caloriesPerMinute;
-            Start = start;
-            Finish = finish;
             Image = image;
             Сount = count;
             Amount = amount;
             Designation = designation;
-            Description = description;
             Username = UserController.CurrentUserName;
             Type = TrainingController.Type;
 

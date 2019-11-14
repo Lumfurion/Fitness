@@ -39,6 +39,9 @@ namespace Fitness.BusinessLogic.Controller
             SaveVideo();
         }
 
+       
+       
+
         public ExerciseAboutInformation GetCurrentExerciseInfo(string name)
         {
             ExerciseAboutInformation rez = Archive.Archive.Where(ar => ar.Name == name).FirstOrDefault();
