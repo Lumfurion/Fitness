@@ -7,8 +7,28 @@ namespace Fitness.BusinessLogic.Model
     [Serializable]
     public class Training
     {
- 
+
         #region Cвойство
+        /// <summary>
+        /// Имя пользователя.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Тип тренировки.
+        /// </summary>
+        public string Type { get; set; }
+        
+        /// <summary>
+        /// Описание
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Будет хранить пользователя тип тренировки когда выбрал.
+        /// </summary>
+        public bool SelectedWorkouts { get; set; } = false;
+
         /// <summary>
         ///День и cколько пользователь дожен сделать упражений.
         /// </summary>
@@ -33,8 +53,17 @@ namespace Fitness.BusinessLogic.Model
             
         }
 
+        public Training(string name, string type,string description, Dictionary<string, List<Exercise>>  exercises)
+        {
+            Name = name;
+            Type = type;
+            Description = description;
+            Exercises = exercises;
 
-       
+        }
+
+
+
         public void AddTraining(string day, List<Exercise> exercises)
         {
             if (!Exercises.ContainsKey(day))

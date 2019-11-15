@@ -1,0 +1,55 @@
+﻿<Window x:Class="Fitness.Wpf.ChoiceExercise"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fitness.Wpf"
+        mc:Ignorable="d"
+        Title="ChoiceExercise" Height="800" Width="800">
+    <Grid>
+        <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ItemsControl  Name="ICTraining">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="21*"/>
+                                <ColumnDefinition Width="110*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"   Width="190" Height="150"/>
+
+                            <Grid Grid.Column="1" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="554*"/>
+                                    <ColumnDefinition Width="111*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="217*"/>
+                                    <RowDefinition Height="64*"/>
+                                    <RowDefinition Height="217*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
+                                <Button  Tag="{Binding ElementName=ExerciseName, Path=Text}" 
+                                   Content="Дабвить"  Grid.Column="1" 
+                                    Grid.Row="1"  MinHeight="44"  MaxHeight="100"  
+                                   Style="{StaticResource ButtonAdd}" />
+
+
+                                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="12,0,0,0">
+                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="Подход"/>
+                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Amount}"/>
+                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="по"/>
+                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Сount}"/>
+                                    <TextBlock    FontSize="15"   Margin="6,0,0,0"  Text="{Binding Designation}"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>

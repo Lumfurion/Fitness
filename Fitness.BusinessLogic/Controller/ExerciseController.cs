@@ -1,4 +1,5 @@
 ﻿using Fitness.BusinessLogic.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,7 +10,7 @@ namespace Fitness.BusinessLogic.Controller
     {
         private ExerciseInformationArchive Archive { get;}
 
-        private List<Exercise> Exercises { get; }
+        public List<Exercise> Exercises {get; }
 
         public ExerciseController()
         {
@@ -20,6 +21,42 @@ namespace Fitness.BusinessLogic.Controller
             {
                 InitArchive();
             }
+
+            if (Exercises.Count == 0)
+            {
+                InitExercises();
+            }
+
+        }
+
+        private void InitExercises()
+        {
+            AddExercise("Кардио", 100, "Training/Noobman/Day1/Кардио.jpg", 0, 5, "минут");
+            AddExercise("Жим штанги лежа", 100, "Training/Noobman/Day1/Жим штанги лежа.jpg", 2, 10, "раз");
+            AddExercise("Разведение гантелей лежа", 100, "Training/Noobman/Day1/Разведение гантелей лежа.jpg", 2, 10, "раз");
+            AddExercise("Разгибание рук на блоке", 100, "Training/Noobman/Day1/Разгибание рук на блоке.jpg", 2, 10, "раз");
+            AddExercise("Жим гантели из-за головы", 100, "Training/Noobman/Day1/Жим гантели из-за головы.jpg", 2, 10, "раз");
+            AddExercise("Пресс", 100, "Training/Noobman/Day1/Пресс.png", 3, 10, "раз");
+            AddExercise("Приседания с пустым грифом", 100, "Training/Noobman/Day2/Приседания с пустым грифом.jpg", 2, 10, "раз");
+            AddExercise("Жим ногами в тренажере", 100, "Training/Noobman/Day2/Жим ногами в тренажере.jpg", 2, 10, "раз");
+            AddExercise("Жим гантелей сидя", 100, "Training/Noobman/Day2/Жим гантелей сидя.jpg", 2, 10, "раз");
+            AddExercise("Тяга грифа к подбородку", 100, "Training/Noobman/Day2/Тяга грифа к подбородку.jpg", 2, 10, "раз");
+            AddExercise("Гиперэкстензия", 100, "Training/Noobman/Day3/Гиперэкстензия.jpg", 2, 15, "раз");
+            AddExercise("Тяга верхнего блока", 100, "Training/Noobman/Day3/Тяга верхнего блока.jpg", 2, 10, "раз");
+            AddExercise("Сгибание рук с грифом на бицепс", 100, "Training/Noobman/Day3/Сгибание рук с грифом на бицепс.jpg", 2, 10, "раз");
+            AddExercise("Молот", 100, "Training/Noobman/Day3/Молот.jpg", 2, 10, "раз");
+            SaveExercise();
+
+        }
+
+        private void AddExercise(string name, double caloriesPerMinute, string image, int amount, int count, string designation)
+        {
+            Exercises.Add(new Exercise(name, caloriesPerMinute, image, amount, count, designation));
+        }
+        private Exercise GetExercise(string Name)
+        {   
+            var exercise = Exercises.Where(ex => ex.Name == Name).FirstOrDefault();
+            return exercise;
         }
 
         private void InitArchive()
@@ -39,16 +76,20 @@ namespace Fitness.BusinessLogic.Controller
             SaveVideo();
         }
 
-       
-       
 
+
+        /// <summary>
+        /// Возвращение информации текущем упражнении.
+        /// </summary>
+        /// <param name="name">Имя упражнения</param>
+        /// <returns>текущое упражнение</returns>
         public ExerciseAboutInformation GetCurrentExerciseInfo(string name)
         {
             ExerciseAboutInformation rez = Archive.Archive.Where(ar => ar.Name == name).FirstOrDefault();
             return rez;
         }
-
-        private void  Add (string name, string description, string Image, string videoGirl, string videoMan)
+   
+        private void  Add(string name, string description, string Image, string videoGirl, string videoMan)
         {
             Archive.Add(new ExerciseAboutInformation(name, description, Image, videoGirl, videoMan));
         }
@@ -69,6 +110,10 @@ namespace Fitness.BusinessLogic.Controller
         private void SaveVideo()
         {
             Save(new List<ExerciseInformationArchive>() { Archive });
+        }
+        private void SaveExercise()
+        {
+            Save(Exercises);
         }
 
     }

@@ -1,5 +1,4 @@
 ﻿using Fitness.BusinessLogic.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,13 +7,24 @@ namespace Fitness.BusinessLogic.Controller
 {
     public class TrainingController : ControllerBase
     {
+
+        /// <summary>
+        /// Имя пользователя.
+        /// </summary>
+        public string Name { get; set; }
+
         /// <summary>
         /// Описание
         /// </summary>
         public string Description { get; set; }
+        /// <summary>
+        /// Тип тренировки.
+        /// </summary>
+        internal static string Type { get; set; }
+        
 
         /// <summary>
-        /// Класс который хранит трироки.
+        /// Класс который хранит тренировки.
         /// </summary>
         private Training Training { get; set; }
 
@@ -23,13 +33,12 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         public Dictionary<string, List<Exercise>> CurrentTraining { get; }
 
-        internal static string Type { get; set; }
-
-
+        
         public TrainingController()
         {
             CurrentTraining = new Dictionary<string, List<Exercise>>();
             Training = GetTraining();
+
         }
 
 
@@ -109,8 +118,8 @@ namespace Fitness.BusinessLogic.Controller
         }
         public void SelectTraining(string name)
         {
-            Type = name;
             CurrentTraining.Clear();
+            Type = name;
             switch (name)
             {
                 case "NoobMan":
@@ -181,8 +190,6 @@ namespace Fitness.BusinessLogic.Controller
                 new Exercise ("Разгибание рук на блоке",100,"Training/Noobman/Day1/Разгибание рук на блоке.jpg",2,10,"раз"),
                 new Exercise ("Жим гантели из-за головы",100,"Training/Noobman/Day1/Жим гантели из-за головы.jpg",2,10,"раз"),
                 new Exercise ("Пресс",100,"Training/Noobman/Day1/Пресс.png",3,10,"раз")
-
-
             };
 
             List<Exercise> day2 = new List<Exercise>()
@@ -400,9 +407,6 @@ namespace Fitness.BusinessLogic.Controller
             AddNew("Понедельник", day1);
             AddNew("Вторник", day2);
             AddNew("Четверг", day3);
-            //Training.Add("День 1", day1);
-            //Training.Add("День 2", day2);
-            //Training.Add("День 3", day3);
         }
         #endregion
         #region  Бодибилдинг

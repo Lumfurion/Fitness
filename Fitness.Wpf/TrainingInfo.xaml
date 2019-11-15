@@ -79,21 +79,12 @@
 
         <Separator Grid.Row="5" />
 
-        <ScrollViewer Grid.Row="6" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer   Grid.Row="6" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <ItemsControl  Name="ICTraining">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25*"/>
-                                <RowDefinition Height="5*"/>
-                                <RowDefinition Height="57*"/>
-                                <RowDefinition Height="141*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" FontWeight="Bold" Text="{Binding Key}"  FontSize="20" Margin="5" />
-                            <Separator Grid.Row="1"/>
-
-                            <ItemsControl  Grid.Row="2"    ItemsSource="{Binding Path=Value}" >
+                        <Expander Margin="5" Padding="5" Header="{Binding Key}"  FontSize="20"  BorderBrush="Black" BorderThickness="2">
+                            <ItemsControl   ItemsSource="{Binding Path=Value}" >
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
 
@@ -106,19 +97,36 @@
                                             <Image Source="{Binding Image}" Grid.Column="0"  Margin="1"   Width="190" Height="150"/>
 
                                             <Grid Grid.Column="1" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="554*"/>
+                                                    <ColumnDefinition Width="111*"/>
+                                                </Grid.ColumnDefinitions>
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="217*"/>
                                                     <RowDefinition Height="64*"/>
                                                     <RowDefinition Height="217*"/>
                                                 </Grid.RowDefinitions>
 
-                                                <TextBlock Grid.Row="1"  Margin="15,0,0,0" Text="{Binding Name}" FontSize="15" FontWeight="Bold"  />
+                                                <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
+                                                <Button  Tag="{Binding ElementName=ExerciseName, Path=Text}" Click="Look_Click"
+                                                                   Content="Посмотреть"  Grid.Column="1" 
+                                                                   Grid.Row="1"  MinHeight="44"  MaxHeight="100"  Style="{StaticResource ButtonInfo}" />
+
+
+                                                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="12,0,0,0">
+                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="Подход"/>
+                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Amount}"/>
+                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="по"/>
+                                                    <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Сount}"/>
+                                                    <TextBlock    FontSize="15"   Margin="6,0,0,0"  Text="{Binding Designation}"/>
+                                                </StackPanel>
+
                                             </Grid>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                        </Grid>
+                        </Expander>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

@@ -26,6 +26,14 @@ namespace Fitness.Wpf
 
         }
 
+        private void Look_Click(object sender, RoutedEventArgs e)
+        {
+            object tag = (sender as FrameworkElement).Tag;
+            string name = tag.ToString();
+            AboutExercise aboutExercise = new AboutExercise();
+            aboutExercise.SetData(name);
+            aboutExercise.ShowDialog();
+        }
 
         private void SelectGender(string name,string man, string girl)
         {

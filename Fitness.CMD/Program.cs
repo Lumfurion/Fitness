@@ -24,55 +24,71 @@ namespace Fitness.CMD
             Console.Write(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
             var userController = new UserController(name);
-            var eatingController = new EatingController();
-          
-            var noob = "NoobMan";
+            
             var training = new TrainingController();
+            var eatingController = new EatingController();
+            training.GetCurrentTraining();
+            var exercise = new ExerciseController();
+            foreach(var ex in exercise.Exercises)
+            {
+                Console.WriteLine(ex.Name);
+                Console.WriteLine(ex.Amount +"\t"+ ex.Amount);
+                Console.WriteLine(ex.CaloriesPerMinute);
+                Console.WriteLine(ex.Image);
+                Console.WriteLine(ex.Username);
+                Console.WriteLine(ex.Type);
+                Console.WriteLine("\n");
+            }
+
+            //var noob = "NoobMan";
+            //var training = new TrainingController();
             //training.SelectTraining(noob);
             //training.Saver();
-            training.GetCurrentTraining();
+            //training.GetCurrentTraining();
             //training.Delete("День 1", "Кардио");
-            
-           
-
-           Console.WriteLine(training.Description);
-            foreach (var Data in training.CurrentTraining)
-            {
-                Console.WriteLine(Data.Key);
-                foreach (var key in Data.Value)
-                {
-
-                    Console.WriteLine(key.Name);
-                    Console.WriteLine(key.Amount);
-                    Console.WriteLine(key.CaloriesPerMinute);
-                    Console.WriteLine(key.Start);
-                    Console.WriteLine(key.Finish);
-                    Console.WriteLine(key.Image);
-                    Console.WriteLine(key.Description);
-                    Console.WriteLine(key.Username);
-                    Console.WriteLine(key.Type);
-                    Console.WriteLine("\n");
-
-                }
-            }
-            Console.WriteLine("\n");
-            Console.WriteLine("\n");
-
-
-            //training.Check();
-
-            Console.WriteLine("\n");
 
 
 
-            foreach (var us in userController.Users)
-            {
-                Console.WriteLine(us.Name);
 
-                Console.WriteLine();
-            }
 
-          
+            //Console.WriteLine(training.Description);
+            // foreach (var Data in training.CurrentTraining)
+            // {
+            //     Console.WriteLine(Data.Key);
+            //     foreach (var key in Data.Value)
+            //     {
+
+            //         Console.WriteLine(key.Name);
+            //         Console.WriteLine(key.Amount);
+            //         Console.WriteLine(key.CaloriesPerMinute);
+            //         Console.WriteLine(key.Start);
+            //         Console.WriteLine(key.Finish);
+            //         Console.WriteLine(key.Image);
+            //         Console.WriteLine(key.Description);
+            //         Console.WriteLine(key.Username);
+            //         Console.WriteLine(key.Type);
+            //         Console.WriteLine("\n");
+
+            //     }
+            // }
+            // Console.WriteLine("\n");
+            // Console.WriteLine("\n");
+
+
+            // //training.Check();
+
+            // Console.WriteLine("\n");
+
+
+
+            // foreach (var us in userController.Users)
+            // {
+            //     Console.WriteLine(us.Name);
+
+            //     Console.WriteLine();
+            // }
+
+
 
 
             Console.WriteLine("\nЕда");

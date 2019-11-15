@@ -34,6 +34,8 @@ namespace Fitness.Wpf
             object tag = (sender as FrameworkElement).Tag;
             string name = tag.ToString();
             MessageBox.Show(name);
+            ChoiceExercise cex = new ChoiceExercise();
+            cex.Show();
         }
 
         private void DeleteExercise_Click(object sender, RoutedEventArgs e)

@@ -58,6 +58,9 @@
     <Compile Include="AboutExercise.xaml.cs">
       <DependentUpon>AboutExercise.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChoiceExercise.xaml.cs">
+      <DependentUpon>ChoiceExercise.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
       <DependentUpon>UserControlWorkout.xaml</DependentUpon>
     </Compile>
     <Page Include="AboutExercise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChoiceExercise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
