@@ -165,12 +165,6 @@
     <Resource Include="Image\maxresdefault.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Fitness.BusinessLogic\Fitness.BusinessLogic.csproj">
-      <Project>{a797671f-edfe-48f5-bb3d-6b8b7c535d4b}</Project>
-      <Name>Fitness.BusinessLogic</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\user.png" />
   </ItemGroup>
   <ItemGroup>
@@ -473,6 +467,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Fitness.BusinessLogic\Fitness.BusinessLogic.csproj">
+      <Project>{a797671f-edfe-48f5-bb3d-6b8b7c535d4b}</Project>
+      <Name>Fitness.BusinessLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

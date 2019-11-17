@@ -26,7 +26,7 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Класс который хранит тренировки.
         /// </summary>
-        private Training Training { get; set; }
+        private List<Training> Trainings { get; set; }
 
         /// <summary>
         /// Будет хранить тренировку пользователя.
@@ -35,67 +35,18 @@ namespace Fitness.BusinessLogic.Controller
 
         
         public TrainingController()
-        {
+        {   
+            Name = UserController.CurrentUserName;
             CurrentTraining = new Dictionary<string, List<Exercise>>();
-            Training = GetTraining();
+            Trainings = GetTraining();
 
         }
 
 
         public void Update()
         {
-            Training = GetTraining();
-        }
-
-        /// <summary>
-        /// Получение тренировки для кокретного пользователя.
-        /// </summary>
-        public void GetCurrentTraining()
-        {
-            var name = UserController.CurrentUserName;
-            SelectedWorkout st = Training.selectedWorkouts.Where(t => t.Name == name).FirstOrDefault();
-            var settraining = st.Type;
-
-            CurrentTraining.Clear();
-
-            foreach (var ex in Training.Exercises)
-            {
-                var day = ex.Key;
-                foreach (var vulue in ex.Value)
-                {
-                    if (vulue.Username == name && vulue.Type == settraining)
-                    {
-                        List<Exercise> exe;
-                        if (!CurrentTraining.TryGetValue(day, out exe))
-                        {
-                            exe = new List<Exercise>();
-                            CurrentTraining.Add(day, exe);
-                        }
-                        exe.Add(new Exercise(vulue.Name, vulue.CaloriesPerMinute,  vulue.Image, vulue.Amount, vulue.Сount, vulue.Designation));
-
-                    }
-
-                }
-            }
-
-        }
-
-        /// <summary>
-        /// Проверка  выбрана треровка.
-        /// </summary>
-        public bool CurrentUserSelectsTraining()
-        {
-            var rezalt = Training.selectedWorkouts.Any(s => s.Name == UserController.CurrentUserName && s.isSelected == true);
-            return rezalt;
-        }
-
-        /// <summary>
-        ///Получения типа выбранной тренировки.
-        /// </summary>
-        public string GetTypeSelectTraining()
-        {
-            var rezalt = Training.selectedWorkouts.Where(t => t.Name == UserController.CurrentUserName).FirstOrDefault();
-            return rezalt.Type;
+            Name = UserController.CurrentUserName;
+            Trainings = GetTraining();
         }
 
 
@@ -116,6 +67,13 @@ namespace Fitness.BusinessLogic.Controller
 
 
         }
+        private void SetDescription(string des)
+        {
+            Description = string.Empty;
+
+            Description = des;
+        }
+
         public void SelectTraining(string name)
         {
             CurrentTraining.Clear();
@@ -171,15 +129,7 @@ namespace Fitness.BusinessLogic.Controller
 
             var des = @"Программа призначена для начинающих, которые хотят увеличить объемы мышц, стать накаченными.Им нужно программа тренировок на массу для начинающих. Она должна включать в себя базовые упражнения.";
 
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
+            SetDescription(des);
 
 
             List<Exercise> day1 = new List<Exercise>()
@@ -220,6 +170,9 @@ namespace Fitness.BusinessLogic.Controller
             AddNew("День 3", day3);
             
         }
+
+      
+
         private void NoobGirl()
         {
 
@@ -229,15 +182,8 @@ namespace Fitness.BusinessLogic.Controller
              Перед каждой тренировкой хорошенько разминайтесь – делайте суставную гимнастику или кардио средней интенсивности. 
              Для заминки после тренировки делайте растяжку (но не переусердствуйте) и легкое кардио (быстрая ходьба, кручение обруча, велосипед).";
 
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
+            SetDescription(des);
+
 
             List<Exercise> day1 = new List<Exercise>()
             {
@@ -281,15 +227,7 @@ namespace Fitness.BusinessLogic.Controller
             var des = @"Предпочтительнее заниматься в зале трижды в неделю. Например, если тренировки для сжигания жира будут проходить в понедельник, среду и пятницу.
                         Данная программа направлена на формирование и рельефообразование мышц всего тела с упором на проблемные женские зоны.";
 
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
+            SetDescription(des);
 
 
             List<Exercise> day1 = new List<Exercise>()
@@ -346,15 +284,7 @@ namespace Fitness.BusinessLogic.Controller
              Тренировки проводятся по дням:Понедельник,Вторник,Четверг.Остальные дни Отдых. Если есть желание и силы, можно сделать кардио вечером (для ускорения процесса сушки мышц).
              ";
 
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
+            SetDescription(des);
 
 
             List<Exercise> day1 = new List<Exercise>()
@@ -413,16 +343,8 @@ namespace Fitness.BusinessLogic.Controller
         private void BodyBuildingGirl()
         {
             var des = @"Ваши тренировки должны быть направлены в сторону наращивания мышечной массы и потери жира, это будет способствовать улучшению форм, повышению упругости и тонуса мышц, и поможет сохранить соблазнительные изгибы женского тела.";
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
 
+            SetDescription(des);
 
             List<Exercise> day1 = new List<Exercise>()
             {
@@ -464,17 +386,7 @@ namespace Fitness.BusinessLogic.Controller
         private void BodyBuildingMan()
         {
             var des = @"Упражнения бодибилдинг тренировок на массу.Базовые(или многосуставные) упражнения – это упражнения, где задействовано сразу несколько групп мышц и работают несколько суставов. Приседания, становая тяга,жим лежа, подтягивания, тяга штанги кпоясу в наклоне, отжимания на брусьях– все это базовые упражнения.Какправило, они – самые тяжелые для выполнения. Но они же – самое эффективноесредство для набора мышечной массы.База – платформа, на которой строитсяпрограмма тренировок на массу вбодибилдинге. Изолирующие упражнения– те, которые прорабатывают лишь однумышцу (и задействуют один сустав. Втренинге на массу они второстепенны ивыступают лишь как дополнение дляотстающих мышц.";
-
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-
+            SetDescription(des);
 
             List<Exercise> day1 = new List<Exercise>()
             {
@@ -518,15 +430,7 @@ namespace Fitness.BusinessLogic.Controller
         private void AthomeHorizontalbarMan()
         {
             var des = @"Набор упражнений для занятий  дома,требует гантели  и турник.";
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
+            SetDescription(des);
 
 
             List<Exercise> day1 = new List<Exercise>()
@@ -559,16 +463,7 @@ namespace Fitness.BusinessLogic.Controller
         private void AtHomeConditions()
         {
             var des = @"Цель: Базовое развитие мышц и поднятие тонуса организма.Универсальный набор упражнений для занятий дома с гантелями.Отлично подходит для поддержания тонуса, не выходя из дома или для предварительной подготовки к походу в зал.В наклоне со штангой можно использовать гантели.";
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-
+            SetDescription(des);
 
             List<Exercise> day1 = new List<Exercise>()
             {
@@ -610,15 +505,7 @@ namespace Fitness.BusinessLogic.Controller
         private void FullbodyMan()
         {
             var des = @"  Подойдет для начинающих, упор на базовые упражнения без перегрузки изолирующими.  Базовые упражнения - это тип упражнений, которые включают в работу несколько мышц или групп мышц, может задействоваться сразу несколько суставов. Как правило, это тяжелые упражнения, которые выполняются со свободным весом.Альтернатива базовому сплиту, для тех у кого мало времени.Будьте аккуратны, и не допустите перетренированности.";
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
+            SetDescription(des);
 
 
             List<Exercise> day1 = new List<Exercise>()
@@ -650,16 +537,7 @@ namespace Fitness.BusinessLogic.Controller
         private void FullbodyGirl()
         {
             var des = @"Глaвными инcтpyмeнтaми coздaния идeaльнoй фигypы дeвyшeк и жeнщин являютcя cилoвыe тpeниpoвки и кapдиoнaгpyзки. Cилoвыe yпpaжнeния пoзвoляют вылeпливaть cвoe тeлo, пoдoбнo cкyльптopy, нapaщивaя в нyжныx мecтax мышeчный oбъeм, a кapдиoнaгpyзки избaвляют oт лишниx жиpoвыx oтлoжeний. Ho paбoтaют эти инcтpyмeнты тoлькo в coвoкyпнocти c пpaвильным питaниeм. ";
-            if (!Training.DescriptionSet.ContainsKey(Type))
-            {
-                Training.DescriptionSet.Add(Type, des);
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-            else
-            {
-                Description = Training.DescriptionSet[Type];//Получение описание треровки.
-            }
-
+            SetDescription(des);
 
             List<Exercise> day1 = new List<Exercise>()
             {  new Exercise ("Кардио",100,"Training/SlimmingGirl/Day1/Кардио.jpg",0,10,"минут"),
@@ -721,56 +599,110 @@ namespace Fitness.BusinessLogic.Controller
 
         #endregion
 
+
+
+        /// <summary>
+        /// Проверка  выбрана треровка.
+        /// </summary>
+        public bool CurrentUserSelectsTraining()
+        {
+            var rezalt = Trainings.Any(s => s.Name == Name && s.isSelected == true);
+            return rezalt;
+        }
+
+
+
+
+        /// <summary>
+        ///Получения типа выбранной программы.
+        /// </summary>
+        public string GetTypeSelectTraining()
+        {
+            var rezalt = Trainings.Where(t => t.Name == Name).FirstOrDefault();
+            var type = rezalt.Type;
+            return type;
+        }
+
+
+        public Dictionary<string, List<Exercise>> SelectProgram()
+        {
+            Type = GetTypeSelectTraining();
+            var rezalt = Trainings.Where(t => t.Name == Name && t.Type == Type).FirstOrDefault();
+            var program = rezalt.Exercises;
+            return program;
+        }
+
+
+       /// <summary>
+       /// Дабавление программы.
+       /// </summary>
+       /// <param name="name"></param>
+       /// <param name="type"></param>
+       /// <param name="description"></param>
+       /// <param name="exercises"></param>
+       /// <param name="selectedWorkouts"></param>
+        public void AddProgram(string name, string type, string description, Dictionary<string, List<Exercise>> exercises, bool selectedWorkouts)
+        {
+            Trainings.Add(new Training(name, type, description, exercises, selectedWorkouts));
+            Save();
+        }
+
+        /// <summary>
+        /// Добавить упражнение в программу.
+        /// </summary>
+        public void AddExerciseinProgram(string  day, string name)
+        {
+            ExerciseController exerciseController = new ExerciseController();
+            var exercise = exerciseController.GetExercise(name);//получение упражнения
+            AddTraining(day,exercise);
+            Save();
+        }
+
         /// <summary>
         /// Дабавление  тренировки.
         /// </summary>
         /// <param name="day"></param>
         /// <param name="exercises"></param>
-        public void Add(string day, List<Exercise> exercises)
+        public void AddTraining(string day, Exercise exercise)
         {
-            if (exercises != null && string.IsNullOrEmpty(day))
-            {
-                Training.AddTraining(day, exercises);
-                Save();
-            }
-        }
-
-        public void Delete(string key, string name)
-        {  
-            Training.DeleteTraining(key,name);
+            List<Exercise> temp = new List<Exercise>();
+            int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);//Получения идекса.
+            temp.Add(exercise);
+            Trainings[index].Add(day, temp);
             Save();
-            GetCurrentTraining();
         }
-
+        public void Delete(string key, string name)
+        {
+            int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);//Получения идекса.
+            Trainings[index].Delete(key, name);
+            Save();
+   
+        }
 
         /// <summary>
         /// Сохранят если пользователь не выбрал тренировку.
         /// </summary>
         public void Saver()
         {
-            var isSuch = Training.Exercises.Any(ex => ex.Value.Any(e => e.Type == Type && e.Username == UserController.CurrentUserName));
+            var isSuch = Trainings.Any(trainings => trainings.Name == Name && trainings.Type == Type);
 
-            if (isSuch == false)//Нету
+            if (isSuch == false)//если пользователь не выбирал тренировку.
             {
-                foreach (var tr in CurrentTraining)
-                {
-                    Training.AddTraining(tr.Key, tr.Value);
-                }
-                Training.selectedWorkouts.Add(new SelectedWorkout(true));
+                AddProgram(Name, Type, Description, CurrentTraining, true);
                 Save();
             }
-
+            
         }
 
 
-        private Training GetTraining()
+        private List<Training> GetTraining()
         {
-            return Load<Training>().FirstOrDefault() ?? new Training();
+           return Load<Training>() ?? new List<Training>();
         }
 
         private void Save()
         {
-            Save(new List<Training>() { Training });
+            Save(Trainings);
         }
 
 

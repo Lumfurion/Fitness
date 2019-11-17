@@ -127,7 +127,7 @@
                                                     <ColumnDefinition Width="32*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <Button Grid.Column="1"  Tag="{Binding Key}" Style="{StaticResource ButtonAdd}"   Click="AddExercise_Click"  Content="+"  FontSize="20"    MinHeight="44"  MaxHeight="60"/>
+                                                <Button Grid.Column="1"   Tag="{Binding Key}" Style="{StaticResource ButtonAdd}"   Click="AddExercise_Click"  Content="+"  FontSize="20"    MinHeight="44"  MaxHeight="60"/>
                                             </Grid>
 
                                         </Grid>

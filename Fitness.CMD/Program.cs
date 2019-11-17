@@ -27,26 +27,30 @@ namespace Fitness.CMD
             
             var training = new TrainingController();
             var eatingController = new EatingController();
-            training.GetCurrentTraining();
             var exercise = new ExerciseController();
-            foreach(var ex in exercise.Exercises)
+
+
+
+            var noob = "NoobMan";
+            training.SelectTraining(noob);
+            training.Saver();
+            training.AddExerciseinProgram("День 1", "Кардио");
+            foreach (var Data in training.SelectProgram())
             {
-                Console.WriteLine(ex.Name);
-                Console.WriteLine(ex.Amount +"\t"+ ex.Amount);
-                Console.WriteLine(ex.CaloriesPerMinute);
-                Console.WriteLine(ex.Image);
-                Console.WriteLine(ex.Username);
-                Console.WriteLine(ex.Type);
-                Console.WriteLine("\n");
+                Console.WriteLine(Data.Key);
+                foreach (var key in Data.Value)
+                {
+
+                    Console.WriteLine(key.Name);
+                    Console.WriteLine(key.Amount);
+                    Console.WriteLine(key.CaloriesPerMinute);
+  
+                    Console.WriteLine(key.Image);
+                   
+                    Console.WriteLine("\n");
+
+                }
             }
-
-            //var noob = "NoobMan";
-            //var training = new TrainingController();
-            //training.SelectTraining(noob);
-            //training.Saver();
-            //training.GetCurrentTraining();
-            //training.Delete("День 1", "Кардио");
-
 
 
 

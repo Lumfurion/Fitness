@@ -14,10 +14,14 @@ namespace Fitness.Wpf
             InitializeComponent();
             userController = new UserController(UserController.CurrentUserName);
             trainingController = new TrainingController();
-            trainingController.GetCurrentTraining();
+            trainingController.SelectProgram();
+            
+
             //Пвязки
-            ICTraining.ItemsSource = trainingController.CurrentTraining;
-            ICEdit.ItemsSource = trainingController.CurrentTraining;
+            ICTraining.ItemsSource = trainingController.SelectProgram();
+            ICEdit.ItemsSource = trainingController.SelectProgram();
+
+
         }
 
         private void Look_Click(object sender, RoutedEventArgs e)
@@ -31,11 +35,22 @@ namespace Fitness.Wpf
 
         private void AddExercise_Click(object sender, RoutedEventArgs e)
         {
+            ICTraining.ItemsSource = null;
+            ICEdit.ItemsSource = null;
+
             object tag = (sender as FrameworkElement).Tag;
-            string name = tag.ToString();
-            MessageBox.Show(name);
-            ChoiceExercise cex = new ChoiceExercise();
-            cex.Show();
+            string day = tag.ToString();
+            MessageBox.Show(day);
+            ChoiceExercise cex = new ChoiceExercise(day);
+            cex.ShowDialog();
+
+            trainingController.Update();
+
+            //Пвязки
+            ICTraining.ItemsSource = trainingController.SelectProgram();
+            ICEdit.ItemsSource = trainingController.SelectProgram();
+
+
         }
 
         private void DeleteExercise_Click(object sender, RoutedEventArgs e)
@@ -47,6 +62,7 @@ namespace Fitness.Wpf
             MessageBox.Show(name+"\n"+ Key);
 
             trainingController.Delete(Key, name);
+
             //Обновление
             ICTraining.Items.Refresh();
             ICEdit.Items.Refresh();
@@ -57,6 +73,7 @@ namespace Fitness.Wpf
             object tag = (sender as FrameworkElement).Tag;
             string name = tag.ToString();
             MessageBox.Show(name);
+
         }
 
     }

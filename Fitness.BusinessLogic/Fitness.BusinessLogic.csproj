@@ -62,7 +62,6 @@
     <Compile Include="Model\ExerciseInformationArchive.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Gender.cs" />
-    <Compile Include="Model\SelectedWorkout.cs" />
     <Compile Include="Model\Training.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,16 +11,6 @@ namespace Fitness.BusinessLogic.Model
         #region Cвойства
 
         /// <summary>
-        /// Какого прльзователя упражнения
-        /// </summary>
-        public string Username { get; set; }
-
-        /// <summary>
-        /// Тип тренировки.
-        /// </summary>
-        public  string Type { get; set; }
-
-        /// <summary>
         /// Название вида активности.
         /// </summary>
         public string Name { get; set; }
@@ -60,8 +50,7 @@ namespace Fitness.BusinessLogic.Model
             Сount = count;
             Amount = amount;
             Designation = designation;
-            Username = UserController.CurrentUserName;
-            Type = TrainingController.Type;
+            
 
         }
     }

@@ -49,16 +49,6 @@ namespace Fitness.BusinessLogic.Controller
 
         }
 
-        private void AddExercise(string name, double caloriesPerMinute, string image, int amount, int count, string designation)
-        {
-            Exercises.Add(new Exercise(name, caloriesPerMinute, image, amount, count, designation));
-        }
-        private Exercise GetExercise(string Name)
-        {   
-            var exercise = Exercises.Where(ex => ex.Name == Name).FirstOrDefault();
-            return exercise;
-        }
-
         private void InitArchive()
         {
             Add(
@@ -75,6 +65,19 @@ namespace Fitness.BusinessLogic.Controller
                "InfoExercise/Кардио/КардиоМальчик.mp4");
             SaveVideo();
         }
+
+
+        private void AddExercise(string name, double caloriesPerMinute, string image, int amount, int count, string designation)
+        {
+            Exercises.Add(new Exercise(name, caloriesPerMinute, image, amount, count, designation));
+        }
+        public Exercise GetExercise(string Name)
+        {   
+            var exercise = Exercises.Where(ex => ex.Name == Name).FirstOrDefault();
+            return exercise;
+        }
+
+       
 
 
 

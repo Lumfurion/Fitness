@@ -12,12 +12,14 @@ namespace Fitness.Wpf
         public MainWindow()
         {
             InitializeComponent();
+           
             trainingController = new TrainingController();
         }
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             user = new UserController();
+            
 
             bool  name = user.Users.Any(u => u.Name == tbUsername.Text);
 
@@ -28,10 +30,11 @@ namespace Fitness.Wpf
             else
             {
                 user = new UserController(tbUsername.Text);
-                
+                trainingController.Update();
+
                 if(user.CurrentUser.Password == tbPassword.Password)
                 {
-                    if (trainingController.CurrentUserSelectsTraining() != true)
+                    if (trainingController.CurrentUserSelectsTraining() == false)
                     {
                         ChoiceTraining training = new ChoiceTraining();
                         training.Show();
@@ -58,7 +61,7 @@ namespace Fitness.Wpf
         {
             Registration reg = new Registration();
             reg.Show();
-            this.Close();
+            Close();
         }
     }
 }

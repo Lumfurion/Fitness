@@ -32,7 +32,7 @@
 
                                 <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
                                 <Button  Tag="{Binding ElementName=ExerciseName, Path=Text}" 
-                                   Content="Дабвить"  Grid.Column="1" 
+                                   Content="Дабвить"  Grid.Column="1"  Click="ButtonOnClick"
                                     Grid.Row="1"  MinHeight="44"  MaxHeight="100"  
                                    Style="{StaticResource ButtonAdd}" />
 
@@ -44,7 +44,6 @@
                                     <TextBlock    FontSize="15"   Margin="5,0,0,0"  Text="{Binding Сount}"/>
                                     <TextBlock    FontSize="15"   Margin="6,0,0,0"  Text="{Binding Designation}"/>
                                 </StackPanel>
-
                             </Grid>
                         </Grid>
                     </DataTemplate>

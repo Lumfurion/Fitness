@@ -27,45 +27,31 @@ namespace Fitness.BusinessLogic.Model
         /// <summary>
         /// Будет хранить пользователя тип тренировки когда выбрал.
         /// </summary>
-        public bool SelectedWorkouts { get; set; } = false;
+        public bool isSelected { get; set; } = false;
 
         /// <summary>
         ///День и cколько пользователь дожен сделать упражений.
         /// </summary>
         public Dictionary<string, List<Exercise>> Exercises { get; set; }
-
-        /// <summary>
-        /// Описание закрепляем за типом тренировки.
-        /// </summary>
-        public Dictionary<string,string> DescriptionSet { get; }
-       
-        /// <summary>
-        /// Будет хранить пользователя тип тренировки когда выбрал.
-        /// </summary>
-        public List<SelectedWorkout> selectedWorkouts { get; }
         #endregion
 
         public Training()
         {
-            Exercises = new Dictionary<string, List<Exercise>>();
-            DescriptionSet = new Dictionary<string, string>();
-            selectedWorkouts = new List<SelectedWorkout>();
-            
+           Exercises = new Dictionary<string, List<Exercise>>();
         }
 
-        public Training(string name, string type,string description, Dictionary<string, List<Exercise>>  exercises)
+        public Training(string name, string type, string description, Dictionary<string, List<Exercise>> exercises,bool isSelected)
         {
             Name = name;
             Type = type;
             Description = description;
             Exercises = exercises;
-
+            this.isSelected = isSelected;
         }
 
-
-
-        public void AddTraining(string day, List<Exercise> exercises)
+        public void Add(string day, List<Exercise> exercises)
         {
+
             if (!Exercises.ContainsKey(day))
             {
                 Exercises.Add(day, exercises);
@@ -74,17 +60,18 @@ namespace Fitness.BusinessLogic.Model
             {
                 foreach (var ex in exercises)
                 {
-                    Exercises[day].Add(new Exercise(ex.Name, ex.CaloriesPerMinute,ex.Image,ex.Amount,ex.Сount,ex.Designation));
+                    Exercises[day].Add(new Exercise(ex.Name, ex.CaloriesPerMinute, ex.Image, ex.Amount, ex.Сount, ex.Designation));
                 }
             }
         }
 
 
-        public void DeleteTraining(string key, string name)
+        public void Delete(string key, string name)
         {
-            var exercise= Exercises[key].Where(ex => ex.Name == name).FirstOrDefault();
-            Exercises[key].Remove(exercise); 
+            var exercise = Exercises[key].Where(ex => ex.Name == name).FirstOrDefault();
+            Exercises[key].Remove(exercise);
         }
+
 
 
     }
