@@ -20,7 +20,7 @@ namespace Fitness.Wpf
             //Пвязки
             ICTraining.ItemsSource = trainingController.SelectProgram();
             ICEdit.ItemsSource = trainingController.SelectProgram();
-
+            ICSelectProgram.ItemsSource = trainingController.GetAllPrograms();
 
         }
 
@@ -35,14 +35,15 @@ namespace Fitness.Wpf
 
         private void AddExercise_Click(object sender, RoutedEventArgs e)
         {
-            ICTraining.ItemsSource = null;
-            ICEdit.ItemsSource = null;
+            
 
             object tag = (sender as FrameworkElement).Tag;
             string day = tag.ToString();
             MessageBox.Show(day);
             ChoiceExercise cex = new ChoiceExercise(day);
             cex.ShowDialog();
+            ICTraining.ItemsSource = null;
+            ICEdit.ItemsSource = null;
 
             trainingController.Update();
 
@@ -75,6 +76,33 @@ namespace Fitness.Wpf
             MessageBox.Show(name);
 
         }
+        
+        private void ButtonSelectOnClick(object sender, RoutedEventArgs e)
+        {
 
+            Button button = (Button)sender;
+       
+            string type = button.Tag.ToString();
+            switch (type)
+            {
+                case "Для новичков Мужчин":
+                    trainingController.ChangeProgram("NoobMan");
+                    break;
+
+                case "Для новичков Женщин":
+                    trainingController.ChangeProgram("NoobGirl");
+                    break;
+            }
+
+            ICTraining.ItemsSource = null;
+            ICEdit.ItemsSource = null;
+
+            trainingController.Update();
+
+            //Пвязки
+            ICTraining.ItemsSource = trainingController.SelectProgram();
+            ICEdit.ItemsSource = trainingController.SelectProgram();
+
+        }
     }
 }

@@ -49,6 +49,13 @@ namespace Fitness.BusinessLogic.Model
             this.isSelected = isSelected;
         }
 
+        public Training(string type, string description, Dictionary<string, List<Exercise>> exercises)
+        {
+            Type = type;
+            Description = description;
+            Exercises = exercises;
+        }
+
         public void Add(string day, List<Exercise> exercises)
         {
 

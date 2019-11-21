@@ -610,8 +610,110 @@ namespace Fitness.BusinessLogic.Controller
             return rezalt;
         }
 
+        /// <summary>
+        /// Получение всех програм.
+        /// </summary>
+        public List<Training> GetAllPrograms()
+        {
+            var programs = new List<Training>();
+            var desNoobMan = @"Программа призначена для начинающих,которые хотят увеличить объемы мышц, стать накаченными.
+             Им нужно программа тренировок на массу для начинающих.Она должна включать в себя базовые упражнения.";
+
+            List<Exercise> NoobManday1 = new List<Exercise>()
+            {
+                new Exercise ("Кардио",100,"Training/Noobman/Day1/Кардио.jpg",0,5,"минут"),
+                new Exercise ("Жим штанги лежа",100,"Training/Noobman/Day1/Жим штанги лежа.jpg",2,10,"раз"),
+                new Exercise ("Разведение гантелей лежа",100,"Training/Noobman/Day1/Разведение гантелей лежа.jpg",2,10,"раз"),
+                new Exercise ("Разгибание рук на блоке",100,"Training/Noobman/Day1/Разгибание рук на блоке.jpg",2,10,"раз"),
+                new Exercise ("Жим гантели из-за головы",100,"Training/Noobman/Day1/Жим гантели из-за головы.jpg",2,10,"раз"),
+                new Exercise ("Пресс",100,"Training/Noobman/Day1/Пресс.png",3,10,"раз")
+            };
+
+            List<Exercise> NoobManday2 = new List<Exercise>()
+            {
+                new Exercise ("Кардио",100,"Training/Noobman/Day1/Кардио.jpg",0,6,"минут"),
+                new Exercise ("Приседания с пустым грифом",100,"Training/Noobman/Day2/Приседания с пустым грифом.jpg",2,10,"раз"),
+                new Exercise ("Жим ногами в тренажере",100,"Training/Noobman/Day2/Жим ногами в тренажере.jpg",2,10,"раз"),
+                new Exercise ("Жим гантелей сидя",100,"Training/Noobman/Day2/Жим гантелей сидя.jpg",2,10,"раз"),
+                new Exercise ("Тяга грифа к подбородку",100,"Training/Noobman/Day2/Тяга грифа к подбородку.jpg",2,10,"раз"),
+                new Exercise ("Пресс",100,"Training/Noobman/Day1/Пресс.png",2,15,"раз")
+            };
 
 
+            List<Exercise> NoobManday3 = new List<Exercise>()
+            {
+                new Exercise ("Кардио",100,"Training/Noobman/Day1/Кардио.jpg",0,7,"минут"),
+                new Exercise ("Гиперэкстензия",100,"Training/Noobman/Day3/Гиперэкстензия.jpg",2,15,"раз"),
+                new Exercise ("Тяга верхнего блока",100,"Training/Noobman/Day3/Тяга верхнего блока.jpg",2,10,"раз"),
+                new Exercise ("Сгибание рук с грифом на бицепс",100,"Training/Noobman/Day3/Сгибание рук с грифом на бицепс.jpg",2,10,"раз"),
+                new Exercise ("Молот",100,"Training/Noobman/Day3/Молот.jpg",2,10,"раз"),
+                new Exercise ("Пресс",100,"Training/Noobman/Day1/Пресс.png",3,10,"раз")
+
+            };
+            var Exercises1 = new Dictionary<string, List<Exercise>>();
+            Exercises1.Add("День 1", NoobManday1);
+            Exercises1.Add("День 2", NoobManday2);
+            Exercises1.Add("День 3", NoobManday3);
+            programs.Add(new Training("Для новичков Мужчин", desNoobMan, Exercises1));
+
+
+
+
+            var NoobGirldes =
+             @"Легкую зарядку продолжительностью 10-20 минут можно выполнять каждый день.
+             Для более интенсивных занятий, длящихся 45-60 минут, выделите три дня в неделю, чтобы организм успевал восстанавливаться. 
+             Перед каждой тренировкой хорошенько разминайтесь – делайте суставную гимнастику или кардио средней интенсивности. 
+             Для заминки после тренировки делайте растяжку (но не переусердствуйте) и легкое кардио (быстрая ходьба, кручение обруча, велосипед).";
+
+
+            List<Exercise> NoobGirlday1 = new List<Exercise>()
+            {
+                 new Exercise ("Выпады в движении",100,"Training/Noobgril/Day1/Lunges-with-dumbbells.jpg",4,20,"(по 10 шагов на каждую ногу)"),
+                 new Exercise ("Махи ногами назад, стоя на четвереньках",100,"Training/Noobgril/Day1/mahi-nogami.jpg",4,15,"раз"),
+                 new Exercise ("Тяга верхнего блока к груди",100,"Training/Noobgril/Day1/Тяга-блока-к-груди.png",5,10,"раз"),
+                 new Exercise ("Разведение рук в стороны в наклоне",100,"Training/Noobgril/Day1/razvedeniya-ruk-v-naklone-dlya-devushek.jpg",4,12,"раз"),
+                 new Exercise ("Сведение рук лежа с гантелями",100,"Training/Noobgril/Day1/DSC_5501_1545278749-630x315.jpg",4,12,"раз"),
+                 new Exercise ("Скручивания корпуса лежа",100,"Training/Noobgril/Day1/skruchivaniya-kak-pravilno-delat_20.jpg",4,20,"раз")
+            };
+
+            List<Exercise> NoobGirlday2 = new List<Exercise>()
+            {
+                new Exercise ("Румынская становая тяга (с гантелями или эспандером)",100,"Training/Noobgril/Day2/Румынская становая тяга.jpg",5,10,"раз"),
+                new Exercise ("Ягодичный мостик (без отягощения или с блином)",100,"Training/Noobgril/Day2/Ягодичный мостик.jpg",4,12,"раз"),
+                new Exercise ("Подъем рук стоя через стороны с гантелями",100,"Training/Noobgril/Day2/Подъем рук стоя через стороны.jpg",4,12,"раз"),
+                new Exercise ("Тяга гантели к поясу в наклоне",100,"Training/Noobgril/Day2/Тяга гантели к поясу в наклоне.jpg",4,10,"раз"),
+                new Exercise ("Разгибание рук из-за головы с гантелью",100,"Training/Noobgril/Day2/Разгибание рук из-за головы с гантелью.jpg",3,12,"раз"),
+                new Exercise ("Подъем ног лежа",100,"Training/Noobgril/Day2/Подъем ног лежа.jpg",4,15,"раз")
+            };
+
+            List<Exercise> NoobGirlday3 = new List<Exercise>()
+            {
+                new Exercise ("Приседания с широкой постановкой ног (без отягощения или с гантелью),",100,"Training/Noobgril/Day3/Приседания с широкой постановкой ног.jpg",5,10,"раз"),
+                new Exercise ("Гиперэкстензия",100,"Training/Noobgril/Day3/Гиперэкстензия.jpg",4,15,"раз"),
+                new Exercise ("Отжимания от пола",100,"Training/Noobgril/Day3/Отжимания от пола.jpg",4,10,"раз"),
+                new Exercise ("Тяга верхнего блока к груди",100,"Training/Noobgril/Day1/Тяга-блока-к-груди.png",4,10,"раз"),
+                new Exercise ("Сгибания рук с гантелями",100,"Training/Noobgril/Day3/Сгибания рук с гантелями.jpg",4,10,"раз"),
+                new Exercise ("Планка",100,"Training/Noobgril/Day3/планка.jpg",3,1,"минуте")
+
+            };
+            var Exercises2 = new Dictionary<string, List<Exercise>>();
+            Exercises2.Add("День 1", NoobGirlday1);
+            Exercises2.Add("День 2", NoobGirlday2);
+            Exercises2.Add("День 3", NoobGirlday3);
+            programs.Add(new Training("Для новичков Женщин", NoobGirldes, Exercises1));
+
+            return programs;
+        }
+
+        /// <summary>
+        /// Изменить программу
+        /// </summary>
+        public void ChangeProgram(string name)
+        {
+            DeleteProgram();
+            SelectTraining(name);
+            Saver();
+        }
 
         /// <summary>
         ///Получения типа выбранной программы.
@@ -623,7 +725,10 @@ namespace Fitness.BusinessLogic.Controller
             return type;
         }
 
-
+        /// <summary>
+        /// Получение программы.
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<string, List<Exercise>> SelectProgram()
         {
             Type = GetTypeSelectTraining();
@@ -636,11 +741,6 @@ namespace Fitness.BusinessLogic.Controller
        /// <summary>
        /// Дабавление программы.
        /// </summary>
-       /// <param name="name"></param>
-       /// <param name="type"></param>
-       /// <param name="description"></param>
-       /// <param name="exercises"></param>
-       /// <param name="selectedWorkouts"></param>
         public void AddProgram(string name, string type, string description, Dictionary<string, List<Exercise>> exercises, bool selectedWorkouts)
         {
             Trainings.Add(new Training(name, type, description, exercises, selectedWorkouts));
@@ -673,10 +773,16 @@ namespace Fitness.BusinessLogic.Controller
         }
         public void Delete(string key, string name)
         {
-            int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);//Получения идекса.
+            int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);
             Trainings[index].Delete(key, name);
             Save();
-   
+        }
+
+        private void DeleteProgram()
+        {
+            int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);
+            Trainings.RemoveAt(index);
+            Save();
         }
 
         /// <summary>
@@ -693,7 +799,6 @@ namespace Fitness.BusinessLogic.Controller
             }
             
         }
-
 
         private List<Training> GetTraining()
         {
