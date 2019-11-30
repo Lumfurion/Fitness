@@ -8,7 +8,17 @@ namespace Fitness.Wpf
     {
         private readonly ExerciseController excerseController;
         private readonly TrainingController trainingController;
-        readonly string Day; 
+        readonly string Day;
+        private string excerse;
+
+        public ChoiceExercise()
+        {
+            InitializeComponent();
+            excerseController = new ExerciseController();
+            trainingController = new TrainingController();
+            ICTraining.ItemsSource = excerseController.Exercises;
+        }
+
 
         public ChoiceExercise(string day)
         {
@@ -24,10 +34,15 @@ namespace Fitness.Wpf
             object tag = (sender as FrameworkElement).Tag;
             string name = tag.ToString();
             MessageBox.Show(name + "\n" + Day);
-            trainingController.AddExerciseinProgram(Day,name);
- 
+            excerse = name;
+            if(!string.IsNullOrEmpty(Day))
+            {
+                trainingController.AddExerciseinProgram(Day, name);
+            }
             Close();
-  
         }
+
+        public string GetExercise() => excerse;
+
     }
 }

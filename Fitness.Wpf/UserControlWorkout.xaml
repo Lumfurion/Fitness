@@ -96,12 +96,17 @@
                 </TabItem.Header>
 
                 <TabItem.Content>
-                    <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                  <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="367*"/>
+                            <RowDefinition Height="52*"/>
+                        </Grid.RowDefinitions>
+                        <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                         <ItemsControl  Name="ICEdit">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     
-                                    <Expander x:Name="epedit" Margin="5" Padding="5" Header="{Binding Key}"  FontSize="20"  BorderBrush="Black" BorderThickness="2">
+                                    <Expander IsExpanded="True" x:Name="epedit" Margin="5" Padding="5" Header="{Binding Key}"  FontSize="20"  BorderBrush="Black" BorderThickness="2">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="374*"/>
@@ -133,11 +138,15 @@
 
                                         </Grid>
                                     </Expander>
+                                    
                                    
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                    </ScrollViewer>
+                </ScrollViewer>
+
+                <Button  Grid.Row="1"  Click="AddnewDayOnClick"  Style="{StaticResource ButtonAdd}"    Content="Дабать новый день"  FontSize="20"    MinHeight="44"  MaxHeight="60" />
+                  </Grid>
                 </TabItem.Content>
                 
             </TabItem>

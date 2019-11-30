@@ -34,7 +34,7 @@ namespace Fitness.CMD
             var noob = "NoobMan";
             training.SelectTraining(noob);
             training.Saver();
-            training.ChangeProgram("NoobGirl");
+            training.AddNewDay();
 
 
             foreach (var Data in training.SelectProgram())

@@ -35,8 +35,6 @@ namespace Fitness.Wpf
 
         private void AddExercise_Click(object sender, RoutedEventArgs e)
         {
-            
-
             object tag = (sender as FrameworkElement).Tag;
             string day = tag.ToString();
             MessageBox.Show(day);
@@ -103,6 +101,24 @@ namespace Fitness.Wpf
             ICTraining.ItemsSource = trainingController.SelectProgram();
             ICEdit.ItemsSource = trainingController.SelectProgram();
 
+        }
+
+        private void AddnewDayOnClick(object sender, RoutedEventArgs e)
+        {
+            var choice= new ChoiceExercise();
+            choice.ShowDialog();
+            var ex=choice.GetExercise();
+            MessageBox.Show(ex);
+            trainingController.AddNewDay(ex);
+
+            ICTraining.ItemsSource = null;
+            ICEdit.ItemsSource = null;
+
+            trainingController.Update();
+
+            //Пвязки
+            ICTraining.ItemsSource = trainingController.SelectProgram();
+            ICEdit.ItemsSource = trainingController.SelectProgram();
         }
     }
 }
