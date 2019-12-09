@@ -16,7 +16,7 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public DateTime Moment { get; set; }
         /// <summary>
-        /// Список еды и сколько сел пользователь еды.
+        /// Список еды и сколько сел пользователь еды в грамах.
         /// </summary>
         public Dictionary<Food, double> Foods { get; set; }
  
@@ -38,9 +38,22 @@ namespace Fitness.BusinessLogic.Model
             else
             {   //Получаем значения,мы не добавляем еду а увеличиваем количество еды.
                 //Если пользователь ел такое увеличить счет еды.
+               
                 Foods[product] += count;
             }
         }
- 
-   }
+
+
+        public void Delete(Food food)
+        {  
+            var product = Foods.Keys.FirstOrDefault(f => f.Name.Equals(food.Name));
+
+            if (product != null)
+            {
+                Foods.Remove(food);
+            }
+           
+        }
+
+    }
 }

@@ -52,6 +52,7 @@
     <Compile Include="Controller\EatingController.cs" />
     <Compile Include="Controller\ExerciseController.cs" />
     <Compile Include="Controller\FitnessContext.cs" />
+    <Compile Include="Controller\FoodDiaryController.cs" />
     <Compile Include="Controller\IDataSaver.cs" />
     <Compile Include="Controller\SerializeDataSaver.cs" />
     <Compile Include="Controller\TrainingController.cs" />
@@ -61,13 +62,16 @@
     <Compile Include="Model\ExerciseAboutInformation.cs" />
     <Compile Include="Model\ExerciseInformationArchive.cs" />
     <Compile Include="Model\Food.cs" />
+    <Compile Include="Model\FoodDiary.cs" />
     <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\Training.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Initializers\InitializingFoodDiary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
