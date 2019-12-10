@@ -1,44 +1,41 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Fitness.BusinessLogic.Model
 {   /// <summary>
-    /// Днивник питания
+    /// Днивник приёма пищи.
     /// </summary> 
     [Serializable]
     public class FoodDiary
     {
         public string Name { get; set; }
-        public Eating Eating { get; set; }
+        public List<Eating> Eatings { get; set; }
         public string Traning { get; set; }
 
         public FoodDiary(){}
 
-        public FoodDiary(Eating eating)
+        public FoodDiary(List<Eating> eatings, string traning)
         {
-            Eating = eating;
-        }
-
-        public FoodDiary(Eating eating, string traning)
-        {
-            Eating = eating;
+            Eatings = eatings;
             Traning = traning;
         }
 
-        public FoodDiary(string name, Eating eating, string traning)
+        public FoodDiary(string name, List<Eating> eatings, string traning)
         {
             Name = name;
-            Eating = eating;
+            Eatings = eatings;
             Traning = traning;
         }
 
-        public void Add(Food food, double count)
-        {
-            Eating.Add(food, count);
-        }
+        //public void Add(Food food, double count)
+        //{
+        //    Eating.Add(food, count);
+        //}
         
-        public void Delete(Food food)
-        {
-            Eating.Delete(food);
-        }
+        //public void Delete(Food food)
+        //{
+        //    Eating.Delete(food);
+        //}
 
     }
 }

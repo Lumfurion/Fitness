@@ -35,12 +35,6 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public double Carbohydrates { get; set; }
 
-
-
-        /// <summary>
-        /// Жирность
-        /// </summary>
-        public double Fat { get; set; }
         #endregion
 
 
@@ -49,16 +43,16 @@ namespace Fitness.BusinessLogic.Model
         /// <summary>
         /// Получения продукта по имени.
         /// </summary>
-        public Food(string name) : this(name, 0, 0, 0, 0,0) { }
+        public Food(string name) : this(name, 0, 0, 0, 0) { }
 
-        public Food(string name, double calories, double proteins, double fats, double carbohydrates, double fat)
+        public Food(string name, double calories, double proteins, double fats, double carbohydrates)
         {
             Name = name;
             Calories = calories;
             Proteins = proteins;
             Fats = fats;
             Carbohydrates = carbohydrates;
-            Fat = fat;
+            
         }
 
         public override string ToString()

@@ -4,27 +4,30 @@ using System.Linq;
 
 namespace Fitness.BusinessLogic.Model
 {  /// <summary>
-   /// Прием пищи.Будем фиксировать кто поел что поел когда поел.
+   /// Прием пищи.
    /// </summary>
     [Serializable]
     public class Eating
     {
-        #region Cвойство
-      
+        #region Свойства
+
         /// <summary>
-        /// Момент приема пищи.
+        /// Прием пищи когда в Обед,Ужин.
         /// </summary>
-        public DateTime Moment { get; set; }
+        public string EatingTime { get; set;}
+      
         /// <summary>
         /// Список еды и сколько сел пользователь еды в грамах.
         /// </summary>
         public Dictionary<Food, double> Foods { get; set; }
  
         #endregion
-        public Eating()
+        public Eating(){}
+
+        public Eating(string eatingTime, Dictionary<Food, double> foods)
         {
-            Moment = DateTime.UtcNow;//если приложение мультиязычное, то время нужно utcnow
-            Foods = new Dictionary<Food,double>();
+            EatingTime = eatingTime;
+            Foods = foods;
         }
 
         public void Add(Food food,double count)

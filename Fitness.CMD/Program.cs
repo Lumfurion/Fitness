@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Resources;
 using System.Linq;
 using System.Collections.Generic;
+using Fitness.BusinessLogic.Services.Initializers;
 
 namespace Fitness.CMD
 {    /// <summary>
@@ -15,6 +16,7 @@ namespace Fitness.CMD
       
         static void Main()
         {
+            var g = InitializingFoodDiary.GetFoodDiaries();
             var culture = CultureInfo.CreateSpecificCulture("ru-ru");//создание культуры.
             //typeof(Program).Assembly-получаем cборку.
             var resourceManager = new ResourceManager("Fitness.CMD.Languages.Localization", typeof(Program).Assembly);
@@ -34,7 +36,7 @@ namespace Fitness.CMD
             var noob = "NoobMan";
             training.SelectTraining(noob);
             training.Saver();
-            training.AddNewDay();
+          
 
 
             foreach (var Data in training.SelectProgram())
