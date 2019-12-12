@@ -108,8 +108,8 @@ namespace Fitness.Wpf
 
                 case "btnEating":
                     ShowItemSelected("Eating");
-                    //usc = new UserControlHome();
-                    //GridContent.Children.Add(usc);
+                    usc = new UserControlEating();
+                    GridContent.Children.Add(usc);
                     break;
                 case "btnDiet":
                     ShowItemSelected("Diet");

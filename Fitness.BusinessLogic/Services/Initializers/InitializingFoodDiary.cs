@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Fitness.BusinessLogic.Model;
 
 namespace Fitness.BusinessLogic.Services.Initializers
@@ -53,12 +54,18 @@ namespace Fitness.BusinessLogic.Services.Initializers
 
             };
 
-
-            foodDiaries.Add(new FoodDiary(Eating1, "Похудание"));
+            foodDiaries.Add(new FoodDiary(Eating1, "NoobGirl"));
 
             return foodDiaries;
         }
 
         public static List<FoodDiary> GetFoodDiaries()=> FoodDiaries;
+
+        public static FoodDiary GetFoodDiary(string type)
+        {
+            var FoodDiary = FoodDiaries.Where(f => f.Traning == type).FirstOrDefault();
+            return FoodDiary;
+        }
+
     }
 }

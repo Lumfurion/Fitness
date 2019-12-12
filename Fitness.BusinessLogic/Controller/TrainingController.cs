@@ -70,7 +70,6 @@ namespace Fitness.BusinessLogic.Controller
         private void SetDescription(string des)
         {
             Description = string.Empty;
-
             Description = des;
         }
 
@@ -128,10 +127,7 @@ namespace Fitness.BusinessLogic.Controller
         {
 
             var des = @"Программа призначена для начинающих, которые хотят увеличить объемы мышц, стать накаченными.Им нужно программа тренировок на массу для начинающих. Она должна включать в себя базовые упражнения.";
-
             SetDescription(des);
-
-
             List<Exercise> day1 = new List<Exercise>()
             {
                 new Exercise ("Кардио",100,"Training/Noobman/Day1/Кардио.jpg",0,5,"минут"),
@@ -700,7 +696,7 @@ namespace Fitness.BusinessLogic.Controller
             Exercises2.Add("День 1", NoobGirlday1);
             Exercises2.Add("День 2", NoobGirlday2);
             Exercises2.Add("День 3", NoobGirlday3);
-            programs.Add(new Training("Для новичков Женщин", NoobGirldes, Exercises1));
+            programs.Add(new Training("Для новичков Женщин", NoobGirldes, Exercises2));
 
             return programs;
         }

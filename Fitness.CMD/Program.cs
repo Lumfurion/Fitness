@@ -17,6 +17,8 @@ namespace Fitness.CMD
         static void Main()
         {
             var g = InitializingFoodDiary.GetFoodDiaries();
+
+
             var culture = CultureInfo.CreateSpecificCulture("ru-ru");//создание культуры.
             //typeof(Program).Assembly-получаем cборку.
             var resourceManager = new ResourceManager("Fitness.CMD.Languages.Localization", typeof(Program).Assembly);
@@ -28,15 +30,15 @@ namespace Fitness.CMD
             var userController = new UserController(name);
             
             var training = new TrainingController();
-            var eatingController = new EatingController();
-            var exercise = new ExerciseController();
-
-
-
-            var noob = "NoobMan";
+          
+            var noob = "NoobGirl";
             training.SelectTraining(noob);
             training.Saver();
-          
+
+            FoodDiaryController foodDiaryController = new FoodDiaryController();
+             var d = foodDiaryController.SetRecommended();
+
+
 
 
             foreach (var Data in training.SelectProgram())

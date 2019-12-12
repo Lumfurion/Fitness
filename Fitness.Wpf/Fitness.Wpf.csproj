@@ -67,6 +67,9 @@
     <Compile Include="TrainingInfo.xaml.cs">
       <DependentUpon>TrainingInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlEating.xaml.cs">
+      <DependentUpon>UserControlEating.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlHome.xaml.cs">
       <DependentUpon>UserControlHome.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TrainingInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlEating.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -473,5 +480,6 @@
       <Name>Fitness.BusinessLogic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,11 +20,11 @@ namespace Fitness.BusinessLogic.Model
             Traning = traning;
         }
 
-        public FoodDiary(string name, List<Eating> eatings, string traning)
+        public FoodDiary(string name,string traning, List<Eating> eatings)
         {
             Name = name;
-            Eatings = eatings;
             Traning = traning;
+            Eatings = eatings;   
         }
 
         //public void Add(Food food, double count)
