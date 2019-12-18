@@ -6,14 +6,12 @@ namespace Fitness.BusinessLogic.Services.Initializers
 {
     public static class InitializingFoodDiary
     {
-         static readonly List<FoodDiary> FoodDiaries;
+        static readonly List<FoodDiary> FoodDiaries;
 
         static  InitializingFoodDiary()
         {
             FoodDiaries = InitFoodDiary();
         }
-
-       
 
         private static List<FoodDiary> InitFoodDiary()
         {

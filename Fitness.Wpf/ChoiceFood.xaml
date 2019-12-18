@@ -1,0 +1,55 @@
+﻿<Window x:Class="Fitness.Wpf.ChoiceFood"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fitness.Wpf"
+        mc:Ignorable="d"
+        Title="ChoiceFood" Height="800" Width="800">
+
+
+    <Grid>
+        
+        <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="ICEating" >
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27*"/>
+                                <RowDefinition Height="22*"/>
+                                <RowDefinition Height="29*"/>
+                                <RowDefinition Height="341*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Key.Name}" FontSize="20" Margin="2"/>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Grid.Row="1" >
+
+                                <Border   CornerRadius="2"  Background="#FF9B9B94" Margin="3,3"  >
+                                    <TextBlock   Foreground="White" Text="{Binding Key.Calories, StringFormat='Калории:{0}'}"   HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                </Border>
+
+                                <Border CornerRadius="2" Background="#FFFBAE08"   Margin="3,3"  >
+                                    <TextBlock  Foreground="White" Text="{Binding Key.Proteins, StringFormat='Белки:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+
+                                <Border CornerRadius="2" Background="#FF48C135"   Margin="3,3"  >
+                                    <TextBlock  Foreground="White"  Text="{Binding Key.Fats, StringFormat='Жиры:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <Border CornerRadius="2" Background="#FF8B00FF"   Margin="3,3" >
+                                    <TextBlock  Foreground="White"  Text="{Binding Key.Carbohydrates, StringFormat='Углеводы:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+
+                                <TextBlock Text="{Binding Value, StringFormat='Грам:{0}'}" Margin="2" FontSize="15" HorizontalAlignment="Right"/>
+                            </StackPanel>
+                            <Button Tag="{Binding Key.Name}"   Content="Дабвить" Click="btnAddOnClick"  Grid.Row="2"    Style="{StaticResource ButtonAdd}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>

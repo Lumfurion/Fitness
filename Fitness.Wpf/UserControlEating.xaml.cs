@@ -1,6 +1,6 @@
 ﻿using Fitness.BusinessLogic.Controller;
+using System.Windows;
 using System.Windows.Controls;
-
 
 namespace Fitness.Wpf
 {
@@ -13,12 +13,28 @@ namespace Fitness.Wpf
 
         public UserControlEating()
         {
-            trainingController = new TrainingController();
+           
             InitializeComponent();
+            trainingController = new TrainingController();
             userController = new UserController(UserController.CurrentUserName);
             trainingController = new TrainingController();
             foodDiaryController = new FoodDiaryController();
-            DataContext = foodDiaryController.SetRecommended();
+            DataContext = foodDiaryController;
+        }
+
+        private void btnAddFoodOnClick(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            var EatingTime  = button.Tag.ToString();
+            ChoiceFood choiceFood = new ChoiceFood(EatingTime);
+            choiceFood.ShowDialog();
+           
+            ICUserFoodDiary.ItemsSource = null;
+          
+            foodDiaryController.Update();
+
+            
+            ICUserFoodDiary.ItemsSource = foodDiaryController.UserFoodDiary;
         }
     }
 }

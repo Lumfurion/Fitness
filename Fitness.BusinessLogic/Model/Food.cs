@@ -38,7 +38,7 @@ namespace Fitness.BusinessLogic.Model
         #endregion
 
 
-        public Food() { }
+        public Food(Food food) { }
 
         /// <summary>
         /// Получения продукта по имени.

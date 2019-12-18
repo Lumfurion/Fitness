@@ -5,64 +5,182 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fitness.Wpf"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="636.104" d:DesignWidth="620">
     <Grid  Background="White">
-        <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <ItemsControl  ItemsSource="{Binding Eatings}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="40*"/>
-                                <RowDefinition Height="379*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock  Foreground="Black" FontSize="30" Text="{Binding EatingTime}" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <ItemsControl  ItemsSource="{Binding Foods}" Grid.Row="1">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="167*"/>
-                                                <ColumnDefinition Width="229*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="27*"/>
-                                                    <RowDefinition Height="22*"/>
-                                                    <RowDefinition Height="370*"/>
-                                                </Grid.RowDefinitions>
-                                                <TextBlock Text="{Binding Key.Name}" FontSize="20" Margin="2"   />
-                                                <!--<TextBlock Text="{Binding Value, StringFormat='Грам:{0}'}" Margin="2" FontSize="15" HorizontalAlignment="Right"/>-->
-                                                
-                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Grid.Row="1" >
-                                                    <Border   CornerRadius="2"  Background="#FF9B9B94" Margin="3,3"  >
-                                                        <TextBlock   Foreground="White" Text="{Binding Key.Calories, StringFormat='Калории:{0}'}"   HorizontalAlignment="Center" VerticalAlignment="Center"  />
-                                                    </Border>
-
-                                                    <Border CornerRadius="2" Background="#FFFBAE08"   Margin="3,3"  >
-                                                        <TextBlock  Foreground="White" Text="{Binding Key.Proteins, StringFormat='Белки:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                    </Border>
-
-                                                    <Border CornerRadius="2" Background="#FF48C135"   Margin="3,3"  >
-                                                        <TextBlock  Foreground="White"  Text="{Binding Key.Fats, StringFormat='Жиры:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                    </Border>
-                                                    <Border CornerRadius="2" Background="#FF8B00FF"   Margin="3,3" >
-                                                        <TextBlock  Foreground="White"  Text="{Binding Key.Carbohydrates, StringFormat='Углеводы:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                    </Border>
-
-                                                </StackPanel>
-                                            </Grid>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </Grid>
 
 
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </ScrollViewer>
+        <TabControl Background="Transparent">
+            <!--Рекомендованная для тренировки-->
+            <TabItem Background="#FF06ACEA">
+                <TabItem.Header >
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32*"/>
+                            <ColumnDefinition Width="89*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Eating\Recommended.png" Height="30" Grid.Column="0" />
+                        <TextBlock   FontWeight="Bold"  Grid.Column="1" FontSize="13" Margin="3">Рекомендованная для тренировки</TextBlock>
+                    </Grid>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <ItemsControl  ItemsSource="{Binding Recommended}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+
+                                    <ItemsControl  ItemsSource="{Binding Eatings}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="40*"/>
+                                                        <RowDefinition Height="379*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock  Foreground="Black" FontSize="30" Text="{Binding EatingTime}" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    <ItemsControl  ItemsSource="{Binding Foods}" Grid.Row="1">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="167*"/>
+                                                                        <ColumnDefinition Width="229*"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Grid>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height="27*"/>
+                                                                            <RowDefinition Height="22*"/>
+                                                                            <RowDefinition Height="370*"/>
+                                                                        </Grid.RowDefinitions>
+                                                                        <TextBlock Text="{Binding Key.Name}" FontSize="20" Margin="2"/>
+                                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Grid.Row="1" >
+
+                                                                            <Border   CornerRadius="2"  Background="#FF9B9B94" Margin="3,3"  >
+                                                                                <TextBlock   Foreground="White" Text="{Binding Key.Calories, StringFormat='Калории:{0}'}"   HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                                                            </Border>
+
+                                                                            <Border CornerRadius="2" Background="#FFFBAE08"   Margin="3,3"  >
+                                                                                <TextBlock  Foreground="White" Text="{Binding Key.Proteins, StringFormat='Белки:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                            </Border>
+
+                                                                            <Border CornerRadius="2" Background="#FF48C135"   Margin="3,3"  >
+                                                                                <TextBlock  Foreground="White"  Text="{Binding Key.Fats, StringFormat='Жиры:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                            </Border>
+                                                                            <Border CornerRadius="2" Background="#FF8B00FF"   Margin="3,3" >
+                                                                                <TextBlock  Foreground="White"  Text="{Binding Key.Carbohydrates, StringFormat='Углеводы:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                            </Border>
+
+                                                                            <TextBlock Text="{Binding Value, StringFormat='Грам:{0}'}" Margin="2" FontSize="15" HorizontalAlignment="Right"/>
+                                                                        </StackPanel>
+                                                                    </Grid>
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </Grid>
+
+
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </TabItem.Content>
+            </TabItem>
+            <!--Составления приема пищи-->
+            <TabItem >
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFDEDE24" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32*"/>
+                            <ColumnDefinition Width="89*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Eating\Сompilation.png" Height="30" Grid.Column="0" />
+                        <TextBlock   FontWeight="Bold"  Grid.Column="1" FontSize="13" Margin="3">Составления приема пищи</TextBlock>
+                    </Grid>
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <ItemsControl  ItemsSource="{Binding UserFoodDiary}" Name="ICUserFoodDiary">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+
+                                    <ItemsControl  ItemsSource="{Binding Eatings}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="40*"/>
+                                                        <RowDefinition Height="343*"/>
+                                                        <RowDefinition Height="36*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock  Foreground="Black" FontSize="30" Text="{Binding EatingTime}" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    <ItemsControl  ItemsSource="{Binding Foods}" Grid.Row="1">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="167*"/>
+                                                                        <ColumnDefinition Width="229*"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Grid>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height="27*"/>
+                                                                            <RowDefinition Height="22*"/>
+                                                                            <RowDefinition Height="370*"/>
+                                                                        </Grid.RowDefinitions>
+                                                                        <TextBlock Text="{Binding Key.Name}" FontSize="20" Margin="2"/>
+
+                                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Grid.Row="1" >
+
+                                                                            <Border   CornerRadius="2"  Background="#FF9B9B94" Margin="3,3"  >
+                                                                                <TextBlock   Foreground="White" Text="{Binding Key.Calories, StringFormat='Калории:{0}'}"   HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                                                            </Border>
+
+                                                                            <Border CornerRadius="2" Background="#FFFBAE08"   Margin="3,3"  >
+                                                                                <TextBlock  Foreground="White" Text="{Binding Key.Proteins, StringFormat='Белки:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                            </Border>
+
+                                                                            <Border CornerRadius="2" Background="#FF48C135"   Margin="3,3"  >
+                                                                                <TextBlock  Foreground="White"  Text="{Binding Key.Fats, StringFormat='Жиры:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                            </Border>
+                                                                            <Border CornerRadius="2" Background="#FF8B00FF"   Margin="3,3" >
+                                                                                <TextBlock  Foreground="White"  Text="{Binding Key.Carbohydrates, StringFormat='Углеводы:{0}'}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                            </Border>
+
+                                                                            <TextBlock Text="{Binding Value, StringFormat='Грам:{0}'}" Margin="2" FontSize="15" HorizontalAlignment="Right"/>
+                                                                        </StackPanel>
+
+                                                                    </Grid>
+
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                    <Button Content="Дабавить" Tag="{Binding EatingTime}" Click="btnAddFoodOnClick"  Style="{StaticResource ButtonAdd}" Grid.Row="2"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </TabItem.Content>
+
+            </TabItem>
+        </TabControl>
+        
     </Grid>
 </UserControl>

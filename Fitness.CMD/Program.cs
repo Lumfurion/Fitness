@@ -1,12 +1,7 @@
 ﻿using Fitness.BusinessLogic.Controller;
-using Fitness.BusinessLogic.Model;
 using System;
 using System.Globalization;
 using System.Resources;
-using System.Linq;
-using System.Collections.Generic;
-using Fitness.BusinessLogic.Services.Initializers;
-
 namespace Fitness.CMD
 {    /// <summary>
     /// Консольный интерфейс
@@ -16,9 +11,6 @@ namespace Fitness.CMD
       
         static void Main()
         {
-            var g = InitializingFoodDiary.GetFoodDiaries();
-
-
             var culture = CultureInfo.CreateSpecificCulture("ru-ru");//создание культуры.
             //typeof(Program).Assembly-получаем cборку.
             var resourceManager = new ResourceManager("Fitness.CMD.Languages.Localization", typeof(Program).Assembly);
@@ -36,7 +28,11 @@ namespace Fitness.CMD
             training.Saver();
 
             FoodDiaryController foodDiaryController = new FoodDiaryController();
-             var d = foodDiaryController.SetRecommended();
+            
+            foodDiaryController.SetFoodDiaryTemplate();
+            foodDiaryController.Add("Апельсин", "Завтрак");
+
+
 
 
 

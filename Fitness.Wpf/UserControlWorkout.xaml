@@ -91,7 +91,7 @@
 
 
                         <Image  Grid.Column="0"  Height="30"  Source="Menu/settings.png"  />
-                        <TextBlock Grid.Column="1" VerticalAlignment="Center" >Изменить тренировку</TextBlock>
+                        <TextBlock FontWeight="Bold"  Grid.Column="1" FontSize="13" VerticalAlignment="Center" >Изменить тренировку</TextBlock>
                     </Grid>
                 </TabItem.Header>
 
@@ -150,7 +150,8 @@
                 </TabItem.Content>
                 
             </TabItem>
-
+           
+            <!--Выбор тренировки-->
             <TabItem>
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -165,7 +166,7 @@
                             <ColumnDefinition Width="89*"/>
                         </Grid.ColumnDefinitions>
                         <Image Source="Image\analytics.png" Height="30" Grid.Column="0" />
-                        <TextBlock   Grid.Column="1" Margin="3">Выбор тренировки</TextBlock>
+                        <TextBlock   FontWeight="Bold"  Grid.Column="1" FontSize="13" Margin="3">Выбор тренировки</TextBlock>
                     </Grid>
                 </TabItem.Header>
 
@@ -244,7 +245,6 @@
                                                 </ItemsControl.ItemTemplate>
                                             </ItemsControl>
                                             <Button Style="{StaticResource ButtonAdd}"  Tag="{Binding Type}" Click="ButtonSelectOnClick"   Grid.Row="4"  Width="110" Height="40"   Name="btnSelect" HorizontalAlignment="Center" >
-                                                
                                                 <StackPanel Orientation="Horizontal">
                                                     <Image Source="Image/Take.png"   />
                                                     <TextBlock Text="Выбрать"    FontSize="15" Margin="5" />
