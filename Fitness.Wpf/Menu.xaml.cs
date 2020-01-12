@@ -11,28 +11,30 @@ namespace Fitness.Wpf
     public partial class Home : Window
     {
         readonly UserController userController;
-        readonly TrainingController trainingController;
+       
         UserControl usc = null;
 
         public Home()
         {
             InitializeComponent();
             userController = new UserController(UserController.CurrentUserName);
-            trainingController = new TrainingController();
+            
             Initwindow();
         }
 
         private void Initwindow()
         {
             lbUser.Content = UserController.CurrentUserName;
-            if(userController.Image!=null)
+            if (userController.Image != null)
             {
                 elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(userController.Image)));
             }
 
-            recDiet.Visibility = Visibility.Hidden;
+            recStatistic.Visibility = Visibility.Hidden;
             recEating.Visibility = Visibility.Hidden;
             recworkout.Visibility = Visibility.Hidden;
+            recPrint.Visibility = Visibility.Hidden;
+
 
             GridContent.Children.Clear();
             usc = new UserControlHome();
@@ -42,7 +44,8 @@ namespace Fitness.Wpf
             btnHome.Click += Click_Button;
             btnWorkout.Click += Click_Button;
             btnEating.Click += Click_Button;
-            btnDiet.Click += Click_Button;
+            btnStatistic.Click += Click_Button;
+            btnPrint.Click += Click_Button;
             #endregion
 
         }
@@ -58,28 +61,40 @@ namespace Fitness.Wpf
                 case "Home":
                     recHome.Visibility = Visibility.Visible;
                     recEating.Visibility = Visibility.Hidden;
-                    recDiet.Visibility = Visibility.Hidden;
+                    recStatistic.Visibility = Visibility.Hidden;
                     recworkout.Visibility = Visibility.Hidden;
+                    recPrint.Visibility = Visibility.Hidden;
                     break;
 
                 case "Workout":
                     recHome.Visibility = Visibility.Hidden;
                     recEating.Visibility = Visibility.Hidden;
-                    recDiet.Visibility = Visibility.Hidden;
+                    recStatistic.Visibility = Visibility.Hidden;
                     recworkout.Visibility = Visibility.Visible;
+                    recPrint.Visibility = Visibility.Hidden;
                     break;
 
                 case "Eating":
                     recHome.Visibility = Visibility.Hidden;
                     recEating.Visibility = Visibility.Visible;
-                    recDiet.Visibility = Visibility.Hidden;
+                    recStatistic.Visibility = Visibility.Hidden;
                     recworkout.Visibility = Visibility.Hidden;
+                    recPrint.Visibility = Visibility.Hidden;
                     break;
-                case "Diet":
+                case "Statistic":
                     recHome.Visibility = Visibility.Hidden;
                     recEating.Visibility = Visibility.Hidden;
-                    recDiet.Visibility = Visibility.Visible;
+                    recStatistic.Visibility = Visibility.Visible;
                     recworkout.Visibility = Visibility.Hidden;
+                    recPrint.Visibility = Visibility.Hidden;
+                    break;
+
+                case "Print":
+                    recHome.Visibility = Visibility.Hidden;
+                    recEating.Visibility = Visibility.Hidden;
+                    recStatistic.Visibility = Visibility.Hidden;
+                    recworkout.Visibility = Visibility.Hidden;
+                    recPrint.Visibility = Visibility.Visible;
                     break;
 
             }
@@ -111,10 +126,15 @@ namespace Fitness.Wpf
                     usc = new UserControlEating();
                     GridContent.Children.Add(usc);
                     break;
-                case "btnDiet":
-                    ShowItemSelected("Diet");
+                case "btnStatistic":
+                    ShowItemSelected("Statistic");
                     //usc = new UserControlHome();
                     //GridContent.Children.Add(usc);
+                    break;
+                case "btnPrint":
+                    ShowItemSelected("Print");
+                    usc = new UserControlPrint();
+                    GridContent.Children.Add(usc);
                     break;
 
             }

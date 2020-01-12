@@ -64,8 +64,8 @@
     <Compile Include="ChoiceFood.xaml.cs">
       <DependentUpon>ChoiceFood.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
     <Compile Include="TrainingInfo.xaml.cs">
       <DependentUpon>TrainingInfo.xaml</DependentUpon>
@@ -75,6 +75,9 @@
     </Compile>
     <Compile Include="UserControlHome.xaml.cs">
       <DependentUpon>UserControlHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPrint.xaml.cs">
+      <DependentUpon>UserControlPrint.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlWorkout.xaml.cs">
       <DependentUpon>UserControlWorkout.xaml</DependentUpon>
@@ -95,7 +98,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Home.xaml">
+    <Page Include="Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlPrint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -466,6 +473,8 @@
     <Resource Include="Menu\settings.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Menu\statistic.png" />
+    <Resource Include="Menu\printer.png" />
     <Resource Include="InfoExercise\Кардио\Кардио.jpg" />
     <Resource Include="Eating\Recommended.png" />
     <Resource Include="Eating\Сompilation.png" />
