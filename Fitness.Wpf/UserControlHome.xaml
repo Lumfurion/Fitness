@@ -58,7 +58,7 @@
                     </Viewbox>
 
                     <Viewbox  Grid.Row="2"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
-                        <TextBlock Foreground="White"    Text="{Binding Path=Password}"/>
+                        <TextBlock   Foreground="White"     Text="{Binding Path=Password}"/>
                     </Viewbox>
 
 
@@ -80,18 +80,11 @@
                     </Viewbox>
 
                     <Viewbox  Grid.Row="4"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
-                        <TextBlock Foreground="White"    Text="{Binding Path=BirthdayDate}"/>
+                        <TextBlock Foreground="White"    Text="{Binding Path=BirthdayDate, StringFormat=d}"/>
                     </Viewbox>
 
 
-                    <Image  Grid.Row="4"  Grid.Column="0"  Margin="3"  Source="Main/calendar.png" HorizontalAlignment="Right"  />
-                    <Viewbox  Grid.Row="4"  Grid.Column="1"  Stretch="Uniform"   HorizontalAlignment="Left" >
-                        <TextBlock Foreground="White"   Text="Дата:" />
-                    </Viewbox>
-
-                    <Viewbox  Grid.Row="4"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left" >
-                        <TextBlock Foreground="White"    Text="{Binding Path=BirthdayDate}"/>
-                    </Viewbox>
+                   
 
 
                     <Image  Grid.Row="5"  Grid.Column="0"   Margin="3" Source="Main/Weight.png" HorizontalAlignment="Right"  />

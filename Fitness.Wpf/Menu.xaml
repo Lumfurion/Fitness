@@ -94,24 +94,40 @@
 
 
 
-                <Button Grid.Row="3"  BorderBrush="Transparent" Background="#FF00FFAE"  Name="btnDiet" HorizontalAlignment="Left" >
+                <Button Grid.Row="3"  BorderBrush="Transparent" Background="#FF00FFAE"  Name="btnStatistic" HorizontalAlignment="Left" >
                     <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="47*" />
                             <ColumnDefinition Width="137*"/>
                         </Grid.ColumnDefinitions>
-                        <Image  Source="Menu/diet.png" Margin="5,0,0,0" />
+                        <Image  Source="Menu/statistic.png" Margin="5,0,0,0" />
                         <Viewbox  Stretch="Uniform"  Grid.Column="1">
-                            <TextBlock Text="Диета"   FontSize="23"  Foreground="White"/>
+                            <TextBlock Text="Cтатистика"   FontSize="23"  Foreground="White"/>
+                        </Viewbox>
+
+                    </Grid>
+                </Button>
+
+
+                <Button Grid.Row="4"  BorderBrush="Transparent" Background="#FF00FFAE"  Name="btnPrint" HorizontalAlignment="Left" >
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="47*" />
+                            <ColumnDefinition Width="137*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image  Source="Menu/printer.png" Margin="5,0,0,0" />
+                        <Viewbox  Stretch="Uniform"  Grid.Column="1">
+                            <TextBlock Text="Печать"   FontSize="23"  Foreground="White"/>
                         </Viewbox>
 
                     </Grid>
                 </Button>
 
                 <Rectangle Fill="Black"  x:Name="recHome" Height="50" Width="5" HorizontalAlignment="Left"/>
-                <Rectangle Fill="Black"   Grid.Row="1" x:Name="recworkout" Height="50" Width="5" HorizontalAlignment="Left"/>
+                <Rectangle Fill="Black"  Grid.Row="1" x:Name="recworkout" Height="50" Width="5" HorizontalAlignment="Left"/>
                 <Rectangle Fill="Black"  Grid.Row="2"  x:Name="recEating" Height="50" Width="5" HorizontalAlignment="Left"/>
-                <Rectangle Fill="Black"  Grid.Row="3" x:Name="recDiet" Height="50" Width="5" HorizontalAlignment="Left"/>
+                <Rectangle Fill="Black"  Grid.Row="3" x:Name="recStatistic" Height="50" Width="5" HorizontalAlignment="Left"/>
+                <Rectangle Fill="Black"  Grid.Row="4" x:Name="recPrint" Height="50" Width="5" HorizontalAlignment="Left"/>
             </Grid>
 
         </Grid>

@@ -1,6 +1,7 @@
 ﻿using Fitness.BusinessLogic.Controller;
 using System.Linq;
 using System.Windows.Controls;
+
 namespace Fitness.Wpf
 {
     public partial class UserControlHome : UserControl
@@ -14,9 +15,6 @@ namespace Fitness.Wpf
             trainingController = new TrainingController();
             DataContext = userController.CurrentUser;
             lbSelected.Text = trainingController.GetTypeSelectTraining();
-
         }
-
-
     }
 }
