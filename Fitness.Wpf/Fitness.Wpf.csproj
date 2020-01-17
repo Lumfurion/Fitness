@@ -79,6 +79,9 @@
     <Compile Include="UserControlPrint.xaml.cs">
       <DependentUpon>UserControlPrint.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlStatistic.xaml.cs">
+      <DependentUpon>UserControlStatistic.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlWorkout.xaml.cs">
       <DependentUpon>UserControlWorkout.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlStatistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -473,6 +480,8 @@
     <Resource Include="Menu\settings.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Statistic\results.png" />
+    <Resource Include="Statistic\metabolism.png" />
     <Resource Include="Menu\statistic.png" />
     <Resource Include="Menu\printer.png" />
     <Resource Include="InfoExercise\Кардио\Кардио.jpg" />

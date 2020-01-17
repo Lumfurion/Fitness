@@ -9,21 +9,22 @@ namespace Fitness.BusinessLogic.Model
     [Serializable]
     public class FoodDiary
     {
-        private List<Eating> eating;
-
         /// <summary>
         ///Имя пользователя. 
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Прием пищи.
+        /// </summary>
         public List<Eating> Eatings { get; set; }
+        /// <summary>
+        /// Тренировка.
+        /// </summary>
         public string Traning { get; set; }
 
         public FoodDiary(){}
 
-        public FoodDiary(List<Eating> eating)
-        {
-            this.eating = eating;
-        }
+     
 
         public FoodDiary(List<Eating> eatings, string traning)
         {
@@ -38,26 +39,28 @@ namespace Fitness.BusinessLogic.Model
             Eatings = eatings;   
         }
 
-        public Eating FoundEating(string name)
+
+
+        #region  Приема пищи
+        /// <summary>
+        /// Получение объекта приема пищи.
+        /// </summary>
+        /// <param name="name">Прием пищи когда в Обед,Ужин.</param>
+        public Eating FindEating(string name)
         {
             var eating = Eatings.Where(ea=>ea.EatingTime == name).FirstOrDefault();
             return eating;
         }
-        public int FoundEatingIndeх(string name)
+
+        /// <summary>
+        /// В какое время прием пищи находим индекс.
+        /// </summary>
+        /// <param name="name">Прием пищи когда в Обед,Ужин.</param>
+        public int FindEatingIndeх(string name)
         {
             var Index = Eatings.FindIndex(ea => ea.EatingTime == name);
             return Index;
         }
-
-        //public void Add(Food food, double count)
-        //{
-        //    Eating.Add(food, count);
-        //}
-
-        //public void Delete(Food food)
-        //{
-        //    Eating.Delete(food);
-        //}
-
+        #endregion 
     }
 }

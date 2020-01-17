@@ -32,8 +32,11 @@ namespace Fitness.CMD
             foodDiaryController.SetFoodDiaryTemplate();
             foodDiaryController.Add("Апельсин", "Завтрак");
 
-
-
+            StatisticController statisticController = new StatisticController();
+            statisticController.GetSumTraining();
+            statisticController.GetSumFoodDiary();
+            statisticController.СalculateBMR();
+            statisticController.Total();
 
 
 

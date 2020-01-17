@@ -28,13 +28,25 @@ namespace Fitness.Wpf
             var EatingTime  = button.Tag.ToString();
             ChoiceFood choiceFood = new ChoiceFood(EatingTime);
             choiceFood.ShowDialog();
-           
+         
             ICUserFoodDiary.ItemsSource = null;
-          
             foodDiaryController.Update();
-
-            
             ICUserFoodDiary.ItemsSource = foodDiaryController.UserFoodDiary;
+        }
+
+        private void btnSelectOnClick(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result =
+             MessageBox.Show("Вы уверены,созданный дневника приема пищи пользователь будет удален?",
+             "Рекомендованой дневника приема пищи", MessageBoxButton.YesNoCancel,
+             MessageBoxImage.Question, MessageBoxResult.Yes);
+
+            if(result == MessageBoxResult.Yes)
+            {
+                foodDiaryController.InitTemplateRecommended();
+                foodDiaryController.Update();
+                ICUserFoodDiary.Items.Refresh();
+            }
         }
     }
 }

@@ -128,8 +128,8 @@ namespace Fitness.Wpf
                     break;
                 case "btnStatistic":
                     ShowItemSelected("Statistic");
-                    //usc = new UserControlHome();
-                    //GridContent.Children.Add(usc);
+                    usc = new UserControlStatistic();
+                    GridContent.Children.Add(usc);
                     break;
                 case "btnPrint":
                     ShowItemSelected("Print");

@@ -598,7 +598,7 @@ namespace Fitness.BusinessLogic.Controller
 
 
         /// <summary>
-        /// Проверка  выбрана треровка.
+        /// Проверка выбрана тренировка.
         /// </summary>
         public bool CurrentUserSelectsTraining()
         {

@@ -58,7 +58,7 @@
                     </Viewbox>
 
                     <Viewbox  Grid.Row="2"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
-                        <TextBlock   Foreground="White"     Text="{Binding Path=Password}"/>
+                        <TextBlock   Foreground="White"     Text="{Binding Path=PasswordStar}"/>
                     </Viewbox>
 
 
@@ -111,8 +111,7 @@
 
         </Border>
 
-        <!---->
-
+        <!--Тренировка-->
         <Border Grid.Row="1" Background="#FF833395" Margin="40,40,40,10" CornerRadius="10">
             <Grid>
                 <Grid.ColumnDefinitions>

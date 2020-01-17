@@ -19,6 +19,17 @@ namespace Fitness.BusinessLogic.Model
         /// </summary>
         public string Password { get; set; }
 
+        public string PasswordStar { 
+            
+           get 
+           {
+               var  star=  new string('*', Password.Length);
+
+               return star;
+           }
+        }
+
+ 
         /// <summary>
         /// Картинка.
         /// </summary>

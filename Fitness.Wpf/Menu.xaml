@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="Home" Height="881.104" Width="1176"  Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip" >
+        Title="Home" Height="881.104" Width="1176"  
+        Background="Transparent" 
+        AllowsTransparency="True" WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        >
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="105*" MaxWidth="300"/>

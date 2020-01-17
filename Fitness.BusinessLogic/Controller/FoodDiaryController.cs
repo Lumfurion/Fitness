@@ -6,7 +6,7 @@ using Fitness.BusinessLogic.Services.Initializers;
 namespace Fitness.BusinessLogic.Controller
 {
     public class FoodDiaryController : ControllerBase
-    {
+    {  
         public List<FoodDiary> FoodDiaries { get; set; }
 
         /// <summary>
@@ -14,7 +14,8 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         public List<FoodDiary> Recommended { get; set; }
         /// <summary>
-        /// Дневник полный узором.
+        /// Днивник приём пищи созданный пользователем.
+        /// Для удобности привязки список. 
         /// </summary>
         public List<FoodDiary> UserFoodDiary { get; set; }
         private string User { get; set; }
@@ -52,7 +53,21 @@ namespace Fitness.BusinessLogic.Controller
             }
 
         }
-
+        /// <summary>
+        /// Добавление рекомендованный прием пищи. 
+        /// </summary>
+        public void InitTemplateRecommended()
+        {   
+            if(Recommended.Count != 0)//если данной тренировки рекомендованный дневник приема пищи.
+            {
+                FoodDiaries.Clear();
+                FoodDiaries = Recommended;
+                Save();
+            }
+        }
+        /// <summary>
+        /// Дневник питания текущего пользователя.
+        /// </summary>
         public void SetFoodDiaryCurrentUser()
         {
             var foodDiary = FoodDiaries.Where(fd => fd.Name == User).FirstOrDefault();
@@ -87,7 +102,7 @@ namespace Fitness.BusinessLogic.Controller
         {
             var foodDiary = FoodDiaries.Where(fd => fd.Name == User).FirstOrDefault();
             var IndeхfoodDiary = FoodDiaries.FindIndex(fd => fd.Name == User);
-            var IndeхEating = foodDiary.FoundEatingIndeх(eating);
+            var IndeхEating = foodDiary.FindEatingIndeх(eating);
 
             var product = InitializingFoods.GetFood(name);
             FoodDiaries[IndeхfoodDiary].Eatings[IndeхEating].Add(product.Key, product.Value);

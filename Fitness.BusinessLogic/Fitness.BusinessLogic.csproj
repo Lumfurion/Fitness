@@ -55,6 +55,7 @@
     <Compile Include="Controller\FoodDiaryController.cs" />
     <Compile Include="Controller\IDataSaver.cs" />
     <Compile Include="Controller\SerializeDataSaver.cs" />
+    <Compile Include="Controller\StatisticController.cs" />
     <Compile Include="Controller\TrainingController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Model\Eating.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\FoodDiary.cs" />
     <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\Statistic.cs" />
     <Compile Include="Model\Training.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
