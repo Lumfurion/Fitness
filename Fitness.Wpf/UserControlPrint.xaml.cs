@@ -1,20 +1,19 @@
 ﻿using Fitness.BusinessLogic.Controller;
-using System;
 using System.Windows;
 using System.Windows.Controls;
+
 
 namespace Fitness.Wpf
 {
    
     public partial class UserControlPrint : UserControl
     {
-        readonly UserController userController;
         readonly TrainingController trainingController;
         readonly FoodDiaryController foodDiaryController;
         public UserControlPrint()
         {
             InitializeComponent();
-            userController = new UserController(UserController.CurrentUserName);
+  
             trainingController = new TrainingController();
             foodDiaryController = new FoodDiaryController();
             BindingControllers();
@@ -29,6 +28,8 @@ namespace Fitness.Wpf
             ICUserFoodDiary.ItemsSource = foodDiaries;
         }
 
+    
+    
         private void Print(string type)
         {
             PrintDialog printDialog = new PrintDialog();
@@ -36,13 +37,16 @@ namespace Fitness.Wpf
             {
                 if (printDialog.ShowDialog() == true)
                 {
+                   
                     printDialog.PrintVisual(ICTraining, "Распечатываем тренировку");
                 }
             }
             else if(type == "Eating")
             {
+                
                 if (printDialog.ShowDialog() == true)
                 {
+                    
                     printDialog.PrintVisual(ICUserFoodDiary, "Распечатываем Дневник приема пищи");
                 }
             }

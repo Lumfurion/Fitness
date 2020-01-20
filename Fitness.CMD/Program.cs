@@ -27,16 +27,14 @@ namespace Fitness.CMD
             training.SelectTraining(noob);
             training.Saver();
 
+            training.ReplacementExerciseinProgram("День 1", "Молот", "Выпады в движении");
+
             FoodDiaryController foodDiaryController = new FoodDiaryController();
             
             foodDiaryController.SetFoodDiaryTemplate();
             foodDiaryController.Add("Апельсин", "Завтрак");
 
-            StatisticController statisticController = new StatisticController();
-            statisticController.GetSumTraining();
-            statisticController.GetSumFoodDiary();
-            statisticController.СalculateBMR();
-            statisticController.Total();
+            
 
 
 

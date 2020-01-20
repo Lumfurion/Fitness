@@ -118,8 +118,8 @@
                                                         <Grid>
                                                             <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
                                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                                                <Button Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}" Style="{StaticResource ButtonError}" Content="Удалить"  Click="DeleteExercise_Click"/>
-                                                                <!--<Button x:Name="btnEdit" Style="{StaticResource ButtonEdit}"   Content="Изменить" Tag="{Binding Name}" Click="EditExercise_Click"/>-->
+                                                                <Button  Content="Удалить"  Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}"  Style="{StaticResource ButtonError}"   Click="DeleteExercise_Click"/>
+                                                                <Button  Content="Заменить" Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}"  Style="{StaticResource ButtonEdit}"  Click="EditExercise_Click" />
                                                             </StackPanel>
                                                         </Grid>
 

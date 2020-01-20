@@ -43,13 +43,6 @@ namespace Fitness.BusinessLogic.Controller
         }
 
 
-        public void Update()
-        {
-            Name = UserController.CurrentUserName;
-            Trainings = GetTraining();
-        }
-
-
         #region Выбор тренировки.
         public void AddNew(string day, List<Exercise> exercises)
         {
@@ -795,6 +788,17 @@ namespace Fitness.BusinessLogic.Controller
             Trainings.RemoveAt(index);
             Save();
         }
+        /// <summary>
+        /// Замена упражнения
+        /// </summary>
+        /// <param name="replace">На что нужно заменить</param>
+        /// <param name="whatToreplace">Что хотят заменить</param>
+        public void ReplacementExerciseinProgram(string key, string replace, string whatToreplace)
+        {
+            var training = Trainings.Where(t => t.Name == Name && t.Type == Type).FirstOrDefault();
+            training.Replacement(key, replace, whatToreplace);
+            Save();
+        }
 
         /// <summary>
         /// Сохранят если пользователь не выбрал тренировку.
@@ -809,6 +813,12 @@ namespace Fitness.BusinessLogic.Controller
                 Save();
             }
             
+        }
+
+        public void Update()
+        {
+            Name = UserController.CurrentUserName;
+            Trainings = GetTraining();
         }
 
         private List<Training> GetTraining()

@@ -7,21 +7,17 @@ namespace Fitness.Wpf
    
     public partial class UserControlEating : UserControl
     {
-        readonly UserController userController;
-        readonly TrainingController trainingController;
         readonly FoodDiaryController foodDiaryController;
 
         public UserControlEating()
         {
-           
             InitializeComponent();
-            trainingController = new TrainingController();
-            userController = new UserController(UserController.CurrentUserName);
-            trainingController = new TrainingController();
             foodDiaryController = new FoodDiaryController();
             DataContext = foodDiaryController;
         }
-
+        /// <summary>
+        /// Добавление тренировки.
+        /// </summary>
         private void btnAddFoodOnClick(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
@@ -33,7 +29,9 @@ namespace Fitness.Wpf
             foodDiaryController.Update();
             ICUserFoodDiary.ItemsSource = foodDiaryController.UserFoodDiary;
         }
-
+        /// <summary>
+        /// Выбор рекомендованой тренировки.
+        /// </summary>
         private void btnSelectOnClick(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result =

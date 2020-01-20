@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,6 +68,9 @@
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Printing Help\ControlToImage.cs" />
+    <Compile Include="Printing Help\UserControlPrintDocumentPaginator.cs" />
+    <Compile Include="Printing Help\UserControlPrintListPage.cs" />
     <Compile Include="TrainingInfo.xaml.cs">
       <DependentUpon>TrainingInfo.xaml</DependentUpon>
     </Compile>

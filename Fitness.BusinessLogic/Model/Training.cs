@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness.BusinessLogic.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -78,8 +79,28 @@ namespace Fitness.BusinessLogic.Model
             var exercise = Exercises[key].Where(ex => ex.Name == name).FirstOrDefault();
             Exercises[key].Remove(exercise);
         }
+       
+        public void Replacement(string key, string replace, string whatToreplace)
+        {
+            var idexwhatToreplace = Exercises[key].FindIndex(trainings => trainings.Name == whatToreplace);
+
+            ExerciseController exerciseController = new ExerciseController();
+            var exercisereplace = exerciseController.GetExercise(replace);
+           
+
+            foreach ( var e in Exercises[key])
+            {
+                if(e.Name == whatToreplace)//ищем что будем менять 
+                {
+                    Exercises[key][idexwhatToreplace] = exercisereplace;
+                   
+                    break;
+                }
+            }
 
 
+        }
+        
 
     }
 }

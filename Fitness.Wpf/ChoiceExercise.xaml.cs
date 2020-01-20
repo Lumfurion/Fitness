@@ -9,6 +9,8 @@ namespace Fitness.Wpf
         private readonly ExerciseController excerseController;
         private readonly TrainingController trainingController;
         readonly string Day;
+        readonly string whatToreplace;
+        readonly string btnpress;
         private string excerse;
 
         public ChoiceExercise()
@@ -20,12 +22,14 @@ namespace Fitness.Wpf
         }
 
 
-        public ChoiceExercise(string day)
+        public ChoiceExercise(string day, string name = " ", string btn = " ")
         {
             InitializeComponent();
             excerseController = new ExerciseController();
             trainingController = new TrainingController();
             Day = day;
+            btnpress = btn;
+            whatToreplace = name;
             ICTraining.ItemsSource = excerseController.Exercises;
         }
 
@@ -33,9 +37,15 @@ namespace Fitness.Wpf
         {
             object tag = (sender as FrameworkElement).Tag;
             string name = tag.ToString();
+
+            if(btnpress == "EditExercise" && !string.IsNullOrEmpty(btnpress))
+            {
+                trainingController.ReplacementExerciseinProgram(Day,name,whatToreplace);
+            }
             MessageBox.Show(name + "\n" + Day);
             excerse = name;
-            if(!string.IsNullOrEmpty(Day))
+
+            if (!string.IsNullOrEmpty(Day) && btnpress != "EditExercise")
             {
                 trainingController.AddExerciseinProgram(Day, name);
             }

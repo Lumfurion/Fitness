@@ -69,9 +69,22 @@ namespace Fitness.Wpf
 
         private void EditExercise_Click(object sender, RoutedEventArgs e)
         {
-            object tag = (sender as FrameworkElement).Tag;
-            string name = tag.ToString();
-            MessageBox.Show(name);
+            Button button = (Button)sender;
+            string Key = button.Tag.ToString();
+            string name = button.Uid.ToString();
+        
+            ChoiceExercise cex = new ChoiceExercise(Key, name, "EditExercise");
+            cex.ShowDialog();
+
+            //Обновление
+            ICTraining.ItemsSource = null;
+            ICEdit.ItemsSource = null;
+
+            trainingController.Update();
+
+            //Пвязки
+            ICTraining.ItemsSource = trainingController.SelectProgram();
+            ICEdit.ItemsSource = trainingController.SelectProgram();
 
         }
         

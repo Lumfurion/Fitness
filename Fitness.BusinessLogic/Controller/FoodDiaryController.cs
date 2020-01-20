@@ -4,7 +4,9 @@ using Fitness.BusinessLogic.Model;
 using Fitness.BusinessLogic.Services.Initializers;
 
 namespace Fitness.BusinessLogic.Controller
-{
+{    /// <summary>
+     /// Дневник питания -позволяет пользователю каждой тренировки составить дневник питания или выбрать готовый  дневник питания.
+     /// </summary>
     public class FoodDiaryController : ControllerBase
     {  
         public List<FoodDiary> FoodDiaries { get; set; }
@@ -23,17 +25,22 @@ namespace Fitness.BusinessLogic.Controller
         private TrainingController trainingController { get; set; }
 
         public FoodDiaryController()
-        {   
-            FoodDiaries = GetFoodDiary();
-            User = UserController.CurrentUserName;
+        {
             trainingController = new TrainingController();
             Recommended = new List<FoodDiary>();
             UserFoodDiary = new List<FoodDiary>();
+
+            FoodDiaries = GetFoodDiary();
+            User = UserController.CurrentUserName;
+            Type = trainingController.GetTypeSelectTraining();
+
+   
             SetRecommended();
             SetFoodDiaryCurrentUser();
         }
 
-       
+
+
 
         /// <summary>
         /// Шаблон который пользователь будет заполнять продуктами.
@@ -46,7 +53,7 @@ namespace Fitness.BusinessLogic.Controller
               new Eating("Обед",new Dictionary<Food, double>()),
               new Eating("Ужин",new Dictionary<Food, double>())
             };
-            var isSuch = FoodDiaries.Any(fd => fd.Name == User);//Проверка есть ли в пользователя шаблон.
+            var isSuch = FoodDiaries.Any(fd => fd.Name == User && fd.Traning == Type);//Проверка есть ли в пользователя шаблон.
             if (isSuch == false)
             {
                 FoodDiaries.Add(new FoodDiary(User, Type, Eating));
@@ -57,11 +64,14 @@ namespace Fitness.BusinessLogic.Controller
         /// Добавление рекомендованный прием пищи. 
         /// </summary>
         public void InitTemplateRecommended()
-        {   
-            if(Recommended.Count != 0)//если данной тренировки рекомендованный дневник приема пищи.
-            {
-                FoodDiaries.Clear();
-                FoodDiaries = Recommended;
+        {
+            var IndeхfoodDiary = FoodDiaries.FindIndex(fd => fd.Name == User && fd.Traning == Type);
+
+            if (Recommended.Count != 0 )//если данной тренировки рекомендованный дневник приема пищи.
+            {   
+                var rec = Recommended.Where(r => r.Traning == Type).FirstOrDefault();
+                FoodDiaries.RemoveAt(IndeхfoodDiary);
+                FoodDiaries.Add(rec);
                 Save();
             }
         }
@@ -70,7 +80,7 @@ namespace Fitness.BusinessLogic.Controller
         /// </summary>
         public void SetFoodDiaryCurrentUser()
         {
-            var foodDiary = FoodDiaries.Where(fd => fd.Name == User).FirstOrDefault();
+            var foodDiary = FoodDiaries.Where(fd => fd.Name == User && fd.Traning  == Type).FirstOrDefault();
             UserFoodDiary.Add(foodDiary);
         }
 
@@ -80,7 +90,6 @@ namespace Fitness.BusinessLogic.Controller
         /// <returns></returns>
         public void SetRecommended()
         {
-           Type = trainingController.GetTypeSelectTraining();
            var foodDiary = InitializingFoodDiary.GetFoodDiary(Type);
 
             if(foodDiary != null)
@@ -100,8 +109,8 @@ namespace Fitness.BusinessLogic.Controller
         /// <param name="eating">Вреня приема пищи(например:обед)</param>
         public void Add(string name, string eating)
         {
-            var foodDiary = FoodDiaries.Where(fd => fd.Name == User).FirstOrDefault();
-            var IndeхfoodDiary = FoodDiaries.FindIndex(fd => fd.Name == User);
+            var foodDiary = FoodDiaries.Where(fd => fd.Name == User && fd.Traning == Type).FirstOrDefault();
+            var IndeхfoodDiary = FoodDiaries.FindIndex(fd => fd.Name == User && fd.Traning == Type);
             var IndeхEating = foodDiary.FindEatingIndeх(eating);
 
             var product = InitializingFoods.GetFood(name);
@@ -109,7 +118,9 @@ namespace Fitness.BusinessLogic.Controller
             Save();
             Update();
         }
-
+        /// <summary>
+        /// Обновление данных.
+        /// </summary>
         public void Update()
         {
             FoodDiaries.Clear();

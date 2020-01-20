@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-
 namespace Fitness.BusinessLogic.Model
 { /// <summary>
   /// Пользователь.
@@ -24,7 +22,6 @@ namespace Fitness.BusinessLogic.Model
            get 
            {
                var  star=  new string('*', Password.Length);
-
                return star;
            }
         }
