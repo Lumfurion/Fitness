@@ -748,16 +748,27 @@ namespace Fitness.BusinessLogic.Controller
         }
 
         /// <summary>
-        /// Добавить упражнение в дня.
+        /// Добавить  день.
         /// </summary>
-        public void AddNewDay(string exercise)
+        public void AddNewDay()
         {
             var Count = SelectProgram().Keys.Count();//Получение количество деней.
             var day = $"День {++Count}";
-            ExerciseController exerciseController = new ExerciseController();
-            var ex = exerciseController.GetExercise(exercise);
-            AddTraining(day,ex);
        
+            int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);//Получения идекса.
+            Trainings[index].Add(day, new List<Exercise>());
+            Save();
+
+        }
+       
+        /// <summary>
+        /// Удалить день.
+        /// </summary>
+        public void DeleteDay(string day)
+        {
+            int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);//Получения идекса.
+            Trainings[index].Exercises.Remove(day);//удаление деня.
+            Save();
         }
 
 

@@ -88,7 +88,7 @@ namespace Fitness.BusinessLogic.Controller
         /// Рекомендованные для тренировки.
         /// </summary>
         /// <returns></returns>
-        public void SetRecommended()
+        private void SetRecommended()
         {
            var foodDiary = InitializingFoodDiary.GetFoodDiary(Type);
 
@@ -118,6 +118,55 @@ namespace Fitness.BusinessLogic.Controller
             Save();
             Update();
         }
+
+        /// <summary>
+        /// Удаление еды из дневника питания.
+        /// </summary>
+        /// <param name="name">Имя еды</param>
+        /// <param name="eating">Вреня приема пищи(например:обед)</param>
+        public void Delete(string name, string eating)
+        {
+            var foodDiary = FoodDiaries.Where(fd => fd.Name == User && fd.Traning == Type).FirstOrDefault();
+            var IndeхfoodDiary = FoodDiaries.FindIndex(fd => fd.Name == User && fd.Traning == Type);
+            var IndeхEating = foodDiary.FindEatingIndeх(eating);
+
+            var product = foodDiary.Eatings[IndeхEating].Foods.Where(f => f.Key.Name == name).FirstOrDefault();
+            var food = product.Key;
+            FoodDiaries[IndeхfoodDiary].Eatings[IndeхEating].Delete(food);
+            Save();
+            Update();
+        }
+
+        /// <summary>
+        ///Замена еды в дневнике питания.
+        /// </summary>
+        /// <param name="name">Имя еды</param>
+        /// <param name="replace">На что будем менять</param>
+        /// <param name="eating">Вреня приема пищи(например:обед)</param>
+        public void Replacement(string name,string replace, string eating)
+        {
+            var foodDiary = FoodDiaries.Where(fd => fd.Name == User && fd.Traning == Type).FirstOrDefault();
+            var IndeхfoodDiary = FoodDiaries.FindIndex(fd => fd.Name == User && fd.Traning == Type);
+            var IndeхEating = foodDiary.FindEatingIndeх(eating);
+
+            var rep = InitializingFoods.GetFood(replace);
+           
+
+            foreach(var i in FoodDiaries[IndeхfoodDiary].Eatings[IndeхEating].Foods)
+            {  
+                if(i.Key.Name == name)
+                {
+                    FoodDiaries[IndeхfoodDiary].Eatings[IndeхEating].Foods.Remove(i.Key);
+                    FoodDiaries[IndeхfoodDiary].Eatings[IndeхEating].Add(rep.Key,rep.Value);
+                    break;
+                }
+            }
+            
+            Save();
+            Update();
+        }
+
+
         /// <summary>
         /// Обновление данных.
         /// </summary>

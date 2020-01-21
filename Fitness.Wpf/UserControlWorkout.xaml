@@ -112,7 +112,7 @@
                                                 <RowDefinition Height="374*"/>
                                                 <RowDefinition Height="45*"/>
                                             </Grid.RowDefinitions>
-                                            <ItemsControl ItemsSource="{Binding Path=Value}"  >
+                                            <ItemsControl ItemsSource="{Binding Path=Value}">
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate>
                                                         <Grid>
@@ -126,15 +126,10 @@
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
                                             </ItemsControl>
-                                            <Grid  Grid.Row="1">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="27*"/>
-                                                    <ColumnDefinition Width="7*"/>
-                                                    <ColumnDefinition Width="32*"/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <Button Grid.Column="1"   Tag="{Binding Key}" Style="{StaticResource ButtonAdd}"   Click="AddExercise_Click"  Content="+"  FontSize="20"    MinHeight="44"  MaxHeight="60"/>
-                                            </Grid>
+                                                <StackPanel  Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <Button  Tag="{Binding ElementName=epedit, Path=Header}"   Style="{StaticResource ButtonAdd}"   Click="AddExercise_Click"  Content="+"  FontSize="20"    MinWidth="60" MaxWidth="80"        MinHeight="44"  MaxHeight="60"/>
+                                                    <Button  Tag="{Binding ElementName=epedit, Path=Header}"   Style="{StaticResource ButtonError}" Click="btnDeleteDayOnClick"  Content="-"  FontSize="20"  MinWidth="60"  MaxWidth="80"      MinHeight="44"  MaxHeight="60"/>
+                                                </StackPanel>
 
                                         </Grid>
                                     </Expander>

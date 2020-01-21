@@ -31,10 +31,12 @@ namespace Fitness.CMD
 
             FoodDiaryController foodDiaryController = new FoodDiaryController();
             
-            foodDiaryController.SetFoodDiaryTemplate();
-            foodDiaryController.Add("Апельсин", "Завтрак");
-
+           
+            foodDiaryController.InitTemplateRecommended();
+            foodDiaryController.Replacement("Чай черный без сахара", "Апельсин", "Завтрак");
             
+
+
 
 
 

@@ -46,5 +46,33 @@ namespace Fitness.Wpf
                 ICUserFoodDiary.Items.Refresh();
             }
         }
+
+        private void DeleteFood_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            var eatingTime = button.Tag.ToString();
+            var name = button.Uid.ToString();
+
+            foodDiaryController.Delete(name, eatingTime);
+            ICUserFoodDiary.ItemsSource = null;
+            ICUserFoodDiary.ItemsSource = foodDiaryController.UserFoodDiary;
+
+        }
+
+        private void EditFood_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            var eatingTime = button.Tag.ToString();
+            var name = button.Uid.ToString();
+
+            ChoiceFood choiceFood = new ChoiceFood(eatingTime,name);
+            choiceFood.ShowDialog();
+            
+            foodDiaryController.Update();
+            ICUserFoodDiary.ItemsSource = null;
+            ICUserFoodDiary.ItemsSource = foodDiaryController.UserFoodDiary;
+
+
+        }
     }
 }

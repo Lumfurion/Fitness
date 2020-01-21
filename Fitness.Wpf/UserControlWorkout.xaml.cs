@@ -35,10 +35,10 @@ namespace Fitness.Wpf
 
         private void AddExercise_Click(object sender, RoutedEventArgs e)
         {
-            object tag = (sender as FrameworkElement).Tag;
-            string day = tag.ToString();
-            MessageBox.Show(day);
-            ChoiceExercise cex = new ChoiceExercise(day);
+            Button button = (Button)sender;
+            string Key = button.Tag.ToString();
+            MessageBox.Show(Key);
+            ChoiceExercise cex = new ChoiceExercise(Key);
             cex.ShowDialog();
             ICTraining.ItemsSource = null;
             ICEdit.ItemsSource = null;
@@ -76,15 +76,7 @@ namespace Fitness.Wpf
             ChoiceExercise cex = new ChoiceExercise(Key, name, "EditExercise");
             cex.ShowDialog();
 
-            //Обновление
-            ICTraining.ItemsSource = null;
-            ICEdit.ItemsSource = null;
-
-            trainingController.Update();
-
-            //Пвязки
-            ICTraining.ItemsSource = trainingController.SelectProgram();
-            ICEdit.ItemsSource = trainingController.SelectProgram();
+            UpDate();
 
         }
         
@@ -92,7 +84,7 @@ namespace Fitness.Wpf
         {
 
             Button button = (Button)sender;
-       
+
             string type = button.Tag.ToString();
             switch (type)
             {
@@ -105,25 +97,33 @@ namespace Fitness.Wpf
                     break;
             }
 
-            ICTraining.ItemsSource = null;
-            ICEdit.ItemsSource = null;
-
-            trainingController.Update();
-
-            //Пвязки
-            ICTraining.ItemsSource = trainingController.SelectProgram();
-            ICEdit.ItemsSource = trainingController.SelectProgram();
+            UpDate();
 
         }
+
+        
 
         private void AddnewDayOnClick(object sender, RoutedEventArgs e)
         {
-            var choice= new ChoiceExercise();
-            choice.ShowDialog();
-            var ex=choice.GetExercise();
-            MessageBox.Show(ex);
-            trainingController.AddNewDay(ex);
+            trainingController.AddNewDay();
 
+            UpDate();
+        }
+
+
+        private void btnDeleteDayOnClick(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string day = button.Tag.ToString();
+            MessageBox.Show(day);
+            trainingController.DeleteDay(day);
+
+            UpDate();
+
+        }
+
+        private void UpDate()
+        {
             ICTraining.ItemsSource = null;
             ICEdit.ItemsSource = null;
 
@@ -133,5 +133,7 @@ namespace Fitness.Wpf
             ICTraining.ItemsSource = trainingController.SelectProgram();
             ICEdit.ItemsSource = trainingController.SelectProgram();
         }
+
+
     }
 }

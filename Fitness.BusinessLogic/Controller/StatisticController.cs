@@ -88,7 +88,7 @@ namespace Fitness.BusinessLogic.Controller
         {   var BMR = СalculateBMR();
             var training = GetSumTraining();
             var FoodDiary = GetSumFoodDiary();
-            var total = (BMR + training) - FoodDiary;
+            var total = -(BMR + training) + FoodDiary;
             return (int)total;
         }
 

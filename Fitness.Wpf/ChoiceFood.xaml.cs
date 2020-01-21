@@ -8,13 +8,16 @@ namespace Fitness.Wpf
     public partial class ChoiceFood : Window
     {
         readonly string Etingtime;
+        readonly string Whatr;
         readonly FoodDiaryController foodDiaryController;
-        public ChoiceFood(string etingtime)
+
+        public ChoiceFood(string etingtime, string whatr = " ")
         {
             InitializeComponent();
             ICEating.ItemsSource = InitializingFoods.Foods;
             
             Etingtime = etingtime;
+            Whatr = whatr;
             foodDiaryController = new FoodDiaryController();
         }
 
@@ -22,7 +25,15 @@ namespace Fitness.Wpf
         {
             Button button = (Button)sender;
             var name = button.Tag.ToString();
-            foodDiaryController.Add(name, Etingtime);
+           
+            if(Whatr == " " )
+            {
+                foodDiaryController.Add(name, Etingtime);
+            }
+            else if(!string.IsNullOrEmpty(Whatr))
+            {
+                foodDiaryController.Replacement(Whatr, name, Etingtime);
+            }
             Close();
         }
     }
