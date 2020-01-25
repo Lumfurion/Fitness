@@ -1,7 +1,7 @@
 ﻿using Fitness.BusinessLogic.Controller;
 using System.Windows;
 using System.Windows.Controls;
-
+using Fitness.BusinessLogic.Printing_document;
 
 namespace Fitness.Wpf
 {
@@ -10,6 +10,7 @@ namespace Fitness.Wpf
     {
         readonly TrainingController trainingController;
         readonly FoodDiaryController foodDiaryController;
+       
         public UserControlPrint()
         {
             InitializeComponent();
@@ -28,29 +29,6 @@ namespace Fitness.Wpf
             ICUserFoodDiary.ItemsSource = foodDiaries;
         }
 
-    
-    
-        private void Print(string type)
-        {
-            PrintDialog printDialog = new PrintDialog();
-            if (type == "Training")
-            {
-                if (printDialog.ShowDialog() == true)
-                {
-                   
-                    printDialog.PrintVisual(ICTraining, "Распечатываем тренировку");
-                }
-            }
-            else if(type == "Eating")
-            {
-                
-                if (printDialog.ShowDialog() == true)
-                {
-                    
-                    printDialog.PrintVisual(ICUserFoodDiary, "Распечатываем Дневник приема пищи");
-                }
-            }
-        }
 
         private void btnPrintOnClick(object sender,RoutedEventArgs e)
         {
@@ -59,11 +37,11 @@ namespace Fitness.Wpf
             switch(name)
             {
                 case "btnPrintTraining":
-                Print("Training");
+                    Printing.Workout();
                     break;
 
                 case "btnPrintEating":
-                    Print("Eating");
+                    Printing.FoodDiary();
                     break;
             }
             

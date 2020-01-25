@@ -6,12 +6,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //прямо во время тогда пишут код не нужно запускать тесты то есть при написания кода постояно идут проверки.
 namespace UserControllerTests
 {   [TestClass()]
-    public class UserControllerTests
+    public class UserControllerTests //если класс будет приватним тестирование будет не правильно работать.
     {
         [TestMethod()]
         public void SetNewUserDataTest()
         {  //Arrange
             var userName = Guid.NewGuid().ToString();
+            var password = "13223dss23232ds232";
             var birtdayDate = DateTime.Now.AddDays(-18);
             var gender = "Man";
             var weight = 90;
@@ -19,15 +20,15 @@ namespace UserControllerTests
             var controller = new UserController(userName);
 
             //Act
-            controller.SetNewUserData(gender, birtdayDate, weight, height);
-            var controller2 = new UserController(userName);
+            controller.SetNewUserData(gender,password, birtdayDate, weight, height);
+            var getData = new UserController(userName);
              
             //Assert
-            Assert.AreEqual(userName, controller2.CurrentUser.Name);
-            Assert.AreEqual(birtdayDate, controller2.CurrentUser.BirthdayDate);
-            Assert.AreEqual(gender, controller2.CurrentUser.Gender.Name);
-            Assert.AreEqual(weight, controller2.CurrentUser.Weight);
-            Assert.AreEqual(height, controller2.CurrentUser.Height);
+            Assert.AreEqual(userName, getData.CurrentUser.Name);
+            Assert.AreEqual(birtdayDate, getData.CurrentUser.BirthdayDate);
+            Assert.AreEqual(gender, getData.CurrentUser.Gender.Name);
+            Assert.AreEqual(weight, getData.CurrentUser.Weight);
+            Assert.AreEqual(height, getData.CurrentUser.Height);
             
 
         }

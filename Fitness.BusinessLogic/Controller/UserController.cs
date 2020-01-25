@@ -97,7 +97,8 @@ namespace Fitness.BusinessLogic.Controller
         /// Инициализация нового пользователя.
         /// </summary>
         public void SetNewUserData(string genderName, string password, DateTime birthdaydate, double weight, double height)
-        { //Проверка.
+        {
+            #region Проверки.
             if (string.IsNullOrEmpty(genderName))
             {
                 throw new ArgumentNullException("Пол пользователя не может быть пустым", nameof(genderName));
@@ -115,6 +116,7 @@ namespace Fitness.BusinessLogic.Controller
             {
                 throw new ArgumentException("Рост не может быть 0", nameof(height));
             }
+            #endregion
             CurrentUser.Password = password;
             CurrentUser.Gender = new Gender(genderName);
             CurrentUser.BirthdayDate = birthdaydate;

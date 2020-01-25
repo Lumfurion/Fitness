@@ -750,7 +750,7 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Добавить  день.
         /// </summary>
-        public void AddNewDay()
+        public string AddNewDay()
         {
             var Count = SelectProgram().Keys.Count();//Получение количество деней.
             var day = $"День {++Count}";
@@ -758,7 +758,7 @@ namespace Fitness.BusinessLogic.Controller
             int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);//Получения идекса.
             Trainings[index].Add(day, new List<Exercise>());
             Save();
-
+            return day;
         }
        
         /// <summary>
