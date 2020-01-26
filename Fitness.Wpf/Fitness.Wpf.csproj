@@ -106,11 +106,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Registration.xaml">
+    <Page Include="Enter to account\Registration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SignIn.xaml">
+    <Page Include="Enter to account\SignIn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -121,10 +121,10 @@
     <Compile Include="ChoiceTraining.xaml.cs">
       <DependentUpon>ChoiceTraining.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Registration.xaml.cs">
+    <Compile Include="Enter to account\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SignIn.xaml.cs">
+    <Compile Include="Enter to account\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -188,7 +188,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\Logotip.jpg" />
+    <Resource Include="Enter to account\Image\Logotip.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\maxresdefault.jpg" />
@@ -430,19 +430,19 @@
     <Resource Include="Training\FullbodyGirl\Day3\Тяга штанги в наклоне.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu\home.png" />
+    <Resource Include="Menu Icon\home.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu\workout.png" />
+    <Resource Include="Menu Icon\workout.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu\food.png" />
+    <Resource Include="Menu Icon\food.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu\diet.png" />
+    <Resource Include="Menu Icon\diet.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu\Close.png" />
+    <Resource Include="Menu Icon\Close.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Main\login.png" />
@@ -478,13 +478,13 @@
     <Resource Include="Image\analytics.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu\settings.png" />
+    <Resource Include="Menu Icon\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Statistic\results.png" />
     <Resource Include="Statistic\metabolism.png" />
-    <Resource Include="Menu\statistic.png" />
-    <Resource Include="Menu\printer.png" />
+    <Resource Include="Menu Icon\statistic.png" />
+    <Resource Include="Menu Icon\printer.png" />
     <Resource Include="InfoExercise\Кардио\Кардио.jpg" />
     <Resource Include="Eating\Recommended.png" />
     <Resource Include="Eating\Сompilation.png" />
@@ -508,6 +508,8 @@
       <Name>Fitness.BusinessLogic</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Menu and WindowSelectTraining\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -106,6 +106,9 @@ namespace Fitness.BusinessLogicTests.Controller
             TrainingController trainingController = new TrainingController();
 
             //Act
+            trainingController.SelectTraining("NoobMan");
+            trainingController.Saver();
+            trainingController.Update();
             var training = trainingController.SelectProgram();
             trainingController.ChangeProgram("SlimmingMan");
             trainingController.Update();

@@ -8,7 +8,9 @@ namespace Fitness.BusinessLogic.Controller
      /// Дневник питания -позволяет пользователю каждой тренировки составить дневник питания или выбрать готовый  дневник питания.
      /// </summary>
     public class FoodDiaryController : ControllerBase
-    {  
+    {  /// <summary>
+       ///Все дневники питания.
+       /// </summary>
         public List<FoodDiary> FoodDiaries { get; set; }
 
         /// <summary>
@@ -69,8 +71,8 @@ namespace Fitness.BusinessLogic.Controller
 
             if (Recommended.Count != 0 )//если данной тренировки рекомендованный дневник приема пищи.
             {   
-                var rec = Recommended.Where(r => r.Traning == Type).FirstOrDefault();
-                FoodDiaries.RemoveAt(IndeхfoodDiary);
+                var rec = Recommended.Where(r => r.Traning == Type).FirstOrDefault();//получение по типу тренировки и дневник питания.
+                FoodDiaries.RemoveAt(IndeхfoodDiary);//Удаление предыдущего дневник питания.
                 FoodDiaries.Add(rec);
                 Save();
             }
@@ -87,7 +89,6 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Рекомендованные для тренировки.
         /// </summary>
-        /// <returns></returns>
         private void SetRecommended()
         {
            var foodDiary = InitializingFoodDiary.GetFoodDiary(Type);

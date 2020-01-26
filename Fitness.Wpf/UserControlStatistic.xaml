@@ -53,12 +53,12 @@
                                 <TextBlock  HorizontalAlignment="Left" FontSize="20" Grid.Row="2" Grid.Column="1" Foreground="White" Text="BMR:" />
                                 <TextBlock  HorizontalAlignment="Left" FontSize="20" Grid.Row="2" Grid.Column="2" Foreground="White" Text="{Binding BMR}"  />
 
-                                <Image HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0"   Source="Menu\workout.png"/>
+                                <Image HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0"   Source="Menu Icon\workout.png"/>
                                 <TextBlock  HorizontalAlignment="Left" FontSize="20" Grid.Row="3" Grid.Column="1" Foreground="White" Text="Тренировка:"  />
                                 <TextBlock  HorizontalAlignment="Left" FontSize="20" Grid.Row="3" Grid.Column="2" Foreground="White" Text="{Binding TrainingСaloriesSum}"/>
 
 
-                                <Image HorizontalAlignment="Right" Grid.Row="4" Grid.Column="0"   Source="Menu\food.png"/>
+                                <Image HorizontalAlignment="Right" Grid.Row="4" Grid.Column="0"   Source="Menu Icon\food.png"/>
                                 <TextBlock  HorizontalAlignment="Left" FontSize="20" Grid.Row="4" Grid.Column="1" Foreground="White" Text="Дневник питания:" />
                                 <TextBlock  HorizontalAlignment="Left" FontSize="20" Grid.Row="4" Grid.Column="2" Foreground="White" Text="{Binding FoodDiaryСaloriesSum}" />
 

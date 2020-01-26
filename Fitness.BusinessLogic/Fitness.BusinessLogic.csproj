@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="Controller\ControllerBase.cs" />
     <Compile Include="Controller\DatabaseDataSaver.cs" />
-    <Compile Include="Controller\EatingController.cs" />
     <Compile Include="Controller\ExerciseController.cs" />
     <Compile Include="Controller\FitnessContext.cs" />
     <Compile Include="Controller\FoodDiaryController.cs" />

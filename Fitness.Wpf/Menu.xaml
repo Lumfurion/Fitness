@@ -59,7 +59,7 @@
                             <ColumnDefinition Width="47*"/>
                             <ColumnDefinition Width="137*"/>
                         </Grid.ColumnDefinitions>
-                        <Image  Source="Menu/home.png" Margin="5,0,0,0" />
+                        <Image  Source="Menu Icon/home.png" Margin="5,0,0,0" />
 
                         <Viewbox  Stretch="Uniform"  Grid.Column="1"  >
                             <TextBlock Text="Главная"  FontSize="25" Foreground="White" />
@@ -73,7 +73,7 @@
                             <ColumnDefinition Width="47*"/>
                             <ColumnDefinition Width="137*"/>
                         </Grid.ColumnDefinitions>
-                        <Image  Source="Menu/workout.png" Margin="5,0,0,0" />
+                        <Image  Source="Menu Icon/workout.png" Margin="5,0,0,0" />
 
                         <Viewbox  Stretch="Uniform"  Grid.Column="1"  HorizontalAlignment="Left">
                             <TextBlock Text="Тренировка"  FontSize="23"  Foreground="White" />
@@ -88,7 +88,7 @@
                             <ColumnDefinition Width="47*"/>
                             <ColumnDefinition Width="137*"/>
                         </Grid.ColumnDefinitions>
-                        <Image  Source="Menu/food.png" Margin="5,0,0,0" />
+                        <Image  Source="Menu Icon/food.png" Margin="5,0,0,0" />
 
                         <Viewbox  Stretch="Uniform"  Grid.Column="1"  HorizontalAlignment="Left">
                             <TextBlock Text="Приемы пищи"   FontSize="23"  Foreground="White" />
@@ -105,7 +105,7 @@
                             <ColumnDefinition Width="47*" />
                             <ColumnDefinition Width="137*"/>
                         </Grid.ColumnDefinitions>
-                        <Image  Source="Menu/statistic.png" Margin="5,0,0,0" />
+                        <Image  Source="Menu Icon/statistic.png" Margin="5,0,0,0" />
                         <Viewbox  Stretch="Uniform"  Grid.Column="1">
                             <TextBlock Text="Cтатистика"   FontSize="23"  Foreground="White"/>
                         </Viewbox>
@@ -120,7 +120,7 @@
                             <ColumnDefinition Width="47*" />
                             <ColumnDefinition Width="137*"/>
                         </Grid.ColumnDefinitions>
-                        <Image  Source="Menu/printer.png" Margin="5,0,0,0" />
+                        <Image  Source="Menu Icon/printer.png" Margin="5,0,0,0" />
                         <Viewbox  Stretch="Uniform"  Grid.Column="1">
                             <TextBlock Text="Печать"   FontSize="23"  Foreground="White"/>
                         </Viewbox>
@@ -150,7 +150,7 @@
                     <ColumnDefinition Width="39*"/>
                 </Grid.ColumnDefinitions>
                 <Border Background="Transparent"  MouseLeftButtonDown="titleBar_MouseLeftButtonDown" Grid.ColumnSpan="3"/>
-                <Image  Source="Menu/Close.png"  Grid.Column="2" Margin="10" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+                <Image  Source="Menu Icon/Close.png"  Grid.Column="2" Margin="10" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
             </Grid>
 
             <!--Контент-->
