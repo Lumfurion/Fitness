@@ -71,8 +71,9 @@
     <Compile Include="Model\Statistic.cs" />
     <Compile Include="Model\Training.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Printing document\Printing.cs" />
-    <Compile Include="Printing document\Workout.cs" />
+    <Compile Include="Services\Verification.cs" />
+    <Compile Include="Services\Printing document\Printing.cs" />
+    <Compile Include="Services\Printing document\Workout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Initializers\InitializingFoods.cs" />
     <Compile Include="Services\Initializers\InitializingFoodDiary.cs" />

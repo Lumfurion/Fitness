@@ -42,10 +42,12 @@ namespace Fitness.BusinessLogicTests.Controller
             var name = "sd";
             UserController userController = new UserController(name);
             TrainingController trainingController = new TrainingController();
+            var exercise = new Exercise("Молот", 100, "Training/Noobman/Day3/Молот.jpg", 2, 10, "раз");
 
             //Act
             var training = trainingController.SelectProgram();
             var firstday = training.Keys.FirstOrDefault();
+            trainingController.AddTraining(firstday, exercise);
             trainingController.Delete(firstday, "Молот");
             trainingController.Update();
             var result = training[firstday].Where(c => c.Name == "Молот").FirstOrDefault();
@@ -106,9 +108,7 @@ namespace Fitness.BusinessLogicTests.Controller
             TrainingController trainingController = new TrainingController();
 
             //Act
-            trainingController.SelectTraining("NoobMan");
-            trainingController.Saver();
-            trainingController.Update();
+         
             var training = trainingController.SelectProgram();
             trainingController.ChangeProgram("SlimmingMan");
             trainingController.Update();

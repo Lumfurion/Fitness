@@ -93,7 +93,7 @@
                         <ColumnDefinition Width="17*"/>
                         <ColumnDefinition Width="190*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="Menu/diet.png" Stretch="Uniform"  Height="30"  Grid.Column="0" />
+                    <Image Source="Menu Icon/diet.png" Stretch="Uniform"  Height="30"  Grid.Column="0" />
                     <TextBlock FontWeight="Bold"  Grid.Column="1" FontSize="13" VerticalAlignment="Center">Дневника приема пищи</TextBlock>
                 </Grid>
             </TabItem.Header>

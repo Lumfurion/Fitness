@@ -25,7 +25,7 @@ namespace Fitness.Wpf
         private void Initwindow()
         {
             lbUser.Content = UserController.CurrentUserName;
-            if (userController.Image != null)
+            if (userController.CurrentUser.Image != null)
             {
                 elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(userController.Image)));
             }

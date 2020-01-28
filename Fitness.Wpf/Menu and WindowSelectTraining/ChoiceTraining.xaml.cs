@@ -92,16 +92,10 @@ namespace Fitness.Wpf
 
         private void Initwindow()
         {
-            try
-            {
-                if (userController.Image != null)//если пользователя нет картинки.
-                {
-                    elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(userController.Image)));
-                }
-            }
-            catch
-            {
 
+            if (userController.CurrentUser.Image != null)//если пользователя нет картинки.
+            {
+                elpUserAvatar.Fill = new ImageBrush(new BitmapImage(new Uri(userController.Image)));
             }
             lbUser.Content = name;
 

@@ -28,7 +28,7 @@
 
                 </Grid.RowDefinitions>
 
-                <Label  Content="UserName" Foreground="White"  FontSize="23"/>
+                <Label  Content="Логин пользователя"   Foreground="White"  FontSize="23"/>
                 <TextBox Grid.Row="1" Name="tbUsername" Background="#545d6a" Foreground="White" FontSize="30"/>
 
                 <Label  Grid.Row="2" Content="Password" Foreground="White"  FontSize="23"/>

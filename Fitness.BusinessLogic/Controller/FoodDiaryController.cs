@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Fitness.BusinessLogic.Model;
 using Fitness.BusinessLogic.Services.Initializers;
@@ -83,7 +84,15 @@ namespace Fitness.BusinessLogic.Controller
         public void SetFoodDiaryCurrentUser()
         {
             var foodDiary = FoodDiaries.Where(fd => fd.Name == User && fd.Traning  == Type).FirstOrDefault();
-            UserFoodDiary.Add(foodDiary);
+            if (foodDiary != null)
+            {
+                UserFoodDiary.Add(foodDiary);
+            }
+            else
+            {
+                throw new ArgumentException("Нету дневника питания");
+            }
+           
         }
 
         /// <summary>

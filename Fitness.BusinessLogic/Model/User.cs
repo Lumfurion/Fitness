@@ -16,7 +16,9 @@ namespace Fitness.BusinessLogic.Model
         /// Пароль.
         /// </summary>
         public string Password { get; set; }
-
+        /// <summary>
+        /// Пароль с маскировкой.
+        /// </summary>
         public string PasswordStar { 
             
            get 
@@ -26,13 +28,11 @@ namespace Fitness.BusinessLogic.Model
            }
         }
 
- 
         /// <summary>
         /// Картинка.
         /// </summary>
         public string Image { get; set; }
-        public int Imagecount { get; set; }
-
+        
         /// <summary>
         /// Пол.
         /// </summary>

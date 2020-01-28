@@ -56,53 +56,53 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AboutExercise.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\AboutExercise.xaml.cs">
       <DependentUpon>AboutExercise.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChoiceExercise.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\ChoiceExercise.xaml.cs">
       <DependentUpon>ChoiceExercise.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChoiceFood.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\ChoiceFood.xaml.cs">
       <DependentUpon>ChoiceFood.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menu.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TrainingInfo.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\TrainingInfo.xaml.cs">
       <DependentUpon>TrainingInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlEating.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\UserControlEating.xaml.cs">
       <DependentUpon>UserControlEating.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlHome.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\UserControlHome.xaml.cs">
       <DependentUpon>UserControlHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlPrint.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\UserControlPrint.xaml.cs">
       <DependentUpon>UserControlPrint.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlStatistic.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\UserControlStatistic.xaml.cs">
       <DependentUpon>UserControlStatistic.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlWorkout.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\UserControlWorkout.xaml.cs">
       <DependentUpon>UserControlWorkout.xaml</DependentUpon>
     </Compile>
-    <Page Include="AboutExercise.xaml">
+    <Page Include="Menu and WindowSelectTraining\AboutExercise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChoiceExercise.xaml">
+    <Page Include="Menu and WindowSelectTraining\ChoiceExercise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChoiceFood.xaml">
+    <Page Include="Menu and WindowSelectTraining\ChoiceFood.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChoiceTraining.xaml">
+    <Page Include="Menu and WindowSelectTraining\ChoiceTraining.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Menu.xaml">
+    <Page Include="Menu and WindowSelectTraining\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,7 +118,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ChoiceTraining.xaml.cs">
+    <Compile Include="Menu and WindowSelectTraining\ChoiceTraining.xaml.cs">
       <DependentUpon>ChoiceTraining.xaml</DependentUpon>
     </Compile>
     <Compile Include="Enter to account\Registration.xaml.cs">
@@ -136,27 +136,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TrainingInfo.xaml">
+    <Page Include="Menu and WindowSelectTraining\TrainingInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlEating.xaml">
+    <Page Include="Menu and WindowSelectTraining\UserControlEating.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlHome.xaml">
+    <Page Include="Menu and WindowSelectTraining\UserControlHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlPrint.xaml">
+    <Page Include="Menu and WindowSelectTraining\UserControlPrint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlStatistic.xaml">
+    <Page Include="Menu and WindowSelectTraining\UserControlStatistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlWorkout.xaml">
+    <Page Include="Menu and WindowSelectTraining\UserControlWorkout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,316 +191,302 @@
     <Resource Include="Enter to account\Image\Logotip.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\maxresdefault.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Image\maxresdefault.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\user.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image training\drying.png" />
-    <Resource Include="Image training\noob.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image training\drying.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image training\noob.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image training\Slimming.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image training\Slimming.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image training\at home.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image training\at home.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image training\boy.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image training\boy.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="System button\Close.png" />
+    <Resource Include="Menu and WindowSelectTraining\System button\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="System button\Сollapse.png" />
+    <Resource Include="Menu and WindowSelectTraining\System button\Сollapse.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="System button\expend.png" />
+    <Resource Include="Menu and WindowSelectTraining\System button\expend.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Gender\girl.png" />
-    <Resource Include="Gender\Man.png" />
+    <Resource Include="Menu and WindowSelectTraining\Gender\girl.png" />
+    <Resource Include="Menu and WindowSelectTraining\Gender\Man.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\Take.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image\Take.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day1\Lunges-with-dumbbells.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day1\Lunges-with-dumbbells.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day1\mahi-nogami.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day1\mahi-nogami.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day1\Тяга-блока-к-груди.png" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day1\Тяга-блока-к-груди.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day1\razvedeniya-ruk-v-naklone-dlya-devushek.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day1\razvedeniya-ruk-v-naklone-dlya-devushek.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day1\DSC_5501_1545278749-630x315.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day1\DSC_5501_1545278749-630x315.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day1\skruchivaniya-kak-pravilno-delat_20.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day1\skruchivaniya-kak-pravilno-delat_20.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobman\Day2\Жим гантелей сидя.jpg" />
-    <Resource Include="Training\Noobman\Day2\Жим ногами в тренажере.jpg" />
-    <Resource Include="Training\Noobman\Day2\Приседания с пустым грифом.jpg" />
-    <Resource Include="Training\Noobman\Day2\Тяга грифа к подбородку.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day2\Жим гантелей сидя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day2\Жим ногами в тренажере.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day2\Приседания с пустым грифом.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day2\Тяга грифа к подбородку.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day2\Подъем ног лежа.jpg" />
-    <Resource Include="Training\Noobgril\Day2\Подъем рук стоя через стороны.jpg" />
-    <Resource Include="Training\Noobgril\Day2\Разгибание рук из-за головы с гантелью.jpg" />
-    <Resource Include="Training\Noobgril\Day2\Румынская становая тяга.jpg" />
-    <Resource Include="Training\Noobgril\Day2\Тяга гантели к поясу в наклоне.jpg" />
-    <Resource Include="Training\Noobgril\Day2\Ягодичный мостик.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day2\Подъем ног лежа.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day2\Подъем рук стоя через стороны.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day2\Разгибание рук из-за головы с гантелью.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day2\Румынская становая тяга.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day2\Тяга гантели к поясу в наклоне.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day2\Ягодичный мостик.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobgril\Day3\Гиперэкстензия.jpg" />
-    <Resource Include="Training\Noobgril\Day3\Отжимания от пола.jpg" />
-    <Resource Include="Training\Noobgril\Day3\планка.jpg" />
-    <Resource Include="Training\Noobgril\Day3\Приседания с широкой постановкой ног.jpg" />
-    <Resource Include="Training\Noobgril\Day3\Сгибания рук с гантелями.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day3\Гиперэкстензия.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day3\Отжимания от пола.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day3\планка.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day3\Приседания с широкой постановкой ног.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobgril\Day3\Сгибания рук с гантелями.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobman\Day1\Жим гантели из-за головы.jpg" />
-    <Resource Include="Training\Noobman\Day1\Жим штанги лежа.jpg" />
-    <Resource Include="Training\Noobman\Day1\Кардио.jpg" />
-    <Resource Include="Training\Noobman\Day1\Пресс.png" />
-    <Resource Include="Training\Noobman\Day1\Разведение гантелей лежа.jpg" />
-    <Resource Include="Training\Noobman\Day1\Разгибание рук на блоке.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day1\Жим гантели из-за головы.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day1\Жим штанги лежа.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day1\Кардио.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day1\Пресс.png" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day1\Разведение гантелей лежа.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day1\Разгибание рук на блоке.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\Noobman\Day3\Гиперэкстензия.jpg" />
-    <Resource Include="Training\Noobman\Day3\Молот.jpg" />
-    <Resource Include="Training\Noobman\Day3\Сгибание рук с грифом на бицепс.jpg" />
-    <Resource Include="Training\Noobman\Day3\Тяга верхнего блока.jpg" />
-    <Resource Include="Training\Noobman\Day3\Тяга нижнего блока.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day3\Гиперэкстензия.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day3\Молот.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day3\Сгибание рук с грифом на бицепс.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day3\Тяга верхнего блока.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\Noobman\Day3\Тяга нижнего блока.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingGirl\Day1\Выпады с гантелями.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day1\Выпады с гантелями.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingGirl\Day1\Кардио.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day1\Пресс подъем туловища на римском стуле и подъем ног лежа..jpg" />
-    <Resource Include="Training\SlimmingGirl\Day1\Приседание со штангой.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day1\Приседания плие.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day1\Кардио.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day1\Пресс подъем туловища на римском стуле и подъем ног лежа..jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day1\Приседание со штангой.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day1\Приседания плие.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingGirl\Day2\Жим гантелей лежа.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day2\Косые скручивания.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day2\Подъем туловища на полу.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day2\Разведение рук с гантелями на горизонтальной скамье.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day2\Разведение рук с гантелями на скамье под углом 30 градусов.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day2\Разгибание рук на блоке.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day2\Румынская тяга.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day2\Сведение ног в тренажере.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Жим гантелей лежа.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Косые скручивания.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Подъем туловища на полу.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Разведение рук с гантелями на горизонтальной скамье.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Разведение рук с гантелями на скамье под углом 30 градусов.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Разгибание рук на блоке.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Румынская тяга.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day2\Сведение ног в тренажере.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingGirl\Day3\Жим гантелей сидя.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day3\Жим ногами %28стопы на верхней части платформы, расставлены широко%29.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day3\Подъем на носки на икры.jpg" />
-    <Resource Include="Training\SlimmingGirl\Day3\Разгибание ног в тренажере.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day3\Жим гантелей сидя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day3\Жим ногами %28стопы на верхней части платформы, расставлены широко%29.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day3\Подъем на носки на икры.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day3\Разгибание ног в тренажере.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingGirl\Day3\Разведение гантелей через стороны.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingGirl\Day3\Разведение гантелей через стороны.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingMan\Day2\Жим штанги лёжа на наклонной скамье.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day2\Жим штанги лёжа на наклонной скамье.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingMan\Day1\Жим ногами.jpg" />
-    <Resource Include="Training\SlimmingMan\Day1\Жим штанги лёжа.jpg" />
-    <Resource Include="Training\SlimmingMan\Day1\Подъём штанги на бицепс стоя.jpg" />
-    <Resource Include="Training\SlimmingMan\Day1\Подъёмы на икры.jpg" />
-    <Resource Include="Training\SlimmingMan\Day1\Разведение рук с гантелями стоя.jpg" />
-    <Resource Include="Training\SlimmingMan\Day1\Разгибания рук на блоке на трицепс.jpg" />
-    <Resource Include="Training\SlimmingMan\Day1\Сгибание ног.jpg" />
-    <Resource Include="Training\SlimmingMan\Day1\Тяга нижнего блока.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Жим ногами.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Жим штанги лёжа.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Подъём штанги на бицепс стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Подъёмы на икры.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Разведение рук с гантелями стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Разгибания рук на блоке на трицепс.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Сгибание ног.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day1\Тяга нижнего блока.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingMan\Day3\Сгибание ног стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day3\Сгибание ног стоя.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\SlimmingMan\Day3\Разгибания ног в тренажёре.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\SlimmingMan\Day3\Разгибания ног в тренажёре.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image training\Body-building.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image training\Body-building.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\BodyBuildingGirl\Day1\Фронтальный подъём штанги над головой .png" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Фронтальный подъём штанги над головой .png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\BodyBuildingGirl\Day1\Жим гантелей лежа на горизонтальной скамье.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day1\Жим гантелей лежа на наклонной скамье.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day1\Жим на плечи в тросовом тренажёре.PNG" />
-    <Resource Include="Training\BodyBuildingGirl\Day1\Отжимания на брусьях.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day1\Разведение рук с гантелями лежа на наклонной скамье.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day1\Разгибание рук стоя на нижнем блоке.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day1\Сведение рук в кроссовере.png" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Жим гантелей лежа на горизонтальной скамье.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Жим гантелей лежа на наклонной скамье.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Жим на плечи в тросовом тренажёре.PNG" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Отжимания на брусьях.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Разведение рук с гантелями лежа на наклонной скамье.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Разгибание рук стоя на нижнем блоке.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day1\Сведение рук в кроссовере.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\BodyBuildingGirl\Day3\Выпад с гантелями вперед.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day3\Выпады со штангой в сторону.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day3\Подъем на носки на одной ноге.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day3\Приседания со штангой.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day3\Становая тяга в машине Смита с прямыми ногами.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day3\Выпад с гантелями вперед.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day3\Выпады со штангой в сторону.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day3\Подъем на носки на одной ноге.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day3\Приседания со штангой.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day3\Становая тяга в машине Смита с прямыми ногами.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\BodyBuildingGirl\Day2\Подтягивания обратным хватом.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day2\Подтягивания.jpg" />
-    <Resource Include="Training\BodyBuildingGirl\Day2\Подъем EZ-штанги на бицепс на скамье Скотта.jpeg" />
-    <Resource Include="Training\BodyBuildingGirl\Day2\Попеременный подъем гантелей на бицепс стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day2\Подтягивания обратным хватом.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day2\Подтягивания.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day2\Подъем EZ-штанги на бицепс на скамье Скотта.jpeg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingGirl\Day2\Попеременный подъем гантелей на бицепс стоя.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\BodyBuildingMan\Day1\Жим штанги стоя.jpg" />
-    <Resource Include="Training\BodyBuildingMan\Day1\Приседания со штангой.jpeg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingMan\Day1\Жим штанги стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingMan\Day1\Приседания со штангой.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\BodyBuildingMan\Day2\Жим лежа узким хватом.jpg" />
-    <Resource Include="Training\BodyBuildingMan\Day2\Подтягивания.jpg" />
-    <Resource Include="Training\BodyBuildingMan\Day2\Французский жим.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingMan\Day2\Жим лежа узким хватом.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingMan\Day2\Подтягивания.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingMan\Day2\Французский жим.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\BodyBuildingMan\Day2\Cтановая тяга.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\BodyBuildingMan\Day2\Cтановая тяга.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\AthomeHorizontalbarMan\Day1\Отжимания от пола.jpg" />
-    <Resource Include="Training\AthomeHorizontalbarMan\Day1\Подтягивание широким хватом.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day1\Отжимания от пола.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day1\Подтягивание широким хватом.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Лодка.jpg" />
-    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Обратное скручивание.jpg" />
-    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Приседания с выпрыгиванием.jpg" />
-    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Приседания с гантелями плие.jpg" />
-    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Приседания.jpg" />
-    <Resource Include="Training\AthomeHorizontalbarMan\Day2\Скручивания на пресс на наклоной скамье.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day2\Лодка.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day2\Обратное скручивание.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day2\Приседания с выпрыгиванием.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day2\Приседания с гантелями плие.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day2\Приседания.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AthomeHorizontalbarMan\Day2\Скручивания на пресс на наклоной скамье.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\AtHomeConditions\Day1\Приседания с гантелями.jpg" />
-    <Resource Include="Training\AtHomeConditions\Day1\Пуловер лежа с гантелями.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day1\Приседания с гантелями.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day1\Пуловер лежа с гантелями.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\AtHomeConditions\Day2\Наклоны со штангой на плечах.jpg" />
-    <Resource Include="Training\AtHomeConditions\Day2\Подем корпуса.jpg" />
-    <Resource Include="Training\AtHomeConditions\Day2\Тяга одной гантели в наклоне.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day2\Наклоны со штангой на плечах.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day2\Подем корпуса.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day2\Тяга одной гантели в наклоне.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\AtHomeConditions\Day3\Жим арнольда.jpg" />
-    <Resource Include="Training\AtHomeConditions\Day3\Концентрированный подъем на бицепс.jpg" />
-    <Resource Include="Training\AtHomeConditions\Day3\Подем ног в висе.jpg" />
-    <Resource Include="Training\AtHomeConditions\Day3\Подъем гантелей перед собой.jpg" />
-    <Resource Include="Training\AtHomeConditions\Day3\Шраги с гантелями стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day3\Жим арнольда.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day3\Концентрированный подъем на бицепс.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day3\Подем ног в висе.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day3\Подъем гантелей перед собой.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\AtHomeConditions\Day3\Шраги с гантелями стоя.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyMan\Day2\Отжимания на брусьях.jpg" />
-    <Resource Include="Training\FullbodyMan\Day2\Подтягивания прямым хватом.jpg" />
-    <Resource Include="Training\FullbodyMan\Day2\Разведение рук с гантелями стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyMan\Day2\Отжимания на брусьях.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyMan\Day2\Подтягивания прямым хватом.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyMan\Day2\Разведение рук с гантелями стоя.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyMan\Day1\Армейский жим стоя.jpg" />
-    <Resource Include="Training\FullbodyMan\Day1\Жим штанги лежа широким хватом.jpg" />
-    <Resource Include="Training\FullbodyMan\Day1\Разведение гантелей лежа на скамье.png" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyMan\Day1\Армейский жим стоя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyMan\Day1\Жим штанги лежа широким хватом.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyMan\Day1\Разведение гантелей лежа на скамье.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyGirl\Day1\Тяга горизонтального блока.jpg" />
-    <Resource Include="Training\FullbodyGirl\Day1\Упражнение молот.jpg" />
-    <Resource Include="Training\FullbodyGirl\Day1\Французский жим сидя.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day1\Тяга горизонтального блока.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day1\Упражнение молот.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day1\Французский жим сидя.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyGirl\Day1\Скручивания наклонной скамье.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day1\Скручивания наклонной скамье.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyGirl\Day1\Разминка.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day1\Разминка.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyGirl\Day1\Растяжка.PNG" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day1\Растяжка.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyGirl\Day2\Жим в хаммере.jpg" />
-    <Resource Include="Training\FullbodyGirl\Day2\Подьемы ног в висе.jpg" />
-    <Resource Include="Training\FullbodyGirl\Day2\Разведение с гантелями на дельты.jpg" />
-    <Resource Include="Training\FullbodyGirl\Day2\Сгибания с нижним блоком.jpg" />
-    <Resource Include="Training\FullbodyGirl\Day2\Т-тяга на тренажере.PNG" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day2\Жим в хаммере.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day2\Подьемы ног в висе.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day2\Разведение с гантелями на дельты.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day2\Сгибания с нижним блоком.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day2\Т-тяга на тренажере.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Training\FullbodyGirl\Day3\Сведения на тренажере рук в бабочка.jpg" />
-    <Resource Include="Training\FullbodyGirl\Day3\Тяга штанги в наклоне.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day3\Сведения на тренажере рук в бабочка.jpg" />
+    <Resource Include="Menu and WindowSelectTraining\Training\FullbodyGirl\Day3\Тяга штанги в наклоне.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu Icon\home.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\home.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu Icon\workout.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\workout.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu Icon\food.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\food.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu Icon\diet.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\diet.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu Icon\Close.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main\login.png" />
+    <Resource Include="Menu and WindowSelectTraining\Main\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main\Password.png" />
+    <Resource Include="Menu and WindowSelectTraining\Main\Password.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main\gender.png" />
+    <Resource Include="Menu and WindowSelectTraining\Main\gender.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main\calendar.png" />
+    <Resource Include="Menu and WindowSelectTraining\Main\calendar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main\Weight.png" />
+    <Resource Include="Menu and WindowSelectTraining\Main\Weight.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main\Height.png" />
+    <Resource Include="Menu and WindowSelectTraining\Main\Height.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Main\training.png" />
+    <Resource Include="Menu and WindowSelectTraining\Main\training.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImagesKeyOptions\fullscreen.png" />
-    <Resource Include="ImagesKeyOptions\Mute.png" />
-    <Resource Include="ImagesKeyOptions\Pause.png" />
-    <Resource Include="ImagesKeyOptions\Play.png" />
-    <Resource Include="ImagesKeyOptions\screenNormal.png" />
-    <Resource Include="ImagesKeyOptions\Speaker.png" />
-    <Resource Include="ImagesKeyOptions\Stop.png" />
+    <Resource Include="Menu and WindowSelectTraining\ImagesKeyOptions\fullscreen.png" />
+    <Resource Include="Menu and WindowSelectTraining\ImagesKeyOptions\Mute.png" />
+    <Resource Include="Menu and WindowSelectTraining\ImagesKeyOptions\Pause.png" />
+    <Resource Include="Menu and WindowSelectTraining\ImagesKeyOptions\Play.png" />
+    <Resource Include="Menu and WindowSelectTraining\ImagesKeyOptions\screenNormal.png" />
+    <Resource Include="Menu and WindowSelectTraining\ImagesKeyOptions\Speaker.png" />
+    <Resource Include="Menu and WindowSelectTraining\ImagesKeyOptions\Stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\analytics.png" />
+    <Resource Include="Menu and WindowSelectTraining\Image\analytics.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Menu Icon\settings.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Statistic\results.png" />
-    <Resource Include="Statistic\metabolism.png" />
-    <Resource Include="Menu Icon\statistic.png" />
-    <Resource Include="Menu Icon\printer.png" />
-    <Resource Include="InfoExercise\Кардио\Кардио.jpg" />
-    <Resource Include="Eating\Recommended.png" />
-    <Resource Include="Eating\Сompilation.png" />
-    <Content Include="InfoExercise\Кардио\КардиоДевочка.mp4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="InfoExercise\Кардио\КардиоМальчик.mp4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Resource Include="InfoExercise\Приседания со штангой\Приседание со штангой.jpg" />
-    <Content Include="InfoExercise\Приседания со штангой\Приседания со штангой Девушка.mp4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="InfoExercise\Приседания со штангой\Приседания со штангой Мальчик.mp4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Menu and WindowSelectTraining\Statistic\results.png" />
+    <Resource Include="Menu and WindowSelectTraining\Statistic\metabolism.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\statistic.png" />
+    <Resource Include="Menu and WindowSelectTraining\Menu Icon\printer.png" />
+    <Resource Include="Menu and WindowSelectTraining\Eating\Recommended.png" />
+    <Resource Include="Menu and WindowSelectTraining\Eating\Сompilation.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fitness.BusinessLogic\Fitness.BusinessLogic.csproj">
@@ -508,8 +494,22 @@
       <Name>Fitness.BusinessLogic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Menu and WindowSelectTraining\" />
+    <Resource Include="Menu and WindowSelectTraining\InfoExercise\Кардио\Кардио.jpg" />
+    <Content Include="Menu and WindowSelectTraining\InfoExercise\Кардио\КардиоДевочка.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Menu and WindowSelectTraining\InfoExercise\Кардио\КардиоМальчик.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Menu and WindowSelectTraining\InfoExercise\Приседания со штангой\Приседание со штангой.jpg" />
+    <Content Include="Menu and WindowSelectTraining\InfoExercise\Приседания со штангой\Приседания со штангой Девушка.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Menu and WindowSelectTraining\InfoExercise\Приседания со штангой\Приседания со штангой Мальчик.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

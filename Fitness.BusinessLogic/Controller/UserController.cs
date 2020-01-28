@@ -51,6 +51,31 @@ namespace Fitness.BusinessLogic.Controller
                 return null;
             }
         }
+        /// <summary>
+        /// Перемещение файла.
+        /// </summary>
+        /// <param name="value">Старый путь файла.</param>
+        public void CopyImage(string value)
+        {
+            string directory = @"UserImage\";//Папка.
+            string sourceDirectory = value;//старый путь к файлу.
+            string targetDirectory = directory + @"\" + $"UserAvatar{CurrentUser.Name}.jpg";//2 путь
+            string pathImage = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), targetDirectory);//путь к файлу.
+
+          
+
+            if (!Directory.Exists(directory))//Создание папоки.
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+
+            if (!File.Exists(targetDirectory))//Нету файла
+            {
+                File.Copy(sourceDirectory, targetDirectory);
+            }
+            CurrentUser.Image = pathImage;
+        }
 
         #endregion
 
@@ -124,40 +149,7 @@ namespace Fitness.BusinessLogic.Controller
             CurrentUser.Height = height;
             Save();
         }
-        /// <summary>
-        /// Перемещение файла.
-        /// </summary>
-        /// <param name="value">Старый путь файла.</param>
-        public void CopyImage(string value)
-        {
-            string directory = @"UserImage\" + CurrentUser.Name;
-            string sourceDirectory = value;
-            string targetDirectory = directory + @"\" + $"UserAvatar{CurrentUser.Name}.jpg";
-            string pathImage = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), targetDirectory); ;
-
-            if (File.Exists(pathImage))
-            {
-                int n = CurrentUser.Imagecount++;
-                targetDirectory = directory + @"\" + $"UserAvatar{n + CurrentUser.Name}.jpg";
-
-            }
-
-            if (!Directory.Exists(directory))//Создание папок.
-            {
-                Directory.CreateDirectory(directory);
-            }
-
-
-            if (!File.Exists(targetDirectory))//Нету файла
-            {
-                File.Copy(sourceDirectory, targetDirectory);
-            }
-            pathImage = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), targetDirectory);
-            CurrentUser.Image = pathImage;
-
-        }
-
-
+        
 
         /// <summary>
         /// Получить сохраненный список пользователей(десериализация).

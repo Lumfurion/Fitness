@@ -58,7 +58,12 @@ namespace Fitness.BusinessLogic.Model
         }
 
         public void Add(string day, List<Exercise> exercises)
-        {
+        {   
+            if(exercises == null)
+            {
+                throw new ArgumentException("Не выделена память для хранения упражний");
+            }
+           
 
             if (!Exercises.ContainsKey(day))
             {
@@ -77,7 +82,15 @@ namespace Fitness.BusinessLogic.Model
         public void Delete(string key, string name)
         {
             var exercise = Exercises[key].Where(ex => ex.Name == name).FirstOrDefault();
-            Exercises[key].Remove(exercise);
+            if (exercise != null)
+            {
+                Exercises[key].Remove(exercise);
+            }
+            else
+            {
+                throw new ArgumentException("Нету такого упражнения для удаления");
+            }
+            
         }
        
         public void Replacement(string key, string replace, string whatToreplace)
@@ -87,6 +100,10 @@ namespace Fitness.BusinessLogic.Model
             ExerciseController exerciseController = new ExerciseController();
             var exercisereplace = exerciseController.GetExercise(replace);
            
+            if(exercisereplace == null)
+            {
+                throw new ArgumentException("Нету такого упражнения на замену.");
+            }
 
             foreach ( var e in Exercises[key])
             {

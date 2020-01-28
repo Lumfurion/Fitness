@@ -90,7 +90,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <Image  Grid.Column="0"  Height="30"  Source="Menu/settings.png"  />
+                        <Image  Grid.Column="0"  Height="30"  Source="Menu Icon/settings.png"  />
                         <TextBlock FontWeight="Bold"  Grid.Column="1" FontSize="13" VerticalAlignment="Center" >Изменить тренировку</TextBlock>
                     </Grid>
                 </TabItem.Header>

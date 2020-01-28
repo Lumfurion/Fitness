@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Fitness.BusinessLogic.Model
 {   /// <summary>
-    /// Днивник приёма пищи.
+    /// Дневник питания
     /// </summary> 
     [Serializable]
     public class FoodDiary
@@ -13,18 +13,18 @@ namespace Fitness.BusinessLogic.Model
         ///Имя пользователя. 
         /// </summary>
         public string Name { get; set; }
-        /// <summary>
-        /// Прием пищи.
-        /// </summary>
-        public List<Eating> Eatings { get; set; }
+
         /// <summary>
         /// Тренировка.
         /// </summary>
         public string Traning { get; set; }
 
+        /// <summary>
+        /// Прием пищи.
+        /// </summary>
+        public List<Eating> Eatings { get; set; }
+       
         public FoodDiary(){}
-
-     
 
         public FoodDiary(List<Eating> eatings, string traning)
         {
@@ -39,9 +39,6 @@ namespace Fitness.BusinessLogic.Model
             Eatings = eatings;   
         }
 
-
-
-        #region  Приема пищи
         /// <summary>
         /// Получение объекта приема пищи.
         /// </summary>
@@ -61,6 +58,6 @@ namespace Fitness.BusinessLogic.Model
             var Index = Eatings.FindIndex(ea => ea.EatingTime == name);
             return Index;
         }
-        #endregion 
+       
     }
 }
