@@ -1,4 +1,5 @@
 ﻿using Fitness.BusinessLogic.Controller;
+using Fitness.BusinessLogic.Services.Initializers;
 using System;
 using System.Globalization;
 using System.Resources;
@@ -20,10 +21,11 @@ namespace Fitness.CMD
             Console.Write(resourceManager.GetString("EnterName", culture));
             var name = Console.ReadLine();
             var userController = new UserController(name);
-            
+
+            InitializingTraining.GetTrainings();
             var training = new TrainingController();
           
-            var noob = "NoobGirl";
+            var noob = "Новичков мужчин";
             training.SelectTraining(noob);
             training.Saver();
 
@@ -34,7 +36,11 @@ namespace Fitness.CMD
            
             foodDiaryController.InitTemplateRecommended();
             foodDiaryController.Replacement("Чай черный без сахара", "Апельсин", "Завтрак");
+
+
             
+
+
 
 
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="Информация о уражнении" Height="900" Width="810" WindowStyle="ToolWindow" ResizeMode="NoResize" >
+        Title="Информация о уражнении" WindowStartupLocation="CenterScreen" Height="900" Width="810" WindowStyle="ToolWindow" ResizeMode="NoResize" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="259*"/>

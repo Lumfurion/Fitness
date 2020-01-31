@@ -5,7 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        AllowsTransparency="True" Background="Transparent" Name="window" Title="ChoiceTraining" Height="639" Width="890.327"   WindowStyle="None" ResizeMode="CanResizeWithGrip">
+        AllowsTransparency="True" 
+        Background="Transparent" 
+        Name="window" 
+        Title="ChoiceTraining" 
+        Height="639" 
+        Width="890.327"   
+        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip">
 
     <Grid Name="MainGrid" SizeChanged="MainGrid_SizeChanged" Background="#FF00FFAE">
         <Grid.RowDefinitions>

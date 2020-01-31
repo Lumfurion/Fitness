@@ -14,7 +14,7 @@ namespace Fitness.BusinessLogicTests.Controller
             UserController.CurrentUserName = "sd";
             var trainingController = new TrainingController();
             
-            trainingController.SelectTraining("SlimmingMan");
+            trainingController.SelectTraining("Похудение для мальчиков");
             trainingController.Saver();
             trainingController.Update();
             var foodDiaryController = new FoodDiaryController();

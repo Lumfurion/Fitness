@@ -7,12 +7,12 @@ namespace Fitness.BusinessLogicTests.Controller
 {   [TestClass]
     public  class TrainingControllerTests
     {
-        #region Удаление добавление тренировок
+        #region Удаление,добавление,замена тренировок
         [TestMethod()]
         public void AddTrainingTest()
         {
             //Arrange
-            var noob = "NoobGirl";
+            var noob = "Похудения для девушек";
             var name = "sd";
             UserController userController = new UserController(name);
             TrainingController trainingController = new TrainingController();
@@ -54,6 +54,28 @@ namespace Fitness.BusinessLogicTests.Controller
 
             //Assert
             Assert.AreEqual(result, null);
+
+        }
+
+
+        [TestMethod()]
+        public void ReplacementExerciseinProgramTest()
+        {
+            //Arrange
+            var name = "sd";
+            UserController userController = new UserController(name);
+            TrainingController trainingController = new TrainingController();
+
+
+            //Act
+            var training = trainingController.SelectProgram();
+            var firstday = training.Keys.FirstOrDefault();
+
+            trainingController.ReplacementExerciseinProgram(firstday, "Молот", training[firstday][0].Name);
+            trainingController.Update();
+
+            //Assert
+            Assert.AreEqual("Молот", trainingController.SelectProgram()[firstday][0].Name);
 
         }
         #endregion
@@ -110,35 +132,16 @@ namespace Fitness.BusinessLogicTests.Controller
             //Act
          
             var training = trainingController.SelectProgram();
-            trainingController.ChangeProgram("SlimmingMan");
+            trainingController.ChangeProgram("Похудения для девушек");
             trainingController.Update();
             
 
             //Assert
-            Assert.AreEqual("SlimmingMan", trainingController.GetTypeSelectTraining());
+            Assert.AreEqual("Похудения для девушек", trainingController.GetTypeSelectTraining());
         }
 
 
-        [TestMethod()]
-        public void ReplacementExerciseinProgramTest()
-        {
-            //Arrange
-            var name = "sd";
-            UserController userController = new UserController(name);
-            TrainingController trainingController = new TrainingController();
-           
-
-            //Act
-            var training = trainingController.SelectProgram();
-            var firstday = training.Keys.FirstOrDefault();
-
-            trainingController.ReplacementExerciseinProgram(firstday, "Молот", training[firstday][0].Name);
-            trainingController.Update();
-
-            //Assert
-            Assert.AreEqual("Молот", trainingController.SelectProgram()[firstday][0].Name);
-
-        }
+      
 
 
 

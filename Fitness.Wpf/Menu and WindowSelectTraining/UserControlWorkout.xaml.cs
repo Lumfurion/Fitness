@@ -79,29 +79,20 @@ namespace Fitness.Wpf
             UpDate();
 
         }
-        
+
+     
+
         private void ButtonSelectOnClick(object sender, RoutedEventArgs e)
         {
 
             Button button = (Button)sender;
-
             string type = button.Tag.ToString();
-            switch (type)
-            {
-                case "Для новичков Мужчин":
-                    trainingController.ChangeProgram("NoobMan");
-                    break;
-
-                case "Для новичков Женщин":
-                    trainingController.ChangeProgram("NoobGirl");
-                    break;
-            }
-
+            trainingController.ChangeProgram(type);  
             UpDate();
-
         }
 
-        
+
+
 
         private void AddnewDayOnClick(object sender, RoutedEventArgs e)
         {

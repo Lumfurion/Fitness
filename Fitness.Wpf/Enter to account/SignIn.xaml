@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="562.379" Width="535.366" Background="#545d6a">
+        Title="MainWindow" Height="562.379" 
+        Width="535.366" Background="#545d6a"
+        WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Border Background="#2e3137" CornerRadius="30" Margin="30">

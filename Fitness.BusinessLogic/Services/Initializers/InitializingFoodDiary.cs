@@ -52,7 +52,7 @@ namespace Fitness.BusinessLogic.Services.Initializers
 
             };
 
-            foodDiaries.Add(new FoodDiary(Eating1, "NoobGirl"));
+            foodDiaries.Add(new FoodDiary(Eating1, "Похудения для девушек"));
 
             return foodDiaries;
         }

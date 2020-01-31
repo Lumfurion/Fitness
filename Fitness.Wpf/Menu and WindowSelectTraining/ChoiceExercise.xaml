@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="ChoiceExercise" Height="800" Width="800">
+        Title="ChoiceExercise" Height="800" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <ItemsControl  Name="ICTraining">

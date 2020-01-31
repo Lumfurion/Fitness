@@ -160,26 +160,49 @@ namespace Fitness.Wpf
 
             var name = button.Name;
 
+            //switch (name)
+            //{
+            //    case "btnNoob":
+            //        trainingInfo = new TrainingInfo("Noob");
+            //        break;
+            //    case "btnslimming":
+            //        trainingInfo = new TrainingInfo("Slimming");
+            //        break;
+            //    case "btnBodyBuilding":
+            //        trainingInfo = new TrainingInfo("BodyBuilding");
+            //        break;
+            //    case "btnAthomeHorizontalbar":
+            //        trainingInfo = new TrainingInfo("AthomeHorizontalbar");
+            //        break;
+            //    case "btnAthome":
+            //        trainingInfo = new TrainingInfo("AtHomeConditions");
+            //        break;
+
+            //    case "btnFullbody":
+            //        trainingInfo = new TrainingInfo("Fullbody");
+            //        break;
+            //}
+
             switch (name)
             {
                 case "btnNoob":
-                    trainingInfo = new TrainingInfo("Noob");
+                    trainingInfo = new TrainingInfo("База для начинающих");
                     break;
                 case "btnslimming":
-                    trainingInfo = new TrainingInfo("Slimming");
+                    trainingInfo = new TrainingInfo("Сбросить вес");
                     break;
                 case "btnBodyBuilding":
-                    trainingInfo = new TrainingInfo("BodyBuilding");
+                    trainingInfo = new TrainingInfo("Бодибилдинг");
                     break;
                 case "btnAthomeHorizontalbar":
-                    trainingInfo = new TrainingInfo("AthomeHorizontalbar");
+                    trainingInfo = new TrainingInfo("Турник дома");
                     break;
                 case "btnAthome":
-                    trainingInfo = new TrainingInfo("AtHomeConditions");
+                    trainingInfo = new TrainingInfo("В домашних условиях");
                     break;
 
                 case "btnFullbody":
-                    trainingInfo = new TrainingInfo("Fullbody");
+                    trainingInfo = new TrainingInfo("Фулбоди для начинающих");
                     break;
             }
 
