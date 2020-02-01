@@ -5,44 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="562.379" 
-        Width="535.366" Background="#545d6a"
-        WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="MainWindow" 
+        Height="500" 
+        Width="400"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None"
+        Background="Transparent" 
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        >
 
-        <Border Background="#2e3137" CornerRadius="30" Margin="30">
 
+    <Grid Background="#FFF5F5F5" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="199*"/>
+            <RowDefinition Height="223*"/>
+            <RowDefinition Height="42*"/>
+        </Grid.RowDefinitions>
+        <!--Системное меню-->
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="71*"/>
+                <ColumnDefinition Width="78*"/>
+                <ColumnDefinition Width="51*"/>
+            </Grid.ColumnDefinitions>
 
-            <Grid Margin="40,32,40,40" >
+            <Border Background="Transparent"  MouseLeftButtonDown="titleBar_MouseLeftButtonDown" Grid.ColumnSpan="3"/>
+            <StackPanel Orientation="Horizontal">
+                <Button  Margin="10" Click="btnCloseOnClick"  Style="{StaticResource ButtonClose}" Width="16" />
+            </StackPanel>
+
+            <TextBlock Grid.Column="1" FontSize="25" Text="Sparta fitness"/>
+        </Grid>
+
+        <!--Логотип-->
+        <Image Grid.Row="1" Margin="10" Source="Image\Logotip.jpg"/>
+
+        <Grid  Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="347*"/>
+                <ColumnDefinition Width="94*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="87*"/>
-                    <RowDefinition Height="41*"/>
-                    <RowDefinition Height="42*"/>
-                    <RowDefinition Height="46*"/>
-                    <RowDefinition Height="41*"/>
-                    <RowDefinition Height="48*"/>
-                    <RowDefinition Height="52*"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="14*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="29*"/>
+                    <RowDefinition Height="45*"/>
                 </Grid.RowDefinitions>
 
+                <TextBox Tag="Введите логин"  Style="{StaticResource BaseTextBox}"  MaxLength="10" Grid.Row="1" Name="tbUsername" FontSize="20" />
+                <TextBox  Tag="Введите пароль"  Style="{StaticResource BaseTextBox}"  MaxLength="20"  Grid.Row="3" Name="tbPassword"  FontSize="20" />
 
-                <Image  Source="Image\Logotip.jpg"/>
-
-                <Label Grid.Row="1" Content="Username" Foreground="White"  FontSize="23" />
-
-                <TextBox Grid.Row="2" Name="tbUsername" Background="#545d6a" Foreground="White" FontSize="30" />
-                <Label Grid.Row="3" Content="Password" Foreground="White" FontSize="23"  />
-                <PasswordBox  Grid.Row="4" Name="tbPassword" Background="#545d6a" Foreground="White" FontSize="30" />
-
-                <Grid Grid.Row="6" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="193*"/>
-                        <ColumnDefinition Width="194*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button  Name="btnSignIn" Click="btnSignIn_Click" Content="Sign In"  Background="#545d6a" Foreground="White" FontSize="18" Margin="0,10,49,10"  />
-                    <Button Grid.Column="1" Name="btnRegistration" Click="btnRegistration_Click" Content="Registration"  Background="#545d6a" Foreground="White" FontSize="18" Margin="66,10,0,10"/>
-
-                </Grid>
+                <TextBlock  Text="Вас нет аккаунта зарегистрируйтесь!?"
+                            Grid.Row="5"
+                            FontSize="15" 
+                            Style="{StaticResource TextBlockLink}"
+                            MouseLeftButtonUp="lbRegistrationOnMouseLeftButtonUp" Margin="-18,0,-19,0"
+                            />
             </Grid>
-        </Border>
+
+        </Grid>
+
+        <Button Content="Войти в аккаунт" Grid.Row="3"
+                Click="btnSignIn_Click" 
+                Style="{StaticResource ButtonAdd}" />
     </Grid>
+
 </Window>
