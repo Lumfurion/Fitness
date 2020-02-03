@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Sparta.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -163,6 +166,10 @@
     <Page Include="Styles\Fonts.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Texts.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -504,8 +511,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Sparta.ico" />
     <Resource Include="Menu and WindowSelectTraining\InfoExercise\Кардио\Кардио.jpg" />
-    <Resource Include="Enter to account\Image\photo_2019-11-02_20-19-39.jpg" />
+    <Resource Include="Enter to account\Image\reg.jpg" />
     <Content Include="Menu and WindowSelectTraining\InfoExercise\Кардио\КардиоДевочка.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

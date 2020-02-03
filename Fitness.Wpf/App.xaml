@@ -15,6 +15,7 @@
                 <!--<ResourceDictionary Source="Styles\Defaults.xaml" />-->
                 <ResourceDictionary Source="Styles\Texts.xaml" />
                 <ResourceDictionary Source="Styles\Buttons.xaml" />
+                <ResourceDictionary Source="Styles\RadioButton.xaml" />
                 <!--<ResourceDictionary Source="Styles\ContentControls.xaml" />
                 <ResourceDictionary Source="Styles\UserControl.xaml" />-->
 

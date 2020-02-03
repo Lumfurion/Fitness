@@ -13,6 +13,7 @@
 
     <Style TargetType="Button" x:Key="ButtonInfo" BasedOn="{StaticResource ButtonBase}">
         <Setter Property="Background"  Value="{StaticResource BrushBlue}" />
+       
         <Setter  Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -101,6 +102,7 @@
 
     <Style TargetType="Button" x:Key="ButtonAdd" BasedOn="{StaticResource ButtonBase}">
         <Setter Property="Background"  Value="{StaticResource BrushGreen}" />
+        <Setter Property="Foreground"  Value="Black" />
         <Setter  Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">

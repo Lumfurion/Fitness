@@ -10,6 +10,7 @@
         <Setter Property="FontSize" Value="{StaticResource Regular}" />
         <Setter Property="FontWeight" Value="Light" />
         <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Margin" Value="3" />
     </Style>
 
     <!--Ccылка TextBlock-->

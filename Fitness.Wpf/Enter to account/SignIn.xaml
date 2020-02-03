@@ -31,12 +31,13 @@
                 <ColumnDefinition Width="51*"/>
             </Grid.ColumnDefinitions>
 
+            <TextBlock Grid.Column="1" FontSize="25" Text="Sparta fitness"/>
             <Border Background="Transparent"  MouseLeftButtonDown="titleBar_MouseLeftButtonDown" Grid.ColumnSpan="3"/>
             <StackPanel Orientation="Horizontal">
                 <Button  Margin="10" Click="btnCloseOnClick"  Style="{StaticResource ButtonClose}" Width="16" />
             </StackPanel>
-
-            <TextBlock Grid.Column="1" FontSize="25" Text="Sparta fitness"/>
+           
+           
         </Grid>
 
         <!--Логотип-->
@@ -74,7 +75,7 @@
         </Grid>
 
         <Button Content="Войти в аккаунт" Grid.Row="3"
-                Click="btnSignIn_Click" 
+                Click="btnSignIn_Click"  
                 Style="{StaticResource ButtonAdd}" />
     </Grid>
 
