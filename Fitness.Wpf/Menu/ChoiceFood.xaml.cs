@@ -8,6 +8,9 @@ namespace Fitness.Wpf
     public partial class ChoiceFood : Window
     {
         readonly string Etingtime;
+        /// <summary>
+        /// На что заменяем еду.
+        /// </summary>
         readonly string Whatr;
         readonly FoodDiaryController foodDiaryController;
 

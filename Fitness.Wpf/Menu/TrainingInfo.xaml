@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="TrainingInfo" Height="900" Width="678" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="TrainingInfo" 
+        Height="900" Width="800" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="74*"/>
@@ -44,7 +47,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <Button Grid.Column="0" Margin="32,10" Background="#FF318BD6" Name="btnMan">
+            <Button Grid.Column="0" MaxWidth="180" Margin="32,10" Background="#FF318BD6" Name="btnMan">
                 <StackPanel>
                     <Image Source="Gender/Man.png" Height="108" />
                     <TextBlock Text="Man"  FontSize="20" HorizontalAlignment="Center" Foreground="White"/>
@@ -62,7 +65,7 @@
 
             </Grid>
 
-            <Button Grid.Column="2" Margin="32,10" Background="#FFD631D6" Name="btnWomen">
+            <Button MaxWidth="180" Grid.Column="2" Margin="32,10" Background="#FFD631D6" Name="btnWomen">
                 <StackPanel>
                     <Image Source="Gender/girl.png" Height="108" />
                     <TextBlock Text="Women"  FontSize="20" HorizontalAlignment="Center" Foreground="White"/>
@@ -75,7 +78,7 @@
         <Separator Grid.Row="3" />
         <!--Описание тренировки-->
 
-        <TextBlock  TextWrapping="Wrap" x:Name="lbdescription"  Grid.Row="4"  Text="{Binding Path=Description}"   FontSize="15" Foreground="Black"/>
+        <TextBlock   x:Name="lbdescription"  Grid.Row="4"  Text="{Binding Path=Description}"   FontSize="17" Foreground="Black"/>
 
         <Separator Grid.Row="5" />
 

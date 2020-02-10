@@ -140,7 +140,7 @@
                         </ItemsControl>
                 </ScrollViewer>
 
-                <Button  Grid.Row="1"  Click="AddnewDayOnClick"  Style="{StaticResource ButtonAdd}"    Content="Дабать новый день"  FontSize="20"    MinHeight="44"  MaxHeight="60" />
+                        <Button  Grid.Row="1"  Click="AddnewDayOnClick"  Style="{StaticResource ButtonAdd}"    Content="Добавить новый день"  FontSize="20"    MinHeight="44"  MaxHeight="60" />
                   </Grid>
                 </TabItem.Content>
                 
@@ -181,10 +181,10 @@
                                                 <RowDefinition Height="30*"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Text="О тренировке"  Margin="27,0,220,2" FontSize="20" Foreground="Black" />
-                                            <Separator Grid.Row="2" Margin="0,0,0,178" />
+                                            <Separator Grid.Row="1" />
 
                                             <!--Описание тренировки-->
-                                            <TextBox    TextWrapping="Wrap" AcceptsReturn="True"   Grid.Row="2" Text="{Binding Description}"   FontSize="15" Foreground="Black" BorderBrush="Black" />
+                                            <TextBlock    Grid.Row="2" Text="{Binding Description}"   FontSize="20" Foreground="Black"/>
 
 
                                             <ItemsControl Grid.Row="3"  ItemsSource="{Binding Exercises}">

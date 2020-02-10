@@ -51,7 +51,7 @@
                
                     <Ellipse MouseLeftButtonDown="btnUserAvatar_MouseLeftButtonUp"  x:Name="elpUserAvatar" Grid.Column="0"  Margin="30" >
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="Image\user.png"  />
+                            <ImageBrush  ImageSource="Image\user.png"  />
                         </Ellipse.Fill>
                     </Ellipse>
                 
@@ -128,7 +128,7 @@
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
 
-                    <Image  Grid.Row="1" Margin="10"  Source="Image training/noob.png"  />
+                    <Image  Grid.Row="1" Margin="10"  Source="Training icon/noob.png"  />
                     <TextBlock  Grid.Row="2"   Text="База для начинающих"   FontSize="17" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="8,0,7,0"/>
                     <Button Grid.Row="3"  x:Name="btnNoob" Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
@@ -145,7 +145,7 @@
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
 
-                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Image training/Slimming.png"  />
+                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Training icon/Slimming.png"  />
                     <TextBlock Grid.Row="2"    Text="Сбросить вес" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3" x:Name="btnslimming"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
@@ -162,7 +162,7 @@
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
 
-                    <Image   Grid.Row="1"   VerticalAlignment="Top" Source="Image training/Body-building.png"  />
+                    <Image   Grid.Row="1"   VerticalAlignment="Top" Source="Training icon/Body-building.png"  />
                     <TextBlock   Grid.Row="2"   Text="Бодибилдинг" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3"   x:Name="btnBodyBuilding"  Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
@@ -178,7 +178,7 @@
                         <RowDefinition Height="41*"/>
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Image training/at home.png"  />
+                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Training icon/at home.png"  />
                     <TextBlock Grid.Row="2"  Text="Турник дома" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3" x:Name="btnAthomeHorizontalbar"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
@@ -196,7 +196,7 @@
                         <RowDefinition Height="41*"/>
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Image training/at home.png"  />
+                    <Image Grid.Row="1"     VerticalAlignment="Top" Source="Training icon/at home.png"  />
                     <TextBlock Grid.Row="2"   Text="В домашних условиях" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button x:Name="btnAthome" Grid.Row="3"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
@@ -213,7 +213,7 @@
                         <RowDefinition Height="41*"/>
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="1"  VerticalAlignment="Top" Source="Image training/boy.png"  />
+                    <Image Grid.Row="1"  VerticalAlignment="Top" Source="Training icon/boy.png"  />
                     <TextBlock Grid.Row="2"    Text="Фулбоди для начинающих"   VerticalAlignment="Center"  FontSize="15" Foreground="White" Grid.Column="1" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3" x:Name="btnFullbody"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
@@ -229,7 +229,7 @@
                         <RowDefinition Height="41*"/>
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="1"      VerticalAlignment="Top" Source="Image training/boy.png"  />
+                    <Image Grid.Row="1"      VerticalAlignment="Top" Source="Training icon/boy.png"  />
                     <TextBlock Grid.Row="2"     Text="Опытная" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3"  x:Name="btnExperienced"  Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>
@@ -246,7 +246,7 @@
                         <RowDefinition Height="41*"/>
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="1"       VerticalAlignment="Top" Source="Image training/at home.png"  />
+                    <Image Grid.Row="1"       VerticalAlignment="Top" Source="Training icon/at home.png"  />
                     <TextBlock Grid.Row="2"   Text="Экстремальная" VerticalAlignment="Center"  FontSize="17" Foreground="White" HorizontalAlignment="Center"/>
                     <Button Grid.Row="3" x:Name="btnExtreme"   Content="Посмотреть"  Background="#FF3FD181" Margin="30,0,28,0" />
                 </Grid>

@@ -58,8 +58,8 @@
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="7*"/>
                     <RowDefinition Height="30*"/>
-                    <RowDefinition Height="72*"/>
-                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="71*"/>
+                    <RowDefinition Height="11*"/>
                 </Grid.RowDefinitions>
 
                 <!--Логин и пароль-->
@@ -74,27 +74,27 @@
 
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="19*"/>
+                            <RowDefinition Height="20*"/>
                             <RowDefinition Height="20*"/>
                         </Grid.RowDefinitions>
 
 
                         <!--Дата-->
-                        <Grid Grid.Row="0" >
+                        <Grid Grid.Row="0" Margin="2" >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="49*"/>
-                                <ColumnDefinition Width="34*"/>
+                                <ColumnDefinition Width="44*"/>
                                 <ColumnDefinition Width="36*"/>
-                                <ColumnDefinition Width="67*"/>
+                                <ColumnDefinition Width="35*"/>
+                                <ColumnDefinition Width="64*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Style="{StaticResource BaseText }" Text="Дата:" FontSize="15" VerticalAlignment="Center"  />
-                            <TextBox x:Name="tbdateday" MaxLength="2" Margin="1"  Style="{StaticResource BaseTextBox}" Tag="DD" FontSize="20" Grid.Column="1"/>
-                            <TextBox x:Name="tbdatemonth" MaxLength="2" Margin="2"  Style="{StaticResource BaseTextBox}" Tag="MM" FontSize="20" Grid.Column="2"/>
-                            <TextBox x:Name="tbdateyear" Margin="3" MaxLength="4"   Style="{StaticResource BaseTextBox}" Tag="YYYY" FontSize="20" Grid.Column="3"/>
+                            <TextBlock FontWeight="Bold" Style="{StaticResource BaseText }" Text="Дата:" FontSize="15" VerticalAlignment="Center" Height="18" Margin="3,7"  />
+                            <TextBox x:Name="tbdateday" Margin="1" MaxLength="2"   Style="{StaticResource BaseTextBox}" Tag="DD" FontSize="20" Grid.Column="1"/>
+                            <TextBox x:Name="tbdatemonth" Margin="1" MaxLength="2"  Style="{StaticResource BaseTextBox}" Tag="MM" FontSize="20" Grid.Column="2"/>
+                            <TextBox x:Name="tbdateyear" Margin="1" MaxLength="4"   Style="{StaticResource BaseTextBox}" Tag="YYYY" FontSize="20" Grid.Column="3"/>
                         </Grid>
                         <!--Рост и Вес-->
-                        <Grid Grid.Row="1" >
+                        <Grid Grid.Row="1"  Margin="1" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="125*"/>
                                 <ColumnDefinition Width="127*"/>
@@ -106,8 +106,8 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Style="{StaticResource BaseText }" Text="Вес:" FontSize="15" VerticalAlignment="Center"  />
-                                <TextBox Name="tbweight" Margin="3" MaxLength="3" Tag="кг" FontSize="20" Style="{StaticResource BaseTextBox}"  Grid.Column="1" />
+                                <TextBlock FontWeight="Bold" Style="{StaticResource BaseText }" Text="Вес:" FontSize="15" VerticalAlignment="Center"  />
+                                <TextBox Name="tbweight" Margin="1" MaxLength="3" Tag="кг" FontSize="20" Style="{StaticResource BaseTextBox}"  Grid.Column="1" />
                             </Grid>
 
                             <Grid Grid.Column="1">
@@ -116,8 +116,8 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Style="{StaticResource BaseText }" Text="Рост:" FontSize="17" Margin="1" VerticalAlignment="Center" />
-                                <TextBox Margin="3"  Name="tbheight" MaxLength="3"  Tag="см" FontSize="20" Style="{StaticResource BaseTextBox}"  Grid.Column="1"/>
+                                <TextBlock FontWeight="Bold" Style="{StaticResource BaseText }" Text="Рост:" FontSize="17" Margin="1" VerticalAlignment="Center" />
+                                <TextBox Margin="1"  Name="tbheight" MaxLength="3"  Tag="см" FontSize="20" Style="{StaticResource BaseTextBox}"  Grid.Column="1"/>
                             </Grid>
                         </Grid>
 
@@ -132,8 +132,8 @@
                         </Grid.RowDefinitions>
 
 
-                        <RadioButton FontSize="13" x:Name="rbМan" Content="Мужчина" GroupName="Gender" Grid.Column="0"  Grid.Row="0" VerticalAlignment="Center"   />
-                        <RadioButton FontSize="13" x:Name="rbWoman" Content="Женщина" GroupName="Gender" Grid.Column="0"   Grid.Row="1" VerticalAlignment="Center"  />
+                        <RadioButton FontWeight="Bold" FontSize="12" x:Name="rbМan" Content="Мужчина" GroupName="Gender" Grid.Column="0"  Grid.Row="0" VerticalAlignment="Center"   />
+                        <RadioButton FontWeight="Bold" FontSize="12" x:Name="rbWoman" Content="Женщина" GroupName="Gender" Grid.Column="0"   Grid.Row="1" VerticalAlignment="Center"  />
 
                     </Grid>
 

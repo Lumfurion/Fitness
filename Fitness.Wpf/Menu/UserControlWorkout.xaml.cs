@@ -6,13 +6,11 @@ namespace Fitness.Wpf
 {
     public partial class UserControlWorkout : UserControl
     {
-        readonly UserController userController;
+        
         readonly TrainingController trainingController;
-       
         public UserControlWorkout()
         {
             InitializeComponent();
-            userController = new UserController(UserController.CurrentUserName);
             trainingController = new TrainingController();
             trainingController.SelectProgram();
             
@@ -37,7 +35,7 @@ namespace Fitness.Wpf
         {
             Button button = (Button)sender;
             string Key = button.Tag.ToString();
-            MessageBox.Show(Key);
+
             ChoiceExercise cex = new ChoiceExercise(Key);
             cex.ShowDialog();
             ICTraining.ItemsSource = null;
@@ -58,7 +56,7 @@ namespace Fitness.Wpf
             Button button = (Button)sender;
             string Key = button.Tag.ToString(); 
             string name = button.Uid.ToString();
-            MessageBox.Show(name+"\n"+ Key);
+          
 
             trainingController.Delete(Key, name);
 
@@ -97,7 +95,6 @@ namespace Fitness.Wpf
         private void AddnewDayOnClick(object sender, RoutedEventArgs e)
         {
             trainingController.AddNewDay();
-
             UpDate();
         }
 
@@ -106,11 +103,8 @@ namespace Fitness.Wpf
         {
             Button button = (Button)sender;
             string day = button.Tag.ToString();
-            MessageBox.Show(day);
             trainingController.DeleteDay(day);
-
             UpDate();
-
         }
 
         private void UpDate()

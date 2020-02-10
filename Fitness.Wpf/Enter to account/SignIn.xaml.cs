@@ -1,21 +1,20 @@
 ﻿using Fitness.BusinessLogic.Controller;
 using System.Windows;
 using System.Linq;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Fitness.Wpf
 {
     public partial class MainWindow : Window
     {
-        UserController user { get; set; }
-        TrainingController trainingController { get; }
+        private  UserController user { get; set; }
+        readonly TrainingController trainingController;
 
         public MainWindow()
         {
             InitializeComponent();
-           
             trainingController = new TrainingController();
+            user = new UserController();
 
         }
 
@@ -24,11 +23,8 @@ namespace Fitness.Wpf
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            user = new UserController();
-
-
+            user.UpDate();//если есть новый пользователь.
             bool name = user.Users.Any(u => u.Name == tbUsername.Text);
-
             if (name == false)
             {
                 MessageBox.Show("Нет такого пользователя");

@@ -9,6 +9,9 @@ namespace Fitness.Wpf
         private readonly ExerciseController excerseController;
         private readonly TrainingController trainingController;
         readonly string Day;
+        /// <summary>
+        /// Какое упражнение заменяем.
+        /// </summary>
         readonly string whatToreplace;
         readonly string btnpress;
         private string excerse;
@@ -42,7 +45,7 @@ namespace Fitness.Wpf
             {
                 trainingController.ReplacementExerciseinProgram(Day,name,whatToreplace);
             }
-            MessageBox.Show(name + "\n" + Day);
+         
             excerse = name;
 
             if (!string.IsNullOrEmpty(Day) && btnpress != "EditExercise")

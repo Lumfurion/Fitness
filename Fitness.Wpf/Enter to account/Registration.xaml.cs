@@ -10,9 +10,10 @@ namespace Fitness.Wpf
 
     public partial class Registration : Window
     {
-        UserController user { get; set; }
-        string Gender { get; set; }
-        MainWindow signIn { get; set; }
+        private string Gender { get; set; }
+        private UserController user { get; set; }
+        readonly MainWindow signIn;
+
         public Registration()
         {
             InitializeComponent();

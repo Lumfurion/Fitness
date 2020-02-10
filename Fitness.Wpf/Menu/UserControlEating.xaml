@@ -181,7 +181,7 @@
                                                             </DataTemplate>
                                                         </ItemsControl.ItemTemplate>
                                                     </ItemsControl>
-                                                    <Button Content="Дабавить" Tag="{Binding EatingTime}" Click="btnAddFoodOnClick"  Style="{StaticResource ButtonAdd}" Grid.Row="2"/>
+                                                    <Button Content="Добавить" Tag="{Binding EatingTime}" Click="btnAddFoodOnClick"  Style="{StaticResource ButtonAdd}" Grid.Row="2"/>
                                                 </Grid>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>

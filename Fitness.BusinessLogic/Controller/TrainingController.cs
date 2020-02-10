@@ -141,15 +141,21 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Добавить  день.
         /// </summary>
-        public string AddNewDay()
+        public int AddNewDay()
         {
             var Count = SelectProgram().Keys.Count();//Получение количество деней.
+            
             var day = $"День {++Count}";
-       
+
+            if (SelectProgram().Keys.Contains(day))
+            {
+                day = $"День {++Count}";
+            }
+            
             int index = Trainings.FindIndex(trainings => trainings.Name == Name && trainings.Type == Type);//Получения идекса.
             Trainings[index].Add(day, new List<Exercise>());
             Save();
-            return day;
+            return Count;
         }
        
         /// <summary>

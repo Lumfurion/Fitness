@@ -101,18 +101,10 @@ namespace Fitness.BusinessLogic.Controller
             var sumFoodDiary = GetSumFoodDiary();
             var total = Total();
 
-            statistics.Add(new Statistic(login, BMR, sumtraining, sumFoodDiary, total));
+            statistics.Add(new Statistic(login, -BMR, -sumtraining, sumFoodDiary, total));
             Save();
             UpDate();
 
-            //var isSuch = statistics.Any(statistic => statistic.Login == login);
-          
-            //if (isSuch == false)
-            //{
-            //    statistics.Add(new Statistic(login, BMR, sumtraining, sumFoodDiary, total));
-            //    Save();
-            //    UpDate();
-            //}
         }
 
         public Statistic StatisticObject()

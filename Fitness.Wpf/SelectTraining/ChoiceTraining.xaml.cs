@@ -128,7 +128,6 @@ namespace Fitness.Wpf
             #endregion
 
 
-
             //Вызваем обробочик каждих 0.1 секунду timer_tick.
             //Интервал устанавливается в 0.1 секунду с помощью TimeSpan объекта, и запускается таймер.
             timer.Interval = TimeSpan.FromSeconds(0.1);
@@ -159,30 +158,6 @@ namespace Fitness.Wpf
             }
 
             var name = button.Name;
-
-            //switch (name)
-            //{
-            //    case "btnNoob":
-            //        trainingInfo = new TrainingInfo("Noob");
-            //        break;
-            //    case "btnslimming":
-            //        trainingInfo = new TrainingInfo("Slimming");
-            //        break;
-            //    case "btnBodyBuilding":
-            //        trainingInfo = new TrainingInfo("BodyBuilding");
-            //        break;
-            //    case "btnAthomeHorizontalbar":
-            //        trainingInfo = new TrainingInfo("AthomeHorizontalbar");
-            //        break;
-            //    case "btnAthome":
-            //        trainingInfo = new TrainingInfo("AtHomeConditions");
-            //        break;
-
-            //    case "btnFullbody":
-            //        trainingInfo = new TrainingInfo("Fullbody");
-            //        break;
-            //}
-
             switch (name)
             {
                 case "btnNoob":
@@ -205,8 +180,10 @@ namespace Fitness.Wpf
                     trainingInfo = new TrainingInfo("Фулбоди для начинающих");
                     break;
             }
-
-            trainingInfo.ShowDialog();
+            if(trainingInfo != null)
+            {
+                trainingInfo.ShowDialog();
+            }
 
         }
 

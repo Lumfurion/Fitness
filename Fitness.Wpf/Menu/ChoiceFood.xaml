@@ -43,7 +43,7 @@
 
                                 <TextBlock Text="{Binding Value, StringFormat='Грам:{0}'}" Margin="2" FontSize="15" HorizontalAlignment="Right"/>
                             </StackPanel>
-                            <Button Tag="{Binding Key.Name}"   Content="Дабвить" Click="btnAddOnClick"  Grid.Row="2"    Style="{StaticResource ButtonAdd}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Button Tag="{Binding Key.Name}"   Content="Добавить" Click="btnAddOnClick"  Grid.Row="2"    Style="{StaticResource ButtonAdd}" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
 
                         </Grid>

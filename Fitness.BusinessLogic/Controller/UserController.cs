@@ -18,7 +18,7 @@ namespace Fitness.BusinessLogic.Controller
         /// Пользователь приложения.
         /// Будем использовать список он не безопасен можно его заменить даже если он приватный.
         /// </summary>
-        public List<User> Users { get; }
+        public List<User> Users { get; private set; }
         /// <summary>
         /// Текущий пользователь,для проверки есть такой пользователь.
         /// </summary>
@@ -80,11 +80,6 @@ namespace Fitness.BusinessLogic.Controller
         #endregion
 
 
-
-        public UserController()
-        {
-            Users = GetUsersData();
-        }
         /// <summary>
         /// Создание нового контроллера пользователя.
         /// При вводе пользователь вводит свой логин проверяем в наличии такого  логина в файле,
@@ -114,6 +109,11 @@ namespace Fitness.BusinessLogic.Controller
                 Save();
             }
 
+        }
+
+        public UserController()
+        {
+            Users = GetUsersData();
         }
 
 
@@ -151,12 +151,19 @@ namespace Fitness.BusinessLogic.Controller
         }
         
 
+
+
         /// <summary>
         /// Получить сохраненный список пользователей(десериализация).
         /// </summary>
         public List<User> GetUsersData()
         {
             return Load<User>() ?? new List<User>(); //?? new List<User>()-праверка нужна потому что default(T) возращает null.
+        }
+
+        public void UpDate()
+        {
+            Users = GetUsersData();
         }
 
         /// <summary>
