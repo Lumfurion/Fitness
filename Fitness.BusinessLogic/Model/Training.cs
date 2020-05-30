@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Fitness.BusinessLogic.Model
-{
+{   /// <summary>
+    /// Программа тренировок.
+    /// </summary>
     [Serializable]
     public class Training
     {
 
         #region Cвойство
         /// <summary>
-        /// Имя пользователя.
+        /// Имя пользователя который выбрал программу тренировок.
         /// </summary>
         public string Name { get; set; }
 
@@ -26,12 +28,12 @@ namespace Fitness.BusinessLogic.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Будет хранить пользователя тип тренировки когда выбрал.
+        ///Будет хранить выбрал или пользователь тренировку true-да false-нет
         /// </summary>
         public bool isSelected { get; set; } = false;
 
         /// <summary>
-        ///День и cколько пользователь дожен сделать упражений.
+        ///Сколько за день пользователь должен выполнить упражнений.
         /// </summary>
         public Dictionary<string, List<Exercise>> Exercises { get; set; }
         #endregion

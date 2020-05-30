@@ -17,7 +17,9 @@ namespace Fitness.BusinessLogic.Services.Initializers
                 Init();
             }
         }
-
+        /// <summary>
+        /// Заполнение программами тренировок Trainings.
+        /// </summary>
         private static void Init()
         {   //База для начинающих
             NoobMan();
@@ -529,13 +531,20 @@ namespace Fitness.BusinessLogic.Services.Initializers
 
 
 
-
+        /// <summary>
+        /// Получение программы тренировок.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static Training GetTraining(string type)
         {
             var training = Trainings.Where(t => t.Type == type).FirstOrDefault();
             return training;
         }
-
+        /// <summary>
+        /// Получение программ тренировок.
+        /// </summary>
+        /// <returns></returns>
         public static List<Training> GetTrainings() => Trainings;
 
 

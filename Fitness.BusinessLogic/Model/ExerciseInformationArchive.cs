@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 
 namespace Fitness.BusinessLogic.Model
-{
+{   /// <summary>
+    /// Класс будет сохранять в архиве информацию об упражнениях.
+    /// </summary>
     [Serializable]
     public class ExerciseInformationArchive
     {

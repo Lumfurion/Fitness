@@ -105,34 +105,41 @@
                         <ItemsControl  Name="ICEdit">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    
-                                    <Expander IsExpanded="True" x:Name="epedit" Margin="5" Padding="5" Header="{Binding Key}"  FontSize="20"  BorderBrush="Black" BorderThickness="2">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="374*"/>
-                                                <RowDefinition Height="45*"/>
-                                            </Grid.RowDefinitions>
-                                            <ItemsControl ItemsSource="{Binding Path=Value}">
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <Grid>
-                                                            <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
-                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                                                <Button  Content="Удалить"  Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}"  Style="{StaticResource ButtonError}"   Click="DeleteExercise_Click"/>
-                                                                <Button  Content="Заменить" Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Header}"  Style="{StaticResource ButtonEdit}"  Click="EditExercise_Click" />
-                                                            </StackPanel>
-                                                        </Grid>
 
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
-                                                <StackPanel  Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                    <Button  Tag="{Binding ElementName=epedit, Path=Header}"   Style="{StaticResource ButtonAdd}"   Click="AddExercise_Click"  Content="+"  FontSize="20"    MinWidth="60" MaxWidth="80"        MinHeight="44"  MaxHeight="60"/>
-                                                    <Button  Tag="{Binding ElementName=epedit, Path=Header}"   Style="{StaticResource ButtonError}" Click="btnDeleteDayOnClick"  Content="-"  FontSize="20"  MinWidth="60"  MaxWidth="80"      MinHeight="44"  MaxHeight="60"/>
-                                                </StackPanel>
+                                        <Border CornerRadius="5"  Margin="5" Padding="5" Background="White"   BorderBrush="Black" BorderThickness="2">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="41*"/>
+                                                    <RowDefinition Height="379*"/>
+                                                </Grid.RowDefinitions>
+                                                <TextBlock  x:Name="epedit"   Text="{Binding Key}"  Foreground="Black" FontSize="30"   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <Grid Grid.Row="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="374*"/>
+                                                        <RowDefinition Height="45*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <ItemsControl ItemsSource="{Binding Path=Value}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Grid>
+                                                                    <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontSize="15"   Margin="15,0,0,0" x:Name="ExerciseName" Text="{Binding Name}"/>
+                                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                                        <Button  Content="Удалить"  Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Text}"  Style="{StaticResource ButtonError}"   Click="DeleteExercise_Click"/>
+                                                                        <Button  Content="Заменить" Uid="{Binding Name}" Tag="{Binding ElementName=epedit, Path=Text}"  Style="{StaticResource ButtonEdit}"  Click="EditExercise_Click" />
+                                                                    </StackPanel>
+                                                                </Grid>
 
-                                        </Grid>
-                                    </Expander>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                    <StackPanel  Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                        <Button  Tag="{Binding ElementName=epedit, Path=Text}"   Style="{StaticResource ButtonAdd}"   Click="AddExercise_Click"  Content="+"  FontSize="20"    MinWidth="60" MaxWidth="80"        MinHeight="44"  MaxHeight="60"/>
+                                                        <Button  Tag="{Binding ElementName=epedit, Path=Text}"   Style="{StaticResource ButtonError}" Click="btnDeleteDayOnClick"  Content="-"  FontSize="20"  MinWidth="60"  MaxWidth="80"      MinHeight="44"  MaxHeight="60"/>
+                                                    </StackPanel>
+
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
                                     
                                    
                                 </DataTemplate>

@@ -24,10 +24,10 @@ namespace Fitness.BusinessLogic.Model
         /// Изображение активности
         /// </summary>
         public string Image { get; set; }
-       
-       /// <summary>
-       /// Количество раз.
-       /// </summary>
+
+        /// <summary>
+        /// Количество раз сколько нужно сделать упражнения
+        /// </summary>
         public int Amount { get; set; }
         /// <summary>
         /// Количество подходов.

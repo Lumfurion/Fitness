@@ -15,22 +15,22 @@ namespace Fitness.BusinessLogic.Controller
         public string Name { get; set; }
 
         /// <summary>
-        /// Описание
+        ///Описание программы тренировок.
         /// </summary>
         public string Description { get; set; }
         /// <summary>
         /// Тип тренировки.
         /// </summary>
         internal static string Type { get; set; }
-        
+
 
         /// <summary>
-        /// Класс который хранит тренировки.
+        /// Хранит всех пользователей тренировки.
         /// </summary>
         private List<Training> Trainings { get; set; }
 
         /// <summary>
-        /// Будет хранить тренировку пользователя.
+        /// Будет хранить тренировку текущего пользователя.
         /// </summary>
         public Dictionary<string, List<Exercise>> CurrentTraining { get; set; }
         #endregion
@@ -89,12 +89,12 @@ namespace Fitness.BusinessLogic.Controller
             return type;
         }
 
-       
+
 
 
         #region Дабавление,Удаление,Измение,Получение программы
         /// <summary>
-        /// Дабавление программы.
+        /// Добавление программы.
         /// </summary>
         public void AddProgram(string name, string type, string description, Dictionary<string, List<Exercise>> exercises, bool selectedWorkouts)
         {
@@ -182,7 +182,7 @@ namespace Fitness.BusinessLogic.Controller
         }
 
         /// <summary>
-        /// Дабавление  тренировки.
+        /// Добавление тренировки.
         /// </summary>
         public void AddTraining(string day, Exercise exercise)
         {
@@ -217,8 +217,10 @@ namespace Fitness.BusinessLogic.Controller
         #endregion
 
 
- 
 
+        /// <summary>
+        /// Обновления данных.
+        /// </summary>
         public void Update()
         {
             Name = UserController.CurrentUserName;
@@ -231,7 +233,7 @@ namespace Fitness.BusinessLogic.Controller
         }
 
         /// <summary>
-        /// Сохраняет если пользователь не выбрал тренировку.
+        /// Сохраняет  если пользователь не выбрал программу тренировок.
         /// </summary>
         public void Saver()
         {
@@ -244,7 +246,9 @@ namespace Fitness.BusinessLogic.Controller
             }
 
         }
-
+        /// <summary>
+        /// Сохранение программ тренировок в файл.
+        /// </summary>
         private void Save()
         {
             Save(Trainings);

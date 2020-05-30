@@ -1,4 +1,5 @@
 ﻿using Fitness.BusinessLogic.Controller;
+using Fitness.BusinessLogic.Services;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,9 +46,18 @@ namespace Fitness.Wpf
         }
 
         private void tbSaveOnClick(object sender, RoutedEventArgs e)
-        {   //Проверка.
+        {
+            var login = Verification.Login(tbUsername.Text);
+            if(login)
+            {
+                user = new UserController(tbUsername.Text);
+            }
+            else
+            {
+                MessageBox.Show("Имя пользователя пустое или меньше 5 символов или больше 15 символов");
+                return;
+            }
 
-            user = new UserController(tbUsername.Text);
             if (!user.isNewUser)
             {
                 MessageBox.Show("Такой пользователь уже есть");
@@ -57,9 +67,25 @@ namespace Fitness.Wpf
                 var password = tbPassword.Text;
                 var gender = Gender;
                 var date = tbdateday.Text + "." + tbdatemonth.Text + "." + tbdateyear.Text;
-                var birtdayDate = Convert.ToDateTime(date);
+                DateTime birtdayDate;
                 var weight = Convert.ToInt32(tbweight.Text);
                 var height = Convert.ToInt32(tbheight.Text);
+
+                if (!Verification.Password(password))
+                {
+                    MessageBox.Show("Пароль пустой или меньше 10 символов или больше 20 символов");
+                    return;
+                }
+
+                if (!Verification.Date(date))
+                {
+                    MessageBox.Show("Некорректно введена дата");
+                    return;
+                }
+                else
+                {
+                    birtdayDate = Convert.ToDateTime(date);
+                }
                 user.SetNewUserData(gender, password, birtdayDate, weight, height);
 
                 signIn.Show();

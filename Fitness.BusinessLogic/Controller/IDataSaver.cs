@@ -4,11 +4,11 @@ namespace Fitness.BusinessLogic.Controller
 {
     public interface IDataSaver
     {  /// <summary>
-       /// 
+       /// Зависимости от созданного объекта интерфейса будет сохранять в файл или в базу данных.
        /// </summary>
        /// <typeparam name="T">Тип котрый будем сохронять.</typeparam>
        /// <param name="item">Коллекция элементов которой будем сохранять</param>
-       void Save<T>(List<T> item) where T : class;
+        void Save<T>(List<T> item) where T : class;
         /// <summary>
         /// 
         /// </summary>

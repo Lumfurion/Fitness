@@ -10,9 +10,15 @@ using Fitness.BusinessLogic.Model;
 using System.Linq;
 
 namespace Fitness.BusinessLogic.Printing_document
-{
+{   /// <summary>
+    /// Класс который выполняет функцию печати программы тренировки и дневника питания.
+    /// </summary>
     public static class Printing
-    {
+    {   /// <summary>
+        /// Создает структуру документа для печати (программы тренировок).
+        /// </summary>
+        /// <param name="dec"></param>
+        /// <returns></returns>
         private static FlowDocument CreateDocumentWorkout(Dictionary<string, List<Workout>> dec)
         {
             FlowDocument fd = new FlowDocument();
@@ -64,7 +70,9 @@ namespace Fitness.BusinessLogic.Printing_document
 
             return fd;
         }
-
+        /// <summary>
+        /// Настройка печати и печать(программа тренировок).
+        /// </summary>
         public static void Workout()
         {
             var items = new Dictionary<string, List<Workout>>();
@@ -115,7 +123,9 @@ namespace Fitness.BusinessLogic.Printing_document
 
         }
 
-
+        /// <summary>
+        /// Настройка печати и печать(дневника питания).
+        /// </summary>
         public static void FoodDiary()
         {
             var foodDiaryController = new FoodDiaryController();
@@ -142,7 +152,11 @@ namespace Fitness.BusinessLogic.Printing_document
 
 
         }
-
+        /// <summary>
+        /// Создает структуру документа для печати (дневника питания).
+        /// </summary>
+        /// <param name="eatings"></param>
+        /// <returns></returns>
         private static FlowDocument CreateDocumentFoodDiary(List<Eating> eatings)
         {
             FlowDocument fd = new FlowDocument();

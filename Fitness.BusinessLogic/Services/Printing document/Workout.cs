@@ -15,6 +15,9 @@ namespace Fitness.BusinessLogic.Printing_document
         /// Изображение активности
         /// </summary>
         public Image Image { get; set; }
+        /// <summary>
+        /// Сколько подходов 0(подход) по 1(сколько)(мин,раз,кг)
+        /// </summary>
         public string howmuch { get; set; }
 
         #endregion

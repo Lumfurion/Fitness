@@ -91,11 +91,12 @@ namespace Fitness.BusinessLogicTests.Controller
             //Act
             var training = trainingController.SelectProgram();
             var daynew = trainingController.AddNewDay();
+            var day = $"День {daynew}";
             trainingController.Update();
-            var result = training.Keys.Where(k => k == daynew).FirstOrDefault();
+            var result = training.Keys.Where(k => k == day).FirstOrDefault();
 
             //Assert
-            Assert.AreEqual(daynew, result);
+            Assert.AreEqual(day, result);
         }
 
 

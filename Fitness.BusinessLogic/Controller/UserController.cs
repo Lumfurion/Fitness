@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-
 namespace Fitness.BusinessLogic.Controller
 {   /// <summary>
     /// Контроллер пользователя.
@@ -27,7 +26,9 @@ namespace Fitness.BusinessLogic.Controller
         /// Проверка являться пользователь новый или получили из приложения.
         /// </summary>
         public bool isNewUser { get; } = false;
-
+        /// <summary>
+        /// Имя текущего пользователя.
+        /// </summary>
         public static string CurrentUserName { get; set; }
 
         public string Image
@@ -59,16 +60,18 @@ namespace Fitness.BusinessLogic.Controller
         {
             string directory = @"UserImage\";//Папка.
             string sourceDirectory = value;//старый путь к файлу.
-            string targetDirectory = directory + @"\" + $"UserAvatar{CurrentUser.Name}.jpg";//2 путь
+            string targetDirectory = directory + @"\" + $"UserAvatar{CurrentUser.Name}.jpg";//где будет находиться файдл
             string pathImage = Path.Combine(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName), targetDirectory);//путь к файлу.
-
-          
 
             if (!Directory.Exists(directory))//Создание папоки.
             {
                 Directory.CreateDirectory(directory);
             }
-
+            //if (File.Exists(targetDirectory))//есть файл
+            //{
+            //    File.Delete(targetDirectory);
+            //    File.Copy(sourceDirectory, targetDirectory);
+            //}
 
             if (!File.Exists(targetDirectory))//Нету файла
             {
@@ -160,7 +163,9 @@ namespace Fitness.BusinessLogic.Controller
         {
             return Load<User>() ?? new List<User>(); //?? new List<User>()-праверка нужна потому что default(T) возращает null.
         }
-
+        /// <summary>
+        /// Обновляет данные модели.
+        /// </summary>
         public void UpDate()
         {
             Users = GetUsersData();

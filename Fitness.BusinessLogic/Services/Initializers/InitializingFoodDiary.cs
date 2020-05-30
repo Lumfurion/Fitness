@@ -5,14 +5,19 @@ using Fitness.BusinessLogic.Model;
 namespace Fitness.BusinessLogic.Services.Initializers
 {
     public static class InitializingFoodDiary
-    {
+    {   /// <summary>
+        /// Дневник питания который будет заполнять данными
+        /// </summary>
         static readonly List<FoodDiary> FoodDiaries;
 
         static  InitializingFoodDiary()
         {
             FoodDiaries = InitFoodDiary();
         }
-
+        /// <summary>
+        /// Возвратит заполнений дневник питания и  заполнит.
+        /// </summary>
+        /// <returns></returns>
         private static List<FoodDiary> InitFoodDiary()
         {
             var foodDiaries = new List<FoodDiary>();
@@ -56,9 +61,16 @@ namespace Fitness.BusinessLogic.Services.Initializers
 
             return foodDiaries;
         }
-
+        /// <summary>
+        /// Получение дневников питания.
+        /// </summary>
+        /// <returns></returns>
         public static List<FoodDiary> GetFoodDiaries()=> FoodDiaries;
-
+        /// <summary>
+        /// Получение дневника питания.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static FoodDiary GetFoodDiary(string type)
         {
             var FoodDiary = FoodDiaries.Where(f => f.Traning == type).FirstOrDefault();

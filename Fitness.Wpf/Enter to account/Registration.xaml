@@ -88,9 +88,9 @@
                                 <ColumnDefinition Width="64*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock FontWeight="Bold" Style="{StaticResource BaseText }" Text="Дата:" FontSize="15" VerticalAlignment="Center" Height="18" Margin="3,7"  />
-                            <TextBox x:Name="tbdateday" Margin="1" MaxLength="2"   Style="{StaticResource BaseTextBox}" Tag="DD" FontSize="20" Grid.Column="1"/>
-                            <TextBox x:Name="tbdatemonth" Margin="1" MaxLength="2"  Style="{StaticResource BaseTextBox}" Tag="MM" FontSize="20" Grid.Column="2"/>
+                            <TextBlock FontWeight="Bold" Style="{StaticResource BaseText }" Text="Дата:" FontSize="15" VerticalAlignment="Center"  Margin="3,7"  />
+                            <TextBox x:Name="tbdateday" Margin="1" MaxLength="2"   Style="{StaticResource BaseTextBox}" Tag="MM" FontSize="20" Grid.Column="1"/>
+                            <TextBox x:Name="tbdatemonth" Margin="1" MaxLength="2"  Style="{StaticResource BaseTextBox}" Tag="DD" FontSize="20" Grid.Column="2"/>
                             <TextBox x:Name="tbdateyear" Margin="1" MaxLength="4"   Style="{StaticResource BaseTextBox}" Tag="YYYY" FontSize="20" Grid.Column="3"/>
                         </Grid>
                         <!--Рост и Вес-->

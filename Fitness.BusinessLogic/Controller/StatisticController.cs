@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Fitness.BusinessLogic.Controller
 {   /// <summary>
-    ///
+    ///Класс будет считать сколько калорий пользователь набрал калорий когда питался и метаболизм.
     /// </summary>
     public class StatisticController :ControllerBase
-    {
+    {   /// <summary>
+        /// Контроллер пользователя.
+        /// </summary>
         readonly UserController userController;
+        /// <summary>
+        /// Контроллер программы тренировок.
+        /// </summary>
         readonly TrainingController trainingController;
+        /// <summary>
+        /// Контроллер дневника питания.
+        /// </summary>
         readonly FoodDiaryController foodDiaryController;
+        /// <summary>
+        /// Хранение данных о статистике.
+        /// </summary>
         public List<Statistic> statistics { private set;  get; }
 
         public StatisticController()
@@ -64,7 +75,7 @@ namespace Fitness.BusinessLogic.Controller
             var height = user.Height;
             var age = user.Age;
             var gender = user.Gender;
-
+            //Формула Маффина-Джеора.
             var BMRMAN =  (10 * weight) + (6.25 * height) - (5 * age + 5);
             var BMRGirl = (10 * weight) + (6.25 * height) - (5 * age - 161);
 
@@ -81,7 +92,7 @@ namespace Fitness.BusinessLogic.Controller
             return result;
         }
         /// <summary>
-        /// Итог всего
+        /// Тут будет рассчитана статистика для всего.
         /// </summary>
         /// <returns></returns>
         private int Total()
@@ -91,7 +102,9 @@ namespace Fitness.BusinessLogic.Controller
             var total = -(BMR + training) + FoodDiary;
             return (int)total;
         }
-
+        /// <summary>
+        /// Будет выполнять расчеты каждый раз при вызове конструктора.
+        /// </summary>
         private void init()
         {
             statistics.Clear();
@@ -106,7 +119,10 @@ namespace Fitness.BusinessLogic.Controller
             UpDate();
 
         }
-
+        /// <summary>
+        /// Получение статистики для текущего пользователя.
+        /// </summary>
+        /// <returns></returns>
         public Statistic StatisticObject()
         {
             var login = UserController.CurrentUserName;
@@ -114,17 +130,23 @@ namespace Fitness.BusinessLogic.Controller
             return statistic;
         }
 
-
+        /// <summary>
+        /// Обновление данных о статистике.
+        /// </summary>
         private void UpDate()
         {
             statistics = GetStatistic();
         }
-
+        /// <summary>
+        /// Получение данных из файла статистике.
+        /// </summary>
         private List<Statistic> GetStatistic()
         {
             return Load<Statistic>() ?? new List<Statistic>();
         }
-
+        /// <summary>
+        /// Сохранение  данных о статистике  в файл.
+        /// </summary>
         private void Save()
         {
             Save(statistics);

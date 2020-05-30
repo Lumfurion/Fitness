@@ -15,16 +15,21 @@ namespace Fitness.BusinessLogic.Controller
         public List<FoodDiary> FoodDiaries { get; set; }
 
         /// <summary>
-        /// Рекомендуемый днивник приём пищи.
+        /// Рекомендуемый дневник приема пищи.
         /// </summary>
         public List<FoodDiary> Recommended { get; set; }
         /// <summary>
-        /// Днивник приём пищи созданный пользователем.
-        /// Для удобности привязки список. 
+        /// Дневник приема пищи созданный пользователем.
         /// </summary>
         public List<FoodDiary> UserFoodDiary { get; set; }
         private string User { get; set; }
+        /// <summary>
+        /// Для  какой программы тренировок будет дневник питания.
+        /// </summary>
         private string Type { get; set; }
+        /// <summary>
+        /// Контроллер программы тренировок.
+        /// </summary>
         private TrainingController trainingController { get; set; }
 
         public FoodDiaryController()
@@ -187,12 +192,17 @@ namespace Fitness.BusinessLogic.Controller
             FoodDiaries = GetFoodDiary();
             SetFoodDiaryCurrentUser();
         }
-
+        /// <summary>
+        /// Получает все дневники питания из файла.
+        /// </summary>
+        /// <returns></returns>
         private List<FoodDiary>  GetFoodDiary()
         {
             return Load<FoodDiary>() ?? new List<FoodDiary>();
         }
-
+        /// <summary>
+        /// Збереження прийому їжі в файл.
+        /// </summary>
         private void Save()
         {
             Save(FoodDiaries);

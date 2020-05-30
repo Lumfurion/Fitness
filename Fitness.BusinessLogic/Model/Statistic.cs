@@ -1,6 +1,9 @@
 ﻿using System;
 namespace Fitness.BusinessLogic.Model
-{   [Serializable]
+{   /// <summary>
+    ///Класс статистики будет подсчитывать сколько пользователь потратил калории выполнении упражнения или сколько набрал при приеме еды.  
+    /// </summary>
+    [Serializable]
     public class Statistic
     {
         public string Login { get; set; }

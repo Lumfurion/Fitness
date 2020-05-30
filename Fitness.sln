@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.BusinessLogicTests", "Fitness.BusinessLogicTests\Fitness.BusinessLogicTests.csproj", "{BE87B1E0-DBBA-4130-B378-6E5474FD088D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.CMD", "Fitness.CMD\Fitness.CMD.csproj", "{AC2EE1CE-9CC0-4D54-A374-86C51D8C9612}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.BusinessLogic", "Fitness.BusinessLogic\Fitness.BusinessLogic.csproj", "{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitness.Wpf", "Fitness.Wpf\Fitness.Wpf.csproj", "{87448243-0E4B-469F-970C-88024924BE54}"
@@ -21,10 +19,6 @@ Global
 		{BE87B1E0-DBBA-4130-B378-6E5474FD088D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE87B1E0-DBBA-4130-B378-6E5474FD088D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE87B1E0-DBBA-4130-B378-6E5474FD088D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC2EE1CE-9CC0-4D54-A374-86C51D8C9612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC2EE1CE-9CC0-4D54-A374-86C51D8C9612}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC2EE1CE-9CC0-4D54-A374-86C51D8C9612}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC2EE1CE-9CC0-4D54-A374-86C51D8C9612}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A797671F-EDFE-48F5-BB3D-6B8B7C535D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU

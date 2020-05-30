@@ -1,6 +1,8 @@
 ﻿using System;
 namespace Fitness.BusinessLogic.Model
-{
+{   /// <summary>
+    /// Будет показывать информацию об упражнении.
+    /// </summary>
     [Serializable]
     public class ExerciseAboutInformation
     {

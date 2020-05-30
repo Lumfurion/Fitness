@@ -7,9 +7,13 @@ using System.Linq;
 namespace Fitness.BusinessLogic.Controller
 {
     public class ExerciseController:ControllerBase
-    {
+    {   /// <summary>
+        ///Будет хранить информацию о упражнениях. 
+        /// </summary>
         private ExerciseInformationArchive Archive { get;}
-
+        /// <summary>
+        /// Будет хранить  упражнения.
+        /// </summary>
         public List<Exercise> Exercises {get; }
 
         public ExerciseController()
@@ -28,7 +32,9 @@ namespace Fitness.BusinessLogic.Controller
             }
 
         }
-
+        /// <summary>
+        /// Заполнение Exercises упражнениями.
+        /// </summary>
         private void InitExercises()
         {
             AddExercise("Кардио", 100, "Training/Noobman/Day1/Кардио.jpg", 0, 5, "минут");
@@ -48,7 +54,9 @@ namespace Fitness.BusinessLogic.Controller
             SaveExercise();
 
         }
-
+        /// <summary>
+        /// Заполнение архива информацией про  упражнение.
+        /// </summary>
         private void InitArchive()
         {
             Add(
@@ -66,11 +74,22 @@ namespace Fitness.BusinessLogic.Controller
             SaveVideo();
         }
 
-
+        /// <summary>
+        /// Добавление упражнения.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="caloriesPerMinute"></param>
+        /// <param name="image"></param>
+        /// <param name="amount"></param>
+        /// <param name="count"></param>
+        /// <param name="designation"></param>
         private void AddExercise(string name, double caloriesPerMinute, string image, int amount, int count, string designation)
         {
             Exercises.Add(new Exercise(name, caloriesPerMinute, image, amount, count, designation));
         }
+        /// <summary>
+        /// Получение  упражнения по имени.
+        /// </summary>
         public Exercise GetExercise(string Name)
         {   
             var exercise = Exercises.Where(ex => ex.Name == Name).FirstOrDefault();
@@ -91,29 +110,46 @@ namespace Fitness.BusinessLogic.Controller
             ExerciseAboutInformation rez = Archive.Archive.Where(ar => ar.Name == name).FirstOrDefault();
             return rez;
         }
-   
+        /// <summary>
+        /// Будет добавлять информацию об упражнениях.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="Image"></param>
+        /// <param name="videoGirl"></param>
+        /// <param name="videoMan"></param>
         private void  Add(string name, string description, string Image, string videoGirl, string videoMan)
         {
             Archive.Add(new ExerciseAboutInformation(name, description, Image, videoGirl, videoMan));
         }
 
 
-       
 
+        /// <summary>
+        /// Получения из файла всех всех упражнений.
+        /// </summary>
+        
         private List<Exercise> GetAllExercises()
         {
             return Load<Exercise>() ?? new List<Exercise>();
         }
-
+        /// <summary>
+        /// Получения из файла информации об всех упражнениях.
+        /// </summary>
         private ExerciseInformationArchive GetArchive()
         {
              return Load<ExerciseInformationArchive>().FirstOrDefault() ?? new ExerciseInformationArchive();
         }
-
+        /// <summary>
+        /// Сохранить архив упражнения в файл.
+        /// </summary>
         private void SaveVideo()
         {
             Save(new List<ExerciseInformationArchive>() { Archive });
         }
+        /// <summary>
+        /// Сохранить упражнения в файл.
+        /// </summary>
         private void SaveExercise()
         {
             Save(Exercises);

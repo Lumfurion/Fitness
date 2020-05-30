@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Fitness.BusinessLogic.Controller.ControllerBase" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller\ControllerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Controller.SerializeDataSaver" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller\SerializeDataSaver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Controller.TrainingController" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>gAQAEIIDAAAoAAAAIAAAAIQAEAMEAAIAARAAACABAAQ=</HashCode>
+      <FileName>Controller\TrainingController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Controller.ExerciseController" Collapsed="true">
+    <Position X="6.25" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAAAIAAAAAAAAkAgAAABAAAAAGQAIAAAAAAQAA=</HashCode>
+      <FileName>Controller\ExerciseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Controller.FoodDiaryController" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAYBAIAAAABAAAQAQAAAAAAAAAkACAAAIQAAAAAAhEE=</HashCode>
+      <FileName>Controller\FoodDiaryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Controller.StatisticController" Collapsed="true">
+    <Position X="3.25" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQBAIAAAAAAACAAAgAABABAEAAAQBIAAAEAAAAAgAA=</HashCode>
+      <FileName>Controller\StatisticController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Services.Initializers.InitializingFoodDiary" Collapsed="true">
+    <Position X="6" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAAAAAAAAkA=</HashCode>
+      <FileName>Services\Initializers\InitializingFoodDiary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Services.Initializers.InitializingFoods" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Services\Initializers\InitializingFoods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Services.Initializers.InitializingTraining" Collapsed="true">
+    <Position X="8.5" Y="1.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAEJAAAABAAAAAACAAAAEBAAAAAAAEBCIAAAAIA=</HashCode>
+      <FileName>Services\Initializers\InitializingTraining.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Printing_document.Printing" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAQAAAAAAIAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Printing document\Printing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Printing_document.Workout" Collapsed="true">
+    <Position X="5.5" Y="1.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAwAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Printing document\Workout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Controller.UserController" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAKAABIAAAAAAAAQAAQIAAAAAQBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.Eating" Collapsed="true">
+    <Position X="9" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Eating.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.Exercise" Collapsed="true">
+    <Position X="9" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAASAAAABAhAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Exercise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.ExerciseAboutInformation" Collapsed="true">
+    <Position X="10.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAgAAAAAAAAAAQAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ExerciseAboutInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.ExerciseInformationArchive" Collapsed="true">
+    <Position X="10.75" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ExerciseInformationArchive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.Food" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAEAAAAABQAAAAAABAAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.FoodDiary" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAQAEAAAAAAAAEAAAAAAEAA=</HashCode>
+      <FileName>Model\FoodDiary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.Gender" Collapsed="true">
+    <Position X="5.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Gender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.Statistic" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAgAIAAAAQAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Model\Statistic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.Training" Collapsed="true">
+    <Position X="2" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAQAAAgAAAAAAEAAAQAAAEAAAAAAQAAAAAAAAE=</HashCode>
+      <FileName>Model\Training.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fitness.BusinessLogic.Model.User" Collapsed="true">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAACEAEAAAAQAACABABACAAAAAABAAAA=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Fitness.BusinessLogic.Controller.IDataSaver" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller\IDataSaver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

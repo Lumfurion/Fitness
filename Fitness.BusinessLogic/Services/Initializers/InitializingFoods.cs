@@ -6,7 +6,9 @@ namespace Fitness.BusinessLogic.Services.Initializers
 {
     public static class InitializingFoods
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static Dictionary<Food, double> Foods { get; set; }
         
 
@@ -14,7 +16,9 @@ namespace Fitness.BusinessLogic.Services.Initializers
         {
             InitFoods();  
         }
-
+        /// <summary>
+        /// Вернет заполнений прием еды и заполнит.
+        /// </summary>
         private static void InitFoods()
         {
             Foods = new Dictionary<Food, double>();
@@ -34,13 +38,21 @@ namespace Fitness.BusinessLogic.Services.Initializers
 
         }
 
-     
+        /// <summary>
+        /// Получение еды и день в который съели еду.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static KeyValuePair<Food, double> GetFood(string name)
         {
             var poduct = Foods.Where(f => f.Key.Name == name).FirstOrDefault();
             return poduct;
         }
-
+        /// <summary>
+        /// Добавления еды.
+        /// </summary>
+        /// <param name="food"></param>
+        /// <param name="count"></param>
         private static void Add(Food food, double count)
         {  //Есть такой в списке продукт.
             var product = Foods.Keys.FirstOrDefault(f => f.Name.Equals(food.Name));
