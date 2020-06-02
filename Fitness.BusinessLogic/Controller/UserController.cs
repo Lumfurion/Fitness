@@ -21,7 +21,7 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Текущий пользователь,для проверки есть такой пользователь.
         /// </summary>
-        public User CurrentUser { get; }
+        public User CurrentUser { get; private set; }
         /// <summary>
         /// Проверка являться пользователь новый или получили из приложения.
         /// </summary>
@@ -81,7 +81,10 @@ namespace Fitness.BusinessLogic.Controller
         }
 
         #endregion
-
+        public UserController()
+        {
+            Users = GetUsersData();
+        }
 
         /// <summary>
         /// Создание нового контроллера пользователя.
@@ -99,32 +102,21 @@ namespace Fitness.BusinessLogic.Controller
             }
             Users = GetUsersData();
 
-            //Будем искать пользователя 1 единственным именами,ecли пользователь есть.
-            CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
-
+            CurrentUser = Users.SingleOrDefault(u => u.Name == userName);//поиск пользователя.
             CurrentUserName = userName;
 
+    
             if (CurrentUser == null)
             {
-                CurrentUser = new User(userName);
-                Users.Add(CurrentUser);//Добавление нового пользователя.
                 isNewUser = true;
-                Save();
             }
 
         }
 
-        public UserController()
-        {
-            Users = GetUsersData();
-        }
-
-
-
         /// <summary>
         /// Инициализация нового пользователя.
         /// </summary>
-        public void SetNewUserData(string genderName, string password, DateTime birthdaydate, double weight, double height)
+        public void SetNewUserData(string password,string genderName, DateTime birthdaydate, double weight, double height)
         {
             #region Проверки.
             if (string.IsNullOrEmpty(genderName))
@@ -145,12 +137,14 @@ namespace Fitness.BusinessLogic.Controller
                 throw new ArgumentException("Рост не может быть 0", nameof(height));
             }
             #endregion
-            CurrentUser.Password = password;
-            CurrentUser.Gender = new Gender(genderName);
-            CurrentUser.BirthdayDate = birthdaydate;
-            CurrentUser.Weight = weight;
-            CurrentUser.Height = height;
-            Save();
+
+            if (CurrentUser == null)
+            {
+                CurrentUser = new User(CurrentUserName,password, new Gender(genderName), birthdaydate, weight, height);
+                Users.Add(CurrentUser);//Добавление нового пользователя.
+                Save();
+            }
+      
         }
         
 

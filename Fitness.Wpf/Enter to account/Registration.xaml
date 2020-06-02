@@ -22,7 +22,7 @@
             <RowDefinition Height="18*"/>
             <RowDefinition Height="86*"/>
             <RowDefinition Height="87*"/>
-            <RowDefinition Height="39*"/>
+            <RowDefinition Height="45*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <!--Системное меню-->
@@ -44,7 +44,7 @@
         <!--Логотип-->
         <Image Grid.Row="1" Margin="5" Source="Image\reg.jpg"/>
 
-
+        <!--Ввод данных-->
         <Grid  Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="94*"/>
@@ -144,6 +144,35 @@
             </Grid>
 
         </Grid>
+
+        <!--Вывод ошибок(Контейнер для ошибок)-->
+        <Border Visibility="Hidden"  Name="brError" Grid.Row="3" CornerRadius="4" BorderThickness="2" 
+         BorderBrush="Red" Margin="5" >
+            <Grid >
+
+                <Grid Margin="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="11*"/>
+                        <RowDefinition Height="12*"/>
+                        <RowDefinition Height="12*"/>
+                        <RowDefinition Height="13*"/>
+                        <RowDefinition Height="13*"/>
+                        <RowDefinition Height="11*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="tberrorlogin" Margin="1" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+
+                    <TextBlock Grid.Row="1" Margin="1"  Name="tberrorpasword" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+
+                    <TextBlock Grid.Row="2" Margin="1"  Name="tberrordate" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+
+                    <TextBlock Grid.Row="3" Margin="1"  Name="tberrorgender" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+
+                    <TextBlock Grid.Row="4" Margin="1"  Name="tberrorweight" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+
+                    <TextBlock Grid.Row="5" Margin="1"  Name="tberrorheight" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}" /> 
+                </Grid>
+            </Grid>
+        </Border>
         <Button Content="Создать аккаунт" Grid.Row="4" 
            Style="{StaticResource ButtonAdd}" Click="tbSaveOnClick" />
     </Grid>

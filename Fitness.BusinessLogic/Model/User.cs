@@ -54,6 +54,15 @@ namespace Fitness.BusinessLogic.Model
         public int Age { get { return DateTime.Now.Year - BirthdayDate.Year; }}
         #endregion
         public User() { }
+        
+        public User(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException("Имя пользователя не может  быть пустым или null.", nameof(name));
+            }
+            Name = name;
+        }
 
         /// <summary>
         /// Создать  нового пользователя.
@@ -99,14 +108,7 @@ namespace Fitness.BusinessLogic.Model
             Weight = weight;
             Height = height;
         }
-        public User(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentNullException("Имя пользователя не может  быть пустым или null.", nameof(name));
-            }
-            Name = name;
-        }
+        
 
 
         public override string ToString()

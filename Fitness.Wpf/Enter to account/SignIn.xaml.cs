@@ -24,7 +24,8 @@ namespace Fitness.Wpf
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             user.UpDate();//если есть новый пользователь.
-            bool name = user.Users.Any(u => u.Name == tbUsername.Text);
+            bool name = user.Users.Any(u => u.Name == tbUsername.Text);//если есть какой либо пользователь с именем.
+           
             if (name == false)
             {
                 MessageBox.Show("Нет такого пользователя");
