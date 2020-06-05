@@ -24,19 +24,21 @@ namespace Fitness.Wpf
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             user.UpDate();//если есть новый пользователь.
-            bool name = user.Users.Any(u => u.Name == tbUsername.Text);//если есть какой либо пользователь с именем.
-           
-            if (name == false)
-            {
-                MessageBox.Show("Нет такого пользователя");
-            }
-            else
-            {
-                user = new UserController(tbUsername.Text);
-                trainingController.Update();
+            bool name = user.isExist(tbUsername.Text);
 
-                if (user.CurrentUser.Password == tbPassword.Text)
-                {
+            if (!name)
+            {
+               tberrorlogin.Text="Нет такого пользователя";
+               brError.Visibility = Visibility.Visible;
+            }
+            else if (user.CurrentUser.Password == tbPassword.Text)
+            {
+                    brError.Visibility = Visibility.Collapsed;
+                    tberrorlogin.Text = "";
+                    tberrorpasword.Text = " ";
+                   
+                    trainingController.Update();
+                   
                     if (trainingController.CurrentUserSelectsTraining() == false)
                     {
                         ChoiceTraining training = new ChoiceTraining();
@@ -49,13 +51,12 @@ namespace Fitness.Wpf
                         home.Show();
                         Close();
                     }
-
-                }
-                else
-                {
-                    MessageBox.Show("Пароль неправильный");
-                }
-
+  
+            }
+            else
+            {
+                brError.Visibility = Visibility.Visible;
+                tberrorpasword.Text = "Пароль неправильный";
             }
 
         }

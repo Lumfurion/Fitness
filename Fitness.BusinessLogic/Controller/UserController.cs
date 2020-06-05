@@ -25,7 +25,7 @@ namespace Fitness.BusinessLogic.Controller
         /// <summary>
         /// Проверка являться пользователь новый или получили из приложения.
         /// </summary>
-        public bool isNewUser { get; } = false;
+        public bool isNewUser { get; private set; } = false;
         /// <summary>
         /// Имя текущего пользователя.
         /// </summary>
@@ -112,6 +112,21 @@ namespace Fitness.BusinessLogic.Controller
             }
 
         }
+
+        public bool isExist(string userName)
+        {
+            var isexist = false;
+            CurrentUser = Users.SingleOrDefault(u => u.Name == userName);//поиск пользователя.
+            CurrentUserName = userName;
+
+            if (CurrentUser == null) { }
+            else if (CurrentUser != null)
+            {
+                isexist = true;
+            }
+            return isexist;
+        }
+
 
         /// <summary>
         /// Инициализация нового пользователя.

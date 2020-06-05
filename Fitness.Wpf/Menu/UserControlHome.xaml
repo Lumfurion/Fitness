@@ -40,7 +40,7 @@
 
 
                     <Viewbox   Stretch="Uniform"   Grid.Column="1"  Grid.ColumnSpan="3">
-                        <TextBlock Foreground="White"    Text="Информация о пользователе"  />
+                        <TextBlock  Foreground="White"    Text="Информация о пользователе"  />
                     </Viewbox>
 
                     <Image  Grid.Row="1"  Grid.Column="0"  Margin="3"  Source="Main/login.png" HorizontalAlignment="Right" />
@@ -57,7 +57,7 @@
                         <TextBlock Foreground="White"    Text="Пароль:" />
                     </Viewbox>
 
-                    <Viewbox  Grid.Row="2"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
+                    <Viewbox  Grid.Row="2"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left" >
                         <TextBlock   Foreground="White"     Text="{Binding Path=PasswordStar}"/>
                     </Viewbox>
 
@@ -84,7 +84,7 @@
                     </Viewbox>
 
 
-                   
+
 
 
                     <Image  Grid.Row="5"  Grid.Column="0"   Margin="3" Source="Main/Weight.png" HorizontalAlignment="Right"  />
@@ -124,8 +124,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="66*"/>
                         <ColumnDefinition Width="163*"/>
-                        <ColumnDefinition Width="103*"/>
-                        <ColumnDefinition Width="42*"/>
+                        <ColumnDefinition Width="145*"/>
+                       
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="22*"/>
@@ -139,11 +139,11 @@
 
                     <Image Grid.Row="1" Margin="5" Source="Main/training.png" />
 
-                    <Viewbox Grid.Row="1"  Grid.Column="1"   Stretch="Uniform"   HorizontalAlignment="Right"   >
+                    <Viewbox Grid.Row="1"  Grid.Column="1"   Stretch="Uniform"   HorizontalAlignment="Right">
                         <TextBlock Foreground="White"    Text="Вибраная тренировка:"/>
                     </Viewbox>
 
-                    <Viewbox  Grid.Row="1"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left" >
+                    <Viewbox  Grid.Row="1"  Grid.Column="2"  Stretch="Uniform"   HorizontalAlignment="Left">
                         <TextBlock Foreground="White"   Name="lbSelected" />
                     </Viewbox>
 

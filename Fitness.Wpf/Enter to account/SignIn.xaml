@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fitness.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="500" 
-        Width="400"
+        Height="600" 
+        Width="500"
         WindowStartupLocation="CenterScreen" 
         WindowStyle="None"
         Background="Transparent" 
@@ -33,11 +32,8 @@
 
             <TextBlock Grid.Column="1" FontSize="25" Text="Sparta fitness"/>
             <Border Background="Transparent"  MouseLeftButtonDown="titleBar_MouseLeftButtonDown" Grid.ColumnSpan="3"/>
-            <StackPanel Orientation="Horizontal">
-                <Button  Margin="10" Click="btnCloseOnClick"  Style="{StaticResource ButtonClose}" Width="16" />
-            </StackPanel>
-           
-           
+
+            <Button   Click="btnCloseOnClick"  Style="{StaticResource ButtonClose}" Margin="10,14,150,10"/>
         </Grid>
 
         <!--Логотип-->
@@ -68,10 +64,21 @@
                             Grid.Row="5"
                             FontSize="15" 
                             Style="{StaticResource TextBlockLink}"
-                            MouseLeftButtonUp="lbRegistrationOnMouseLeftButtonUp" Margin="-18,0,-19,0"
-                            />
-            </Grid>
+                            MouseLeftButtonUp="lbRegistrationOnMouseLeftButtonUp"/>
 
+                <Border  Visibility="Hidden" Name="brError" Grid.Row="6" CornerRadius="4" BorderThickness="2" 
+                BorderBrush="Red">
+                    <Grid Margin="5" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="11*"/>
+                                <RowDefinition Height="13*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Name="tberrorlogin" Margin="0"   FontWeight="Bold" Style="{StaticResource BaseText}"/>
+                            <TextBlock Name="tberrorpasword" Grid.Row="1"  Margin="0"    FontWeight="Bold" Style="{StaticResource BaseText}"/>
+                    </Grid>
+                </Border>
+
+            </Grid>
         </Grid>
 
         <Button Content="Войти в аккаунт" Grid.Row="3"

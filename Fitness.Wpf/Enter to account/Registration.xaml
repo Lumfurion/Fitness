@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Name="reg" 
         Title="Registration" 
-        Height="500" 
-        Width="400"
+       Height="600" 
+        Width="500"
         WindowStartupLocation="CenterScreen" 
         WindowStyle="None"
         Background="Transparent" 
@@ -35,9 +35,9 @@
 
             <TextBlock Grid.Column="1" Margin="3" Style="{StaticResource BaseText}" FontSize="25" Text="Создать новый аккаунт "/>
             <Border Background="Transparent"  MouseLeftButtonDown="titleBar_MouseLeftButtonDown" Grid.ColumnSpan="3"/>
-            <StackPanel Orientation="Horizontal">
-                <Button  Margin="10" Click="btnCloseOnClick"  Style="{StaticResource ButtonClose}" Width="15" />
-            </StackPanel>
+
+            <Button   Click="btnCloseOnClick"  Style="{StaticResource ButtonClose}" Margin="10,14,54,10"/>
+
         </Grid>
 
 
@@ -77,8 +77,6 @@
                             <RowDefinition Height="20*"/>
                             <RowDefinition Height="20*"/>
                         </Grid.RowDefinitions>
-
-
                         <!--Дата-->
                         <Grid Grid.Row="0" Margin="2" >
                             <Grid.ColumnDefinitions>
@@ -99,8 +97,7 @@
                                 <ColumnDefinition Width="125*"/>
                                 <ColumnDefinition Width="127*"/>
                             </Grid.ColumnDefinitions>
-
-
+                            <!--Вес-->
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
@@ -109,19 +106,16 @@
                                 <TextBlock FontWeight="Bold" Style="{StaticResource BaseText }" Text="Вес:" FontSize="15" VerticalAlignment="Center"  />
                                 <TextBox Name="tbweight" Margin="1" MaxLength="3" Tag="кг" FontSize="20" Style="{StaticResource BaseTextBox}"  Grid.Column="1" />
                             </Grid>
-
+                            <!--Рост-->
                             <Grid Grid.Column="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-
                                 <TextBlock FontWeight="Bold" Style="{StaticResource BaseText }" Text="Рост:" FontSize="17" Margin="1" VerticalAlignment="Center" />
                                 <TextBox Margin="1"  Name="tbheight" MaxLength="3"  Tag="см" FontSize="20" Style="{StaticResource BaseTextBox}"  Grid.Column="1"/>
                             </Grid>
                         </Grid>
-
-
                     </Grid>
 
                     <!--Выбор пола-->
@@ -130,17 +124,10 @@
                             <RowDefinition Height="19*"/>
                             <RowDefinition Height="20*"/>
                         </Grid.RowDefinitions>
-
-
                         <RadioButton FontWeight="Bold" FontSize="12" x:Name="rbМan" Content="Мужчина" GroupName="Gender" Grid.Column="0"  Grid.Row="0" VerticalAlignment="Center"   />
                         <RadioButton FontWeight="Bold" FontSize="12" x:Name="rbWoman" Content="Женщина" GroupName="Gender" Grid.Column="0"   Grid.Row="1" VerticalAlignment="Center"  />
-
                     </Grid>
-
                 </Grid>
-
-
-
             </Grid>
 
         </Grid>
@@ -159,17 +146,12 @@
                         <RowDefinition Height="13*"/>
                         <RowDefinition Height="11*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Name="tberrorlogin" Margin="1" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
-
-                    <TextBlock Grid.Row="1" Margin="1"  Name="tberrorpasword" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
-
-                    <TextBlock Grid.Row="2" Margin="1"  Name="tberrordate" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
-
-                    <TextBlock Grid.Row="3" Margin="1"  Name="tberrorgender" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
-
-                    <TextBlock Grid.Row="4" Margin="1"  Name="tberrorweight" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}"/>
-
-                    <TextBlock Grid.Row="5" Margin="1"  Name="tberrorheight" FontSize="10" FontWeight="Bold" Style="{StaticResource BaseText}" /> 
+                    <TextBlock Name="tberrorlogin" Margin="1" FontSize="12"  FontWeight="Bold" Style="{StaticResource BaseText}"/>
+                    <TextBlock Grid.Row="1" Margin="1"  Name="tberrorpasword" FontSize="12" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+                    <TextBlock Grid.Row="2" Margin="1"  Name="tberrordate" FontSize="12" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+                    <TextBlock Grid.Row="3" Margin="1"  Name="tberrorgender" FontSize="12" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+                    <TextBlock Grid.Row="4" Margin="1"  Name="tberrorweight" FontSize="12" FontWeight="Bold" Style="{StaticResource BaseText}"/>
+                    <TextBlock Grid.Row="5" Margin="1"  Name="tberrorheight" FontSize="12" FontWeight="Bold" Style="{StaticResource BaseText}" /> 
                 </Grid>
             </Grid>
         </Border>

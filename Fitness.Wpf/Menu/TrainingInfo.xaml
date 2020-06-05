@@ -139,7 +139,7 @@
         <Button Style="{StaticResource ButtonAdd}"  Grid.Row="7"    Name="btnSelect" HorizontalAlignment="Center"  Click="BtnSelect_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Image/Take.png"   />
-                <TextBlock Text="Выбрать"    FontSize="15" Margin="5" />
+                <TextBlock Text="Выбрать"    FontSize="15" Margin="2" />
             </StackPanel>
         </Button>
 
