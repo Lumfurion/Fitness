@@ -1,6 +1,5 @@
 ﻿using Fitness.BusinessLogic.Controller;
 using System.Windows;
-using System.Linq;
 using System.Windows.Input;
 
 namespace Fitness.Wpf
@@ -29,9 +28,10 @@ namespace Fitness.Wpf
             if (!name)
             {
                tberrorlogin.Text="Нет такого пользователя";
+               tberrorpasword.Text = " ";
                brError.Visibility = Visibility.Visible;
             }
-            else if (user.CurrentUser.Password == tbPassword.Text)
+            else if (user.CurrentUser.Password == tbPassword.Password)
             {
                     brError.Visibility = Visibility.Collapsed;
                     tberrorlogin.Text = "";
@@ -55,6 +55,7 @@ namespace Fitness.Wpf
             }
             else
             {
+                tberrorlogin.Text = "";
                 brError.Visibility = Visibility.Visible;
                 tberrorpasword.Text = "Пароль неправильный";
             }

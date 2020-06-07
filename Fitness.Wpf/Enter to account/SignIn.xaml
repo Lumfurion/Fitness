@@ -58,7 +58,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBox Tag="Введите логин"  Style="{StaticResource BaseTextBox}"  MaxLength="10" Grid.Row="1" Name="tbUsername" FontSize="20" />
-                <TextBox  Tag="Введите пароль"  Style="{StaticResource BaseTextBox}"  MaxLength="20"  Grid.Row="3" Name="tbPassword"  FontSize="20" />
+                <PasswordBox   Style="{StaticResource  BasePasswordBox}"  MaxLength="20"  Grid.Row="3" Name="tbPassword"  FontSize="20" />
 
                 <TextBlock  Text="Вас нет аккаунта зарегистрируйтесь!?"
                             Grid.Row="5"

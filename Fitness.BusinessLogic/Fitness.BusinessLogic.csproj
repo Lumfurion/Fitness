@@ -73,6 +73,7 @@
     <Compile Include="Model\Training.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Services\Initializers\InitializingTraining.cs" />
+    <Compile Include="Services\PasswordBoxMonitor.cs" />
     <Compile Include="Services\Verification.cs" />
     <Compile Include="Services\Printing document\Printing.cs" />
     <Compile Include="Services\Printing document\Workout.cs" />

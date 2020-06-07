@@ -28,11 +28,11 @@
                             <RowDefinition Height="557*"/>
                             <RowDefinition Height="37*"/>
                         </Grid.RowDefinitions>
+                        <!--рекомендованные тренировки-->
                         <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                             <ItemsControl  ItemsSource="{Binding Recommended}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-
                                         <ItemsControl  ItemsSource="{Binding Eatings}">
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
@@ -93,7 +93,36 @@
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
                         </ScrollViewer>
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Center"  Click="btnSelectOnClick"  Grid.Row="1"  Style="{StaticResource ButtonAdd}"  Content="Выбор" Margin="277,5,253,0" Height="34"  Width="84" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120*"/>
+                                <ColumnDefinition Width="373*"/>
+                                <ColumnDefinition Width="121*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="132*"/>
+                                    <RowDefinition Height="293*"/>
+                                    <RowDefinition Height="132*"/>
+                                </Grid.RowDefinitions>
+                                <Border  Background="#FF833395"  Name="brNotFoodDiary"  CornerRadius="10" Grid.Row="1"  >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="117*"/>
+                                            <RowDefinition Height="60*"/>
+                                            <RowDefinition Height="116*"/>
+                                        </Grid.RowDefinitions>
+                                        <Viewbox Grid.Row="1">
+                                            <TextBlock Text="Для тренировки нету дневника питания" Foreground="White"  Style="{ StaticResource BaseText }"  />
+                                        </Viewbox>
+                                        
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                        <Button x:Name="btnSelect" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="btnSelectOnClick"  Grid.Row="1"  Style="{StaticResource ButtonAdd}"  Content="Выбор" Margin="277,5,253,0" Height="34"  Width="84" />
                     </Grid>
                 </TabItem.Content>
             </TabItem>
@@ -195,6 +224,6 @@
 
             </TabItem>
         </TabControl>
-        
+
     </Grid>
 </UserControl>

@@ -14,6 +14,14 @@ namespace Fitness.Wpf
             InitializeComponent();
             foodDiaryController = new FoodDiaryController();
             DataContext = foodDiaryController;
+            if(foodDiaryController.Recommended.Count == 0)
+            {
+                btnSelect.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                brNotFoodDiary.Visibility = Visibility.Hidden;
+            }
         }
         /// <summary>
         /// Добавление тренировки.

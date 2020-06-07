@@ -49,7 +49,7 @@ namespace Fitness.Wpf
         {
             #region Сбор данных с окна
             var login = tbUsername.Text;
-            var password = tbPassword.Text;
+            var password = tbPassword.Password;
             var gender = Gender;
             var date = tbdateday.Text + "." + tbdatemonth.Text + "." + tbdateyear.Text;
             var weight = tbweight.Text;
