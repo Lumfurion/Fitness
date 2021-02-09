@@ -5,7 +5,7 @@
 
 **Цель разрабка этой системы:** Она была сделана в качестве дипломной работы. Я хотел показать все знания которые получил.
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/71b5a82508bffcb4d78187c5af8679c5-full.png)
+![alt tag](https://i.imgur.com/tXeiyDi.png)
 
 **Обзор системы**
 
@@ -13,36 +13,36 @@
 - Общие сведения о позаватели.
 - Выбранная тренировка.
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/71b5a82508bffcb4d78187c5af8679c5-full.png)
+![alt tag](https://i.imgur.com/tXeiyDi.png)
 
 **2)Треровка:**
 -	Выбор программы:тренировок,Удаление программы тренировок.
 -	Упражнения:удаление,добавление,замена.
 -	День:удаление,добавление.
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/88c6e9058f2589f7b41a54834d641660-full.png)
+![alt tag](https://i.imgur.com/ETCRa4h.png)
 
 
 **3)Приемы пищи:**
 - Выбрать рекомендованный прием пищи или составить свой.
 - Удалять,изменять,добавлять продукты можно в приеме пищи.
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/b048579ace386fcdea7696b503e696f3-full.png)
+![alt tag](https://i.imgur.com/dnNu6lC.png)
 
 
 **4)Cтатистика:**
 В этом пункте меню можно посмотреть сколько калорий набрано, когда пользователь принимал пищу, сколько пользователь сжег калорий при выполнении упражнений, также важный параметр - рассчитать метаболизм человека и сумму всего.
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/7f4b84f6ed5e25ecd62ac4c4b9127e76-full.png)
+![alt tag](https://i.imgur.com/yRV3qKr.png)
 
 **5)Печать:**
 В этом пункте меню можно распечатать программу тренировок или дневник питания.
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/faec7f07967a3f52ac5865d37fe802f7-full.png)
+![alt tag](https://i.imgur.com/uWaI1ZE.png)
 
 **6)Аккаунт:** В каждой системе должна быть возможноть регистрации и авторизации.
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/f8ae858c44650fb2a3e583c2cf3c46cb-full.png)
+![alt tag](https://i.imgur.com/p0ILCgn.png)
 
 
-![alt tag](https://cdn1.savepice.ru/uploads/2021/1/6/51f6b25efcd086a16040bae4a59a1c69-full.png)
+![alt tag](https://i.imgur.com/eAv3CDr.png)
